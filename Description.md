@@ -18,3 +18,7 @@ The following power armor sets are available, each with multiple modules to allo
 * This is a patch for the original armor set that allows it to spawn with all of its possible linings (e.g. Mk. I to Mk. VI)
 * If you do not use this patch, enemies and legendary drops can only spawn as Mk I or Mk II, so it is recommended
 * There is a version of this that carries forward the durability and armor rating changes from Some Assembly Required
+
+## [X-01 Tesla Upgrade Kit](https://www.nexusmods.com/fallout4/mods/27125)
+### Power Armored Enemies
+* Some high level Gunner commanders will wear X-01 armor with the tesla coil upgrades
