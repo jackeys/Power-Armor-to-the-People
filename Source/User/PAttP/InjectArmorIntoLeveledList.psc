@@ -1,25 +1,31 @@
 Scriptname PAttP:InjectArmorIntoLeveledList extends Quest
-{Injects an item into one or more leveled lists with the specified count and level}
+{Injects one or more armor pieces into one or more leveled lists with the specified count and level}
 
-Int Property count = 1 Auto Const
+Struct InjectionInfo
+
+Int count = 1
 {How many of the item should be returned}
 
-Int Property level = 1 Auto Const
+Int level = 1
 {The level at which the item should start appearing}
 
-LeveledItem[] Property injectInto Auto Const
+LeveledItem injectInto
 {The lists that the item should be injected into}
 
-Armor Property itemToInject Auto Const
+Armor itemToInject
 {The item that should be injected into the other lists with the specified count and level}
 
-int iter = 0
+EndStruct
+
+InjectionInfo[] Property injections Auto Const
 
 Event OnInit()
-	iter = 0
+	int iter = 0
 	
-	while(iter < injectInto.length)
-		injectInto[iter].AddForm(itemToInject, level, count)
+	while(iter < injections.length)
+		InjectionInfo currentInjection = injections[iter]
+
+		currentInjection.injectInto.AddForm(currentInjection.itemToInject, currentInjection.level, currentInjection.count)
 		iter += 1
 	endwhile
 EndEvent
