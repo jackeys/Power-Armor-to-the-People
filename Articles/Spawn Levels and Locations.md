@@ -5,6 +5,7 @@ The following levels are when each of the power armor sets begin to drop from le
 Level | Power Armor Set |
 ----- | ---------------
 10 | _Raider Power Armor_
+15 | Excavator Power Armor
 20 | _T-45_
 30 | _T-51_, T-51c
 40 | _T-60_, Institute Power Armor
