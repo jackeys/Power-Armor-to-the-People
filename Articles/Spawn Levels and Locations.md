@@ -32,7 +32,7 @@ Level | Power Armor Set
 * The vanilla sets shown in italics are actually provided by SweXavier05's Power Armored Enemies mod - they are included here for completeness.
 
 ### Gunners
-Gunners have access to power armor sets that were previously used by offshoots of the US military. They have partially upgraded suits, sporting linings from B to E, and legendary Gunners will often have exclusive power armor sets or paint jobs.
+Gunners have access to power armor sets that were previously used by offshoots of the US military. They maintain and can partially upgrade their power armor for increased defense, and legendary Gunners will often have exclusive power armor sets or paint jobs.
 
 Level | Power Armor Set | Enemy Type
 ----- | --------------- | ----------
