@@ -39,8 +39,7 @@ Level | Power Armor Set | Enemy Type
 20    | _T-45_, _T-51_, T-51c | All Gunners
 30    | _T-60*_ | All Gunners
 40    | X-01  | Legendary Gunners
-55    | Enclave X-02 | Legendary Gunners
-60    | X-01 Tesla | Legendary Gunners
+55    | Enclave X-02, X-01 Tesla | Legendary Gunners
 65    | Hellfire X-03 | Legendary Gunners
 
 * T-60 is excluded if using the Some Assembly Required Redistribution patch, since that makes T-60 exclusive to the Brotherhood of Steel
