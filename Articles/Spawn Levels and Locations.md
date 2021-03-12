@@ -37,10 +37,10 @@ Gunners have access to power armor sets that were previously used by offshoots o
 Level | Power Armor Set | Enemy Type
 ----- | --------------- | ----------
 20    | _T-45_, _T-51_, T-51c | All Gunners
-30    | _T-60*_ | All Gunners
+30    | _T-60*_, Enclave X-02 | All Gunners
 40    | X-01  | Legendary Gunners
-55    | Enclave X-02, X-01 Tesla | Legendary Gunners
-65    | Hellfire X-03 | Legendary Gunners
+55    | X-01 Tesla | Legendary Gunners
+60    | Hellfire X-03 | Legendary Gunners
 
 * T-60 is excluded if using the Some Assembly Required Redistribution patch, since that makes T-60 exclusive to the Brotherhood of Steel
 * The vanilla sets shown in italics are actually provided by SweXavier05's Power Armored Enemies mod - they are included here for completeness.
@@ -50,7 +50,7 @@ In addition to the power armor that the Brotherhood of Steel typically have, the
 
 Level | Power Armor Set | Enemy Type
 ----- | --------------- | ----------
-77    | Ultracite Power Armor | Star Paladins
+67    | Ultracite Power Armor | Star Paladins
 
 ### Institute
 Level | Power Armor Set | Enemy Type
