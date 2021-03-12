@@ -26,7 +26,8 @@ Raiders use scavenged sets of power armor. They typically have rusty sets of pow
 Level | Power Armor Set
 ----- | ---------------
 14    | _Raider Power Armor_, Excavator Power Armor, _T-45_
-30    | T-51*, _T-60*_
+20    | T-51*
+30    | _T-60*_
 
 * T-51 is only available if using the Consistent Power Armor patch, as otherwise T-51 does not have a rusty version
 * T-60 is excluded if using the Some Assembly Required Redistribution patch, since that makes T-60 exclusive to the Brotherhood of Steel
