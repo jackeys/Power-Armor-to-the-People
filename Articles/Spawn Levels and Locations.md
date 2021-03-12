@@ -59,4 +59,4 @@ Level | Power Armor Set | Enemy Type
 ### Institute
 Level | Power Armor Set | Enemy Type
 ----- | --------------- | ----------
-39    | Institute Power Armor | Synths
+30    | Institute Power Armor | Synths
