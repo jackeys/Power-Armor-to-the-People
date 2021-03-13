@@ -17,7 +17,11 @@ start /d "C:\path\to\this\directory" release.bat $MODVERSION$
 ```
 
 ## Installing for Development
-If you are installing the mod just to use it, it is **strongly recommended** that you use a release zip file and install using a FOMOD-compatible mod manager such as [Vortex](https://www.nexusmods.com/about/vortex/). For development purposes, however, this can be cumbersome, so a script `install_all.bat` is provided. This script will symbolically link all of the files in the project to the appropriate place in the game's directory, allowing for changes made to be immediately reflected in the project directory. All this script needs to run is the install path of Fallout 4, which can be provided either as a command-line argument or as a prompt after running the script. This allows it to be run straight from Windows Explorer.
+If you are installing the mod just to use it, it is **strongly recommended** that you use a release zip file and install using a FOMOD-compatible mod manager such as [Vortex](https://www.nexusmods.com/about/vortex/). For development purposes, however, this can be cumbersome, so a script `install_all.bat` is provided. This script will symbolically link all of the files in the project to the appropriate place in the game's directory, allowing for changes made to be immediately reflected in the project directory. When running the script, it will ask for the install path of Fallout 4 (e.g. `C:\Program Files (x86)\Steam\steamapps\common\Fallout 4`). Alternatively, this can be entered as a command-line argument:
+
+```
+install_all.bat "C:\Program Files (x86)\Steam\steamapps\common\Fallout 4"
+```
 
 **Important Note:** Unless you have Developer Mode turned on in Windows 10, you will need to run this script as an administrator since it makes symbolic links. You can do this right from Windows Explorer by right-clicking on the file and selecting, "Run as administrator."
 
