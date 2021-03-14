@@ -5,7 +5,7 @@ pushd %~dp0
 
 if "%~1" == "" (
     set /p TARGET_DIRECTORY=Enter absolute path to Fallout 4 install directory: 
-) else (set TARGET_DIRECTORY=%1)
+) else (set TARGET_DIRECTORY=%~1)
 
 echo Deploying to %TARGET_DIRECTORY%
 
