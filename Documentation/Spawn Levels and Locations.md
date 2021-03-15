@@ -40,6 +40,7 @@ Level | Power Armor Set | Enemy Type
 20    | _T-45_, _T-51_, T-51c | All Gunners
 30    | _T-60*_, Enclave X-02 | All Gunners
 40    | X-01  | Legendary Gunners
+50    | T-65 | Legendary Gunners
 55    | X-01 Tesla | Legendary Gunners
 60    | Hellfire X-03 | Legendary Gunners
 
