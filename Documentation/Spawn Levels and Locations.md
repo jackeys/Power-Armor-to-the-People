@@ -9,6 +9,7 @@ Level | Power Armor Set |
 30 | _T-51_, T-51c
 40 | _T-60_, Institute Power Armor, Enclave X-02
 50 | _X-01_
+60 | T-65
 70 | Hellfire X-03, Ultracite
 
 * The levels indicated above show when the weakest lining for each piece of armor begins to drop. A stronger lining unlocks every 4 levels afterwards until all linings are available for that power armor set.
