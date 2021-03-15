@@ -41,8 +41,9 @@ Level | Power Armor Set | Enemy Type
 30    | _T-60*_, Enclave X-02 | All Gunners
 40    | X-01  | Legendary Gunners
 50    | T-65 | Legendary Gunners
-55    | X-01 Tesla | Legendary Gunners
+55    | Enclave X-02 Tesla | Legendary Gunners
 60    | Hellfire X-03 | Legendary Gunners
+65    | X-01 Tesla | Legendary Gunners
 
 * T-60 is excluded if using the Some Assembly Required Redistribution patch, since that makes T-60 exclusive to the Brotherhood of Steel
 * The vanilla sets shown in italics are actually provided by SweXavier05's Power Armored Enemies mod - they are included here for completeness.
