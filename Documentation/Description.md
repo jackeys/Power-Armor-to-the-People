@@ -64,10 +64,18 @@ These mods naturally fit into what Power Armor to the People is trying to achiev
 
 The power armor scarcity of [Some Assembly Required](https://www.nexusmods.com/fallout4/mods/12050) contributes greatly to the feeling that others in the wasteland have been scavenging the power armor sets. However, not every power armor set supported by Power Armor to the People has a patch to bring its repair, durability, and armor rating in line with Some Assembly Required. As such, the installer for Power Armor to the People has a plugin that provides only the scarcity aspects of Some Assembly Required. If the power armor sets you want to use all have patches for Some Assembly Required, go ahead and use the full version instead if you want the other changes.
 
-The Atom Cats CPAO patch from Some Assembly Required is also highly recommended to make T-60 unique to the Brotherhood of Steel.
+The Atom Cats CPAO patch from Some Assembly Required is also highly recommended to make T-60 unique to the Brotherhood of Steel, whether you use the full version of Some Assembly Required or just the redistribution version included with Power Armor to the People.
 
 # Installation
 
 Use your preferred FOMOD-compatible mod manager, such as Vortex. The installer has many patches in it, which will auto-detect your current mods and should default to the correct set for your setup. You can also manually toggle each feature, power armor set, and patch to customize what you get, though features all show up together (e.g. if you choose both Power Armored Enemies and Legendary Power Armor and select three power armor sets, you will get both features for all three sets).
 
 Once again, while the installer can install many patches to support your selection, all of these plugins are ESL-flagged ESPs that will not count against the normal ESP limit.
+
+## Installing Mid-Playthrough
+
+Power Armor to the People is intended to work with a new game, with each set of power armor set to show up at certain levels to provide a progression throughout the game, but this is not a requirement. Installing mid-playthrough should be safe, as this is how I have done most of my testing. **However,** there are some important things to keep in mind if you do this:
+
+* Legendary power armor heavily leans in favour of giving you the strongest power armor set(s) available to you based on your level (>50%, with the exact chance depending on how many power armor sets you installed). If you install Power Armor to the People while you are already a high level, your chances of getting legendary power armor for a specific lower level set will be very low.
+* If you have already obtained some of the power armor sets from around the world, you could skip some of the normal progression (e.g. with everything installed, it shouldn't be possible to get a full set of Hellfire X-03 until at least level 60, but you could have gotten this at a much lower level first)
+* If you have already obtained some of the power armor sets from around the world, it's possible that some of the partial sets that replaced the full sets will respawn
