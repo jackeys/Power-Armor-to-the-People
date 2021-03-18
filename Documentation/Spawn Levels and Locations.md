@@ -59,3 +59,12 @@ Level | Power Armor Set | Enemy Type
 Level | Power Armor Set | Enemy Type
 ----- | --------------- | ----------
 30    | Institute Power Armor | Synths
+
+## Vendors
+
+Some power armor sets are available at vendors when using the "Redistribute Power Armor" feature. Full sets are not guaranteed, so you may have to come back a few times to get the full set after the vendor's inventory refreshes.
+
+Power Armor Set | Location | Conditions
+--------------- | -------- | ----------
+Institute Power Armor | The Institute - Requisitions | Allied with The Institute
+Ultracite Power Armor | The Prydwyn - Proctor Teagan | Promoted to Sentinel

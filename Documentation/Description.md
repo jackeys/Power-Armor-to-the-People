@@ -13,7 +13,7 @@ With this feature installed, each selected power armor set will be given to cert
 * Raiders are only able to scrap together what they can find, using mixed sets of rusted power armor
 * Gunners have learned how to maintain and upgrade power armor, and have working sets of armor from the different offshoots of the US military and former US government
 * The Institute has their own set of power armor
-* The Brotherhood of Steel has an advanced set of power armor for their Star Paladins and, if you become a Sentinel, for you 
+* The Brotherhood of Steel has an advanced set of power armor for their Star Paladins
 
 For a full breakdown of which sets are available to each group of enemies at each level, see this article: [Spawn Levels and Locations](Spawn%20Levels%20and%20Locations.md)
 
@@ -30,6 +30,8 @@ For a full breakdown of what level each power armor set becomes available as a p
 ## Redistribute Power Armor
 
 With this feature installed, the availability of each power armor set is changed. The full set that each power armor mod adds to the world is either removed or reduced to a partial set. This makes the hunt for each set of power armor more interesting, as you typically have to find the legendary pieces or fight an enemy wearing the armor to get it.
+
+This also makes some power armor sets available for sale at vendors. For a full breakdown of which sets are available at which vendors, see this article: [Spawn Levels and Locations](Spawn%20Levels%20and%20Locations.md)
 
 # Power Armor Sets
 
