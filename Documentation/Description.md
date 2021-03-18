@@ -27,9 +27,9 @@ For a full breakdown of what level each power armor set becomes available as a p
 
 *Requires [Legendary Power Armor Pieces](https://www.nexusmods.com/fallout4/mods/12834) and the Far Harbor DLC*
 
-## Remove Full Sets From the World
+## Redistribute Power Armor
 
-With this feature installed, the full set that each power armor mod adds is either removed or reduced to a partial set. This makes the hunt for each set of armor more interesting, as you typically have to find the legendary pieces or fight an enemy wearing the armor to get it.
+With this feature installed, the availability of each power armor set is changed. The full set that each power armor mod adds to the world is either removed or reduced to a partial set. This makes the hunt for each set of power armor more interesting, as you typically have to find the legendary pieces or fight an enemy wearing the armor to get it.
 
 # Power Armor Sets
 
