@@ -56,6 +56,8 @@ Level | Power Armor Set | Enemy Type
 67    | Ultracite Power Armor | Star Paladins
 
 ### Institute
+With power armor in the hands of the raider factions on the surface, the Institute has developed their own power armor to ensure they can continue to accomplish their goals. Legendary synths who don this armor also carry synth relay grenades to overwhelm their enemies.
+
 Level | Power Armor Set | Enemy Type
 ----- | --------------- | ----------
 30    | Institute Power Armor | Synths
