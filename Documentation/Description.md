@@ -59,6 +59,7 @@ Patches are available for [AWKCR](https://www.nexusmods.com/fallout4/mods/6091) 
 
 These mods naturally fit into what Power Armor to the People is trying to achieve and are highly recommended to be included alongside it. These are the mods I play with, and patches are included in the installer to support those that need them:
 * [Consistent Power Armor Overhaul](https://www.nexusmods.com/fallout4/mods/11234) - Among other things, it adds a rusty T-51 texture which raiders can use
+    * Note: If you are using AWKCR's Consistent Power Armor Overhaul replacer plugin, be sure to download the [rusty T-51 fix](https://www.nexusmods.com/fallout4/mods/50798?tab=files)
 * [Brotherhood of Steel Power Armor Overhaul](https://www.nexusmods.com/fallout4/mods/11978) - Gives the Brotherhood of Steel multiple types of power armor
 * [Children of Atom Power Armor](https://www.nexusmods.com/fallout4/mods/47586) - Unique variants and can be worn by the Children of Atom
 
