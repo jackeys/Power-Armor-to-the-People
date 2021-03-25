@@ -74,6 +74,22 @@ Use your preferred FOMOD-compatible mod manager, such as Vortex. The installer h
 
 Once again, while the installer can install many patches to support your selection, all of these plugins are ESL-flagged ESPs that will not count against the normal ESP limit.
 
+## Load Order
+
+In general, these plugins should all be as close to the bottom of your load order as possible. Patches have been included to aid in compatibility, and there are no load order dependencies within Power Armor to the People itself (outside of making sure every plugin is lower than its masters).
+
+The only known load order issue has to do with the armor records for the power armor sets in the base game, since many of the recommended mods make changes to them. Assuming you have every recommended mod and patch installed, here is how those plugins should be ordered:
+
+```
+ArmorKeywords.esm
+LegendaryPAPieces.esp
+LegendaryPAPieces - AWKCR Patch.esp
+Some Assembly Required.esp
+RaiderOverhaul.esp
+```
+
+If you don't have some of these mods installed, the order should still be maintained for the ones that you do.
+
 ## Installing Mid-Playthrough
 
 Power Armor to the People is intended to work with a new game, with each set of power armor set to show up at certain levels to provide a progression throughout the game, but this is not a requirement. Installing mid-playthrough should be safe, as this is how I have done most of my testing. **However,** there are some important things to keep in mind if you do this:
