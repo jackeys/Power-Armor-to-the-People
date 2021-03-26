@@ -62,12 +62,9 @@ These mods naturally fit into what Power Armor to the People is trying to achiev
     * Note: If you are using AWKCR's Consistent Power Armor Overhaul replacer plugin, be sure to download the [rusty T-51 fix](https://www.nexusmods.com/fallout4/mods/50798?tab=files)
 * [Brotherhood of Steel Power Armor Overhaul](https://www.nexusmods.com/fallout4/mods/11978) - Gives the Brotherhood of Steel multiple types of power armor
 * [Children of Atom Power Armor](https://www.nexusmods.com/fallout4/mods/47586) - Unique variants and can be worn by the Children of Atom
-
-## Some Assembly Required
-
-The power armor scarcity of [Some Assembly Required](https://www.nexusmods.com/fallout4/mods/12050) contributes greatly to the feeling that others in the wasteland have been scavenging the power armor sets. However, not every power armor set supported by Power Armor to the People has a patch to bring its repair, durability, and armor rating in line with Some Assembly Required. As such, the installer for Power Armor to the People has a plugin that provides only the scarcity aspects of Some Assembly Required. If the power armor sets you want to use all have patches for Some Assembly Required, go ahead and use the full version instead if you want the other changes.
-
-The Atom Cats CPAO patch from Some Assembly Required is also highly recommended to make T-60 unique to the Brotherhood of Steel, whether you use the full version of Some Assembly Required or just the redistribution version included with Power Armor to the People.
+* [Some Assembly Required](https://www.nexusmods.com/fallout4/mods/12050) - Makes power armor rare in the world, contributing to the feeling that people have been scavenging it for the last 210 years
+    * The Atom Cats CPAO patch from Some Assembly Required is also highly recommended to make T-60 unique to the Brotherhood of Steel
+    * The No Stat Change version is recommended, as most of the power armor sets that Power Armor to the People supports do not have a Some Assembly Required patch and the stat changes make power armored enemies harder
 
 # Installation
 
