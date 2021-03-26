@@ -64,7 +64,7 @@ These mods naturally fit into what Power Armor to the People is trying to achiev
 * [Children of Atom Power Armor](https://www.nexusmods.com/fallout4/mods/47586) - Unique variants and can be worn by the Children of Atom
 * [Some Assembly Required](https://www.nexusmods.com/fallout4/mods/12050) - Makes power armor rare in the world, contributing to the feeling that people have been scavenging it for the last 210 years
     * The Atom Cats CPAO patch from Some Assembly Required is also highly recommended to make T-60 unique to the Brotherhood of Steel
-    * The No Stat Change version is recommended, as most of the power armor sets that Power Armor to the People supports do not have a Some Assembly Required patch and the stat changes make power armored enemies harder
+    * The No Stat Change version is recommended, as most of the power armor sets that Power Armor to the People supports do not have a Some Assembly Required patch to maintain balance between the sets and the increase makes power armored enemies more difficult
 
 # Installation
 
@@ -86,7 +86,7 @@ Some Assembly Required.esp
 RaiderOverhaul.esp
 ```
 
-If you don't have some of these mods installed, the order should still be maintained for the ones that you do.
+If you don't have some of these mods installed, the order should still be maintained for the ones that you do. These mods don't necessarily need to be right next to each other in the order - other mods can be in between them - so long as this is the order these specific mods are in.
 
 ## Installing Mid-Playthrough
 
