@@ -62,7 +62,9 @@ Level | Power Armor Set | Enemy Type
 ----- | --------------- | ----------
 30    | Institute Power Armor | Synths
 
-## Vendors
+## Power Armor Redistribution
+
+### Vendors
 
 Some power armor sets are available at vendors when using the "Redistribute Power Armor" feature. Full sets are not guaranteed, so you may have to come back a few times to get the full set after the vendor's inventory refreshes.
 
