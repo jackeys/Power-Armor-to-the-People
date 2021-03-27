@@ -92,7 +92,7 @@ If you don't have some of these mods installed, the order should still be mainta
 
 Power Armor to the People is intended to work with a new game, with each set of power armor set to show up at certain levels to provide a progression throughout the game, but this is not a requirement. Installing mid-playthrough should be safe, as this is how I have done most of my testing. **However,** there are some important things to keep in mind if you do this:
 
-* Legendary power armor heavily leans in favour of giving you the strongest power armor set(s) available to you based on your level (>50%, with the exact chance depending on how many power armor sets you installed). If you install Power Armor to the People while you are already a high level, your chances of getting legendary power armor for a specific lower level set will be very low.
+* Legendary power armor heavily leans in favour of giving you the strongest power armor set(s) available to you based on your level (>50%, with the exact chance depending on how many power armor sets you installed). If you install Power Armor to the People while you are already a high level, your chances of getting legendary power armor for a specific lower level set will be very low unless you visit zones that are still locked to a lower level.
 * If you have already obtained some of the power armor sets from around the world, you could skip some of the normal progression (e.g. with everything installed, it shouldn't be possible to get a full set of Hellfire X-03 until at least level 60, but you could have gotten this at a much lower level first)
 * If you have already obtained some of the power armor sets from around the world, it's possible that some of the partial sets that replaced the full sets will respawn
 

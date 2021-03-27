@@ -327,6 +327,7 @@
 **Change List:**
 * Removes the metal box that originally contained the full set of Institute Power Armor
 * Makes Institute Power Armor available for sale from the Institute Requisitions Desk (thanks to FAB001 for this)
+* Makes a power armor frame available for sale from the Institute Requisitions Desk (thanks to BitMage for this)
 
 ### Institute Power Armor - All Lining Combinations.esp
 **Description:** Adds all lining combinations for Institute Power Armor to allow any of them to be spawned
