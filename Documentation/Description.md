@@ -17,7 +17,7 @@ With this feature installed, each selected power armor set will be given to cert
 
 For a full breakdown of which sets are available to each group of enemies at each level, see this article: [Spawn Levels and Locations](Spawn%20Levels%20and%20Locations.md)
 
-*Requires [SweXavier05's Power Armored Enemies](https://www.nexusmods.com/fallout4/mods/24635/)*
+*Requires [SweXavier05's Power Armored Enemies](https://www.nexusmods.com/fallout4/mods/24635/) - Destructible version is recommended*
 
 ## Legendary Power Armor
 
