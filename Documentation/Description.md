@@ -70,7 +70,7 @@ These mods naturally fit into what Power Armor to the People is trying to achiev
 
 Use your preferred FOMOD-compatible mod manager, such as Vortex. The installer has many patches in it, which will auto-detect your current mods and should default to the correct set for your setup. You can also manually toggle each feature, power armor set, and patch to customize what you get, though features all show up together (e.g. if you choose both Power Armored Enemies and Legendary Power Armor and select three power armor sets, you will get both features for all three sets).
 
-Once again, while the installer can install many patches to support your selection, all of these plugins are ESL-flagged ESPs that will not count against the normal ESP limit.
+Once again, while the installer can install many patches to support your selection, all of these plugins are ESL-flagged ESPs that will not count against the normal ESP limit. For a full reference of what plugins can be installed, what they do, and when the installer will select them, see [Plugin Details](Plugin%20Details.md). Note that this list is quite long and it is not necessary to understand all of it, but it is a useful reference if you are trying to figure out what a plugin in your load order does.
 
 ## Load Order
 
