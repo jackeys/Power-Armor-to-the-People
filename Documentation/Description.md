@@ -95,3 +95,42 @@ Power Armor to the People is intended to work with a new game, with each set of 
 * Legendary power armor heavily leans in favour of giving you the strongest power armor set(s) available to you based on your level (>50%, with the exact chance depending on how many power armor sets you installed). If you install Power Armor to the People while you are already a high level, your chances of getting legendary power armor for a specific lower level set will be very low.
 * If you have already obtained some of the power armor sets from around the world, you could skip some of the normal progression (e.g. with everything installed, it shouldn't be possible to get a full set of Hellfire X-03 until at least level 60, but you could have gotten this at a much lower level first)
 * If you have already obtained some of the power armor sets from around the world, it's possible that some of the partial sets that replaced the full sets will respawn
+
+# Credits
+
+Since this mod has patches for so many other mods, it is really built on the shoulders of giants. Thank you to all of the mod authors who gave me permission to make patches for your work, and a special nod to AtomicTEM for uploading the No Stat Change version of Some Assembly Required at my request.
+
+If you enjoy playing with these mods, please endorse them!
+
+## Mods Directly Incorporated
+
+* FAB001 for [Institute Power Armor Availability Tweak](https://www.nexusmods.com/fallout4/mods/49243?tab=description), with its main concepts being brought into this mod as part of the Power Armored Enemies / Redistribution features
+* BitMage for [Buy Power Armor at the Institute](https://www.nexusmods.com/fallout4/mods/15731), which was brought into the Redistribution feature
+
+## Dependencies
+
+* SweXavier05 for [SweXavier05's Power Armored Enemies](https://www.nexusmods.com/fallout4/mods/24635/), which served as a major inspiration
+* ferrari365 for [Legendary Power Armor Pieces](https://www.nexusmods.com/fallout4/mods/12834), which served as a major inspiration
+* Unoctium and DogtoothCG / Road to Liberty team for the [Enclave X-02](https://www.nexusmods.com/fallout4/mods/11017) and [Hellfire X-03](https://www.nexusmods.com/fallout4/mods/26251) power armor sets
+* m150 for the [Institute Power Armor](https://www.nexusmods.com/fallout4/mods/18315)
+* newermind43 and Captain-Ultima for the [Ultracite Power Armor](https://www.nexusmods.com/fallout4/mods/44804), [T-65](https://www.nexusmods.com/fallout4/mods/49922), [T-51c](https://www.nexusmods.com/fallout4/mods/17941), and [Excavator Power Armor](https://www.nexusmods.com/fallout4/mods/41884) sets
+
+## Other Patches
+
+* ProgmanX for [Some Assembly Required](https://www.nexusmods.com/fallout4/mods/12050?tab=description) and AtomicTEM for the [AWKCR / Merged DLC version](https://www.nexusmods.com/fallout4/mods/44235?tab=description)
+* Captain-Ultima for the [X-01 Tesla Upgrade Kit](https://www.nexusmods.com/fallout4/mods/27125)
+* MadMAX713, Joemitchell320, Thirdstorm, KKthebeast, and MunkySpunk for [Raider Overhaul](https://www.nexusmods.com/fallout4/mods/9103)
+* Cosique for [Institute Heavy Weapons](https://www.nexusmods.com/fallout4/mods/2441)
+* Gambit77, Thirdstorm, and Valdacil for [AWKCR](https://www.nexusmods.com/fallout4/mods/6091)
+* Bordraw for [Consistent Power Armor Overhaul](https://www.nexusmods.com/fallout4/mods/11234), which made rusty T-51 available to our beloved raiders
+
+## Tools
+
+* Elminster for [xEdit](http://tes5edit.github.io), without which this mod would not have been possible
+* Wenderer for [FOMOD Creation Tool](https://www.nexusmods.com/fallout4/mods/6821), which helped greatly in building the installer
+
+## Images
+
+I took all of the screenshots, but I did not create any of the assets in them. All of those assets were made by the authors you see credited above for their respective mods.
+
+(CC BY-NC-SA 4.0)
