@@ -29,7 +29,7 @@ Level | Power Armor Set
 
 * T-51 is only available if using the Consistent Power Armor patch, as otherwise T-51 does not have a rusty version
 * T-60 is excluded if using the Some Assembly Required Redistribution patch, since that makes T-60 exclusive to the Brotherhood of Steel
-* If using the Raider Overhaul patch, these raiders will use the paint jobs and upgrades provided by the Raider Overhaul as well
+* If using either the Raider Overhaul or Raider Chop-Shop patch, these raiders will use the new paint jobs and upgrades as well
 * The vanilla sets shown in italics are actually provided by SweXavier05's Power Armored Enemies mod - they are included here for completeness.
 
 ### Gunners

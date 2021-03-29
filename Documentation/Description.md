@@ -50,7 +50,7 @@ The following power armor sets are currently supported:
 
 Patches are available for the following to add additional variety to power armored enemies:
 * [X-01 Tesla Upgrade Kit](https://www.nexusmods.com/fallout4/mods/27125)
-* [Raider Overhaul](https://www.nexusmods.com/fallout4/mods/9103)
+* [Raider Power Armor Chop Shop](https://www.nexusmods.com/fallout4/mods/13552) / [Raider Overhaul](https://www.nexusmods.com/fallout4/mods/9103)
 * [Institute Heavy Weapons](https://www.nexusmods.com/fallout4/mods/2441)
 
 Patches are available for [AWKCR](https://www.nexusmods.com/fallout4/mods/6091) as well, but that's for compatibility reasons - it does not add any additional features in relation to this mod.
@@ -83,7 +83,8 @@ ArmorKeywords.esm
 LegendaryPAPieces.esp
 LegendaryPAPieces - AWKCR Patch.esp
 Some Assembly Required.esp
-RaiderOverhaul.esp
+RaiderOverhaul.esp / RaiderPAChopShop.esp
+Power Armored Enemies - Raider Chop Shop Patch.esp
 ```
 
 If you don't have some of these mods installed, the order should still be maintained for the ones that you do. These mods don't necessarily need to be right next to each other in the order - other mods can be in between them - so long as this is the order these specific mods are in.
@@ -120,6 +121,7 @@ If you enjoy playing with these mods, please endorse them!
 * ProgmanX for [Some Assembly Required](https://www.nexusmods.com/fallout4/mods/12050?tab=description) and AtomicTEM for the [AWKCR / Merged DLC version](https://www.nexusmods.com/fallout4/mods/44235?tab=description)
 * Captain-Ultima for the [X-01 Tesla Upgrade Kit](https://www.nexusmods.com/fallout4/mods/27125)
 * MadMAX713, Joemitchell320, Thirdstorm, KKthebeast, and MunkySpunk for [Raider Overhaul](https://www.nexusmods.com/fallout4/mods/9103)
+* MadMAX713 for [Raider Power Armor Chop-Shop](https://www.nexusmods.com/fallout4/mods/13552)
 * Cosique for [Institute Heavy Weapons](https://www.nexusmods.com/fallout4/mods/2441)
 * Gambit77, Thirdstorm, and Valdacil for [AWKCR](https://www.nexusmods.com/fallout4/mods/6091)
 * Bordraw for [Consistent Power Armor Overhaul](https://www.nexusmods.com/fallout4/mods/11234), which made rusty T-51 available to our beloved raiders

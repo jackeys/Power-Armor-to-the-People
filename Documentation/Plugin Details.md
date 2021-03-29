@@ -72,6 +72,22 @@
 
 **Compatibility:**
 * This should be compatible with Raider Overhaul-R
+* This isn't directly compatible with the below Raider Chop-Shop Patch, as only one will actually take effect, but Raider Overhaul and Raider Chop-Shop specifically say they shouldn't be installed together because Raider Overhaul includes everything Chop-Shop does and more
+
+### Power Armored Enemies - Raider Chop Shop Patch.esp
+**Description:** Allows the raiders from Power Armored Enemies to wear the power armor from Raider Chop Shop
+
+**Dependencies:** SweXavier05's Power Armored Enemies, Power Armored Enemies feature, Raider Overhaul
+
+**Installed If:** The Power Armored Enemies feature is checked, and the Raider Overhaul patch is later selected
+
+**Change List:**
+* Merges changes to Raider leveled lists and NPCs
+* Switches Power Armored Enemies to use Raider Overhaul's raider power armor sets when selecting a full raider set
+* Adds the painted Raider torsos from Raider Overhaul as possible torsos in one of the mixed sets of rusty armor
+
+**Compatibility:**
+* This isn't directly compatible with the above Raider Overhaul Patch, as only one will actually take effect, but Raider Overhaul and Raider Chop-Shop specifically say they shouldn't be installed together because Raider Overhaul includes everything Chop-Shop does and more
 
 ### Power Armored Enemies - Rusty T-51 (CPAO).esp
 **Description:** Adds T-51 to the rusty sets Raiders can use in Power Armored Enemies
