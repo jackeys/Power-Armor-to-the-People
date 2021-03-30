@@ -478,6 +478,16 @@
 * Adds the legendary effects to the naming rules for Classic Advanced Power Armor
 * Injects Classic Advanced Power Armor into the legendary drop lists in Legendary Power Armor Pieces
 
+### Classic Advanced Power Armor - Power Armored Enemies.esp
+**Description:** Adds Classic Advanced power armor to enemies in the world
+
+**Dependencies:** Classic Advanced Power Armor
+
+**Installed If:** The Power Armored Enemies feature and Classic Advanced Power Armor boxes are both checked
+
+**Change List:**
+* Injects a Classic Advanced power armor set for Legendary Gunners into Power Armored Enemies Extended
+
 ## X-01 Tesla Upgrade Kit
 
 ### X-01 Tesla Upgrade Kit - Power Armored Enemies.esp
