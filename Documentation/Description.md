@@ -89,6 +89,15 @@ Power Armored Enemies - Raider Chop Shop Patch.esp
 
 If you don't have some of these mods installed, the order should still be maintained for the ones that you do. These mods don't necessarily need to be right next to each other in the order - other mods can be in between them - so long as this is the order these specific mods are in.
 
+## Compatibility
+
+Many of the changes made for Power Armor to the People are new records, not changes to the base game. This should make it compatible with most mods. The biggest compatibility concerns are the following:
+* Changes to the armor records for the power armor in the base game, such as changing durability / armor, or possibly even adding new paint jobs if they add a new combination to the armor for spawning the set
+* Changes to leveled lists for NPC enemies if you are using the Power Armored Enemies feature
+* Changes to some vendor inventories for the Redistribute Power Armor feature
+
+If you use a mod that affects any of these things but there is not a patch available for it in Power Armor to the People, check the [Compatibility Reference](Compatibility%20Reference.md) to see how well supporting it is. This is an ongoing effort as the community starts using the mod, so if you are able to provide details about the compatibility of another mod, please leave a comment. If you do not see the mod on the list, that doesn't mean it isn't compatible, so feel free to try it out and report back.
+
 ## Installing Mid-Playthrough
 
 Power Armor to the People is intended to work with a new game, with each set of power armor set to show up at certain levels to provide a progression throughout the game, but this is not a requirement. Installing mid-playthrough should be safe, as this is how I have done most of my testing. **However,** there are some important things to keep in mind if you do this:
