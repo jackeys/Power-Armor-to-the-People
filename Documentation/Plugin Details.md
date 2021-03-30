@@ -465,6 +465,19 @@
 * If a Some Assembly Required patch is made for Ultracite power armor in the future, this will have a conflict and require a new patch
 * May conflict with mods that add additional paint jobs - placing this lower should resolve that
 
+## Classic Advanced Power Armor
+
+### Classic Advanced Power Armor Legendary PA.esp
+**Description:** Makes it possible for legendary drops to be Classic Advanced Power Armor
+
+**Dependencies:** Classic Advanced Power Armor, Legendary Power Armor Pieces, Far Harbor DLC
+
+**Installed If:** The Legendary Power Armor feature and Classic Advanced Power Armor boxes are both checked
+
+**Change List:**
+* Adds the legendary effects to the naming rules for Classic Advanced Power Armor
+* Injects Classic Advanced Power Armor into the legendary drop lists in Legendary Power Armor Pieces
+
 ## X-01 Tesla Upgrade Kit
 
 ### X-01 Tesla Upgrade Kit - Power Armored Enemies.esp
