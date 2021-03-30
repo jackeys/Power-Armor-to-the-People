@@ -25,6 +25,9 @@
 * Carries forward AWKCR's keywords for the Unbreakable and Lightweight legendary mods
 * Carries forward AWKCR's naming rules for power armor, merging in the naming for the Unbreakable and Lightweight effects
 
+**Compatibility:**
+* If you are using Lore-Based Power Armor Changes, you will need to make sure that it is lower in your order than this plugin
+
 ### Legendary Power Armor Extended - R88 Patch.esp
 **Description:** Adds legendary power armor naming for R88's Simple Sorter
 
