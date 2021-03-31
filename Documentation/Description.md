@@ -45,6 +45,7 @@ The following power armor sets are currently supported:
 * [T-65](https://www.nexusmods.com/fallout4/mods/49922)
 * [T-51c](https://www.nexusmods.com/fallout4/mods/17941)
 * [Excavator Power Armor](https://www.nexusmods.com/fallout4/mods/41884)
+* [Classic Advanced Power Armor](https://www.nexusmods.com/fallout4/mods/43164)
 
 ## Additional Patches
 
@@ -124,6 +125,7 @@ If you enjoy playing with these mods, please endorse them!
 * Unoctium and DogtoothCG / Road to Liberty team for the [Enclave X-02](https://www.nexusmods.com/fallout4/mods/11017) and [Hellfire X-03](https://www.nexusmods.com/fallout4/mods/26251) power armor sets
 * m150 for the [Institute Power Armor](https://www.nexusmods.com/fallout4/mods/18315)
 * newermind43 and Captain-Ultima for the [Ultracite Power Armor](https://www.nexusmods.com/fallout4/mods/44804), [T-65](https://www.nexusmods.com/fallout4/mods/49922), [T-51c](https://www.nexusmods.com/fallout4/mods/17941), and [Excavator Power Armor](https://www.nexusmods.com/fallout4/mods/41884) sets
+* 3nikhey for [Classic Advanced Power Armor](https://www.nexusmods.com/fallout4/mods/43164)
 
 ## Other Patches
 
