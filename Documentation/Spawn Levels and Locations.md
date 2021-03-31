@@ -72,3 +72,4 @@ Power Armor Set | Location | Conditions
 --------------- | -------- | ----------
 Institute Power Armor | The Institute - Requisitions | Allied with The Institute
 Ultracite Power Armor | The Prydwyn - Proctor Teagan | Promoted to Sentinel
+Classic Advanced Power Armor | The Prydwyn - Proctor Teagon, Atom Cats Garage | Level 55

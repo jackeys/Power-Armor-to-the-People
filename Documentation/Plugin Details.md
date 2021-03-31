@@ -488,6 +488,32 @@
 **Change List:**
 * Injects a Classic Advanced power armor set for Legendary Gunners into Power Armored Enemies Extended
 
+### Classic Advanced Power Armor Redistribution.esp
+**Description:** Adjusts the availability of Classic Advanced Power Armor in the world
+
+**Dependencies:** Classic Advanced Power Armor
+
+**Installed If:** The Redistribute Power Armor feature and Classic Advanced Power Armor boxes are both checked
+
+**Change List:**
+* Removes most of the sets that the original plugin adds to vendor inventories
+* Changes the vendor set to only provide a maximum of 3 pieces, with a chance of each not showing up
+* Changes the vendor set to only start showing up at level 55
+* Removes the Chosen One set from vendors so you have to go find it in the world
+
+**Compatibility:**
+* This makes changes to Proctor Teagan and the Atom Cats vendor lists, so it could conflict with anything that does the same without injection (such as Some Assembly Required - a patch is provided in this installer)
+
+### Classic Advanced Power Armor Redistribution - Some Assembly Required Patch.esp
+**Description:** Preserves the vendor changes from Some Assembly Required
+
+**Dependencies:** Classic Advanced Power Armor, Some Assembly Required, Redistribution feature
+
+**Installed If:** The Redistribute Power Armor feature and Classic Advanced Power Armor boxes are both checked, and either of the Some Assembly Required patch options is checked (Standard of No Stat Changes)
+
+**Change List:**
+* Carry forward the changes that Some Assembly Required makes to the Atom Cats vendor list
+
 ## X-01 Tesla Upgrade Kit
 
 ### X-01 Tesla Upgrade Kit - Power Armored Enemies.esp
