@@ -42,10 +42,10 @@ The following power armor sets are currently supported:
 * [Hellfire X-03](https://www.nexusmods.com/fallout4/mods/26251) (Nexus, not Creation Club)
 * [Institute Power Armor](https://www.nexusmods.com/fallout4/mods/18315)
 * [Ultracite Power Armor](https://www.nexusmods.com/fallout4/mods/44804)
-* [T-65](https://www.nexusmods.com/fallout4/mods/49922)
+* [T-65](https://www.nexusmods.com/fallout4/mods/49922) (Both ESP and ESL versions)
 * [T-51c](https://www.nexusmods.com/fallout4/mods/17941)
 * [Excavator Power Armor](https://www.nexusmods.com/fallout4/mods/41884)
-* [Classic Advanced Power Armor](https://www.nexusmods.com/fallout4/mods/43164)
+* [Classic Advanced Power Armor](https://www.nexusmods.com/fallout4/mods/43164) (Both ESP and ESL versions)
 
 ## Additional Patches
 
@@ -69,7 +69,7 @@ These mods naturally fit into what Power Armor to the People is trying to achiev
 
 # Installation
 
-Use your preferred FOMOD-compatible mod manager, such as Vortex. The installer has many patches in it, which will auto-detect your current mods and should default to the correct set for your setup. You can also manually toggle each feature, power armor set, and patch to customize what you get, though features all show up together (e.g. if you choose both Power Armored Enemies and Legendary Power Armor and select three power armor sets, you will get both features for all three sets).
+Use your preferred FOMOD-compatible mod manager, such as Vortex. The installer has many patches in it, which will auto-detect your current mods and should default to the correct set for your setup. **It is highly recommended that you install this mod after you have the other power armor sets you want as a result, especially since some power armor sets feature both an ESL and an ESP version and this installer will ensure you get the right files depending on which one you have.** You can also manually toggle each feature, power armor set, and patch to customize what you get, though features all show up together (e.g. if you choose both Power Armored Enemies and Legendary Power Armor and select three power armor sets, you will get both features for all three sets). If you select a power armor set that you do not have installed and it supports both an ESL and an ESP version, it will install the files for the ESL version by default.
 
 Once again, while the installer can install many patches to support your selection, all of these plugins are ESL-flagged ESPs that will not count against the normal ESP limit. For a full reference of what plugins can be installed, what they do, and when the installer will select them, see [Plugin Details](Plugin%20Details.md). Note that this list is quite long and it is not necessary to understand all of it, but it is a useful reference if you are trying to figure out what a plugin in your load order does.
 
