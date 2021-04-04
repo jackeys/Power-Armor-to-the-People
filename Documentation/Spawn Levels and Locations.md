@@ -54,9 +54,11 @@ The Brotherhood of Steel have made it their mission to reclaim and repair pre-wa
 Level | Power Armor Set       | Rank
 ----- | --------------------- | ------------
 30    | Enclave X-02*         | Knight and higher
+60    | Hellfire X-03*        | Paladin and higher
 67    | Ultracite Power Armor | Star Paladin
 
-* Enclave X-02 is only available if using the All Factions Paintjob patch
+* Enclave X-02 is only available if using the X-02 All Factions Paintjob patch
+* Hellfire X-03 is only available if using the X-03 All Factions Paintjob patch
 ### Institute
 With power armor in the hands of the raider factions on the surface, the Institute has developed their own power armor to ensure they can continue to accomplish their goals. Legendary synths who don this armor also carry synth relay grenades to overwhelm their enemies.
 
