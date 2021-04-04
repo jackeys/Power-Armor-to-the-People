@@ -49,12 +49,14 @@ Level | Power Armor Set | Enemy Type
 * The vanilla sets shown in italics are actually provided by SweXavier05's Power Armored Enemies mod - they are included here for completeness.
 
 ### Brotherhood of Steel
-In addition to the power armor that the Brotherhood of Steel typically have, the following additional sets are available to them:
+The Brotherhood of Steel have made it their mission to reclaim and repair pre-war technology. They have also reclaimed technology created by the Enclave from the Capitol Wasteland. All power armor sets reclaimed by the Brotherhood of Steel are painted to allow for immediate recognition.
 
-Level | Power Armor Set | Enemy Type
------ | --------------- | ----------
-67    | Ultracite Power Armor | Star Paladins
+Level | Power Armor Set       | Rank
+----- | --------------------- | ------------
+30    | Enclave X-02*         | Knight and higher
+67    | Ultracite Power Armor | Star Paladin
 
+* Enclave X-02 is only available if using the All Factions Paintjob patch
 ### Institute
 With power armor in the hands of the raider factions on the surface, the Institute has developed their own power armor to ensure they can continue to accomplish their goals. Legendary synths who don this armor also carry synth relay grenades to overwhelm their enemies.
 
