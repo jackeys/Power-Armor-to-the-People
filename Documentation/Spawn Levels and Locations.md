@@ -54,6 +54,7 @@ The Brotherhood of Steel have made it their mission to reclaim and repair pre-wa
 Level | Power Armor Set       | Rank
 ----- | --------------------- | ------------
 30    | Enclave X-02*         | Knight and higher
+50    | T-65                  | Paladin and higher
 60    | Hellfire X-03*        | Paladin and higher
 67    | Ultracite Power Armor | Star Paladin
 
