@@ -60,6 +60,7 @@
 * Change the levels at which the linings for the base sets are available in the game
 * Adds a Tesla keyword for integrating sets that have Tesla variants to use
 * Adds a leveled list of energy weapons for integrating sets that have Tesla variants to use
+* Adds a framework for providing different power armor sets to the various ranks within the Brotherhood of Steel
 
 ### Power Armored Enemies - Raider Overhaul Patch.esp
 **Description:** Addresses compatibility issues between Power Armored Enemies Extended and Raider Overhaul
@@ -101,6 +102,27 @@
 
 **Change List:**
 * Adds T-51 to the options for rusty pieces in mixed sets of power armor that Raiders can get
+
+### Power Armored Enemies - X-01 for BoS.esp
+**Description:** Adds X-01 to the possible power armor sets for BoS Paladins
+
+**Dependencies:** Power Armored Enemies feature, any mod that adds the Paladin combination to X-01 (Brotherhood Power Armor Overhaul and AWKCR are both known to do this)
+
+**Installed If:** The Power Armored Enemies feature is checked, and the Power Armored Enemies option to add X-01 to the Brotherhood of Steel is later selected
+
+**Change List:**
+* Adds BoS-painted X-01 to the options for power armor sets the Brotherhood of Steel can wear
+    * If Brotherhood Power Armor Overhaul (BPAO) is installed, this will only be available to Paladins and higher ranks
+
+### Power Armored Enemies - BPAO Patch.esp
+**Description:** Makes Power Armored Enemies' Brotherhood of Steel sets work properly with Brotherhood Power Armor Overhaul
+
+**Dependencies:** Power Armored Enemies feature, Brotherhood Power Armor Overhaul
+
+**Installed If:** The Power Armored Enemies feature is checked, and the Brotherhood Power Armor Overhaul option is later selected
+
+**Change List:**
+* Splits the Brotherhood of Steel power armor sets out to appropriate ranks
 
 ### Power Armored Enemies - Some Assembly Required Redistribution.esp
 **Description:** Adjusts the availability of power armor to enemies in the world to match the theme of Some Assembly Required
@@ -227,6 +249,31 @@
 **Change List:**
 * Carries forward the armor rating and durability changes from Some Assembly Required
 
+### Enclave X-02 Power Armored Enemies - All Factions.esp
+**Description:** Adds X-02 power armor sets with the All Factions paint jobs to Power Armored Enemies
+
+**Dependencies:** Enclave X-02 Power Armor, SweXavier05's Power Armored Enemies, Power Armored Enemies feature, X-02 Power Armor - All Factions Paintjob
+
+**Installed If:** The Power Armored Enemies feature and Enclave X-02 Power Armor boxes are both checked, and the All Factions Paintjob patch is later selected
+
+**Change List:**
+* Adds Brotherhood of Steel combinations to the X-02 armor records
+* Injects X-02 power armor sets for the Brotherhood of Steel for ranks Knight and higher
+
+**Compatibility:**
+* Requires a patch for Some Assembly Required (included in the installer)
+* May conflict with mods that add additional paint jobs - placing this lower should resolve that
+
+### Enclave X-02 Power Armored Enemies (SAR-All Factions Patch).esp
+**Description:** Addresses compatibiity issues between Enclave X-02 Power Armored Enemies, its All Factions patch, and Some Assembly Required
+
+**Dependencies:** Enclave X-02 Power Armor, SweXavier05's Power Armored Enemies, Power Armored Enemies feature, X-02 Power Armor - All Factions Paintjob, Some Assembly Required (Standard, not No Stat Change)
+
+**Installed If:** The Power Armored Enemies feature and Enclave X-02 Power Armor boxes are both checked, the Some Assembly Required patch is selected, and the All Factions Paintjob patch is later selected
+
+**Change List:**
+* Carries forward the armor rating and durability changes from Some Assembly Required
+
 ### Enclave X-02 Redistribution.esp
 **Description:** Adjusts the availability of X-02 Power Armor in the world
 
@@ -259,6 +306,31 @@
 
 **Change List:**
 * Injects a Hellfire X-03 power armor set for Legendary Gunners into Power Armored Enemies Extended
+
+### Hellfire X-03 Power Armored Enemies - All Factions.esp
+**Description:** Adds X-03 power armor sets with the All Factions paint jobs to Power Armored Enemies
+
+**Dependencies:** Hellfire X-03 Power Armor, SweXavier05's Power Armored Enemies, Power Armored Enemies feature, X-03 Power Armor - All Factions Paintjob
+
+**Installed If:** The Power Armored Enemies feature and Hellfire X-03 Power Armor boxes are both checked, and the All Factions Paintjob patch is later selected
+
+**Change List:**
+* Adds Brotherhood of Steel combinations to the X-03 armor records
+* Injects X-03 power armor sets for the Brotherhood of Steel for ranks Knight and higher
+
+**Compatibility:**
+* Requires a patch for Some Assembly Required (included in the installer)
+* May conflict with mods that add additional paint jobs - placing this lower should resolve that
+
+### Hellfire X-03 Power Armored Enemies (SAR-All Factions Patch).esp
+**Description:** Addresses compatibiity issues between Hellfire X-03 Power Armored Enemies, its All Factions patch, and Some Assembly Required
+
+**Dependencies:** Hellfire X-03 Power Armor, SweXavier05's Power Armored Enemies, Power Armored Enemies feature, X-03 Power Armor - All Factions Paintjob, Some Assembly Required (Standard, not No Stat Change)
+
+**Installed If:** The Power Armored Enemies feature and Hellfire X-03 Power Armor boxes are both checked, the Some Assembly Required patch is selected, and the All Factions Paintjob patch is later selected
+
+**Change List:**
+* Carries forward the armor rating and durability changes from Some Assembly Required
 
 ### Hellfire X-03 Redistribution.esp
 **Description:** Adjusts the availability of X-03 Power Armor in the world
@@ -397,6 +469,11 @@
 
 **Change List:**
 * Injects a T-65 power armor set for Legendary Gunners into Power Armored Enemies Extended
+* Injects a BoS-painted T-65 power armor set for the Brotherhood of Steel
+    * If Brotherhood Power Armor Overhaul (BPAO) is installed, this will only be available to Paladins and higher ranks
+
+**Compatibility:**
+* If a Some Assembly Required patch is made for T-65 power armor in the future, this will have a conflict and require a new patch
 
 ### T-65 Redistribution.esp
 **Description:** Adjusts the availability of T-65 Power Armor in the world
