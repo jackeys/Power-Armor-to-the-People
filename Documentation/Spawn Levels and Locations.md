@@ -63,11 +63,12 @@ Level | Power Armor Set       | Rank
 60    | Hellfire X-03*        | Paladin and higher*
 67    | Ultracite Power Armor | Star Paladin
 
+* Sets shown in italics are actually provided by the Brotherhood Power Armor Overhaul mod, if you are using that - they are included here for completeness
+* Without Brotherhood Power Armor Overhaul and the BPAO patch for Power Armored Enemies, only Ultracite Power Armor applies to a specific rank
+* The Brotherhood of Steel is three times more likely to get T-60 (or the ranked equivalent from Brotherhood Power Armor Overhaul) than any of the newly added sets
 * X-01 is only available if using the X-01 for BoS patch, which is only recommended if you are using Brotherhood Power Armor Overhaul or AWKCR so the appropriate paint job is available
 * Enclave X-02 is only available if using the X-02 All Factions Paintjob patch
 * Hellfire X-03 is only available if using the X-03 All Factions Paintjob patch
-* Sets shown in italics are actually provided by the Brotherhood Power Armor Overhaul mod, if you are using that - they are included here for completeness
-* Without Brotherhood Power Armor Overhaul and the BPAO patch for Power Armored Enemies, only Ultracite Power Armor applies to a specific rank
 
 ### Institute
 With power armor in the hands of the raider factions on the surface, the Institute has developed their own power armor to ensure they can continue to accomplish their goals. Legendary synths who don this armor also carry synth relay grenades to overwhelm their enemies.
