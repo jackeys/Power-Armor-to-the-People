@@ -13,7 +13,7 @@ With this feature installed, each selected power armor set will be given to cert
 * Raiders are only able to scrap together what they can find, using mixed sets of rusted power armor
 * Gunners have learned how to maintain and upgrade power armor, and have working sets of armor from the different offshoots of the US military and former US government
 * The Institute has their own set of power armor
-* The Brotherhood of Steel has an advanced set of power armor for their Star Paladins
+* The Brotherhood of Steel has reclaimed power armor sets from their fight with the Enclave, and has an advanced power armor set for their Star Paladins
 
 For a full breakdown of which sets are available to each group of enemies at each level, see this article: [Spawn Levels and Locations](Spawn%20Levels%20and%20Locations.md)
 
@@ -50,9 +50,11 @@ The following power armor sets are currently supported:
 ## Additional Patches
 
 Patches are available for the following to add additional variety to power armored enemies:
-* [X-01 Tesla Upgrade Kit](https://www.nexusmods.com/fallout4/mods/27125)
-* [Raider Power Armor Chop Shop](https://www.nexusmods.com/fallout4/mods/13552) / [Raider Overhaul](https://www.nexusmods.com/fallout4/mods/9103)
-* [Institute Heavy Weapons](https://www.nexusmods.com/fallout4/mods/2441)
+* [X-01 Tesla Upgrade Kit](https://www.nexusmods.com/fallout4/mods/27125) - Adds enemies wearing X-01 Tesla armor
+* [Raider Power Armor Chop Shop](https://www.nexusmods.com/fallout4/mods/13552) / [Raider Overhaul](https://www.nexusmods.com/fallout4/mods/9103) - Adds more variety to raider power armor (choose one)
+* [Institute Heavy Weapons](https://www.nexusmods.com/fallout4/mods/2441) - Adds an Institute Gatling Laser for power armored synths
+* [X-02 Power Armor - All Factions Paintjob](https://www.nexusmods.com/fallout4/mods/34949) and [X-03 Power Armor - All Factions Paintjob](https://www.nexusmods.com/fallout4/mods/33891) - Adds a Brotherhood of Steel paint job so the armor can be worn by the Brotherhood
+* [Brotherhood of Steel Power Armor Overhaul](https://www.nexusmods.com/fallout4/mods/11978) - Gives the Brotherhood of Steel multiple types of power armor by rank, and enables newly added power armor sets from Power Armor to the People to be given to different ranks
 
 Patches are available for [AWKCR](https://www.nexusmods.com/fallout4/mods/6091) as well, but that's for compatibility reasons - it does not add any additional features in relation to this mod.
 
@@ -61,7 +63,6 @@ Patches are available for [AWKCR](https://www.nexusmods.com/fallout4/mods/6091) 
 These mods naturally fit into what Power Armor to the People is trying to achieve and are highly recommended to be included alongside it. These are the mods I play with, and patches are included in the installer to support those that need them:
 * [Consistent Power Armor Overhaul](https://www.nexusmods.com/fallout4/mods/11234) - Among other things, it adds a rusty T-51 texture which raiders can use
     * Note: If you are using AWKCR's Consistent Power Armor Overhaul replacer plugin, be sure to download the [rusty T-51 fix](https://www.nexusmods.com/fallout4/mods/50798?tab=files)
-* [Brotherhood of Steel Power Armor Overhaul](https://www.nexusmods.com/fallout4/mods/11978) - Gives the Brotherhood of Steel multiple types of power armor
 * [Children of Atom Power Armor](https://www.nexusmods.com/fallout4/mods/47586) - Unique variants and can be worn by the Children of Atom
 * [Some Assembly Required](https://www.nexusmods.com/fallout4/mods/12050) - Makes power armor rare in the world, contributing to the feeling that people have been scavenging it for the last 210 years
     * The Atom Cats CPAO patch from Some Assembly Required is also highly recommended to make T-60 unique to the Brotherhood of Steel
@@ -136,6 +137,7 @@ If you enjoy playing with these mods, please endorse them!
 * Cosique for [Institute Heavy Weapons](https://www.nexusmods.com/fallout4/mods/2441)
 * Gambit77, Thirdstorm, and Valdacil for [AWKCR](https://www.nexusmods.com/fallout4/mods/6091)
 * Bordraw for [Consistent Power Armor Overhaul](https://www.nexusmods.com/fallout4/mods/11234), which made rusty T-51 available to our beloved raiders
+* Assultdragon for [X-02 Power Armor - All Factions Paintjob](https://www.nexusmods.com/fallout4/mods/34949) and [X-03 Power Armor - All Factions Paintjob](https://www.nexusmods.com/fallout4/mods/33891)
 
 ## Tools
 
