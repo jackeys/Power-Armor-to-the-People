@@ -33,13 +33,17 @@ With this feature installed, the availability of each power armor set is changed
 
 This also makes some power armor sets available for sale at vendors. For a full breakdown of which sets are available at which vendors, see this article: [Spawn Levels and Locations](Spawn%20Levels%20and%20Locations.md)
 
+**Note:** This feature does not affect Creation Club power armor, since they come with a quest to retrieve them and I didn't want to interfere with that.
+
 # Power Armor Sets
 
 ## Fully Featured Sets
 
 The following power armor sets are currently supported:
-* [Enclave X-02](https://www.nexusmods.com/fallout4/mods/11017) (Nexus, not Creation Club)
-* [Hellfire X-03](https://www.nexusmods.com/fallout4/mods/26251) (Nexus, not Creation Club)
+* [Enclave X-02](https://www.nexusmods.com/fallout4/mods/11017)
+* X-02 Power Armor (Creation Club)
+* [Hellfire X-03](https://www.nexusmods.com/fallout4/mods/26251)
+* Hellfire Power Armor (Creation Club)
 * [Institute Power Armor](https://www.nexusmods.com/fallout4/mods/18315)
 * [Ultracite Power Armor](https://www.nexusmods.com/fallout4/mods/44804)
 * [T-65](https://www.nexusmods.com/fallout4/mods/49922) (Both ESP and ESL versions)

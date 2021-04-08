@@ -284,6 +284,29 @@
 **Change List:**
 * Replaces the full set of X-02 placed by the original mod with a partial set
 
+## X-02 Power Amor (Creation Club)
+
+### X-02 CC Legendary PA.esp
+**Description:** Makes it possible for legendary drops to be X-02 Power Armor (Creation Club)
+
+**Dependencies:** X-02 Power Armor (Creation Club), Legendary Power Armor Pieces, Far Harbor DLC
+
+**Installed If:** The Legendary Power Armor feature and X-02 Power Armor (Creation Club) boxes are both checked
+
+**Change List:**
+* Adds the legendary effects to the naming rules for Enclave X-02 Power Armor
+* Injects X-02 Power Armor into the legendary drop lists in Legendary Power Armor Pieces
+
+### X-02 CC Power Armored Enemies.esp
+**Description:** Adds X-02 power armor (Creation Club) to enemies in the world
+
+**Dependencies:** X-02 Power Armor (Creation Club), SweXavier05's Power Armored Enemies, Power Armored Enemies feature
+
+**Installed If:** The Power Armored Enemies feature and X-02 Power Armor (Creation Club) boxes are both checked
+
+**Change List:**
+* Injects a standard X-02 power armor set for Gunners into Power Armored Enemies
+
 ## Hellfire X-03
 
 ### Hellfire X-03 Legendary PA.esp
@@ -368,6 +391,33 @@
 
 **Compatibility:**
 * May conflict with mods that add additional paint jobs - placing this lower should resolve that
+
+## Hellfire (Creation Club)
+
+### Hellfire CC Legendary PA.esp
+**Description:** Makes it possible for legendary drops to be Hellfire Power Armor (Creation Club)
+
+**Dependencies:** Hellfire Power Armor (Creation Club), Legendary Power Armor Pieces, Far Harbor DLC
+
+**Installed If:** The Legendary Power Armor feature and Hellfire Power Armor (Creation Club) boxes are both checked
+
+**Change List:**
+* Injects Hellfire Power Armor (Creation Club) into the legendary drop lists in Legendary Power Armor Pieces
+
+### Hellfire CC Power Armored Enemies.esp
+**Description:** Adds Hellfire power armor (Creation Club) to enemies in the world
+
+**Dependencies:** Hellfire Power Armor (Creation Club), Power Armored Enemies feature
+
+**Installed If:** The Power Armored Enemies feature and Hellfire Power Armor (Creation Club) boxes are both checked
+
+**Change List:**
+* Adds a Brotherhood of Steel Paladin combination to the Hellfire armor records
+* Injects a Hellfire power armor set for Legendary Gunners into Power Armored Enemies Extended
+* Injects a painted Hellfire power armor set for BoS Paladins into Power Armored Enemies Extended
+
+**Compatibility:**
+* If a Some Assembly Required patch is made in the future, it will require a patch to carry forward the durability and armor rating changes
 
 ## Institute Power Armor
 
