@@ -8,7 +8,7 @@
             "type": "section"
         },
         {
-            "text": "Percentage of Knights who wear T-60 (or BPAO equivalent)",
+            "text": "Chance that power armored Knights will wear T-60 (or T-45/T-51 with BPAO)",
             "type": "slider",
             "help": "The lower the value, the more likely Knights will wear other power armor sets, such as X-02, if available",
             "valueOptions": {
@@ -20,9 +20,9 @@
             }
         },
         {
-            "text": "Percentage of Paladins who wear T-60 (or BPAO equivalent)",
+            "text": "Chance that power armored Paladins will wear T-60",
             "type": "slider",
-            "help": "The lower the value, the more likely Paladins will wear other power armor sets, such as T-65, if available.",
+            "help": "The lower the value, the more likely Paladins will wear other power armor sets, such as T-65, if available",
             "valueOptions": {
                 "min": 0,
                 "max": 100,
