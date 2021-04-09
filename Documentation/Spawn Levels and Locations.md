@@ -2,15 +2,15 @@
 
 ## Legendary Power Armor
 The following levels are when each of the power armor sets begin to drop from legendary enemies:
-Level | Power Armor Set |
+Level | Power Armor Set
 ----- | ---------------
-10 | _Raider Power Armor_, Excavator Power Armor
-20 | _T-45_
-30 | _T-51_, T-51c
-40 | _T-60_, Institute Power Armor, Enclave X-02
-50 | _X-01_
-60 | T-65
-70 | Hellfire X-03, Ultracite
+10    | _Raider Power Armor_, Excavator Power Armor
+20    | _T-45_
+30    | _T-51_, T-51c
+40    | _T-60_, Institute Power Armor, Enclave X-02
+50    | _X-01_, X-02 (CC), Hellfire (CC)
+60    | T-65
+70    | Hellfire X-03, Ultracite
 
 * The levels indicated above show when the weakest lining for each piece of armor begins to drop. A stronger lining unlocks every 4 levels afterwards until all linings are available for that power armor set.
 * The vanilla sets, shown in italics, are actually provided by the Legendary Power Armor Pieces mod - they are included here for completeness
@@ -35,14 +35,14 @@ Level | Power Armor Set
 ### Gunners
 Gunners have access to power armor sets that were previously used by offshoots of the US military. They maintain and can partially upgrade their power armor for increased defense, and legendary Gunners will often have exclusive power armor sets or paint jobs.
 
-Level | Power Armor Set | Enemy Type
------ | --------------- | ----------
-20    | _T-45_, _T-51_, T-51c | All Gunners
-30    | _T-60*_, Enclave X-02 | All Gunners
-40    | X-01  | Legendary Gunners
-50    | T-65 | Legendary Gunners
-55    | Enclave X-02 Tesla | Legendary Gunners
-60    | Hellfire X-03 | Legendary Gunners
+Level | Power Armor Set                          | Enemy Type
+----- | ---------------------------------------- | ----------
+20    | _T-45_, _T-51_, T-51c                    | All Gunners
+30    | _T-60*_, Enclave X-02                    | All Gunners
+40    | X-01, X-02 (CC), Hellfire (CC)           | Legendary Gunners
+50    | T-65                                     | Legendary Gunners
+55    | Enclave X-02 Tesla                       | Legendary Gunners
+60    | Hellfire X-03                            | Legendary Gunners
 65    | X-01 Tesla, Classic Advanced Power Armor | Legendary Gunners
 
 * T-60 is excluded if using the Some Assembly Required Redistribution patch, since that makes T-60 exclusive to the Brotherhood of Steel
@@ -51,17 +51,17 @@ Level | Power Armor Set | Enemy Type
 ### Brotherhood of Steel
 The Brotherhood of Steel have made it their mission to reclaim and repair pre-war technology. They have also reclaimed technology created by the Enclave from the Capitol Wasteland. All power armor sets reclaimed by the Brotherhood of Steel are painted to allow for immediate recognition.
 
-Level | Power Armor Set       | Rank
------ | --------------------- | ------------
---    | _T-45_                | Knight
---    | _T-51_                | Knight Captain
---    | _T-60_                | Paladin and higher
---    | _X-01_                | Elder
-30    | Enclave X-02*         | Knight and higher*
-40    | X-01*                 | Paladin and higher*
-50    | T-65                  | Paladin and higher*
-60    | Hellfire X-03*        | Paladin and higher*
-67    | Ultracite Power Armor | Star Paladin
+Level | Power Armor Set                 | Rank
+----- | ------------------------------- | ------------
+--    | _T-45_                          | Knight
+--    | _T-51_                          | Knight Captain
+--    | _T-60_                          | Paladin and higher
+--    | _X-01_                          | Elder
+30    | Enclave X-02*                   | Knight and higher*
+40    | X-01*, X-02 (CC), Hellfire (CC) | Paladin and higher*
+50    | T-65                            | Paladin and higher*
+60    | Hellfire X-03*                  | Paladin and higher*
+67    | Ultracite Power Armor           | Star Paladin
 
 * Sets shown in italics are actually provided by the Brotherhood Power Armor Overhaul mod, if you are using that - they are included here for completeness
 * Without Brotherhood Power Armor Overhaul and the BPAO patch for Power Armored Enemies, only Ultracite Power Armor applies to a specific rank
@@ -73,8 +73,8 @@ Level | Power Armor Set       | Rank
 ### Institute
 With power armor in the hands of the raider factions on the surface, the Institute has developed their own power armor to ensure they can continue to accomplish their goals. Legendary synths who don this armor also carry synth relay grenades to overwhelm their enemies.
 
-Level | Power Armor Set | Enemy Type
------ | --------------- | ----------
+Level | Power Armor Set       | Enemy Type
+----- | --------------------- | ----------
 30    | Institute Power Armor | Synths
 
 ## Power Armor Redistribution
@@ -83,8 +83,8 @@ Level | Power Armor Set | Enemy Type
 
 Some power armor sets are available at vendors when using the "Redistribute Power Armor" feature. Full sets are not guaranteed, so you may have to come back a few times to get the full set after the vendor's inventory refreshes.
 
-Power Armor Set | Location | Conditions
---------------- | -------- | ----------
-Institute Power Armor | The Institute - Requisitions | Allied with The Institute
-Ultracite Power Armor | The Prydwyn - Proctor Teagan | Promoted to Sentinel
+Power Armor Set              | Location                                       | Conditions
+---------------------------- | ---------------------------------------------- | ----------
+Institute Power Armor        | The Institute - Requisitions                   | Allied with The Institute
+Ultracite Power Armor        | The Prydwyn - Proctor Teagan                   | Promoted to Sentinel
 Classic Advanced Power Armor | The Prydwyn - Proctor Teagon, Atom Cats Garage | Level 55
