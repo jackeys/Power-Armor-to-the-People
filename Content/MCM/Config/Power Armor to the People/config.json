@@ -2,57 +2,51 @@
     "modName": "Power Armor to the People",
     "displayName": "Power Armor to the People",
     "minMcmVersion": 2,
-    "content": [],
-    "pages": [
+    "content": [
         {
-            "pageDisplayName": "Power Armor Distribution",
-            "content": [
-                {
-                    "text": "Brotherhood of Steel",
-                    "type": "section"
-                },
-                {
-                    "text": "Percentage of Knights who wear T-60 (or BPAO equivalent)",
-                    "type": "slider",
-                    "help": "The lower the value, the more likely Knights will wear other power armor sets, such as X-02, if available",
-                    "valueOptions": {
-                        "min": 0,
-                        "max": 100,
-                        "step": 5,
-                        "sourceType": "GlobalValue",
-                        "sourceForm": "Power Armored Enemies Extended.esp|82c"
-                    }
-                },
-                {
-                    "text": "Percentage of Paladins who wear T-60 (or BPAO equivalent)",
-                    "type": "slider",
-                    "help": "The lower the value, the more likely Paladins will wear other power armor sets, such as T-65, if available.",
-                    "valueOptions": {
-                        "min": 0,
-                        "max": 100,
-                        "step": 5,
-                        "sourceType": "GlobalValue",
-                        "sourceForm": "Power Armored Enemies Extended.esp|82d"
-                    }
-                }
-            ]
+            "text": "Brotherhood of Steel",
+            "type": "section"
         },
         {
-            "pageDisplayName": "Legendary Power Armor",
-            "content": [
-                {
-                    "text": "Legendary Power Armor vs Legendary Armor Drop Rates",
-                    "type": "slider",
-                    "help": "Lower values mean more legendary power armor, higher values mean more legendary armor from legendary enemies",
-                    "valueOptions": {
-                        "min": 0,
-                        "max": 100,
-                        "step": 5,
-                        "sourceType": "GlobalValue",
-                        "sourceForm": "Legendary Power Armor Extended.esp|805"
-                    }
-                }
-            ]
+            "text": "Percentage of Knights who wear T-60 (or BPAO equivalent)",
+            "type": "slider",
+            "help": "The lower the value, the more likely Knights will wear other power armor sets, such as X-02, if available",
+            "valueOptions": {
+                "min": 0,
+                "max": 100,
+                "step": 5,
+                "sourceType": "GlobalValue",
+                "sourceForm": "Power Armored Enemies Extended.esp|82c"
+            }
+        },
+        {
+            "text": "Percentage of Paladins who wear T-60 (or BPAO equivalent)",
+            "type": "slider",
+            "help": "The lower the value, the more likely Paladins will wear other power armor sets, such as T-65, if available.",
+            "valueOptions": {
+                "min": 0,
+                "max": 100,
+                "step": 5,
+                "sourceType": "GlobalValue",
+                "sourceForm": "Power Armored Enemies Extended.esp|82d"
+            }
+        },
+        {
+            "text": "Legendary Power Armor",
+            "type": "section"
+        },
+        {
+            "text": "Legendary Power Armor vs Legendary Armor Drop Rates",
+            "type": "slider",
+            "help": "Lower values mean more legendary power armor, higher values mean more legendary armor from legendary enemies",
+            "valueOptions": {
+                "min": 0,
+                "max": 100,
+                "step": 5,
+                "sourceType": "GlobalValue",
+                "sourceForm": "Legendary Power Armor Extended.esp|805"
+            }
         }
-    ]
+    ],
+    "pages": []
 }
