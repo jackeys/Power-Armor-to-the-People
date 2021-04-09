@@ -41,15 +41,15 @@ This also makes some power armor sets available for sale at vendors. For a full 
 
 The following power armor sets are currently supported:
 * [Enclave X-02](https://www.nexusmods.com/fallout4/mods/11017)
-* X-02 Power Armor (Creation Club)
 * [Hellfire X-03](https://www.nexusmods.com/fallout4/mods/26251)
-* Hellfire Power Armor (Creation Club)
 * [Institute Power Armor](https://www.nexusmods.com/fallout4/mods/18315)
 * [Ultracite Power Armor](https://www.nexusmods.com/fallout4/mods/44804)
 * [T-65](https://www.nexusmods.com/fallout4/mods/49922) (Both ESP and ESL versions)
 * [T-51c](https://www.nexusmods.com/fallout4/mods/17941)
 * [Excavator Power Armor](https://www.nexusmods.com/fallout4/mods/41884)
 * [Classic Advanced Power Armor](https://www.nexusmods.com/fallout4/mods/43164) (Both ESP and ESL versions)
+* X-02 Power Armor (Creation Club) - Thanks to ImmortalAbsol!
+* Hellfire Power Armor (Creation Club) - Thanks to ImmortalAbsol!
 
 ## Additional Patches
 
