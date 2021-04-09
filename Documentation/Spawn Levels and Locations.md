@@ -15,6 +15,9 @@ Level | Power Armor Set
 * The levels indicated above show when the weakest lining for each piece of armor begins to drop. A stronger lining unlocks every 4 levels afterwards until all linings are available for that power armor set.
 * The vanilla sets, shown in italics, are actually provided by the Legendary Power Armor Pieces mod - they are included here for completeness
 
+### Drop Rates
+By default, each legendary item has a 50% chance of being a weapon, a 40% chance of being armor, and a 10% chance of being power armor. If you are using Mod Configuration Menu, you can adjust the split between armor and power armor, but weapons will always make up 50% of the legendary drops.
+
 ## Power Armored Enemies
 Each faction has different power armor sets that they can wear, with each faction having at least one unique set of power armor. There is typically a progression, based on enemy level, of stronger power armor sets.
 
@@ -65,7 +68,7 @@ Level | Power Armor Set                 | Rank
 
 * Sets shown in italics are actually provided by the Brotherhood Power Armor Overhaul mod, if you are using that - they are included here for completeness
 * Without Brotherhood Power Armor Overhaul and the BPAO patch for Power Armored Enemies, only Ultracite Power Armor applies to a specific rank
-* The Brotherhood of Steel is three times more likely to get T-60 (or the ranked equivalent from Brotherhood Power Armor Overhaul) than any of the newly added sets
+* By default, T-60 (or the ranked equivalent from Brotherhood Power Armor Overhaul) is much more likely than any of the newly added sets, but this can be adjusted if you are using Mod Configuration Menu
 * X-01 is only available if using the X-01 for BoS patch, which is only recommended if you are using Brotherhood Power Armor Overhaul or AWKCR so the appropriate paint job is available
 * Enclave X-02 is only available if using the X-02 All Factions Paintjob patch
 * Hellfire X-03 is only available if using the X-03 All Factions Paintjob patch
