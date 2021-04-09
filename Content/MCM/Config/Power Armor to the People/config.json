@@ -1,7 +1,7 @@
 {
     "modName": "Power Armor to the People",
     "displayName": "Power Armor to the People",
-    "minMcmVersion": 2,
+    "minMcmVersion": 1,
     "content": [
         {
             "text": "Brotherhood of Steel",
