@@ -2,7 +2,7 @@ In the 210 years since the bombs dropped, many besides the Sole Survivor have un
 
 Power Armor to the People aims to incorporate many of the lore-friendly power armor sets available on the Nexus into the Commonwealth, making them feel like they are a part of the world. It imagines a world where power armor is a little more plentiful in the hands of the inhabitants of the Commonwealth, both as scavenged legendary items and on enemies who wear the suits themselves, and less commonly found abandoned. Effort has been taken to ensure that enemies who wear each set of power armor could plausibly have the armor.
 
-The mod itself is a series of ESL-flagged ESPs, so if you don't like one of the features or you don't want to use some of the power armor sets, you don't have to. The installer contains patches for some common mods, and will auto-detect which ones you have to try and give you the best selection of patches for your setup automatically.
+The mod itself is a series of ESL-flagged ESPs, so if you don't like one of the features or you don't want to use some of the power armor sets, you don't have to. The installer contains patches for some common mods, and will auto-detect which ones you have to try and give you the best selection of patches for your setup automatically. Some additional configuration options are available in-game to fine-tune some of the mod's behaviour if you have [Mod Configuration Menu](https://www.nexusmods.com/fallout4/mods/21497) installed.
 
 # Features
 
