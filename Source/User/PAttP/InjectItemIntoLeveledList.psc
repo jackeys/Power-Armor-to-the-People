@@ -25,8 +25,9 @@ EndEvent
 
 Function Inject()
 	if (ShouldInject.GetValueInt() > 0)
+		debug.trace("Beginning injection " + Self)
+
 		int iter = 0
-		
 		while(iter < injectInto.length)
 			LeveledItem currentInjectInto = injectInto[iter]
 
@@ -38,7 +39,7 @@ Function Inject()
 			iter += 1
 		endwhile
 	else
-        debug.trace("Skipping injection of " + itemToInject + " into " + injectInto)
+        debug.trace("Skipping injection " + Self + " of " + itemToInject + " into " + injectInto)
 	endif
 EndFunction
 

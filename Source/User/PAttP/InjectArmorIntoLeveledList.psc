@@ -29,9 +29,9 @@ EndEvent
 
 Function Inject()
     if (ShouldInject.GetValueInt() > 0)
+		debug.trace("Beginning injection " + Self)
 
 		int iter = 0
-		
 		while(iter < injections.length)
 			InjectionInfo currentInjection = injections[iter]
 
@@ -43,7 +43,7 @@ Function Inject()
 			iter += 1
 		endwhile
     else
-        debug.trace("Skipping injection of " + injections)
+        debug.trace("Skipping injection " + Self + " of " + injections)
     endif
 EndFunction
 
