@@ -17,12 +17,14 @@ start /d "C:\path\to\this\directory" release.bat $MODVERSION$
 ```
 
 ## Installing for Development
-If you are installing the mod just to use it, it is **strongly recommended** that you use a release zip file and install using a FOMOD-compatible mod manager such as [Vortex](https://www.nexusmods.com/about/vortex/). For development purposes, however, this can be cumbersome, so a script `install_all.ps1` is provided. This script will symbolically link all of the files in the project to the appropriate place in the game's directory, allowing for changes made to be immediately reflected in the project directory. When running the script, which can be done by right-clicking and selecting, "Run with PowerShell," it will ask for the install path of Fallout 4 (e.g. `C:\Program Files (x86)\Steam\steamapps\common\Fallout 4`). Alternatively, this can be entered as a command-line argument:
+For development purposes, a script `install_all.ps1` is provided that will symbolically link all of the files in the project to the appropriate place in the game's directory, allowing for changes made to be immediately reflected in the project directory. Note that this does not work for plugin files (.esp) themselves because tools like xEdit make copies and overwrite the files, clobbering the symbolic link instead of updating the targets they point to.
+
+When running the script, which can be done by right-clicking and selecting, "Run with PowerShell," it will ask for the install path of Fallout 4 (e.g. `C:\Program Files (x86)\Steam\steamapps\common\Fallout 4`). Alternatively, this can be entered as a command-line argument:
 
 ```
 install_all.ps1 "C:\Program Files (x86)\Steam\steamapps\common\Fallout 4"
 ```
 
-**Important Note:** When you run this script, it will request administrator access because Windows only allows an administrator to create symbolic links.
+**Important Note:** When you run this script, it will request administrator access because Windows only allows an administrator to create symbolic links. Use with caution, as this will overwrite any files with the same names already in your game folder.
 
 If you add any new files to the mod, you will need to manually place those within the project directory and run this script again to link them.
