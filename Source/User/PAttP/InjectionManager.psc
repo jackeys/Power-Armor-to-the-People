@@ -1,15 +1,17 @@
 Scriptname PAttP:InjectionManager Extends Quest
 
-FormList Property modifiedListsRegistrar Auto Const
-{An empty FormList to hold the list of leveled items that other scripts are injecting into}
-
+LeveledItem[] modifiedListsRegistrar
 
 CustomEvent RefreshInjection
 
+Event OnInit()
+    modifiedListsRegistrar = new LeveledItem[0]
+EndEvent
+
 Function RegisterInjection(LeveledItem modifiedItemList)
-    if(!modifiedListsRegistrar.HasForm(modifiedItemList))
+    if(modifiedListsRegistrar.Find(modifiedItemList) < 0)
         debug.trace("Registering " + modifiedItemList + " as script-modified")
-        modifiedListsRegistrar.AddForm(modifiedItemList)
+        modifiedListsRegistrar.Add(modifiedItemList)
     EndIf
 EndFunction
 
@@ -29,10 +31,10 @@ Function RefreshListInjections()
 EndFunction
 
 Function RevertAllLists()
-    int numModifiedForms = modifiedListsRegistrar.GetSize()
+    int numModifiedForms = modifiedListsRegistrar.length
     int i = 0
     while(i < numModifiedForms)
-        LeveledItem injectionSite = modifiedListsRegistrar.GetAt(i) as LeveledItem
+        LeveledItem injectionSite = modifiedListsRegistrar[i]
         debug.trace("Reverting " + injectionSite)
         injectionSite.Revert()
         i += 1
