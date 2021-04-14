@@ -1,5 +1,5 @@
-Scriptname PAttP:InjectItemIntoLeveledList extends Quest
-{Injects an item into one or more leveled lists with the specified count and level}
+Scriptname PAttP:InjectItemIntoPAttPLeveledList extends Quest
+{Injects an item into one or more leveled lists within Power Armor to the People with the specified count and level. This should ONLY be used for Power Armor to the People lists, as it registers the list it injects into for automatic reversion and re-injection.}
 
 Int Property count = 1 Auto Const
 {How many of the item should be returned}
@@ -55,3 +55,4 @@ Event PAttP:InjectionManager.RefreshInjection(PAttP:InjectionManager akSender, V
 		debug.trace("Ignoring injection refresh from unknown injection manager " + akSender)
 	endif
 EndEvent
+
