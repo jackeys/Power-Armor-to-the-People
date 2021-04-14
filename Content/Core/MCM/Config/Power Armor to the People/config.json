@@ -66,6 +66,40 @@
             }
         },
         {
+            "text": "Make T-60 available to raiders",
+            "type": "switcher",
+            "help": "Some Assembly Required makes T-60 exclusive to the Brotherhood of Steel, if you want that consistency",
+            "valueOptions": {
+                "sourceType": "GlobalValue",
+                "sourceForm": "Power Armor to the People.esp|87B"
+            },
+            "action": {
+                "type": "CallFunction",
+                "form": "Power Armor to the People.esp|873",
+                "function": "RefreshListInjections",
+                "params": []
+            }
+        },
+        {
+            "text": "Gunners",
+            "type": "section"
+        },
+        {
+            "text": "Make T-60 available to Gunners",
+            "type": "switcher",
+            "help": "Some Assembly Required makes T-60 exclusive to the Brotherhood of Steel, if you want that consistency",
+            "valueOptions": {
+                "sourceType": "GlobalValue",
+                "sourceForm": "Power Armor to the People.esp|87A"
+            },
+            "action": {
+                "type": "CallFunction",
+                "form": "Power Armor to the People.esp|873",
+                "function": "RefreshListInjections",
+                "params": []
+            }
+        },
+        {
             "text": "Legendary Power Armor",
             "type": "section"
         },
