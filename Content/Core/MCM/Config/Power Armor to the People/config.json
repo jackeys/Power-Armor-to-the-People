@@ -16,7 +16,7 @@
                 "max": 100,
                 "step": 5,
                 "sourceType": "GlobalValue",
-                "sourceForm": "Power Armored Enemies Extended.esp|82c"
+                "sourceForm": "Power Armor to the People.esp|82c"
             }
         },
         {
@@ -28,7 +28,26 @@
                 "max": 100,
                 "step": 5,
                 "sourceType": "GlobalValue",
-                "sourceForm": "Power Armored Enemies Extended.esp|82d"
+                "sourceForm": "Power Armor to the People.esp|82d"
+            }
+        },
+        {
+            "text": "Raiders",
+            "type": "section"
+        },
+        {
+            "text": "Give T-51 to raiders",
+            "type": "switcher",
+            "help": "This is only recommended if using Consistent Power Armor Overhaul, which gives T-51 a rusty texture",
+            "valueOptions": {
+                "sourceType": "GlobalValue",
+                "sourceForm": "Power Armor to the People.esp|875"
+            },
+            "action": {
+                "type": "CallFunction",
+                "form": "Power Armor to the People.esp|873",
+                "function": "RefreshListInjections",
+                "params": []
             }
         },
         {

@@ -18,14 +18,44 @@ Armor itemToInject
 EndStruct
 
 InjectionInfo[] Property injections Auto Const
+PAttP:InjectionManager Property injectionManager Auto Const
+GlobalVariable Property ShouldInject Auto Const
+{If the value held by this variable is greater than 0, the provided injections will all take place - otherwise, they will be skipped}
 
 Event OnInit()
-	int iter = 0
-	
-	while(iter < injections.length)
-		InjectionInfo currentInjection = injections[iter]
+    RegisterCustomEvents()
+    Inject()
+EndEvent
 
-		currentInjection.injectInto.AddForm(currentInjection.itemToInject, currentInjection.level, currentInjection.count)
-		iter += 1
-	endwhile
+Function Inject()
+    if (ShouldInject.GetValueInt() > 0)
+
+		int iter = 0
+		
+		while(iter < injections.length)
+			InjectionInfo currentInjection = injections[iter]
+
+			; Register here so that if we inject into new lists in an update they are captured
+			injectionManager.RegisterInjection(currentInjection.injectInto)
+
+			debug.trace("Injecting " + currentInjection.itemToInject + " into " + currentInjection.injectInto + " at level " + currentInjection.level)
+			currentInjection.injectInto.AddForm(currentInjection.itemToInject, currentInjection.level, currentInjection.count)
+			iter += 1
+		endwhile
+    else
+        debug.trace("Skipping injection of " + injections)
+    endif
+EndFunction
+
+Function RegisterCustomEvents()
+    debug.trace("Registering " + Self + " for Power Armor to the People injection refreshes")
+    RegisterForCustomEvent(injectionManager, "RefreshInjection")
+EndFunction
+
+Event PAttP:InjectionManager.RefreshInjection(PAttP:InjectionManager akSender, Var[] akArgs)
+	if akSender == injectionManager
+		Inject()
+	else
+		debug.trace("Ignoring injection refresh from unknown injection manager " + akSender)
+	endif
 EndEvent
