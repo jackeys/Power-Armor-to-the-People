@@ -32,6 +32,21 @@
             }
         },
         {
+            "text": "Give X-01 to the Brotherhood of Steel",
+            "type": "switcher",
+            "help": "This is only recommended if using Brother Power Armor Overhaul or AWKCR, which gives X-01 a BoS paint job",
+            "valueOptions": {
+                "sourceType": "GlobalValue",
+                "sourceForm": "Power Armor to the People.esp|878"
+            },
+            "action": {
+                "type": "CallFunction",
+                "form": "Power Armor to the People.esp|873",
+                "function": "RefreshListInjections",
+                "params": []
+            }
+        },
+        {
             "text": "Raiders",
             "type": "section"
         },
