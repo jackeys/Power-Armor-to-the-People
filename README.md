@@ -5,7 +5,13 @@ Power Armor to the People is a Fallout 4 mod aimed at integrating other Power Ar
 * Adding more enemies that wear power armor
 * Removing the single full set typical of power armor mods
 
-The mod is a series of ESL-flagged ESPs that patch together and enhance features from the mods it aims to integrate.
+The mod is a series of ESL-flagged ESPs that patch together and enhance features from the mods it aims to integrate, tied together into an installer that auto-detects which supported mods are already active.
+
+Check the [mod description](Documentation/Description.md) for complete details, including credits for the mods that Power Armor to the People is dependent on.
+
+## Using the Mod
+
+It is highly recommended that you download the latest release from [NexusMods](https://www.nexusmods.com/fallout4/mods/50819). You can also see screenshots of the mod in action, post comments, and file any issues you encounter there.
 
 ## Building a Release
 A release is a zip file that includes the `fomod` directory, which contains the installer information for a FOMOD-compatible mod manager such as [Vortex](https://www.nexusmods.com/about/vortex/), and the `Content` directory, which includes the actual files that make up the mod. To create a release, simply run `release.bat`.
