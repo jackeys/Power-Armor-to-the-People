@@ -17,10 +17,11 @@ Armor itemToInject
 
 EndStruct
 
-InjectionInfo[] Property injections Auto Const
-PAttP:InjectionManager Property injectionManager Auto Const
+InjectionInfo[] Property injections Auto Const Mandatory
+PAttP:InjectionManager Property injectionManager Auto Const Mandatory
+{Autofill}
 GlobalVariable Property ShouldInject Auto Const
-{If the value held by this variable is greater than 0, the provided injections will all take place - otherwise, they will be skipped}
+{If provided, the value held by this variable is greater than 0, the provided injections will all take place - otherwise, they will be skipped}
 
 Event OnInit()
     RegisterCustomEvents()
@@ -28,7 +29,7 @@ Event OnInit()
 EndEvent
 
 Function Inject()
-    if (ShouldInject.GetValueInt() > 0)
+    if (!ShouldInject || ShouldInject.GetValueInt() > 0)
 		debug.trace("Beginning injection " + Self)
 
 		int iter = 0

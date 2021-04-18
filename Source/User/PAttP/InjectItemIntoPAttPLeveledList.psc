@@ -7,16 +7,17 @@ Int Property count = 1 Auto Const
 Int Property level = 1 Auto Const
 {The level at which the item should start appearing}
 
-LeveledItem[] Property injectInto Auto Const
+LeveledItem[] Property injectInto Auto Const Mandatory
 {The lists that the item should be injected into}
 
-LeveledItem Property itemToInject Auto Const
+LeveledItem Property itemToInject Auto Const Mandatory
 {The item that should be injected into the other lists with the specified count and level}
 
 GlobalVariable Property ShouldInject Auto Const
-{If the value held by this variable is greater than 0, the provided injections will all take place - otherwise, they will be skipped}
+{If provided, the value held by this variable is greater than 0, the provided injections will all take place - otherwise, they will be skipped}
 
-PAttP:InjectionManager Property injectionManager Auto Const
+PAttP:InjectionManager Property injectionManager Auto Const Mandatory
+{Autofill}
 
 Event OnInit()
     RegisterCustomEvents()
@@ -24,7 +25,7 @@ Event OnInit()
 EndEvent
 
 Function Inject()
-	if (ShouldInject.GetValueInt() > 0)
+	if (!ShouldInject || ShouldInject.GetValueInt() > 0)
 		debug.trace("Beginning injection " + Self)
 
 		int iter = 0
