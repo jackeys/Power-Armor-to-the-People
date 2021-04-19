@@ -9,7 +9,7 @@ Event OnInit()
 EndEvent
 
 Function RegisterInjection(LeveledItem modifiedItemList)
-    if(modifiedListsRegistrar.Find(modifiedItemList) < 0)
+    if(modifiedItemList && modifiedListsRegistrar.Find(modifiedItemList) < 0)
         debug.trace("Registering " + modifiedItemList + " as script-modified")
         modifiedListsRegistrar.Add(modifiedItemList)
     EndIf
