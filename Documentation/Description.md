@@ -2,13 +2,13 @@ In the 210 years since the bombs dropped, many besides the Sole Survivor have un
 
 Power Armor to the People aims to incorporate many of the lore-friendly power armor sets available on the Nexus into the Commonwealth, making them feel like they are a part of the world. It imagines a world where power armor is a little more plentiful in the hands of the inhabitants of the Commonwealth, both as scavenged legendary items and on enemies who wear the suits themselves, and less commonly found abandoned. Effort has been taken to ensure that enemies who wear each set of power armor could plausibly have the armor.
 
-The mod itself is a series of ESL-flagged ESPs, so if you don't like one of the features or you don't want to use some of the power armor sets, you don't have to. The installer contains patches for some common mods, and will auto-detect which ones you have to try and give you the best selection of patches for your setup automatically. Some additional configuration options are available in-game to fine-tune some of the mod's behaviour if you have [Mod Configuration Menu](https://www.nexusmods.com/fallout4/mods/21497) installed.
+The mod itself is a series of ESL-flagged ESPs, so if you don't want to use some of the power armor sets, you don't have to. The installer contains patches for some common mods, and will auto-detect which ones you have to try and give you the best selection of patches for your setup automatically. Some additional configuration options are available in-game if you have [Mod Configuration Menu](https://www.nexusmods.com/fallout4/mods/21497) installed.
 
 # Features
 
 ## Power Armored Enemies
 
-With this feature installed, each selected power armor set will be given to certain enemies for the player to encounter. These enemies are still relatively uncommon, but you'll probably find at least one in most locations.
+Each selected power armor set will be given to certain enemies for the player to encounter. These enemies are still relatively uncommon, but you'll probably find at least one in most locations.
 
 * Raiders are only able to scrap together what they can find, using mixed sets of rusted power armor
 * Gunners have learned how to maintain and upgrade power armor, and have working sets of armor from the different offshoots of the US military and former US government
@@ -17,15 +17,11 @@ With this feature installed, each selected power armor set will be given to cert
 
 For a full breakdown of which sets are available to each group of enemies at each level, see this article: [Spawn Levels and Locations](Spawn%20Levels%20and%20Locations.md)
 
-*Requires [SweXavier05's Power Armored Enemies](https://www.nexusmods.com/fallout4/mods/24635/) - Destructible version is recommended*
-
 ## Legendary Power Armor
 
-With this feature installed, there is a small chance that any legendary item will be power armor. All of the base game effects are supported (with the exception of fall damage reduction), as well as the Far Harbor effects and a few effects that are exclusive to power armor in the base game.
+There is a small chance that any legendary item will be power armor. All of the base game effects are supported (with the exception of fall damage reduction), as well as the Far Harbor effects (with the appropriate patch) and a few effects that are exclusive to power armor in the base game.
 
 For a full breakdown of what level each power armor set becomes available as a possible legendary drop, see this article: [Spawn Levels and Locations](Spawn%20Levels%20and%20Locations.md)
-
-*Requires [Legendary Power Armor Pieces](https://www.nexusmods.com/fallout4/mods/12834) and the Far Harbor DLC*
 
 ## Redistribute Power Armor
 
@@ -74,7 +70,7 @@ These mods naturally fit into what Power Armor to the People is trying to achiev
 
 # Installation
 
-Use your preferred FOMOD-compatible mod manager, such as Vortex. The installer has many patches in it, which will auto-detect your current mods and should default to the correct set for your setup. **It is highly recommended that you install this mod after you have the other power armor sets you want as a result, especially since some power armor sets feature both an ESL and an ESP version and this installer will ensure you get the right files depending on which one you have.** You can also manually toggle each feature, power armor set, and patch to customize what you get, though features all show up together (e.g. if you choose both Power Armored Enemies and Legendary Power Armor and select three power armor sets, you will get both features for all three sets). If you select a power armor set that you do not have installed and it supports both an ESL and an ESP version, it will install the files for the ESL version by default.
+Use your preferred FOMOD-compatible mod manager, such as Vortex. The installer has many patches in it, which will auto-detect your current mods and should default to the correct set for your setup. **It is highly recommended that you install this mod after you have the other power armor sets you want as a result, especially since some power armor sets feature both an ESL and an ESP version and this installer will ensure you get the right files depending on which one you have.** You can also manually toggle each power armor set and patch to customize what you get. If you select a power armor set that you do not have installed and it supports both an ESL and an ESP version, it will install the files for the ESL version by default.
 
 Once again, while the installer can install many patches to support your selection, all of these plugins are ESL-flagged ESPs that will not count against the normal ESP limit. For a full reference of what plugins can be installed, what they do, and when the installer will select them, see [Plugin Details](Plugin%20Details.md). Note that this list is quite long and it is not necessary to understand all of it, but it is a useful reference if you are trying to figure out what a plugin in your load order does.
 
@@ -120,13 +116,13 @@ If you enjoy playing with these mods, please endorse them!
 
 ## Mods Directly Incorporated
 
-* FAB001 for [Institute Power Armor Availability Tweak](https://www.nexusmods.com/fallout4/mods/49243?tab=description), with its main concepts being brought into this mod as part of the Power Armored Enemies / Redistribution features
+* FAB001 for [Institute Power Armor Availability Tweak](https://www.nexusmods.com/fallout4/mods/49243?tab=description), with its main concepts being brought into this mod for Institute Power Armor
 * BitMage for [Buy Power Armor at the Institute](https://www.nexusmods.com/fallout4/mods/15731), which was brought into the Redistribution feature
+* SweXavier05 for [SweXavier05's Power Armored Enemies](https://www.nexusmods.com/fallout4/mods/24635/), which is partially incorporated as the basis for power armored enemies and which served as a major inspiration
+* ferrari365 for [Legendary Power Armor Pieces](https://www.nexusmods.com/fallout4/mods/12834), which served as a major inspiration for how I now handle legendary power armor in this mod
 
 ## Dependencies
 
-* SweXavier05 for [SweXavier05's Power Armored Enemies](https://www.nexusmods.com/fallout4/mods/24635/), which served as a major inspiration
-* ferrari365 for [Legendary Power Armor Pieces](https://www.nexusmods.com/fallout4/mods/12834), which served as a major inspiration
 * Unoctium and DogtoothCG / Road to Liberty team for the [Enclave X-02](https://www.nexusmods.com/fallout4/mods/11017) and [Hellfire X-03](https://www.nexusmods.com/fallout4/mods/26251) power armor sets
 * m150 for the [Institute Power Armor](https://www.nexusmods.com/fallout4/mods/18315)
 * newermind43 and Captain-Ultima for the [Ultracite Power Armor](https://www.nexusmods.com/fallout4/mods/44804), [T-65](https://www.nexusmods.com/fallout4/mods/49922), [T-51c](https://www.nexusmods.com/fallout4/mods/17941), and [Excavator Power Armor](https://www.nexusmods.com/fallout4/mods/41884) sets
