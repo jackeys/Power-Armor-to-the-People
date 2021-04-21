@@ -114,6 +114,30 @@
                 "sourceType": "GlobalValue",
                 "sourceForm": "Power Armor to the People.esp|87E"
             }
+        },
+        {
+            "text": "Power Armored Enemy Legendary Equipment Chance",
+            "type": "slider",
+            "help": "The chance that normal power armored enemies will have a single piece of legendary power armor equipped",
+            "valueOptions": {
+                "min": 0,
+                "max": 100,
+                "step": 5,
+                "sourceType": "GlobalValue",
+                "sourceForm": "Power Armor to the People.esp|898"
+            }
+        },
+        {
+            "text": "Legendary Power Armored Enemy Legendary Equipment Chance",
+            "type": "slider",
+            "help": "The chance that legendary power armored enemies will have a single piece of legendary power armor equipped",
+            "valueOptions": {
+                "min": 0,
+                "max": 100,
+                "step": 5,
+                "sourceType": "GlobalValue",
+                "sourceForm": "Power Armor to the People.esp|899"
+            }
         }
     ],
     "pages": []
