@@ -15,14 +15,21 @@ Event OnInit()
     AttachLegendaryModToPowerArmor()
 EndEvent
 
-Bool AlreadyAttached = false
+Bool RunOnce = false
 
 Function AttachLegendaryModToPowerArmor()
 	debug.trace("In AttachLegendaryModToPowerArmor()")
 
-    ; We only want to do this once, and only if we get a lucky roll
-    if(!AlreadyAttached && Utility.RandomInt(1, 100) <= LegendaryChance.GetValueInt())
-		debug.trace("Looking for power armor to attach a legendary mod to")
+    ; We only want to do this once to prevent duplicate legendaries or skewed probability
+    if(RunOnce)
+		return
+	endif
+	
+	; Set our flag to prevent this from running again right away, because if we call another script, this could get called again while we wait for it to return
+	RunOnce = true
+
+	if(Utility.RandomInt(1, 100) <= LegendaryChance.GetValueInt())
+		debug.trace(self + "Looking for power armor to attach a legendary mod to")
 
 		; This requires F4SE - be aware
 		Form[] inventory = GetInventoryItems()
@@ -34,7 +41,7 @@ Function AttachLegendaryModToPowerArmor()
             Form  item = inventory[i]
 
             if item.HasKeyword(PowerArmorKeyword) && !item.HasKeyword(IsPowerArmorFrameKeyword)
-				debug.trace("Item " + item + " in inventory has keyword " + PowerArmorKeyword)
+				debug.trace(self + "Item " + item + " in inventory has keyword " + PowerArmorKeyword)
 				powerArmorPieces.Add(item)
 			endif
 
@@ -45,18 +52,17 @@ Function AttachLegendaryModToPowerArmor()
 		int numPieces = powerArmorPieces.length
 		if numPieces > 0
 			int chosenIndex = Utility.RandomInt(0, numPieces - 1)
-			debug.trace("Selecting power armor at index " + chosenIndex + " out of " + numPieces + " total")
+			debug.trace(self + "Selecting power armor at index " + chosenIndex + " out of " + numPieces + " total")
 			Form itemToMod = powerArmorPieces[chosenIndex]
 			AddLegendaryMod(itemToMod)
-			AlreadyAttached = true
 		else
-			debug.trace("No power armor pieces found to attach a legendary mod to")
+			debug.trace(self + "No power armor pieces found to attach a legendary mod to")
 		endif
     endif
 EndFunction
 
 Function AddLegendaryMod(Form  item, FormList ListOfSpecificModsToChooseFrom = None, FormList ListOfSpecificModsToDisallow = None)
-	debug.trace("Attaching legendary mod to inventory item " + item)
+	debug.trace(self + "Attaching legendary mod to inventory item " + item)
 
 	; Create a temporary reference so we can use the base game's legendary item quest and all of its legendary mod rules
 	ObjectReference itemObject = PlaceAtMe(item, aiCount = 1, abForcePersist = false, abInitiallyDisabled = true, abDeleteWhenAble = false)
