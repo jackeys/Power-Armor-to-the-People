@@ -4,7 +4,8 @@ Scriptname PAttP:AttachLegendaryModtoPowerArmor extends ObjectReference
 GlobalVariable Property LegendaryChance Auto Const Mandatory
 {Global variable with a percent chance from 0 to 100, indicating the likelihood of attaching a legendary mod}
 
-LegendaryItemQuestScript Property LegendaryItemQuest Auto Const Mandatory
+LegendaryPowerArmorManager Property LegendaryPowerArmorQuest Auto Const Mandatory
+{AUTOFILL}
 
 Keyword Property PowerArmorKeyword Auto Const
 
@@ -61,7 +62,7 @@ Function AddLegendaryMod(Form  item, FormList ListOfSpecificModsToChooseFrom = N
 	ObjectReference itemObject = PlaceAtMe(item, aiCount = 1, abForcePersist = false, abInitiallyDisabled = true, abDeleteWhenAble = false)
 	
 	;GET THE MODS WE CAN INSTALL ON THIS ITEM
-	ObjectMod[] AllowedMods = LegendaryItemQuest.GetAllowedMods(itemObject, ListOfSpecificModsToChooseFrom, ListOfSpecificModsToDisallow)
+	ObjectMod[] AllowedMods = LegendaryPowerArmorQuest.GetAllowedMods(itemObject, ListOfSpecificModsToChooseFrom, ListOfSpecificModsToDisallow)
 
 	itemObject.Delete()
 
