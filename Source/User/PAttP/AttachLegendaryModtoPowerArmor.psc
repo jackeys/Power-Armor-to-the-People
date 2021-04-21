@@ -1,15 +1,31 @@
 Scriptname PAttP:AttachLegendaryModtoPowerArmor extends ObjectReference
 {Possibly attaches a legendary mod to a piece of power armor in the object's inventory}
 
-GlobalVariable Property LegendaryChance Auto Const Mandatory
-{Global variable with a percent chance from 0 to 100, indicating the likelihood of attaching a legendary mod}
+GlobalVariable Property NormalLegendaryChance Auto Const Mandatory
+{Global variable with a percent chance from 0 to 100, indicating the likelihood of attaching a legendary mod for a normal enemy}
+
+GlobalVariable Property LegendaryLegendaryChance Auto Const Mandatory
+{Global variable with a percent chance from 0 to 100, indicating the likelihood of attaching a legendary mod for a legendary enemy}
 
 LegendaryPowerArmorManager Property LegendaryPowerArmorQuest Auto Const Mandatory
 {AUTOFILL}
 
-Keyword Property PowerArmorKeyword Auto Const
+Keyword Property PowerArmorKeyword Auto Const Mandatory
 
-Keyword Property IsPowerArmorFrameKeyword Auto Const
+Keyword Property IsPowerArmorFrameKeyword Auto Const Mandatory
+
+Keyword Property EncTypeLegendary Auto Const Mandatory
+{AUTOFILL}
+
+int property legendaryChance
+  int function get()
+    if self.HasKeyword(EncTypeLegendary)
+		return LegendaryLegendaryChance.GetValueInt()
+	else
+		return NormalLegendaryChance.GetValueInt()
+	endif
+  endFunction
+endProperty
 
 Event OnInit()
     AttachLegendaryModToPowerArmor()
@@ -28,7 +44,7 @@ Function AttachLegendaryModToPowerArmor()
 	; Set our flag to prevent this from running again right away, because if we call another script, this could get called again while we wait for it to return
 	RunOnce = true
 
-	if(Utility.RandomInt(1, 100) <= LegendaryChance.GetValueInt())
+	if(Utility.RandomInt(1, 100) <= legendaryChance)
 		debug.trace(self + "Looking for power armor to attach a legendary mod to")
 
 		; This requires F4SE - be aware
