@@ -19,9 +19,7 @@ ObjectMod[] Function GetAllowedMods(ObjectReference item, FormList ListOfSpecifi
 	; Add any of the mods we haven't used recently to our list of preferred mods
 	int i = 0
 	while (i < AllowedMods.length)
-		if  PreviouslySpawnedMods.Find(AllowedMods[i]) < 0  ;not found
-			debug.trace(self + " adding item to PreferredMods:" + AllowedMods[i])
-
+		if  PreviouslySpawnedMods.Find(AllowedMods[i]) < 0
 			PreferredMods.add(AllowedMods[i])
 		endif
 
@@ -36,6 +34,8 @@ ObjectMod[] Function GetAllowedMods(ObjectReference item, FormList ListOfSpecifi
 		PreviouslySpawnedMods.clear()
 		PreferredMods = AllowedMods
 	endif
+
+	debug.trace(self + " providing this list of eligible mods: " + AllowedMods)
 
 	return PreferredMods
 EndFunction

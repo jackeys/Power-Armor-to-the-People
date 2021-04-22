@@ -32,7 +32,7 @@ EndFunction
 Bool RunOnce = false
 
 Function AttachLegendaryModToPowerArmor(Actor akRecipient)
-	debug.trace("Checking if we should attack a legendary mod to power armor for " + akRecipient)
+	debug.trace("Checking if we should attach a legendary mod to power armor for " + akRecipient)
 
     ; We only want to do this once to prevent duplicate legendaries or skewed probability
     if(RunOnce)
