@@ -10,9 +10,11 @@ GlobalVariable Property LegendaryLegendaryChance Auto Const Mandatory
 LegendaryPowerArmorManager Property LegendaryPowerArmorQuest Auto Const Mandatory
 {AUTOFILL}
 
-Keyword Property PowerArmorKeyword Auto Const Mandatory
+Keyword Property ArmorTypePower Auto Const Mandatory
+{AUTOFILL}
 
-Keyword Property IsPowerArmorFrameKeyword Auto Const Mandatory
+FormList Property ExcludeKeywordsList Auto Const Mandatory
+{If any of the keywords in this form list are present on an item, it will be excluded from the eligible equipment for a legendary mod}
 
 Keyword Property EncTypeLegendary Auto Const Mandatory
 {AUTOFILL}
@@ -54,8 +56,8 @@ Function AttachLegendaryModToPowerArmor(Actor akRecipient)
 		while(i < inventory.length)
             Form  item = inventory[i]
 
-            if item.HasKeyword(PowerArmorKeyword) && !item.HasKeyword(IsPowerArmorFrameKeyword)
-				debug.trace(akRecipient + "Item " + item + " in inventory has keyword " + PowerArmorKeyword)
+            if item.HasKeyword(ArmorTypePower) && !item.HasKeywordInFormList(ExcludeKeywordsList)
+				debug.trace(akRecipient + "Item " + item + " in inventory has keyword " + ArmorTypePower)
 				powerArmorPieces.Add(item)
 			endif
 
