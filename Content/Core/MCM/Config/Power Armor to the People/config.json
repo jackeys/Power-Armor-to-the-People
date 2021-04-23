@@ -51,6 +51,19 @@
             "type": "section"
         },
         {
+            "text": "Chance to get rare power armor sets",
+            "type": "slider",
+            "help": "The chance that raiders will get rare power armor sets, like full rusted sets of T-45 or Excavator raider sets",
+            "valueOptions": {
+                "min": 0,
+                "max": 25,
+                "step": 1,
+                "sourceType": "PropertyValueFloat",
+                "sourceForm": "Power Armor to the People.esp|8AA",
+                "propertyName": "MCM_RaiderRareSetChance"
+            }
+        },
+        {
             "text": "Chance to get rare rusted power armor pieces",
             "type": "slider",
             "help": "The chance that rusted mixed sets will contain rare power armor pieces like X-01",
