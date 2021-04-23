@@ -18,6 +18,16 @@ Level | Power Armor Set
 ### Drop Rates
 By default, each legendary item has a 50% chance of being a weapon, a 40% chance of being armor, and a 10% chance of being power armor. If you are using Mod Configuration Menu, you can adjust the split between armor and power armor, but weapons will always make up 50% of the legendary drops.
 
+### Equipped Legendary Power Armor
+
+**This feature requires Fallout 4 Script Extender (F4SE).**
+
+Each power armored enemy has a chance that one of the pieces of power armor they are wearing will be legendary. This will be one of the pieces they are normally wearing, so if you fight an enemy in X-02, a piece of that X-02 set would be legendary. See the below section on Power Armored Enemies to see which enemies can wear each set and at what level.
+
+By default, normal power armored enemies have a 5% chance of having a legendary power armor piece equipped, and legendary power armored enemies have a 20% chance of having a legendary power armor piece equipped in addition to the normal legendary item they drop. If you are using Mod Configuration Menu, you can adjust these chances.
+
+Because of a bug with the Institute Power Armor, equipped Institute power armor torsos cannot be legendary. Turning them into legendary items causes them to temporarily be unequipped, and when this happens, the arms and legs all turn invisible, so I disabled them. 
+
 ## Power Armored Enemies
 Each faction has different power armor sets that they can wear, with each faction having at least one unique set of power armor. There is typically a progression, based on enemy level, of stronger power armor sets.
 
