@@ -19,9 +19,15 @@ For a full breakdown of which sets are available to each group of enemies at eac
 
 ## Legendary Power Armor
 
-There is a small chance that any legendary item will be power armor. All of the base game effects are supported (with the exception of fall damage reduction), as well as the Far Harbor effects (with the appropriate patch) and a few effects that are exclusive to power armor in the base game.
+There is a chance for legendary power armor to spawn in one of these ways:
+* As a standard legendary drop, whenever you could get legendary armor
+* As an equipped item on a power armored enemy
 
-For a full breakdown of what level each power armor set becomes available as a possible legendary drop, see this article: [Spawn Levels and Locations](Spawn%20Levels%20and%20Locations.md)
+All of the base game effects are supported (with the exception of fall damage reduction), as well as the Far Harbor effects (with the appropriate patch) and a few effects that are exclusive to power armor in the base game.
+
+For a full breakdown of what level each power armor set becomes available as a possible legendary drop, as well as the default legendary chance, see this article: [Spawn Levels and Locations](Spawn%20Levels%20and%20Locations.md)
+
+**[F4SE](https://www.nexusmods.com/fallout4/mods/42147) is required for legendary power armor to be worn by power armored enemies**
 
 ## Redistribute Power Armor
 
@@ -127,6 +133,7 @@ If you enjoy playing with these mods, please endorse them!
 * m150 for the [Institute Power Armor](https://www.nexusmods.com/fallout4/mods/18315)
 * newermind43 and Captain-Ultima for the [Ultracite Power Armor](https://www.nexusmods.com/fallout4/mods/44804), [T-65](https://www.nexusmods.com/fallout4/mods/49922), [T-51c](https://www.nexusmods.com/fallout4/mods/17941), and [Excavator Power Armor](https://www.nexusmods.com/fallout4/mods/41884) sets
 * 3nikhey for [Classic Advanced Power Armor](https://www.nexusmods.com/fallout4/mods/43164)
+* ianpatt, behippo, and purplelunchbox for [F4SE](http://f4se.silverlock.org)
 
 ## Other Patches
 
