@@ -40,6 +40,7 @@ Level | Power Armor Set
 20    | T-51*
 30    | _T-60*_
 40    | X-01 (rare, individual pieces only)
+50    | T-65 (rare, individual pieces only - only arms and legs)
 60    | X-03 (rare, individual pieces only)
 
 * T-51 is only available if using the Consistent Power Armor patch, as otherwise T-51 does not have a rusty version
