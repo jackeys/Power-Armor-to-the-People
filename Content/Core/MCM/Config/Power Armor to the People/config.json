@@ -51,6 +51,19 @@
             "type": "section"
         },
         {
+            "text": "Chance to get rare rusted power armor pieces",
+            "type": "slider",
+            "help": "The chance that rusted mixed sets will contain rare power armor pieces like X-01",
+            "valueOptions": {
+                "min": 0,
+                "max": 25,
+                "step": 1,
+                "sourceType": "PropertyValueFloat",
+                "sourceForm": "Power Armor to the People.esp|8AA",
+                "propertyName": "MCM_RaiderRareMixedPieceChance"
+            }
+        },
+        {
             "text": "Make T-51 available to raiders",
             "type": "switcher",
             "help": "This is only recommended if using Consistent Power Armor Overhaul, which gives T-51 a rusty texture",

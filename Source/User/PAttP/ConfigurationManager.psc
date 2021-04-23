@@ -17,6 +17,20 @@ float Property LegendaryPowerArmorDropChance
     EndFunction
 EndProperty
 
+GlobalVariable Property PAttP_Setting_RaiderRareMixedSetPiecesChanceNone Auto Const Mandatory
+{AUTOFILL}
+
+; Convert our ChanceNone into a Chance so it makes more sense
+float Property MCM_RaiderRareMixedPieceChance Auto
+float Property RaiderRareMixedPieceChance
+    float Function get()
+        return 100.0 - PAttP_Setting_RaiderRareMixedSetPiecesChanceNone.GetValue()
+    EndFunction
+    Function set(float value)
+        PAttP_Setting_RaiderRareMixedSetPiecesChanceNone.SetValue(100.0 - value)
+    EndFunction
+EndProperty
+
 Event OnQuestInit()
     RegisterForRemoteEvent(Game.GetPlayer(), "OnPlayerLoadGame")
     RegisterCustomEvents()
@@ -42,10 +56,12 @@ EndFunction
 Function SetMCMPropertiesForDisplay()
     debug.trace(self + " updating MCM properties")
     MCM_LegendaryPowerArmorDropChance = LegendaryPowerArmorDropChance
+    MCM_RaiderRareMixedPieceChance = RaiderRareMixedPieceChance
 EndFunction
 
 ; MCM properties are for display only, so this properly applies them to the game
 Function ApplyMCMProperties()
     debug.trace(self + " applying MCM properties")
     LegendaryPowerArmorDropChance = MCM_LegendaryPowerArmorDropChance
+    RaiderRareMixedPieceChance = MCM_RaiderRareMixedPieceChance
 EndFunction
