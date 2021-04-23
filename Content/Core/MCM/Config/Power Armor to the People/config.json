@@ -1,7 +1,7 @@
 {
     "modName": "Power Armor to the People",
     "displayName": "Power Armor to the People",
-    "minMcmVersion": 1,
+    "minMcmVersion": 2,
     "content": [
         {
             "text": "Brotherhood of Steel",
@@ -104,15 +104,16 @@
             "type": "section"
         },
         {
-            "text": "Legendary Power Armor vs Legendary Armor Drop Rates",
+            "text": "Legendary Power Armor Drop Chance",
             "type": "slider",
-            "help": "Lower values mean more legendary power armor, higher values mean more legendary armor from legendary enemies",
+            "help": "The chance that legendary power armor drops instead of legendary armor. At 100%, no legendary armor will ever drop.",
             "valueOptions": {
                 "min": 0,
                 "max": 100,
                 "step": 5,
-                "sourceType": "GlobalValue",
-                "sourceForm": "Power Armor to the People.esp|87E"
+                "sourceType": "PropertyValueFloat",
+                "sourceForm": "Power Armor to the People.esp|8AA",
+                "propertyName": "MCM_LegendaryPowerArmorDropChance"
             }
         },
         {
