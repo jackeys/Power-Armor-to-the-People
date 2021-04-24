@@ -480,3 +480,10 @@
 
 **Change List:**
 * Carries forward the Some Assembly Required armor rating and durability changes for X-01 power armor
+
+## Horse Power Armor (Creation Club)
+
+### Power Armor to the People - Horse Power Armor.esp
+**Description:** Adds horse power armor as a rare piece in raider mixed power armor sets
+
+**Dependencies:** Horse Power Armor
