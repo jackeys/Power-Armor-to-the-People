@@ -4,16 +4,15 @@
 The following levels are when each of the power armor sets begin to drop from legendary enemies:
 Level | Power Armor Set
 ----- | ---------------
-10    | _Raider Power Armor_, Excavator Power Armor
-20    | _T-45_
-30    | _T-51_, T-51c
-40    | _T-60_, Institute Power Armor, Enclave X-02
-50    | _X-01_, X-02 (CC), Hellfire (CC)
+10    | Raider Power Armor, Excavator Power Armor
+20    | T-45
+30    | T-51, T-51c
+40    | T-60, Institute Power Armor, Enclave X-02
+50    | X-01, X-02 (CC), Hellfire (CC)
 60    | T-65
 70    | Hellfire X-03, Ultracite
 
 * The levels indicated above show when the weakest lining for each piece of armor begins to drop. A stronger lining unlocks every 4 levels afterwards until all linings are available for that power armor set.
-* The vanilla sets, shown in italics, are actually provided by the Legendary Power Armor Pieces mod - they are included here for completeness
 
 ### Drop Rates
 By default, each legendary item has a 50% chance of being a weapon, a 40% chance of being armor, and a 10% chance of being power armor. If you are using Mod Configuration Menu, you can adjust the split between armor and power armor, but weapons will always make up 50% of the legendary drops.
@@ -36,33 +35,31 @@ Raiders use scavenged sets of power armor. They typically have rusty sets of pow
 
 Level | Power Armor Set
 ----- | ---------------
-14    | _Raider Power Armor_, Excavator Power Armor, _T-45_
+14    | Raider Power Armor, Excavator Power Armor, T-45
 20    | T-51*
-30    | _T-60*_, Horse Power Armor (rare, individual pieces only)
+30    | T-60*, Horse Power Armor (rare, individual pieces only)
 40    | X-01 (rare, individual pieces only)
 50    | T-65 (rare, individual pieces only - only arms and legs)
 60    | X-03 (rare, individual pieces only)
 
-* T-51 is only available if using the Consistent Power Armor patch, as otherwise T-51 does not have a rusty version
-* T-60 is excluded if using the Some Assembly Required Redistribution patch, since that makes T-60 exclusive to the Brotherhood of Steel
+* T-51 is not included by default, but is configurable - it is recommended if you are using Consistent Power Armor, which adds a rusty version
+* T-60 can be turned off in the configuration, since Some Assembly Required makes T-60 exclusive to the Brotherhood of Steel
 * If using either the Raider Overhaul or Raider Chop-Shop patch, these raiders will use the new paint jobs and upgrades as well
-* The vanilla sets shown in italics are actually provided by SweXavier05's Power Armored Enemies mod - they are included here for completeness.
 
 ### Gunners
 Gunners have access to power armor sets that were previously used by offshoots of the US military. They maintain and can partially upgrade their power armor for increased defense, and legendary Gunners will often have exclusive power armor sets or paint jobs.
 
 Level | Power Armor Set                          | Enemy Type
 ----- | ---------------------------------------- | ----------
-20    | _T-45_, _T-51_, T-51c                    | All Gunners
-30    | _T-60*_, Enclave X-02                    | All Gunners
+20    | T-45, T-51, T-51c                        | All Gunners
+30    | T-60*, Enclave X-02                      | All Gunners
 40    | X-01, X-02 (CC), Hellfire (CC)           | Legendary Gunners
 50    | T-65                                     | Legendary Gunners
 55    | Enclave X-02 Tesla                       | Legendary Gunners
 60    | Hellfire X-03                            | Legendary Gunners
 65    | X-01 Tesla, Classic Advanced Power Armor | Legendary Gunners
 
-* T-60 is excluded if using the Some Assembly Required Redistribution patch, since that makes T-60 exclusive to the Brotherhood of Steel
-* The vanilla sets shown in italics are actually provided by SweXavier05's Power Armored Enemies mod - they are included here for completeness.
+* T-60 can be turned off in the configuration, since Some Assembly Required makes T-60 exclusive to the Brotherhood of Steel
 
 ### Brotherhood of Steel
 The Brotherhood of Steel have made it their mission to reclaim and repair pre-war technology. They have also reclaimed technology created by the Enclave from the Capitol Wasteland. All power armor sets reclaimed by the Brotherhood of Steel are painted to allow for immediate recognition.
@@ -71,7 +68,7 @@ Level | Power Armor Set                 | Rank
 ----- | ------------------------------- | ------------
 --    | _T-45_                          | Knight
 --    | _T-51_                          | Knight Captain
---    | _T-60_                          | Paladin and higher
+--    | T-60                            | Paladin and higher
 --    | _X-01_                          | Elder
 30    | Enclave X-02*                   | Knight and higher*
 40    | X-01*, X-02 (CC), Hellfire (CC) | Paladin and higher*
@@ -82,7 +79,7 @@ Level | Power Armor Set                 | Rank
 * Sets shown in italics are actually provided by the Brotherhood Power Armor Overhaul mod, if you are using that - they are included here for completeness
 * Without Brotherhood Power Armor Overhaul and the BPAO patch for Power Armored Enemies, only Ultracite Power Armor applies to a specific rank
 * By default, T-60 (or the ranked equivalent from Brotherhood Power Armor Overhaul) is much more likely than any of the newly added sets, but this can be adjusted if you are using Mod Configuration Menu
-* X-01 is only available if using the X-01 for BoS patch, which is only recommended if you are using Brotherhood Power Armor Overhaul or AWKCR so the appropriate paint job is available
+* X-01 is not included by default, but is configurable - it is only recommended if you are using Brotherhood Power Armor Overhaul or AWKCR so the appropriate paint job is available
 * Enclave X-02 is only available if using the X-02 All Factions Paintjob patch
 * Hellfire X-03 is only available if using the X-03 All Factions Paintjob patch
 

@@ -2,14 +2,14 @@
 
 ## Power Armor to the People
 
-**Description:** Provides the core functionality for power armored enemies and legendary power armor
+**Description:** Provides the core functionality for Power Armor to the People and legendary power armor
 
 **Dependencies:** Just the base game
 
 # Patches
 
 ## Power Armor to the People - AWKCR.esp
-**Description:** Addresses compatibility issues between Legendary Power Armor Pieces and AWKCR
+**Description:** Addresses compatibility issues between Power Armor to the People and AWKCR
 
 **Dependencies:** Power Armor to the People, AWKCR, Automatron DLC, Far Harbor DLC, Nuka-World DLC
 
@@ -83,11 +83,11 @@
 
 **Change List:**
 * Adds new armor combinations for Raider and Day of the Dead sets
-* Injects standard Excavator armor into the lists of rusty pieces for Raiders in Power Armored Enemies
-* Injects a full Day of the Dead set of power armor into the rare Raider sets in Power Armored Enemies Extended
-* Injects a mixed raider Excavator set of power armor into the rare Raider sets in Power Armored Enemies Extended
+* Injects standard Excavator armor into the lists of rusty pieces for Raiders in Power Armor to the People
+* Injects a full Day of the Dead set of power armor into the rare Raider sets in Power Armor to the People
+* Injects a mixed raider Excavator set of power armor into the rare Raider sets in Power Armor to the People
 * Adds the legendary effects to the naming rules for Excavator Power Armor
-* Injects Excavator Power Armor into the legendary drop lists in Legendary Power Armor Pieces
+* Injects Excavator Power Armor into the legendary drop lists in Power Armor to the People
 
 **Compatibility:**
 * If a Some Assembly Required patch is made for Excavator power armor in the future, this will have a conflict and require a new patch
@@ -111,9 +111,9 @@
 **Dependencies:** T-51c Power Armor
 
 **Change List:**
-* Injects a T-51c power armor set for Gunners into Power Armored Enemies
+* Injects a T-51c power armor set for Gunners into Power Armor to the People
 * Adds the legendary effects to the naming rules for T-51c Power Armor
-* Injects T-51c Power Armor into the legendary drop lists in Legendary Power Armor Pieces
+* Injects T-51c Power Armor into the legendary drop lists in Power Armor to the People
 
 ### T-51c Redistribution.esp
 **Description:** Adjusts the availability of T-51c Power Armor in the world
@@ -134,10 +134,10 @@
 
 **Change List:**
 * Adds a Tesla combination to the X-02 armor records
-* Injects a standard X-02 power armor set for Gunners into Power Armored Enemies
-* Injects a Tesla X-02 power armor set for Legendary Gunners into Power Armored Enemies Extended
+* Injects a standard X-02 power armor set for Gunners into Power Armor to the People
+* Injects a Tesla X-02 power armor set for Legendary Gunners into Power Armor to the People
 * Adds the legendary effects to the naming rules for Enclave X-02 Power Armor
-* Injects Enclave X-02 Power Armor into the legendary drop lists in Legendary Power Armor Pieces
+* Injects Enclave X-02 Power Armor into the legendary drop lists in Power Armor to the People
 
 **Compatibility:**
 * Requires a patch for Some Assembly Required (included in the installer)
@@ -154,7 +154,7 @@
 * Carries forward the armor rating and durability changes from Some Assembly Required
 
 ### Power Armor to the People - Enclave X-02 - All Factions Paintjob.esp
-**Description:** Adds X-02 power armor sets with the All Factions paint jobs to Power Armored Enemies
+**Description:** Adds X-02 power armor sets with the All Factions paint jobs to Power Armor to the People
 
 **Dependencies:** Enclave X-02 Power Armor, X-02 Power Armor - All Factions Paintjob
 
@@ -194,9 +194,9 @@
 **Dependencies:** X-02 Power Armor (Creation Club)
 
 **Change List:**
-* Injects a standard X-02 power armor set for Gunners into Power Armored Enemies
+* Injects a standard X-02 power armor set for Gunners into Power Armor to the People
 * Adds the legendary effects to the naming rules for Enclave X-02 Power Armor
-* Injects X-02 Power Armor into the legendary drop lists in Legendary Power Armor Pieces
+* Injects X-02 Power Armor into the legendary drop lists in Power Armor to the People
 
 ## Hellfire X-03
 
@@ -206,9 +206,10 @@
 **Dependencies:** Hellfire X-03 Power Armor
 
 **Change List:**
-* Injects a Hellfire X-03 power armor set for Legendary Gunners into Power Armored Enemies Extended
+* Injects a Hellfire X-03 power armor set for Legendary Gunners into Power Armor to the People
 * Adds the legendary effects to the naming rules for Hellfire X-03 Power Armor
-* Injects Hellfire X-03 Power Armor into the legendary drop lists in Legendary Power Armor Pieces
+* Injects Hellfire X-03 Power Armor into the legendary drop lists in Power Armor to the People
+* Injects rusty Hellfire X-03 pieces into the rare raider mixed power armor set lists
 * Adds combinations for Linings C-F to every piece of the X-03 power armor
 
 ### Power Armor to the People - Hellfire X-03 - SAR.esp
@@ -226,7 +227,7 @@
 * May conflict with mods that add additional paint jobs - placing this lower should resolve that
 
 ### Power Armor to the People - Hellfire X-03 - All Factions Paintjob.esp
-**Description:** Adds X-03 power armor sets with the All Factions paint jobs to Power Armored Enemies
+**Description:** Adds X-03 power armor sets with the All Factions paint jobs to Power Armor to the People
 
 **Dependencies:** Hellfire X-03 Power Armor, X-03 Power Armor - All Factions Paintjob
 
@@ -263,13 +264,13 @@
 ### Power Armor to the People - Hellfire CC.esp
 **Description:** Adds Hellfire power armor (Creation Club) to enemies in the world
 
-**Dependencies:** Hellfire Power Armor (Creation Club), Power Armored Enemies feature
+**Dependencies:** Hellfire Power Armor (Creation Club), Power Armor to the People feature
 
 **Change List:**
 * Adds a Brotherhood of Steel Paladin combination to the Hellfire armor records
-* Injects a Hellfire power armor set for Legendary Gunners into Power Armored Enemies Extended
-* Injects a painted Hellfire power armor set for BoS Paladins into Power Armored Enemies Extended
-* Injects Hellfire Power Armor (Creation Club) into the legendary drop lists in Legendary Power Armor Pieces
+* Injects a Hellfire power armor set for Legendary Gunners into Power Armor to the People
+* Injects a painted Hellfire power armor set for BoS Paladins into Power Armor to the People
+* Injects Hellfire Power Armor (Creation Club) into the legendary drop lists in Power Armor to the People
 
 **Compatibility:**
 * If a Some Assembly Required patch is made in the future, it will require a patch to carry forward the durability and armor rating changes
@@ -285,7 +286,7 @@
 * Adds power armored synth enemies to the list of normal and legendary synths
 * Adds power armored synths to the interior of the Institute (thanks to FAB001 for this)
 * Adds the legendary effects to the naming rules for Institute Power Armor
-* Injects Institute Power Armor into the legendary drop lists in Legendary Power Armor Pieces
+* Injects Institute Power Armor into the legendary drop lists in Power Armor to the People
 * Adds combinations for Linings B-F to every piece of the Institute power armor
 
 **Compatibility:**
@@ -333,11 +334,13 @@
 **Dependencies:** T-65 Power Armor
 
 **Change List:**
-* Injects a T-65 power armor set for Legendary Gunners into Power Armored Enemies Extended
+* Injects a T-65 power armor set for Legendary Gunners into Power Armor to the People
 * Injects a BoS-painted T-65 power armor set for the Brotherhood of Steel
     * If Brotherhood Power Armor Overhaul (BPAO) is installed, this will only be available to Paladins and higher ranks
 * Adds the legendary effects to the naming rules for T-65 Power Armor
-* Injects T-65 Power Armor into the legendary drop lists in Legendary Power Armor Pieces
+* Injects T-65 Power Armor into the legendary drop lists in Power Armor to the People
+* Changes Lining A to use the Dpillari (rusted) material
+* Injects rusty T-65 arms and legs into the rare raider mixed power armor set lists
 
 **Compatibility:**
 * If a Some Assembly Required patch is made for T-65 power armor in the future, this will have a conflict and require a new patch
@@ -364,7 +367,7 @@
 * Adds a new Brotherhood of Steel Star Paladin that uses Brotherhood-painted Ultracite Power Armor and Ultracite weapons
 * Adds a Paladin combination to the Ultracite armor records so the Star Paladin can have the appropriate paint
 * Adds the legendary effects to the naming rules for Ultracite Power Armor
-* Injects Ultracite Power Armor into the legendary drop lists in Legendary Power Armor Pieces
+* Injects Ultracite Power Armor into the legendary drop lists in Power Armor to the People
 
 **Compatibility:**
 * Requires a patch for Brotherhood Power Armor Overhaul (included in the installer)
@@ -372,7 +375,7 @@
 * May conflict with mods that add additional paint jobs - placing this lower should resolve that
 * May conflict with mods that change Brotherhood of Steel soldiers, if they change the leveled lists of the Brotherhood of Steel in the base game
 
-### Power Armor to the People - Ultracite Power Armor - Brotherhood Power Armor Overhaulesp
+### Power Armor to the People - Ultracite Power Armor - Brotherhood Power Armor Overhaul.esp
 **Description:** Addresses compatibility issues between Power Armor to the People - Ultracite Power Armor and Brotherhood Power Armor Overhaul
 
 **Dependencies:** Ultracite Power Armor, Brotherhood Power Armor Overhaul
@@ -404,9 +407,9 @@
 **Dependencies:** Classic Advanced Power Armor
 
 **Change List:**
-* Injects a Classic Advanced power armor set for Legendary Gunners into Power Armored Enemies Extended
+* Injects a Classic Advanced power armor set for Legendary Gunners into Power Armor to the People
 * Adds the legendary effects to the naming rules for Classic Advanced Power Armor
-* Injects Classic Advanced Power Armor into the legendary drop lists in Legendary Power Armor Pieces
+* Injects Classic Advanced Power Armor into the legendary drop lists in Power Armor to the People
 
 ### Classic Advanced Power Armor Redistribution.esp
 **Description:** Adjusts the availability of Classic Advanced Power Armor in the world
@@ -443,7 +446,7 @@
 
 **Change List:**
 * Adds a Tesla combination to the X-01 armor records
-* Injects a Tesla X-01 power armor set for Legendary Gunners into Power Armored Enemies Extended
+* Injects a Tesla X-01 power armor set for Legendary Gunners into Power Armor to the People
 
 **Compatibility:**
 * Requires a patch for AWKCR (included in the installer)
@@ -466,7 +469,7 @@
 
 **Dependencies:** X-01 Tesla Upgrade Kit, AWKCR
 
-**Installed If:** The Power Armored Enemies feature is checked, the AWKCR patch is checked and either No Stat Change or None is selected for Some Assembly Required, and the X-01 Tesla Upgrade Kit option is later selected
+**Installed If:** The AWKCR patch is checked and either No Stat Change or None is selected for Some Assembly Required, and the X-01 Tesla Upgrade Kit option is later selected
 
 **Change List:**
 * Merges the armor and object modification records for X-01 power armor
@@ -476,7 +479,7 @@
 
 **Dependencies:** X-01 Tesla Upgrade Kit, Some Assembly Required (Standard, not No Stat Changes)
 
-**Installed If:** The Power Armored Enemies feature is checked, the Some Assembly Required patch is selected and AWKCR patch is not, and the X-01 Tesla Upgrade Kit option is later selected
+**Installed If:** The Some Assembly Required patch is selected and AWKCR patch is not, and the X-01 Tesla Upgrade Kit option is later selected
 
 **Change List:**
 * Carries forward the Some Assembly Required armor rating and durability changes for X-01 power armor
