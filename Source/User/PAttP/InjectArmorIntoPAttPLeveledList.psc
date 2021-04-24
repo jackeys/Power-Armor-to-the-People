@@ -49,7 +49,7 @@ Function Inject()
 				level = DefaultLevel
 			endif
 
-			debug.trace("Injecting " + currentInjection.itemToInject + " into " + currentInjection.injectInto + " at level " + level)
+			debug.trace(self + "Injecting " + currentInjection.itemToInject + " into " + currentInjection.injectInto + " at level " + level)
 			currentInjection.injectInto.AddForm(currentInjection.itemToInject, level, currentInjection.count)
 			iter += 1
 		endwhile

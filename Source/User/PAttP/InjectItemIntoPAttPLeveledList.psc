@@ -35,7 +35,7 @@ Function Inject()
 			; Register here so that if we inject into new lists in an update they are captured
 			injectionManager.RegisterInjection(currentInjectInto)
 
-			debug.trace("Injecting " + itemToInject + " into " + currentInjectInto + " at level " + level)
+			debug.trace(self + "Injecting " + itemToInject + " into " + currentInjectInto + " at level " + level)
 			currentInjectInto.AddForm(itemToInject, level, count)
 			iter += 1
 		endwhile

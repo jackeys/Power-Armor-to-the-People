@@ -49,7 +49,7 @@ EndFunction
 Function RegisterAndInjectInto(LeveledItem injectInto)
 	injectionManager.RegisterInjection(injectInto)
 
-	debug.trace("Injecting " + itemToInject + " into " + injectInto + " at level " + level)
+	debug.trace(Self + " Injecting " + itemToInject + " into " + injectInto + " at level " + level)
 	injectInto.AddForm(itemToInject, level, 1)
 EndFunction
 
