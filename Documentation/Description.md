@@ -52,6 +52,7 @@ The following power armor sets are currently supported:
 * [Classic Advanced Power Armor](https://www.nexusmods.com/fallout4/mods/43164) (Both ESP and ESL versions)
 * X-02 Power Armor (Creation Club) - Thanks to ImmortalAbsol!
 * Hellfire Power Armor (Creation Club) - Thanks to ImmortalAbsol!
+* Horse Power Armor (Creation Club) - Thanks to ImmortalAbsol!
 
 ## Additional Patches
 
