@@ -1,4 +1,4 @@
-Scriptname PAttP:InjectItemIntoPAttPLeveledList extends Quest
+Scriptname PAttP:InjectItemIntoPAttPLeveledList extends PAttP:InjectionQuest
 {Injects an item into one or more leveled lists within Power Armor to the People with the specified count and level. This should ONLY be used for Power Armor to the People lists, as it registers the list it injects into for automatic reversion and re-injection.}
 
 Int Property count = 1 Auto Const
@@ -13,47 +13,10 @@ LeveledItem[] Property injectInto Auto Const Mandatory
 LeveledItem Property itemToInject Auto Const Mandatory
 {The item that should be injected into the other lists with the specified count and level}
 
-GlobalVariable Property ShouldInject Auto Const
-{If provided, the value held by this variable is greater than 0, the provided injections will all take place - otherwise, they will be skipped}
-
-PAttP:InjectionManager Property injectionManager Auto Const Mandatory
-{Autofill}
-
-Event OnQuestInit()
-    RegisterCustomEvents()
-    Inject()
-EndEvent
-
 Function Inject()
-	if (!ShouldInject || ShouldInject.GetValueInt() > 0)
-		debug.trace("Beginning injection " + Self)
-
-		int iter = 0
-		while(iter < injectInto.length)
-			LeveledItem currentInjectInto = injectInto[iter]
-
-			; Register here so that if we inject into new lists in an update they are captured
-			injectionManager.RegisterInjection(currentInjectInto)
-
-			debug.trace(self + "Injecting " + itemToInject + " into " + currentInjectInto + " at level " + level)
-			currentInjectInto.AddForm(itemToInject, level, count)
-			iter += 1
-		endwhile
-	else
-        debug.trace("Skipping injection " + Self + " of " + itemToInject + " into " + injectInto)
-	endif
+	int iter = 0
+	while(iter < injectInto.length)
+		InjectIntoList(injectInto[iter], itemToInject, level, count)
+		iter += 1
+	endwhile
 EndFunction
-
-Function RegisterCustomEvents()
-    debug.trace("Registering " + Self + " for Power Armor to the People injection refreshes")
-    RegisterForCustomEvent(injectionManager, "RefreshInjection")
-EndFunction
-
-Event PAttP:InjectionManager.RefreshInjection(PAttP:InjectionManager akSender, Var[] akArgs)
-	if akSender == injectionManager
-		Inject()
-	else
-		debug.trace("Ignoring injection refresh from unknown injection manager " + akSender)
-	endif
-EndEvent
-

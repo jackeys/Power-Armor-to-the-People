@@ -1,4 +1,4 @@
-Scriptname PAttP:InjectLegendaryPowerArmor extends Quest
+Scriptname PAttP:InjectLegendaryPowerArmor extends PAttP:InjectionQuest
 {Injects an item into the list of potential legendary power armor sets. The correct leveled list to inject into is determined automatically based on the level the power armor should be available. This should only be used for Power Armor to the People, as it registers the list it injects into for automatic reversion and re-injection.}
 
 Int Property level Auto Const Mandatory
@@ -6,9 +6,6 @@ Int Property level Auto Const Mandatory
 
 LeveledItem Property itemToInject Auto Const Mandatory
 {The item list to inject as a possible legendary power armor set - this should include any appropriate lists to ensure the correct linings are used at appropriate levels, and only 1 item should be returned}
-
-GlobalVariable Property ShouldInject Auto Const
-{If provided, the value held by this variable is greater than 0, the provided injections will all take place - otherwise, they will be skipped}
 
 LeveledItem Property PATTP_PossibleLegendaryItemBaseLists_PowerArmor_Top Auto Const Mandatory
 {Autofill
@@ -18,39 +15,17 @@ FormList Property PATTP_LegendaryTierLists_Sorted Auto Const Mandatory
 {Autofill
 A form list containing all of the tiered item lists in order from lowest tier to highest tier}
 
-PAttP:InjectionManager Property injectionManager Auto Const Mandatory
-{Autofill}
-
-Event OnQuestInit()
-    RegisterCustomEvents()
-    Inject()
-EndEvent
-
 Function Inject()
-	if (!ShouldInject || ShouldInject.GetValueInt() > 0)
-		debug.trace("Beginning injection " + Self + " of " + itemToInject + " into legendary lists")
+	InjectIntoList(PATTP_PossibleLegendaryItemBaseLists_PowerArmor_Top, itemToInject, level)
 
-		; Register here so that if we inject into new lists in an update they are captured
-		RegisterAndInjectInto(PATTP_PossibleLegendaryItemBaseLists_PowerArmor_Top)
+	LeveledItem legendaryTierList = LegendaryTierListForLevel(level)
 
-		LeveledItem legendaryTierList = LegendaryTierListForLevel(level)
-
-		if (!legendaryTierList)
-			debug.trace("Unable to find a legendary tiered list for " + Self + " at level " + level)
-			return
-		endif
-
-		RegisterAndInjectInto(legendaryTierList)
-	else
-        debug.trace("Skipping injection " + Self + " of " + itemToInject + " into legendary lists")
+	if (!legendaryTierList)
+		debug.trace("Unable to find a legendary tiered list for " + Self + " at level " + level)
+		return
 	endif
-EndFunction
 
-Function RegisterAndInjectInto(LeveledItem injectInto)
-	injectionManager.RegisterInjection(injectInto)
-
-	debug.trace(Self + " Injecting " + itemToInject + " into " + injectInto + " at level " + level)
-	injectInto.AddForm(itemToInject, level, 1)
+	InjectIntoList(legendaryTierList, itemToInject, level)
 EndFunction
 
 LeveledItem Function LegendaryTierListForLevel(int level)
@@ -65,17 +40,3 @@ LeveledItem Function LegendaryTierListForLevel(int level)
 
 	return PATTP_LegendaryTierLists_Sorted.GetAt(index) as LeveledItem
 EndFunction
-
-Function RegisterCustomEvents()
-    debug.trace("Registering " + Self + " for Power Armor to the People injection refreshes")
-    RegisterForCustomEvent(injectionManager, "RefreshInjection")
-EndFunction
-
-Event PAttP:InjectionManager.RefreshInjection(PAttP:InjectionManager akSender, Var[] akArgs)
-	if akSender == injectionManager
-		Inject()
-	else
-		debug.trace(Self + " is ignoring injection refresh from unknown injection manager " + akSender)
-	endif
-EndEvent
-

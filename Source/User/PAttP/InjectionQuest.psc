@@ -1,0 +1,50 @@
+Scriptname PAttP:InjectionQuest extends Quest
+{Base script for Power Armor to the People injections. Extend this script, overriding Inject() with a function that calls InjectIntoList() for each injection it needs to perform.}
+
+PAttP:InjectionManager Property injectionManager Auto Const Mandatory
+{Autofill}
+
+GlobalVariable Property ShouldInject Auto Const
+{If provided, the value held by this variable is greater than 0, the provided injections will all take place - otherwise, they will be skipped}
+
+Event OnQuestInit()
+    RegisterCustomEvents()
+    InjectIfEnabled()
+EndEvent
+
+Function InjectIntoList(LeveledItem akInjectInto, Form akItemToInject, int aiLevel, int aiCount = 1)
+    ; Register here so that if we inject into new lists in an update they are captured
+    injectionManager.RegisterInjection(akInjectInto)
+
+    debug.trace(self + " injecting " + akItemToInject + " into " + akInjectInto + " at level " + aiLevel)
+    akInjectInto.AddForm(akItemToInject, aiLevel, aiCount)
+EndFunction
+
+Function InjectIfEnabled()
+    ; If ShouldInject was omitted, we always inject
+	if (!ShouldInject || ShouldInject.GetValueInt() > 0)
+		debug.trace("Beginning injection " + Self)
+        Inject()
+	else
+        debug.trace("Skipping injection " + Self)
+	endif
+EndFunction
+
+; Needs to be overridden
+Function Inject()
+    debug.trace(self + " is missing an override for the Inject() function")
+EndFunction
+
+Function RegisterCustomEvents()
+    debug.trace("Registering " + Self + " for Power Armor to the People injection refreshes")
+    RegisterForCustomEvent(injectionManager, "RefreshInjection")
+EndFunction
+
+Event PAttP:InjectionManager.RefreshInjection(PAttP:InjectionManager akSender, Var[] akArgs)
+    if akSender != injectionManager
+        debug.trace(self + " received unexpected refresh injection event from " + akSender)
+        return
+    EndIf
+
+    InjectIfEnabled()
+EndEvent
