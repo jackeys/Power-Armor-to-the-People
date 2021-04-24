@@ -38,7 +38,7 @@ Level | Power Armor Set
 ----- | ---------------
 14    | _Raider Power Armor_, Excavator Power Armor, _T-45_
 20    | T-51*
-30    | _T-60*_
+30    | _T-60*_, Horse Power Armor (rare, individual pieces only)
 40    | X-01 (rare, individual pieces only)
 50    | T-65 (rare, individual pieces only - only arms and legs)
 60    | X-03 (rare, individual pieces only)
