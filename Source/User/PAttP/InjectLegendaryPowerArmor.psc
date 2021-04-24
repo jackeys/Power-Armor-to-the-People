@@ -21,7 +21,7 @@ A form list containing all of the tiered item lists in order from lowest tier to
 PAttP:InjectionManager Property injectionManager Auto Const Mandatory
 {Autofill}
 
-Event OnInit()
+Event OnQuestInit()
     RegisterCustomEvents()
     Inject()
 EndEvent

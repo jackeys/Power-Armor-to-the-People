@@ -19,7 +19,7 @@ GlobalVariable Property ShouldInject Auto Const
 PAttP:InjectionManager Property injectionManager Auto Const Mandatory
 {Autofill}
 
-Event OnInit()
+Event OnQuestInit()
     RegisterCustomEvents()
     Inject()
 EndEvent

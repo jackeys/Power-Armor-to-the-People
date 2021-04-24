@@ -26,7 +26,7 @@ PAttP:InjectionManager Property injectionManager Auto Const Mandatory
 GlobalVariable Property ShouldInject Auto Const
 {If provided, the value held by this variable is greater than 0, the provided injections will all take place - otherwise, they will be skipped}
 
-Event OnInit()
+Event OnQuestInit()
     RegisterCustomEvents()
     Inject()
 EndEvent
