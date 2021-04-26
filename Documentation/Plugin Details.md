@@ -72,6 +72,11 @@
 
 **Dependencies:** Power Armor to the People, Far Harbor DLC
 
+## Power Armor to the People - Gunner Outfit Pack.esp
+**Description:** Adds the power armor paint jobs from the Gunner Outfit Pack to enemies in Power Armor to the People
+
+**Dependencies:** Gunner Outfit Pack (Standalone)
+
 ## Power Armor to the People - Gunners vs Minutemen CC.esp
 **Description:** Adds the paint jobs from the Gunners vs Minutemen Creation Club content to enemies in Power Armor to the People
 
