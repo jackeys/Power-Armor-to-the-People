@@ -127,6 +127,7 @@ If you enjoy playing with these mods, please endorse them!
 * BitMage for [Buy Power Armor at the Institute](https://www.nexusmods.com/fallout4/mods/15731), which was brought into the Redistribution feature
 * SweXavier05 for [SweXavier05's Power Armored Enemies](https://www.nexusmods.com/fallout4/mods/24635/), which is partially incorporated as the basis for power armored enemies and which served as a major inspiration
 * ferrari365 for [Legendary Power Armor Pieces](https://www.nexusmods.com/fallout4/mods/12834), which served as a major inspiration for how I now handle legendary power armor in this mod
+* Ablaze for [Gunner Power Armor Paint](https://www.nexusmods.com/fallout4/mods/29482), which is included to provide a default paint job for Gunner power armor 
 
 ## Dependencies
 
