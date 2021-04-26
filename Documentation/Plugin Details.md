@@ -72,6 +72,14 @@
 
 **Dependencies:** Power Armor to the People, Far Harbor DLC
 
+## Power Armor to the People - Gunners vs Minutemen CC.esp
+**Description:** Adds the paint jobs from the Gunners vs Minutemen Creation Club content to enemies in Power Armor to the People
+
+**Dependencies:** Gunners vs Minutemen Creation Club content
+
+**Change List:**
+* Gives the three Gunner paint jobs provided by Gunners vs Minutemen to Gunners based on the lining level of their power armor
+
 # Power Armor Sets
 
 ## Excavator Power Armor

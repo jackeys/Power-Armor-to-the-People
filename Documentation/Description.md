@@ -62,6 +62,7 @@ Patches are available for the following to add additional variety to power armor
 * [Institute Heavy Weapons](https://www.nexusmods.com/fallout4/mods/2441) - Adds an Institute Gatling Laser for power armored synths
 * [X-02 Power Armor - All Factions Paintjob](https://www.nexusmods.com/fallout4/mods/34949) and [X-03 Power Armor - All Factions Paintjob](https://www.nexusmods.com/fallout4/mods/33891) - Adds a Brotherhood of Steel paint job so the armor can be worn by the Brotherhood
 * [Brotherhood of Steel Power Armor Overhaul](https://www.nexusmods.com/fallout4/mods/11978) - Gives the Brotherhood of Steel multiple types of power armor by rank, and enables newly added power armor sets from Power Armor to the People to be given to different ranks
+* Gunners vs Minutemen (Creation Club) - Gives the three Gunner paint jobs provided by Gunners vs Minutemen to Gunners based on the lining level of their power armor
 
 Patches are available for [AWKCR](https://www.nexusmods.com/fallout4/mods/6091) as well, but that's for compatibility reasons - it does not add any additional features in relation to this mod.
 
