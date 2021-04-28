@@ -62,6 +62,8 @@ Patches are available for the following to add additional variety to power armor
 * [Institute Heavy Weapons](https://www.nexusmods.com/fallout4/mods/2441) - Adds an Institute Gatling Laser for power armored synths
 * [X-02 Power Armor - All Factions Paintjob](https://www.nexusmods.com/fallout4/mods/34949) and [X-03 Power Armor - All Factions Paintjob](https://www.nexusmods.com/fallout4/mods/33891) - Adds a Brotherhood of Steel paint job so the armor can be worn by the Brotherhood
 * [Brotherhood of Steel Power Armor Overhaul](https://www.nexusmods.com/fallout4/mods/11978) - Gives the Brotherhood of Steel multiple types of power armor by rank, and enables newly added power armor sets from Power Armor to the People to be given to different ranks
+* [Gunner Outfit Pack](https://www.nexusmods.com/fallout4/mods/43686) - Adds the power armor paint jobs from the Gunner Outfit Pack to enemies in Power Armor to the People
+* Gunners vs Minutemen (Creation Club) - Gives the three Gunner paint jobs provided by Gunners vs Minutemen to Gunners based on the lining level of their power armor
 
 Patches are available for [AWKCR](https://www.nexusmods.com/fallout4/mods/6091) as well, but that's for compatibility reasons - it does not add any additional features in relation to this mod.
 
@@ -127,6 +129,7 @@ If you enjoy playing with these mods, please endorse them!
 * BitMage for [Buy Power Armor at the Institute](https://www.nexusmods.com/fallout4/mods/15731), which was brought into the Redistribution feature
 * SweXavier05 for [SweXavier05's Power Armored Enemies](https://www.nexusmods.com/fallout4/mods/24635/), which is partially incorporated as the basis for power armored enemies and which served as a major inspiration
 * ferrari365 for [Legendary Power Armor Pieces](https://www.nexusmods.com/fallout4/mods/12834), which served as a major inspiration for how I now handle legendary power armor in this mod
+* Ablaze for [Gunner Power Armor Paint](https://www.nexusmods.com/fallout4/mods/29482), which is included to provide a default paint job for Gunner power armor 
 
 ## Dependencies
 
@@ -146,6 +149,7 @@ If you enjoy playing with these mods, please endorse them!
 * Gambit77, Thirdstorm, and Valdacil for [AWKCR](https://www.nexusmods.com/fallout4/mods/6091)
 * Bordraw for [Consistent Power Armor Overhaul](https://www.nexusmods.com/fallout4/mods/11234), which made rusty T-51 available to our beloved raiders
 * Assultdragon for [X-02 Power Armor - All Factions Paintjob](https://www.nexusmods.com/fallout4/mods/34949) and [X-03 Power Armor - All Factions Paintjob](https://www.nexusmods.com/fallout4/mods/33891)
+* DefaltTheFixer for [Gunner Outfit Pack](https://www.nexusmods.com/fallout4/mods/43686)
 
 ## Tools
 

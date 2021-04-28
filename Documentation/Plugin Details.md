@@ -14,12 +14,25 @@
 **Dependencies:** Power Armor to the People, AWKCR, Automatron DLC, Far Harbor DLC, Nuka-World DLC
 
 **Change List:**
-* Carries forward AWKCR's armor records, preserving keywords and combinations
+* Adds AWKCR's keywords to Gunner painted power armor sets
 * Carries forward AWKCR's keywords for the Unbreakable and Lightweight legendary mods
 * Carries forward AWKCR's naming rules for power armor, merging in the naming for the Unbreakable and Lightweight effects
 
-**Compatibility:**
-* If you are using Lore-Based Power Armor Changes, you will need to make sure that it is lower in your order than this plugin
+## Power Armor to the People - AWKCR-SAR.esp
+**Description:** Addresses compatibility issues between Power Armor to the People and AWKCR and carries forward armor changes from Some Assembly Required
+
+**Dependencies:** Power Armor to the People, AWKCR, Automatron DLC, Far Harbor DLC, Nuka-World DLC
+
+**Change List:**
+* Adds AWKCR's keywords to Gunner painted power armor sets
+* Carries forward AWKCR's keywords for the Unbreakable and Lightweight legendary mods
+* Carries forward AWKCR's naming rules for power armor, merging in the naming for the Unbreakable and Lightweight effects
+* Carries forward Some Assembly Required's armor and durability changes for Gunner painted power armor
+
+## Power Armor to the People - Some Assembly Required.esp
+**Description:** Carries forward armor rating and durability values from Some Assembly Required for painted power armor sets
+
+**Dependencies:** Power Armor to the People
 
 ## Power Armor to the People - R88 Patch.esp
 **Description:** Adds legendary power armor naming for R88's Simple Sorter
@@ -71,6 +84,19 @@
 **Description:** Adds legendary naming rules for Far Harbor legendary effects
 
 **Dependencies:** Power Armor to the People, Far Harbor DLC
+
+## Power Armor to the People - Gunner Outfit Pack.esp
+**Description:** Adds the power armor paint jobs from the Gunner Outfit Pack to enemies in Power Armor to the People
+
+**Dependencies:** Gunner Outfit Pack (Standalone)
+
+## Power Armor to the People - Gunners vs Minutemen CC.esp
+**Description:** Adds the paint jobs from the Gunners vs Minutemen Creation Club content to enemies in Power Armor to the People
+
+**Dependencies:** Gunners vs Minutemen Creation Club content
+
+**Change List:**
+* Gives the three Gunner paint jobs provided by Gunners vs Minutemen to Gunners based on the lining level of their power armor
 
 # Power Armor Sets
 
