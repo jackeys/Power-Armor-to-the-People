@@ -7,6 +7,9 @@ PAttP:InjectionManager Property injectionManager Auto Const Mandatory
 GlobalVariable Property ShouldInject Auto Const
 {If provided, the value held by this variable is greater than 0, the provided injections will all take place - otherwise, they will be skipped}
 
+Bool Property InvertShouldInject = false Auto Const
+{If true, and ShouldInject is provided, consider a 0 in ShouldInject to be true and a non-zero to be false (logical NOT)}
+
 Event OnQuestInit()
     RegisterCustomEvents()
     InjectIfEnabled()
@@ -22,7 +25,7 @@ EndFunction
 
 Function InjectIfEnabled()
     ; If ShouldInject was omitted, we always inject
-	if (!ShouldInject || ShouldInject.GetValueInt() > 0)
+	if (!ShouldInject || (!InvertShouldInject && ShouldInject.GetValueInt() > 0) || (InvertShouldInject && ShouldInject.GetValueInt() == 0))
 		debug.trace("Beginning injection " + Self)
         Inject()
 	else
