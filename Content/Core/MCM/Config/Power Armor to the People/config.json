@@ -107,6 +107,21 @@
             }
         },
         {
+            "text": "Make X-02 (Creation Club) available to raiders",
+            "type": "switcher",
+            "help": "If you use the X02 Raider Power Armor mod, you should enable this",
+            "valueOptions": {
+                "sourceType": "GlobalValue",
+                "sourceForm": "Power Armor to the People - X-02 CC.esp|80A"
+            },
+            "action": {
+                "type": "CallFunction",
+                "form": "Power Armor to the People.esp|873",
+                "function": "RefreshListInjections",
+                "params": []
+            }
+        },
+        {
             "text": "Gunners",
             "type": "section"
         },
