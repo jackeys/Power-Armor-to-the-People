@@ -64,6 +64,7 @@ Patches are available for the following to add additional variety to power armor
 * [Brotherhood of Steel Power Armor Overhaul](https://www.nexusmods.com/fallout4/mods/11978) - Gives the Brotherhood of Steel multiple types of power armor by rank, and enables newly added power armor sets from Power Armor to the People to be given to different ranks
 * [Gunner Outfit Pack](https://www.nexusmods.com/fallout4/mods/43686) - Adds the power armor paint jobs from the Gunner Outfit Pack to enemies in Power Armor to the People
 * Gunners vs Minutemen (Creation Club) - Gives the three Gunner paint jobs provided by Gunners vs Minutemen to Gunners based on the lining level of their power armor
+* [X02 Raider Power Armor](https://www.nexusmods.com/fallout4/mods/40918) - If you want to replace the X-02 Creation Club power armor with a Raider version instead, you can use this and change a setting in MCM to give it to Raiders instead of Gunners
 
 Patches are available for [AWKCR](https://www.nexusmods.com/fallout4/mods/6091) as well, but that's for compatibility reasons - it does not add any additional features in relation to this mod.
 

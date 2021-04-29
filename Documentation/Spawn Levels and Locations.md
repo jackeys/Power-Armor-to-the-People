@@ -38,12 +38,13 @@ Level | Power Armor Set
 14    | Raider Power Armor, Excavator Power Armor, T-45
 20    | T-51*
 30    | T-60*, Horse Power Armor (rare, individual pieces only)
-40    | X-01 (rare, individual pieces only)
+40    | X-01 (rare, individual pieces only), X-02 CC* (rare)
 50    | T-65 (rare, individual pieces only - only arms and legs)
 60    | X-03 (rare, individual pieces only)
 
 * T-51 is not included by default, but is configurable - it is recommended if you are using Consistent Power Armor, which adds a rusty version
 * T-60 can be turned off in the configuration, since Some Assembly Required makes T-60 exclusive to the Brotherhood of Steel
+* X-02 Creation Club must be turned on in the configuration, as this is only applicable if you are using the X02 Raider Power Armor mod that replaces the normal X-02 set with a raider version
 * If using either the Raider Overhaul or Raider Chop-Shop patch, these raiders will use the new paint jobs and upgrades as well
 
 ### Gunners
@@ -53,13 +54,14 @@ Level | Power Armor Set                          | Enemy Type
 ----- | ---------------------------------------- | ----------
 20    | T-45, T-51, T-51c                        | All Gunners
 30    | T-60*, Enclave X-02                      | All Gunners
-40    | X-01, X-02 (CC), Hellfire (CC)           | Legendary Gunners
+40    | X-01, X-02 (CC)*, Hellfire (CC)          | Legendary Gunners
 50    | T-65                                     | Legendary Gunners
 55    | Enclave X-02 Tesla                       | Legendary Gunners
 60    | Hellfire X-03                            | Legendary Gunners
 65    | X-01 Tesla, Classic Advanced Power Armor | Legendary Gunners
 
 * T-60 can be turned off in the configuration, since Some Assembly Required makes T-60 exclusive to the Brotherhood of Steel
+* If the setting to give X-02 Creation Club to raiders is used, it will not be available to Gunners - the X02 Raider Power Armor mod replaces the standard set with a Raider version
 
 ### Brotherhood of Steel
 The Brotherhood of Steel have made it their mission to reclaim and repair pre-war technology. They have also reclaimed technology created by the Enclave from the Capitol Wasteland. All power armor sets reclaimed by the Brotherhood of Steel are painted to allow for immediate recognition.
@@ -71,7 +73,7 @@ Level | Power Armor Set                 | Rank
 --    | T-60                            | Paladin and higher
 --    | _X-01_                          | Elder
 30    | Enclave X-02*                   | Knight and higher*
-40    | X-01*, X-02 (CC), Hellfire (CC) | Paladin and higher*
+40    | X-01*, Hellfire (CC)            | Paladin and higher*
 50    | T-65                            | Paladin and higher*
 60    | Hellfire X-03*                  | Paladin and higher*
 67    | Ultracite Power Armor           | Star Paladin
