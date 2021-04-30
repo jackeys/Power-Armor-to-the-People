@@ -32,21 +32,6 @@
             }
         },
         {
-            "text": "Make X-01 available to Paladins",
-            "type": "switcher",
-            "help": "This is only recommended if using Brother Power Armor Overhaul or AWKCR, which gives X-01 a BoS paint job",
-            "valueOptions": {
-                "sourceType": "GlobalValue",
-                "sourceForm": "Power Armor to the People.esp|878"
-            },
-            "action": {
-                "type": "CallFunction",
-                "form": "Power Armor to the People.esp|873",
-                "function": "RefreshListInjections",
-                "params": []
-            }
-        },
-        {
             "text": "Raiders",
             "type": "section"
         },
@@ -77,42 +62,12 @@
             }
         },
         {
-            "text": "Make T-51 available to raiders",
-            "type": "switcher",
-            "help": "This is only recommended if using Consistent Power Armor Overhaul, which gives T-51 a rusty texture",
-            "valueOptions": {
-                "sourceType": "GlobalValue",
-                "sourceForm": "Power Armor to the People.esp|875"
-            },
-            "action": {
-                "type": "CallFunction",
-                "form": "Power Armor to the People.esp|873",
-                "function": "RefreshListInjections",
-                "params": []
-            }
-        },
-        {
             "text": "Make T-60 available to raiders",
             "type": "switcher",
             "help": "Some Assembly Required makes T-60 exclusive to the Brotherhood of Steel, if you want that consistency",
             "valueOptions": {
                 "sourceType": "GlobalValue",
                 "sourceForm": "Power Armor to the People.esp|87B"
-            },
-            "action": {
-                "type": "CallFunction",
-                "form": "Power Armor to the People.esp|873",
-                "function": "RefreshListInjections",
-                "params": []
-            }
-        },
-        {
-            "text": "Make X-02 (Creation Club) available to raiders",
-            "type": "switcher",
-            "help": "If you use the X02 Raider Power Armor mod, you should enable this",
-            "valueOptions": {
-                "sourceType": "GlobalValue",
-                "sourceForm": "Power Armor to the People - X-02 CC.esp|80A"
             },
             "action": {
                 "type": "CallFunction",
@@ -182,5 +137,72 @@
             }
         }
     ],
-    "pages": []
+    "pages": [
+        {
+            "pageDisplayName": "Mod-Dependent Settings",
+            "content": [
+                {
+                    "text": "These settings make changes based on other mods you may be using. They should be toggled ON only if you have the mod the setting is designed to go with.",
+                    "type": "text"
+                },
+                {
+                    "text": "Brotherhood Power Armor Overhaul OR AWKCR",
+                    "type": "section"
+                },
+                {
+                    "text": "Make X-01 available to Brotherhood of Steel Paladins",
+                    "type": "switcher",
+                    "help": "These mods provide a Paladin paint job for X-01, so it can be give to the Brotherhood of Steel",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People.esp|878"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": []
+                    }
+                },
+                {
+                    "text": "Consistent Power Armor Overhaul",
+                    "type": "section"
+                },
+                {
+                    "text": "Make T-51 available to raiders",
+                    "type": "switcher",
+                    "help": "T-51 doesn't have a rusty texture by default, but CPAO adds one which makes it fit in with the Raiders' equipment",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People.esp|875"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": []
+                    }
+                },
+                {
+                    "text": "X02 Raider Power Armor",
+                    "type": "section"
+                },
+                {
+                    "text": "Make X-02 (Creation Club) available to raiders",
+                    "type": "switcher",
+                    "help": "This mod replaces the standard X-02 set with a raider set, so this removes it from the Gunners and adds it to Raiders",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - X-02 CC.esp|80A"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": []
+                    }
+                }
+            ]
+        }
+    ]
 }
