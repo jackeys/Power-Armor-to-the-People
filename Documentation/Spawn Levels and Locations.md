@@ -109,15 +109,15 @@ Classic Advanced Power Armor | The Prydwyn - Proctor Teagon, Atom Cats Garage | 
 Power Armor Set              | Legendary Drop | On Enemies                     | On Non-Hostile NPCs         | At Vendors                | Abandoned Locations
 ---------------------------- | -------------- | ------------------------------ | --------------------------- | ------------------------- | -------------------
 Excavator Power Armor        | Level 10       | Raiders                        | N/A                         | N/A                       | Thicket Excavations, Quincy Quarries (partial sets)
-T-51c                        | Level 30       | Gunners                        | N/A                         | N/A                       | National Guard Training Yard (partial set)
+T-51c                        | Level 30       | Gunners                        | N/A                         | N/A                       | National Guard Training Yard Armory - Master locksmith or Expert hacking required
 Horse Power Armor            | N/A            | Raiders (Rare)                 | N/A                         | N/A                       | Atomatoys Factory (Giddyup! quest)
 Institute Power Armor        | Level 40       | Synths                         | Guards inside the Institute | Institute Requisitions    | None
-Enclave X-02 Power Armor     | Level 40       | Gunners                        | Brotherhood Knights         | N/A                       | Glowing Sea Red Rocket (partial set)
+Enclave X-02 Power Armor     | Level 40       | Gunners                        | Brotherhood Knights         | N/A                       | Leveled set inside hatch near Vertibird Wreckage in the Glowing Sea - Master hacking required {requires X-03 Hellfire mod}
 X-02 (Creation Club)         | Level 50       | Gunners (Rare)                 | N/A                         | N/A                       | Boston Police Rationing Site (Speak of the Devil quest)
 Hellfire (Creation Club)     | Level 50       | Gunners (Rare), Pyro (quest)   | Brotherhood Paladins        | N/A                       | None
-T-65                         | Level 60       | Gunners (Rare), Raiders (Rare) | Brotherhood Paladins        | N/A                       | Near the Castle (partial set), on leveled sets starting at level 38*
-X-03 Hellfire                | Level 70       | Gunners (Rare), Raiders (Rare) | Brotherhood Paladins        | N/A                       | Inside hatch near Vertibird Wreckage in the Glowing Sea - Master hacking required (partial set)
-Classic Advanced Power Armor | Level 70       | Gunners (Rare)                 | N/A                         | Proctor Teagan, Atom Cats | Libertalia (Chosen One variant)
+T-65                         | Level 60       | Gunners (Rare), Raiders (Rare) | Brotherhood Paladins        | Proctor Teagan            | On leveled sets starting at level 35*
+X-03 Hellfire                | Level 70       | Gunners (Rare), Raiders (Rare) | Brotherhood Paladins        | N/A                       | Leveled set inside hatch near Vertibird Wreckage in the Glowing Sea - Master hacking required
+Classic Advanced Power Armor | Level 70       | Gunners (Rare), Unique enemy   | N/A                         | Proctor Teagan, Atom Cats | Leveled set inside hatch near Vertibird Wreckage in the Glowing Sea - Master hacking required {requires X-03 Hellfire mod}
 Ultracite Power Armor        | Level 70       | N/A                            | Brotherhood Star Paladins   | Proctor Teagan            | None
 
-* Leveled sets are unavailable if using Some Assembly Required, as that mod removes the frames they would appear on
+* Standard leveled sets are unavailable if using Some Assembly Required, as that mod removes the frames they would appear on
