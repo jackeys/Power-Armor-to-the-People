@@ -1,0 +1,36 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Compile Papyrus Script (development)",
+            "type": "shell",
+            "windows": {
+                "command": "..\\..\\compilePapyrusScript.bat '${file}' 'C:\\Program Files (x86)\\Steam\\steamapps\\common\\Fallout 4\\Papyrus Compiler\\PapyrusCompiler.exe' 'C:\\Program Files (x86)\\Steam\\steamapps\\common\\Fallout 4'"
+            },
+            "options": {
+                "cwd": "${workspaceFolder}\\Source\\User"
+            },
+            "presentation": {
+                "reveal": "always"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Install All",
+            "type": "shell",
+            "windows": {
+                "command": ".\\install_all.ps1 'C:\\Program Files (x86)\\Steam\\steamapps\\common\\Fallout 4'"
+            },
+            "presentation": {
+                "reveal": "always"
+            },
+            "problemMatcher": []
+        }
+    ]
+}
