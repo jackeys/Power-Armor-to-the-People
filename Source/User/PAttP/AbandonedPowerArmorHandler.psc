@@ -7,16 +7,19 @@ ObjectReference[] Property ToEnableIfFeatureIsOff Auto Const
 {Object references that should be enabled if the feature is on and disabled otherwise}
 
 Struct InjectionInfo
-    Form ItemToInject
+    Form ItemToInjectIfEnabled
     {This will typically be a LeveledItem containing a partial set of power armor, but it doesn't have to be}
+
+    Form ItemToInjectIfDisabled
+    {This should be the LeveledItem from the original mod that placed the item}
 
     LeveledItem InjectInto
     {This will typically be a LeveledItem that gets directly referenced by the placed power armor furniture}
 
-    int Level = 2
+    int Level = 1
 EndStruct
 
-InjectionInfo[] Property InjectIfFeatureIsOn Auto Const
+InjectionInfo[] Property Injections Auto Const
 {Typically used to add a set of replacement leveled items into a LeveledItem so that they will be used instead of the ones from the default mods}
 
 Event OnQuestInit()
@@ -50,26 +53,24 @@ Function EnableReferences(ObjectReference[] akReferences)
 EndFunction
 
 Function UpdateInjections(bool abEnabled)
-    if !InjectIfFeatureIsOn
+    if !Injections
         return
     EndIf
 
-    if abEnabled
-        debug.trace(self + " is injecting because abandoned power armor replacements are enabled: " + InjectIfFeatureIsOn)
-        int i = 0
-        while i < InjectIfFeatureIsOn.length
-            InjectionInfo currentInjection = InjectIfFeatureIsOn[i]
-            currentInjection.InjectInto.AddForm(currentInjection.ItemToInject, currentInjection.Level, 1)
-            i += 1
-        EndWhile
-    Else
-        debug.trace(self + " is reverting because abandoned power armor replacements are disabled: " + InjectIfFeatureIsOn)
-        int i = 0
-        while i < InjectIfFeatureIsOn.length
-            InjectIfFeatureIsOn[i].InjectInto.Revert()
-            i += 1
-        EndWhile
-    EndIf
+    debug.trace(self + " is injecting because abandoned power armor replacements are enabled: " + Injections)
+    int i = 0
+    while i < Injections.length
+        InjectionInfo currentInjection = Injections[i]
+        currentInjection.InjectInto.Revert()
+            
+        if abEnabled
+                currentInjection.InjectInto.AddForm(currentInjection.ItemToInjectIfEnabled, currentInjection.Level, 1)
+            else
+                currentInjection.InjectInto.AddForm(currentInjection.ItemToInjectIfDisabled, currentInjection.Level, 1)
+        endIf
+        
+        i += 1
+    EndWhile
 EndFunction
         
 
