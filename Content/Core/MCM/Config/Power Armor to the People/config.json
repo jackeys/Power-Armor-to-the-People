@@ -4,6 +4,16 @@
     "minMcmVersion": 2,
     "content": [
         {
+            "text": "Change Availability of Abandoned Power Armor",
+            "type": "switcher",
+            "help": "Removes or changes the full sets placed in the world by most power armor mods",
+            "valueOptions": {
+                "sourceType": "PropertyValueBool",
+                "sourceForm": "Power Armor to the People.esp|8AA",
+                "propertyName": "MCM_AbandonedPowerArmorReplacementEnabled"
+            }
+        },
+        {
             "text": "Brotherhood of Steel",
             "type": "section"
         },

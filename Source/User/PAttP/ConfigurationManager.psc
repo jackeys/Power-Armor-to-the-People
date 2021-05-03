@@ -45,6 +45,31 @@ float Property RaiderRareSetChance
     EndFunction
 EndProperty
 
+GlobalVariable Property PAttP_Setting_AbandonedPowerArmorReplacementChanceNone Auto Const Mandatory
+{AUTOFILL}
+
+CustomEvent AbandonedPowerArmorEnabledChanged
+
+; Convert our ChanceNone into a Chance so it makes more sense
+bool Property MCM_AbandonedPowerArmorReplacementEnabled Auto
+bool Property AbandonedPowerArmorReplacementEnabled
+    bool Function get()
+        return PAttP_Setting_AbandonedPowerArmorReplacementChanceNone.GetValueInt() == 0
+    EndFunction
+    Function set(bool enabled)
+        if enabled
+            PAttP_Setting_AbandonedPowerArmorReplacementChanceNone.SetValue(0.0)
+        else
+            PAttP_Setting_AbandonedPowerArmorReplacementChanceNone.SetValue(100.0)
+        EndIf
+
+        ; Inform everyone that this changed, since it can cause placed objects to be enabled or disabled
+        Var[] args = new Var[1]
+        args[0] = enabled
+        SendCustomEvent("AbandonedPowerArmorEnabledChanged", args)
+    EndFunction
+EndProperty
+
 Event OnQuestInit()
     RegisterForRemoteEvent(Game.GetPlayer(), "OnPlayerLoadGame")
     RegisterCustomEvents()
@@ -72,6 +97,7 @@ Function SetMCMPropertiesForDisplay()
     MCM_LegendaryPowerArmorDropChance = LegendaryPowerArmorDropChance
     MCM_RaiderRareMixedPieceChance = RaiderRareMixedPieceChance
     MCM_RaiderRareSetChance = RaiderRareSetChance
+    MCM_AbandonedPowerArmorReplacementEnabled = AbandonedPowerArmorReplacementEnabled
 EndFunction
 
 ; MCM properties are for display only, so this properly applies them to the game
@@ -80,4 +106,5 @@ Function ApplyMCMProperties()
     LegendaryPowerArmorDropChance = MCM_LegendaryPowerArmorDropChance
     RaiderRareMixedPieceChance = MCM_RaiderRareMixedPieceChance
     RaiderRareSetChance = MCM_RaiderRareSetChance
+    AbandonedPowerArmorReplacementEnabled = MCM_AbandonedPowerArmorReplacementEnabled
 EndFunction
