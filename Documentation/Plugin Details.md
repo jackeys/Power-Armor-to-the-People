@@ -394,6 +394,8 @@
 * Adds a Paladin combination to the Ultracite armor records so the Star Paladin can have the appropriate paint
 * Adds the legendary effects to the naming rules for Ultracite Power Armor
 * Injects Ultracite Power Armor into the legendary drop lists in Power Armor to the People
+* Removes the set of Ultracite power armor and weapons from the Boston Airport
+* Adds Ultracite power armor and weapons to Proctor Teagan's vendor inventory if the player becomes a Sentinel
 
 **Compatibility:**
 * Requires a patch for Brotherhood Power Armor Overhaul (included in the installer)
@@ -408,22 +410,6 @@
 
 **Change List:**
 * Merges the leveled list for power armored Brotherhood of Steel soldiers
-
-### UltracitePA Redistribution.esp
-**Description:** Adjusts the availability of Ultracite Power Armor in the world
-
-**Dependencies:** Ultracite Power Armor
-
-**Installed If:** The Redistribute Power Armor feature and Ultracite Power Armor boxes are both checked
-
-**Change List:**
-* Removes the set of Ultracite power armor and weapons from the Boston Airport
-* Adds Ultracite power armor and weapons to Proctor Teagan's vendor inventory if the player becomes a Sentinel
-* Adds a Paladin combination to the Ultracite armor records so the power armor that the Brotherhood sells is painted appropriately
-
-**Compatibility:**
-* If a Some Assembly Required patch is made for Ultracite power armor in the future, this will have a conflict and require a new patch
-* May conflict with mods that add additional paint jobs - placing this lower should resolve that
 
 ## Classic Advanced Power Armor
 
