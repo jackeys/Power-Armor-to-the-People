@@ -3,41 +3,32 @@ Scriptname PAttP:AbandonedPowerArmorHandler extends Quest
 PAttP:ConfigurationManager Property ConfigManager Auto Const Mandatory
 {AUTOFILL Configuration manager responsible for telling us what we should enable and disable}
 
-ObjectReference[] Property ToEnableIfFeatureIsOn Auto Const
+ObjectReference[] Property ToEnableIfFeatureIsOff Auto Const
 {Object references that should be enabled if the feature is on and disabled otherwise}
-
-ObjectReference[] Property ToDisableIfFeatureIsOn Auto Const
-{Object references that should be disabled if the feature is on and enabled otherwise}
 
 Event OnQuestInit()
     RegisterCustomEvents()
-    EnableDisableReferences(ConfigManager.AbandonedPowerArmorReplacementEnabled)
+    EnableReferencesIfFeatureIsOff(ConfigManager.AbandonedPowerArmorReplacementEnabled)
 EndEvent
 
-Function EnableDisableReferences(bool abFeatureEnabled)
-    SetEnabledForReferences(abFeatureEnabled, ToEnableIfFeatureIsOn)
-    SetEnabledForReferences(!abFeatureEnabled, ToDisableIfFeatureIsOn)
+Function EnableReferencesIfFeatureIsOff(bool abEnabled)
+    if(!abEnabled)
+        EnableReferences(ToEnableIfFeatureIsOff)
+    EndIf
 EndFunction
 
-Function SetEnabledForReferences(bool abEnabled, ObjectReference[] akReferences)
+Function EnableReferences(ObjectReference[] akReferences)
     if !akReferences
         return
     EndIf
 
-    debug.trace(Self + " is setting enabled to " + abEnabled + " for list " + akReferences)
+    debug.trace(Self + " is setting enabling these references: " + akReferences)
     
     int i = 0
-    if abEnabled
-        while i < akReferences.length
-            akReferences[i].Enable()
-            i += 1
-        EndWhile
-    else
-        while i < akReferences.length
-            akReferences[i].Disable()
-            i += 1
-        EndWhile
-    EndIf
+    while i < akReferences.length
+        akReferences[i].Enable()
+        i += 1
+    EndWhile
 EndFunction
 
 
@@ -57,5 +48,5 @@ Event PAttP:ConfigurationManager.AbandonedPowerArmorEnabledChanged(PAttP:Configu
         return
     EndIf
 
-    EnableDisableReferences(akArgs[0] as bool)
+    EnableReferencesIfFeatureIsOff(akArgs[0] as bool)
 EndEvent
