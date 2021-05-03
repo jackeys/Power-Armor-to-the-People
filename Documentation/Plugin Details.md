@@ -114,20 +114,12 @@
 * Injects a mixed raider Excavator set of power armor into the rare Raider sets in Power Armor to the People
 * Adds the legendary effects to the naming rules for Excavator Power Armor
 * Injects Excavator Power Armor into the legendary drop lists in Power Armor to the People
+* Replaces the full sets of Excavator Power Armor placed by the original mod with partial sets
 
 **Compatibility:**
 * If a Some Assembly Required patch is made for Excavator power armor in the future, this will have a conflict and require a new patch
 * May conflict with mods that add additional paint jobs - placing this lower should resolve that
 
-### ExcavatorPA Redistribution.esp
-**Description:** Adjusts the availability of Excavator Power Armor in the world
-
-**Dependencies:** Excavator Power Armor
-
-**Installed If:** The Redistribute Power Armor feature and Excavator Power Armor boxes are both checked
-
-**Change List:**
-* Replaces the full sets of Excavator Power Armor placed by the original mod with partial sets
 
 ## T-51c
 
