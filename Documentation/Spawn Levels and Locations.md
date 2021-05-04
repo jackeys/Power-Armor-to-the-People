@@ -92,17 +92,25 @@ Level | Power Armor Set       | Enemy Type
 ----- | --------------------- | ----------
 30    | Institute Power Armor | Synths
 
-## Power Armor Redistribution
+## Vendors
 
-### Vendors
-
-Some power armor sets are available at vendors when using the "Redistribute Power Armor" feature. Full sets are not guaranteed, so you may have to come back a few times to get the full set after the vendor's inventory refreshes.
+Some power armor sets are available at vendors. A vendor will typically only have a few pieces available at any given time - you will have to come back a few times to get a full set.
 
 Power Armor Set              | Location                                       | Conditions
 ---------------------------- | ---------------------------------------------- | ----------
 Institute Power Armor        | The Institute - Requisitions                   | Allied with The Institute
 Ultracite Power Armor        | The Prydwyn - Proctor Teagan                   | Promoted to Sentinel
 Classic Advanced Power Armor | The Prydwyn - Proctor Teagon, Atom Cats Garage | Level 55
+
+## Abandoned Power Armor
+
+Location                               | Power Armor Set       | Condition
+-------------------------------------- | ------------------    | -------------------
+Thicket Excavations                    | Excavator Power Armor | Partial
+Quincy Quarries                        | Excavator Power Armor | Partial
+National Guard Training Yard - Armory  | T-51C                 | Partial or Full Set
+
+* There is a configuration setting to permanently restore the power armor placement from the original mods, in which case the above table does not apply
 
 # Availability Matrix
 
