@@ -306,6 +306,9 @@
 * Adds the legendary effects to the naming rules for Institute Power Armor
 * Injects Institute Power Armor into the legendary drop lists in Power Armor to the People
 * Adds combinations for Linings B-F to every piece of the Institute power armor
+* Removes the metal box that originally contained the full set of Institute Power Armor
+* Makes Institute Power Armor available for sale from the Institute Requisitions Desk (thanks to FAB001 for this)
+* Makes a power armor frame available for sale from the Institute Requisitions Desk (thanks to BitMage for this)
 
 **Compatibility:**
 * Known to work with Wattz Laser Rifle, Institute Turboplasma, and LAER - all of these weapons can spawn on these power armored synths, and most weapons that can show up for synths should also work, too
@@ -319,18 +322,6 @@
 **Change List:**
 * Makes a new version of the Gatling Laser that uses the white and blue mods from Institute Heavy Weapons
 * Adds the new Institute Gatling Laser to the possible weapons for power armored synths
-
-### Institute Power Armor Redistribution.esp
-**Description:** Adjusts the availability of Institute Power Armor in the world
-
-**Dependencies:** Institute Power Armor
-
-**Installed If:** The Redistribute Power Armor feature and Institute Power Armor boxes are both checked
-
-**Change List:**
-* Removes the metal box that originally contained the full set of Institute Power Armor
-* Makes Institute Power Armor available for sale from the Institute Requisitions Desk (thanks to FAB001 for this)
-* Makes a power armor frame available for sale from the Institute Requisitions Desk (thanks to BitMage for this)
 
 ### Power Armor to the People - Institute Power Armor - SAR.esp
 **Description:** Adds all lining combinations for Institute Power Armor to allow any of them to be spawned, using Some Assembly Required's armor values
