@@ -45,20 +45,20 @@ float Property RaiderRareSetChance
     EndFunction
 EndProperty
 
-GlobalVariable Property PAttP_Setting_AbandonedPowerArmorReplacementChanceNone Auto Const Mandatory
+GlobalVariable Property PAttP_Setting_AbandonedPowerArmorReplacementChance Auto Const Mandatory
 {AUTOFILL}
 
 CustomEvent AbandonedPowerArmorEnabledChanged
 
 bool Property AbandonedPowerArmorReplacementEnabled
     bool Function get()
-        return PAttP_Setting_AbandonedPowerArmorReplacementChanceNone.GetValueInt() == 0
+        return PAttP_Setting_AbandonedPowerArmorReplacementChance.GetValueInt() == 100.0
     EndFunction
     Function set(bool enabled)
         if enabled
-            PAttP_Setting_AbandonedPowerArmorReplacementChanceNone.SetValue(0.0)
+            PAttP_Setting_AbandonedPowerArmorReplacementChance.SetValue(100.0)
         else
-            PAttP_Setting_AbandonedPowerArmorReplacementChanceNone.SetValue(100.0)
+            PAttP_Setting_AbandonedPowerArmorReplacementChance.SetValue(0.0)
         EndIf
 
         ; Inform everyone that this changed, since it can cause placed objects to be enabled or disabled
