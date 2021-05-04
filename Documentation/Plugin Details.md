@@ -135,6 +135,14 @@
 * Removes the items placed in the National Guard Training Yard by the original mod
 * Places a possibly partial set of T-51c in the National Guard Training Yard Armory, replacing the partial set that is normally there
 
+### Power Armor to the People - T-51c - SAR.esp
+**Description:** Addresses compatibility issues between Power Armor to the People - T-51c and Some Assembly Required
+
+**Dependencies:** T-51c Power Armor, Some Assembly Required
+
+**Change List:**
+* Removes the two loose pieces of power armor in the National Guard Training Yard Armory that Some Assembly Required adds
+
 ## Enclave X-02
 
 ### Power Armor to the People - Enclave X-02.esp
