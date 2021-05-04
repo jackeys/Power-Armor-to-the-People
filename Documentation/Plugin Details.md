@@ -132,16 +132,8 @@
 * Injects a T-51c power armor set for Gunners into Power Armor to the People
 * Adds the legendary effects to the naming rules for T-51c Power Armor
 * Injects T-51c Power Armor into the legendary drop lists in Power Armor to the People
-
-### T-51c Redistribution.esp
-**Description:** Adjusts the availability of T-51c Power Armor in the world
-
-**Dependencies:** T-51c Power Armor
-
-**Installed If:** The Redistribute Power Armor feature and T-51c Power Armor boxes are both checked
-
-**Change List:**
-* Replaces the full set of T-51c placed by the original mod with a partial set
+* Removes the items placed in the National Guard Training Yard by the original mod
+* Places a possibly partial set of T-51c in the National Guard Training Yard Armory, replacing the partial set that is normally there
 
 ## Enclave X-02
 
