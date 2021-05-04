@@ -46,10 +46,14 @@ float Property RaiderRareSetChance
 EndProperty
 
 GlobalVariable Property PAttP_Setting_AbandonedPowerArmorReplacementChance Auto Const Mandatory
-{AUTOFILL}
+{AUTOFILL Variable to hold the chance the replacement should be used for leveled lists that depend on the feature}
+
+GlobalVariable Property PAttP_Setting_AbandonedPowerArmorReplacementChanceNone Auto Const Mandatory
+{AUTOFILL Variable to hold the chance the replacement should not be used for leveled lists that depend on the feature (inverse of the above)}
 
 CustomEvent AbandonedPowerArmorEnabledChanged
 
+; We set both a Chance and ChanceNone to give integrators flexibility
 bool Property AbandonedPowerArmorReplacementEnabled
     bool Function get()
         return PAttP_Setting_AbandonedPowerArmorReplacementChance.GetValueInt() == 100.0
@@ -57,8 +61,10 @@ bool Property AbandonedPowerArmorReplacementEnabled
     Function set(bool enabled)
         if enabled
             PAttP_Setting_AbandonedPowerArmorReplacementChance.SetValue(100.0)
+            PAttP_Setting_AbandonedPowerArmorReplacementChanceNone.SetValue(0.0)
         else
             PAttP_Setting_AbandonedPowerArmorReplacementChance.SetValue(0.0)
+            PAttP_Setting_AbandonedPowerArmorReplacementChanceNone.SetValue(100.0)
         EndIf
 
         ; Inform everyone that this changed, since it can cause placed objects to be enabled or disabled
