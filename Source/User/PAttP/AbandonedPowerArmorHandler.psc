@@ -22,6 +22,9 @@ EndStruct
 InjectionInfo[] Property Injections Auto Const
 {Typically used to add a set of replacement leveled items into a LeveledItem so that they will be used instead of the ones from the default mods}
 
+Quest[] Property QuestsToStartIfDisabled Auto Const
+{Some power armor mods add their sets through a quest, which should be made to no longer run at start up. These quests can be put here to start if the feature is disabled.}
+
 Event OnQuestInit()
     RegisterCustomEvents()
     HandleFeatureEnabled(ConfigManager.AbandonedPowerArmorReplacementEnabled)
@@ -30,6 +33,7 @@ EndEvent
 Function HandleFeatureEnabled(bool abEnabled)
     EnableReferencesIfFeatureIsOff(abEnabled)
     UpdateInjections(abEnabled)
+    StartQuests(abEnabled)
 EndFunction
 
 Function EnableReferencesIfFeatureIsOff(bool abEnabled)
@@ -57,22 +61,36 @@ Function UpdateInjections(bool abEnabled)
         return
     EndIf
 
-    debug.trace(self + " is injecting because abandoned power armor replacements are enabled: " + Injections)
+    debug.trace(self + " is injecting abandoned power armor changes: " + Injections)
     int i = 0
     while i < Injections.length
-        InjectionInfo currentInjection = Injections[i]
-        currentInjection.InjectInto.Revert()
-            
-        if abEnabled
-                currentInjection.InjectInto.AddForm(currentInjection.ItemToInjectIfEnabled, currentInjection.Level, 1)
-            else
-                currentInjection.InjectInto.AddForm(currentInjection.ItemToInjectIfDisabled, currentInjection.Level, 1)
-        endIf
-        
+    InjectionInfo currentInjection = Injections[i]
+    currentInjection.InjectInto.Revert()
+    
+    if abEnabled
+        currentInjection.InjectInto.AddForm(currentInjection.ItemToInjectIfEnabled, currentInjection.Level, 1)
+    else
+        currentInjection.InjectInto.AddForm(currentInjection.ItemToInjectIfDisabled, currentInjection.Level, 1)
+    endIf
+    
+    i += 1
+    EndWhile
+EndFunction
+
+Function StartQuests(bool abEnabled)
+    if(abEnabled || !QuestsToStartIfDisabled)
+        return
+    EndIf
+    
+    debug.trace(self + " is starting quests because abandoned power armor replacements are disabled: " + QuestsToStartIfDisabled)
+    int i = 0
+    while i < QuestsToStartIfDisabled.length
+        if !QuestsToStartIfDisabled[i].Start()
+            debug.trace(self + " failed to start quest " + QuestsToStartIfDisabled[i])
+        EndIf
         i += 1
     EndWhile
 EndFunction
-        
 
 Function RegisterCustomEvents()
     debug.trace("Registering " + Self + " for Power Armor to the People abandoned power armor configuration changes")

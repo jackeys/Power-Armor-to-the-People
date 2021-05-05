@@ -156,6 +156,7 @@
 * Injects a Tesla X-02 power armor set for Legendary Gunners into Power Armor to the People
 * Adds the legendary effects to the naming rules for Enclave X-02 Power Armor
 * Injects Enclave X-02 Power Armor into the legendary drop lists in Power Armor to the People
+* Removes the set of Enclave X-02 from the Glowing Sea Red Rocket
 
 **Compatibility:**
 * Requires a patch for Some Assembly Required (included in the installer)
@@ -193,16 +194,6 @@
 
 **Change List:**
 * Carries forward the armor rating and durability changes from Some Assembly Required
-
-### Enclave X-02 Redistribution.esp
-**Description:** Adjusts the availability of X-02 Power Armor in the world
-
-**Dependencies:** Enclave X-02 Power Armor
-
-**Installed If:** The Redistribute Power Armor feature and Enclave X-02 Power Armor boxes are both checked
-
-**Change List:**
-* Replaces the full set of X-02 placed by the original mod with a partial set
 
 ## X-02 Power Amor (Creation Club)
 
