@@ -398,15 +398,6 @@
 * Injects a Classic Advanced power armor set for Legendary Gunners into Power Armor to the People
 * Adds the legendary effects to the naming rules for Classic Advanced Power Armor
 * Injects Classic Advanced Power Armor into the legendary drop lists in Power Armor to the People
-
-### Classic Advanced Power Armor Redistribution.esp
-**Description:** Adjusts the availability of Classic Advanced Power Armor in the world
-
-**Dependencies:** Classic Advanced Power Armor
-
-**Installed If:** The Redistribute Power Armor feature and Classic Advanced Power Armor boxes are both checked
-
-**Change List:**
 * Removes most of the sets that the original plugin adds to vendor inventories
 * Changes the vendor set to only provide a maximum of 3 pieces, with a chance of each not showing up
 * Changes the vendor set to only start showing up at level 55
