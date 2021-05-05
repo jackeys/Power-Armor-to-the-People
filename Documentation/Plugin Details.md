@@ -342,21 +342,12 @@
 * Adds the legendary effects to the naming rules for T-65 Power Armor
 * Injects T-65 Power Armor into the legendary drop lists in Power Armor to the People
 * Changes Lining A to use the Dpillari (rusted) material
+* Changes all abandoned sets that get added to the leveled lists to use lining A, so they have the rusted material
 * Injects rusty T-65 arms and legs into the rare raider mixed power armor set lists
+* Removes the full abandoned set in the lake near The Castle
 
 **Compatibility:**
 * If a Some Assembly Required patch is made for T-65 power armor in the future, this will have a conflict and require a new patch
-
-### T-65 Redistribution.esp
-**Description:** Adjusts the availability of T-65 Power Armor in the world
-
-**Dependencies:** T-65 Power Armor
-
-**Installed If:** The Redistribute Power Armor feature and T-65 Power Armor boxes are both checked
-
-**Change List:**
-* Replaces the full set of T-65 placed by the original mod with a partial set
-* Adjusts the level at which each lining for the torso shows up on partial sets (levels 44-60 instead of 25-41)
 
 ## Ultracite
 
