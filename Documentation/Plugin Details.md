@@ -157,6 +157,7 @@
 * Adds the legendary effects to the naming rules for Enclave X-02 Power Armor
 * Injects Enclave X-02 Power Armor into the legendary drop lists in Power Armor to the People
 * Removes the set of Enclave X-02 from the Glowing Sea Red Rocket
+* Adds X-02 as a rare power armor piece at the Atom Cats Garage starting at level 21
 
 **Compatibility:**
 * Requires a patch for Some Assembly Required (included in the installer)
@@ -180,6 +181,7 @@
 **Change List:**
 * Adds Brotherhood of Steel combinations to the X-02 armor records
 * Injects X-02 power armor sets for the Brotherhood of Steel for ranks Knight and higher
+* Adds X-02 as an uncommon power armor piece available for purchase from Proctor Teagan starting at level 21 if the player is a Knight
 
 **Compatibility:**
 * Requires a patch for Some Assembly Required (included in the installer)
