@@ -223,6 +223,7 @@
 * Injects rusty Hellfire X-03 pieces into the rare raider mixed power armor set lists
 * Adds combinations for Linings C-F to every piece of the X-03 power armor
 * Replaces the full set of X-03 placed by the original mod with an Enclave leveled set
+* Adds Hellfire X-03 as a rare item available at the Atom Cats garage 
 
 ### Power Armor to the People - Hellfire X-03 - SAR.esp
 **Description:** Adds all lining combinations for Hellfire X-03 to allow any of them to be spawned, using Some Assembly Required's armor values
@@ -246,6 +247,7 @@
 **Change List:**
 * Adds Brotherhood of Steel combinations to the X-03 armor records
 * Injects X-03 power armor sets for the Brotherhood of Steel for ranks Knight and higher
+* Adds Hellfire X-03 as an uncommon item available from Proctor Teagan
 
 **Compatibility:**
 * Requires a patch for Some Assembly Required (included in the installer)

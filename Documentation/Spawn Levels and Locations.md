@@ -103,6 +103,8 @@ Enclave X-02                 | The Prydwyn - Proctor Teagan*                  | 
 Enclave X-02                 | Atom Cats Garage                               | Level 21 (Rare)
 T-65                         | The Prdywyn - Proctor Teagan                   | Promoted to Paladin, Level 40
 T-65                         | Atom Cats Garage                               | Level 40 (Rare)
+Hellfire X-03                | The Prdywyn - Proctor Teagan                   | Promoted to Paladin, Level 50
+Hellfire X-03                | Atom Cats Garage                               | Level 50 (Rare)
 Ultracite Power Armor        | The Prydwyn - Proctor Teagan                   | Promoted to Sentinel
 Classic Advanced Power Armor | The Prydwyn - Proctor Teagan, Atom Cats Garage | Level 55
 
