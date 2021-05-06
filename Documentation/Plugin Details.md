@@ -98,6 +98,11 @@
 **Change List:**
 * Gives the three Gunner paint jobs provided by Gunners vs Minutemen to Gunners based on the lining level of their power armor
 
+## Power Armor to the People - EMEncounters1.esp
+**Description:** Adds the new power armor sets provided by Power Armor to the People to the unique enemies from SweXavier05's Power Armored Enemies
+
+**Dependencies:** SweXavier05's Power Armored Enemies
+
 # Power Armor Sets
 
 ## Excavator Power Armor
