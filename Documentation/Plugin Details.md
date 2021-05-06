@@ -114,20 +114,12 @@
 * Injects a mixed raider Excavator set of power armor into the rare Raider sets in Power Armor to the People
 * Adds the legendary effects to the naming rules for Excavator Power Armor
 * Injects Excavator Power Armor into the legendary drop lists in Power Armor to the People
+* Replaces the full sets of Excavator Power Armor placed by the original mod with partial sets
 
 **Compatibility:**
 * If a Some Assembly Required patch is made for Excavator power armor in the future, this will have a conflict and require a new patch
 * May conflict with mods that add additional paint jobs - placing this lower should resolve that
 
-### ExcavatorPA Redistribution.esp
-**Description:** Adjusts the availability of Excavator Power Armor in the world
-
-**Dependencies:** Excavator Power Armor
-
-**Installed If:** The Redistribute Power Armor feature and Excavator Power Armor boxes are both checked
-
-**Change List:**
-* Replaces the full sets of Excavator Power Armor placed by the original mod with partial sets
 
 ## T-51c
 
@@ -140,16 +132,16 @@
 * Injects a T-51c power armor set for Gunners into Power Armor to the People
 * Adds the legendary effects to the naming rules for T-51c Power Armor
 * Injects T-51c Power Armor into the legendary drop lists in Power Armor to the People
+* Removes the items placed in the National Guard Training Yard by the original mod
+* Places a possibly partial set of T-51c in the National Guard Training Yard Armory, replacing the partial set that is normally there
 
-### T-51c Redistribution.esp
-**Description:** Adjusts the availability of T-51c Power Armor in the world
+### Power Armor to the People - T-51c - SAR.esp
+**Description:** Addresses compatibility issues between Power Armor to the People - T-51c and Some Assembly Required
 
-**Dependencies:** T-51c Power Armor
-
-**Installed If:** The Redistribute Power Armor feature and T-51c Power Armor boxes are both checked
+**Dependencies:** T-51c Power Armor, Some Assembly Required
 
 **Change List:**
-* Replaces the full set of T-51c placed by the original mod with a partial set
+* Removes the two loose pieces of power armor in the National Guard Training Yard Armory that Some Assembly Required adds
 
 ## Enclave X-02
 
@@ -164,6 +156,8 @@
 * Injects a Tesla X-02 power armor set for Legendary Gunners into Power Armor to the People
 * Adds the legendary effects to the naming rules for Enclave X-02 Power Armor
 * Injects Enclave X-02 Power Armor into the legendary drop lists in Power Armor to the People
+* Removes the set of Enclave X-02 from the Glowing Sea Red Rocket
+* Adds X-02 as a rare power armor piece at the Atom Cats Garage starting at level 21
 
 **Compatibility:**
 * Requires a patch for Some Assembly Required (included in the installer)
@@ -187,6 +181,7 @@
 **Change List:**
 * Adds Brotherhood of Steel combinations to the X-02 armor records
 * Injects X-02 power armor sets for the Brotherhood of Steel for ranks Knight and higher
+* Adds X-02 as an uncommon power armor piece available for purchase from Proctor Teagan starting at level 21 if the player is a Knight
 
 **Compatibility:**
 * Requires a patch for Some Assembly Required (included in the installer)
@@ -201,16 +196,6 @@
 
 **Change List:**
 * Carries forward the armor rating and durability changes from Some Assembly Required
-
-### Enclave X-02 Redistribution.esp
-**Description:** Adjusts the availability of X-02 Power Armor in the world
-
-**Dependencies:** Enclave X-02 Power Armor
-
-**Installed If:** The Redistribute Power Armor feature and Enclave X-02 Power Armor boxes are both checked
-
-**Change List:**
-* Replaces the full set of X-02 placed by the original mod with a partial set
 
 ## X-02 Power Amor (Creation Club)
 
@@ -237,6 +222,8 @@
 * Injects Hellfire X-03 Power Armor into the legendary drop lists in Power Armor to the People
 * Injects rusty Hellfire X-03 pieces into the rare raider mixed power armor set lists
 * Adds combinations for Linings C-F to every piece of the X-03 power armor
+* Replaces the full set of X-03 placed by the original mod with an Enclave leveled set
+* Adds Hellfire X-03 as a rare item available at the Atom Cats garage 
 
 ### Power Armor to the People - Hellfire X-03 - SAR.esp
 **Description:** Adds all lining combinations for Hellfire X-03 to allow any of them to be spawned, using Some Assembly Required's armor values
@@ -260,6 +247,7 @@
 **Change List:**
 * Adds Brotherhood of Steel combinations to the X-03 armor records
 * Injects X-03 power armor sets for the Brotherhood of Steel for ranks Knight and higher
+* Adds Hellfire X-03 as an uncommon item available from Proctor Teagan
 
 **Compatibility:**
 * Requires a patch for Some Assembly Required (included in the installer)
@@ -274,16 +262,6 @@
 
 **Change List:**
 * Carries forward the armor rating and durability changes from Some Assembly Required
-
-### Hellfire X-03 Redistribution.esp
-**Description:** Adjusts the availability of X-03 Power Armor in the world
-
-**Dependencies:** Hellfire X-03 Power Armor
-
-**Installed If:** The Redistribute Power Armor feature and Hellfire X-03 Power Armor boxes are both checked
-
-**Change List:**
-* Replaces the full set of X-03 placed by the original mod with a partial set
 
 ## Hellfire (Creation Club)
 
@@ -314,6 +292,9 @@
 * Adds the legendary effects to the naming rules for Institute Power Armor
 * Injects Institute Power Armor into the legendary drop lists in Power Armor to the People
 * Adds combinations for Linings B-F to every piece of the Institute power armor
+* Removes the metal box that originally contained the full set of Institute Power Armor
+* Makes Institute Power Armor available for sale from the Institute Requisitions Desk (thanks to FAB001 for this)
+* Makes a power armor frame available for sale from the Institute Requisitions Desk (thanks to BitMage for this)
 
 **Compatibility:**
 * Known to work with Wattz Laser Rifle, Institute Turboplasma, and LAER - all of these weapons can spawn on these power armored synths, and most weapons that can show up for synths should also work, too
@@ -327,18 +308,6 @@
 **Change List:**
 * Makes a new version of the Gatling Laser that uses the white and blue mods from Institute Heavy Weapons
 * Adds the new Institute Gatling Laser to the possible weapons for power armored synths
-
-### Institute Power Armor Redistribution.esp
-**Description:** Adjusts the availability of Institute Power Armor in the world
-
-**Dependencies:** Institute Power Armor
-
-**Installed If:** The Redistribute Power Armor feature and Institute Power Armor boxes are both checked
-
-**Change List:**
-* Removes the metal box that originally contained the full set of Institute Power Armor
-* Makes Institute Power Armor available for sale from the Institute Requisitions Desk (thanks to FAB001 for this)
-* Makes a power armor frame available for sale from the Institute Requisitions Desk (thanks to BitMage for this)
 
 ### Power Armor to the People - Institute Power Armor - SAR.esp
 **Description:** Adds all lining combinations for Institute Power Armor to allow any of them to be spawned, using Some Assembly Required's armor values
@@ -366,21 +335,12 @@
 * Adds the legendary effects to the naming rules for T-65 Power Armor
 * Injects T-65 Power Armor into the legendary drop lists in Power Armor to the People
 * Changes Lining A to use the Dpillari (rusted) material
+* Changes all abandoned sets that get added to the leveled lists to use lining A, so they have the rusted material
 * Injects rusty T-65 arms and legs into the rare raider mixed power armor set lists
+* Removes the full abandoned set in the lake near The Castle
 
 **Compatibility:**
 * If a Some Assembly Required patch is made for T-65 power armor in the future, this will have a conflict and require a new patch
-
-### T-65 Redistribution.esp
-**Description:** Adjusts the availability of T-65 Power Armor in the world
-
-**Dependencies:** T-65 Power Armor
-
-**Installed If:** The Redistribute Power Armor feature and T-65 Power Armor boxes are both checked
-
-**Change List:**
-* Replaces the full set of T-65 placed by the original mod with a partial set
-* Adjusts the level at which each lining for the torso shows up on partial sets (levels 44-60 instead of 25-41)
 
 ## Ultracite
 
@@ -394,6 +354,8 @@
 * Adds a Paladin combination to the Ultracite armor records so the Star Paladin can have the appropriate paint
 * Adds the legendary effects to the naming rules for Ultracite Power Armor
 * Injects Ultracite Power Armor into the legendary drop lists in Power Armor to the People
+* Removes the set of Ultracite power armor and weapons from the Boston Airport
+* Adds Ultracite power armor and weapons to Proctor Teagan's vendor inventory if the player becomes a Sentinel
 
 **Compatibility:**
 * Requires a patch for Brotherhood Power Armor Overhaul (included in the installer)
@@ -409,22 +371,6 @@
 **Change List:**
 * Merges the leveled list for power armored Brotherhood of Steel soldiers
 
-### UltracitePA Redistribution.esp
-**Description:** Adjusts the availability of Ultracite Power Armor in the world
-
-**Dependencies:** Ultracite Power Armor
-
-**Installed If:** The Redistribute Power Armor feature and Ultracite Power Armor boxes are both checked
-
-**Change List:**
-* Removes the set of Ultracite power armor and weapons from the Boston Airport
-* Adds Ultracite power armor and weapons to Proctor Teagan's vendor inventory if the player becomes a Sentinel
-* Adds a Paladin combination to the Ultracite armor records so the power armor that the Brotherhood sells is painted appropriately
-
-**Compatibility:**
-* If a Some Assembly Required patch is made for Ultracite power armor in the future, this will have a conflict and require a new patch
-* May conflict with mods that add additional paint jobs - placing this lower should resolve that
-
 ## Classic Advanced Power Armor
 
 ### Power Armor to the People - Classic Advanced Power Armor.esp
@@ -436,15 +382,6 @@
 * Injects a Classic Advanced power armor set for Legendary Gunners into Power Armor to the People
 * Adds the legendary effects to the naming rules for Classic Advanced Power Armor
 * Injects Classic Advanced Power Armor into the legendary drop lists in Power Armor to the People
-
-### Classic Advanced Power Armor Redistribution.esp
-**Description:** Adjusts the availability of Classic Advanced Power Armor in the world
-
-**Dependencies:** Classic Advanced Power Armor
-
-**Installed If:** The Redistribute Power Armor feature and Classic Advanced Power Armor boxes are both checked
-
-**Change List:**
 * Removes most of the sets that the original plugin adds to vendor inventories
 * Changes the vendor set to only provide a maximum of 3 pieces, with a chance of each not showing up
 * Changes the vendor set to only start showing up at level 55
@@ -453,12 +390,12 @@
 **Compatibility:**
 * This makes changes to Proctor Teagan and the Atom Cats vendor lists, so it could conflict with anything that does the same without injection (such as Some Assembly Required - a patch is provided in this installer)
 
-### Classic Advanced Power Armor Redistribution - Some Assembly Required Patch.esp
+### Power Armor to the People - Classic Advanced Power Armor - SAR.esp
 **Description:** Preserves the vendor changes from Some Assembly Required
 
-**Dependencies:** Classic Advanced Power Armor, Some Assembly Required, Redistribution feature
+**Dependencies:** Classic Advanced Power Armor, Some Assembly Required
 
-**Installed If:** The Redistribute Power Armor feature and Classic Advanced Power Armor boxes are both checked, and either of the Some Assembly Required patch options is checked (Standard of No Stat Changes)
+**Installed If:** Classic Advanced Power Armor is selected, and either of the Some Assembly Required patch options is checked (Standard of No Stat Changes)
 
 **Change List:**
 * Carry forward the changes that Some Assembly Required makes to the Atom Cats vendor list

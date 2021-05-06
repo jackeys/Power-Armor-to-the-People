@@ -203,6 +203,31 @@
                     }
                 }
             ]
+        },
+        {
+            "pageDisplayName": "Abandoned Power Armor",
+            "content": [
+                {
+                    "text": "Power Armor to the People replaces or removes the full set added by most power armor mods for the sake of progression and to make finding the sets more interesting. If you would prefer to keep these full sets intact, you can permanently enable them for current and future modded sets using the button below.",
+                    "type": "text"
+                },
+                {
+                    "text": "<b>This action cannot be undone, so please make sure to back up your save before proceeding.</b>",
+                    "type": "text",
+                    "html": true
+                },
+                {
+                    "text": "Add Full Abandoned Sets Back to the World",
+                    "type": "button",
+                    "help": "You will see a confirmation notification after closing MCM",
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|8AA",
+                        "function": "RestoreOriginalAbandonedPowerArmorSets",
+                        "params": []
+                    }
+                }
+            ]
         }
     ]
 }

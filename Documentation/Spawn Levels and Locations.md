@@ -92,14 +92,64 @@ Level | Power Armor Set       | Enemy Type
 ----- | --------------------- | ----------
 30    | Institute Power Armor | Synths
 
-## Power Armor Redistribution
+## Vendors
 
-### Vendors
-
-Some power armor sets are available at vendors when using the "Redistribute Power Armor" feature. Full sets are not guaranteed, so you may have to come back a few times to get the full set after the vendor's inventory refreshes.
+Some power armor sets are available at vendors. A vendor will typically only have a few pieces available at any given time - you will have to come back a few times to get a full set.
 
 Power Armor Set              | Location                                       | Conditions
 ---------------------------- | ---------------------------------------------- | ----------
 Institute Power Armor        | The Institute - Requisitions                   | Allied with The Institute
+Enclave X-02                 | The Prydwyn - Proctor Teagan*                  | Promoted to Knight, Level 21 (Uncommon)
+Enclave X-02                 | Atom Cats Garage                               | Level 21 (Rare)
+T-65                         | The Prdywyn - Proctor Teagan                   | Promoted to Paladin, Level 40
+T-65                         | Atom Cats Garage                               | Level 40 (Rare)
+Hellfire X-03                | The Prdywyn - Proctor Teagan                   | Promoted to Paladin, Level 50
+Hellfire X-03                | Atom Cats Garage                               | Level 50 (Rare)
 Ultracite Power Armor        | The Prydwyn - Proctor Teagan                   | Promoted to Sentinel
-Classic Advanced Power Armor | The Prydwyn - Proctor Teagon, Atom Cats Garage | Level 55
+Classic Advanced Power Armor | The Prydwyn - Proctor Teagan, Atom Cats Garage | Level 55
+
+* Enclave X-02 is only available at the Brotherhood of Steel if using the All Factions Paintjob patch that gives the Brotherhood painted sets for their Knights and Paladins
+* If using Some Assembly Required, the Atom Cats mostly carry T-45 instead of the items in the table above
+
+## Abandoned Power Armor
+
+Location                                       | Power Armor Set       | Condition
+---------------------------------------------- | ------------------    | -------------------
+Thicket Excavations                            | Excavator Power Armor | Partial
+Quincy Quarries                                | Excavator Power Armor | Partial
+National Guard Training Yard - Armory          | T-51C                 | Partial or Full Set
+Bunker West of Glowing Sea Vertibird Wreckage* | Leveled Enclave Set   | Full Set
+
+* There is a configuration setting to permanently restore the power armor placement from the original mods, in which case the above table does not apply
+* The bunker west of the Glowing Sea Vertibird Wreckage is added by the Hellfire X-03 mod, and is only available if that mod is installed
+
+### Leveled Enclave Set
+
+A leveled Enclave set will include the highest level power armor set that is installed from this list:
+
+Power Armor Set              | Level
+---------------------------- | -----
+Enclave X-02                 | 21
+X-01                         | 28
+Hellfire X-03                | 50
+Classic Advanced Power Armor | 50
+
+* If the set is found at a lower level, it will have the lowest leveled that is currently available
+
+# Availability Matrix
+
+Power Armor Set              | Legendary Drop | On Enemies                     | On Non-Hostile NPCs         | At Vendors                | Abandoned Locations
+---------------------------- | -------------- | ------------------------------ | --------------------------- | ------------------------- | -------------------
+Excavator Power Armor        | Level 10       | Raiders                        | N/A                         | N/A                       | Thicket Excavations, Quincy Quarries (partial sets)
+T-51c                        | Level 30       | Gunners                        | N/A                         | N/A                       | National Guard Training Yard Armory - Master locksmith or Expert hacking required
+Horse Power Armor            | N/A            | Raiders (Rare)                 | N/A                         | N/A                       | Atomatoys Factory (Giddyup! quest)
+Institute Power Armor        | Level 40       | Synths                         | Guards inside the Institute | Institute Requisitions    | None
+Enclave X-02 Power Armor     | Level 40       | Gunners                        | Brotherhood Knights         | N/A                       | Leveled set inside hatch near Vertibird Wreckage in the Glowing Sea - Master hacking required {requires X-03 Hellfire mod}
+X-02 (Creation Club)         | Level 50       | Gunners (Rare)                 | N/A                         | N/A                       | Boston Police Rationing Site (Speak of the Devil quest)
+Hellfire (Creation Club)     | Level 50       | Gunners (Rare), Pyro (quest)   | Brotherhood Paladins        | N/A                       | None
+T-65                         | Level 60       | Gunners (Rare), Raiders (Rare) | Brotherhood Paladins        | Proctor Teagan            | On leveled sets starting at level 35*
+X-03 Hellfire                | Level 70       | Gunners (Rare), Raiders (Rare) | Brotherhood Paladins        | N/A                       | Leveled set inside hatch near Vertibird Wreckage in the Glowing Sea - Master hacking required
+Classic Advanced Power Armor | Level 70       | Gunners (Rare), Unique enemy   | N/A                         | Proctor Teagan, Atom Cats | Leveled set inside hatch near Vertibird Wreckage in the Glowing Sea - Master hacking required {requires X-03 Hellfire mod}
+Ultracite Power Armor        | Level 70       | N/A                            | Brotherhood Star Paladins   | Proctor Teagan            | None
+
+* Standard leveled sets are unavailable if using Some Assembly Required, as that mod removes the frames they would appear on
