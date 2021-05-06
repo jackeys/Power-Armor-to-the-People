@@ -101,8 +101,10 @@ Power Armor Set              | Location                                       | 
 Institute Power Armor        | The Institute - Requisitions                   | Allied with The Institute
 Enclave X-02                 | The Prydwyn - Proctor Teagan*                  | Promoted to Knight, Level 21 (Uncommon)
 Enclave X-02                 | Atom Cats Garage                               | Level 21 (Rare)
+T-65                         | The Prdywyn - Proctor Teagan                   | Promoted to Paladin, Level 40
+T-65                         | Atom Cats Garage                               | Level 40 (Rare)
 Ultracite Power Armor        | The Prydwyn - Proctor Teagan                   | Promoted to Sentinel
-Classic Advanced Power Armor | The Prydwyn - Proctor Teagon, Atom Cats Garage | Level 55
+Classic Advanced Power Armor | The Prydwyn - Proctor Teagan, Atom Cats Garage | Level 55
 
 * Enclave X-02 is only available at the Brotherhood of Steel if using the All Factions Paintjob patch that gives the Brotherhood painted sets for their Knights and Paladins
 * If using Some Assembly Required, the Atom Cats mostly carry T-45 instead of the items in the table above
