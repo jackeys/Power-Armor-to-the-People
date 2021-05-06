@@ -111,13 +111,28 @@ Classic Advanced Power Armor | The Prydwyn - Proctor Teagan, Atom Cats Garage | 
 
 ## Abandoned Power Armor
 
-Location                               | Power Armor Set       | Condition
--------------------------------------- | ------------------    | -------------------
-Thicket Excavations                    | Excavator Power Armor | Partial
-Quincy Quarries                        | Excavator Power Armor | Partial
-National Guard Training Yard - Armory  | T-51C                 | Partial or Full Set
+Location                                       | Power Armor Set       | Condition
+---------------------------------------------- | ------------------    | -------------------
+Thicket Excavations                            | Excavator Power Armor | Partial
+Quincy Quarries                                | Excavator Power Armor | Partial
+National Guard Training Yard - Armory          | T-51C                 | Partial or Full Set
+Bunker West of Glowing Sea Vertibird Wreckage* | Leveled Enclave Set   | Full Set
 
 * There is a configuration setting to permanently restore the power armor placement from the original mods, in which case the above table does not apply
+* The bunker west of the Glowing Sea Vertibird Wreckage is added by the Hellfire X-03 mod, and is only available if that mod is installed
+
+### Leveled Enclave Set
+
+A leveled Enclave set will include the highest level power armor set that is installed from this list:
+
+Power Armor Set              | Level
+---------------------------- | -----
+Enclave X-02                 | 21
+X-01                         | 28
+Hellfire X-03                | 50
+Classic Advanced Power Armor | 50
+
+* If the set is found at a lower level, it will have the lowest leveled that is currently available
 
 # Availability Matrix
 

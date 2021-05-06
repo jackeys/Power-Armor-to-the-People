@@ -222,6 +222,7 @@
 * Injects Hellfire X-03 Power Armor into the legendary drop lists in Power Armor to the People
 * Injects rusty Hellfire X-03 pieces into the rare raider mixed power armor set lists
 * Adds combinations for Linings C-F to every piece of the X-03 power armor
+* Replaces the full set of X-03 placed by the original mod with an Enclave leveled set
 
 ### Power Armor to the People - Hellfire X-03 - SAR.esp
 **Description:** Adds all lining combinations for Hellfire X-03 to allow any of them to be spawned, using Some Assembly Required's armor values
@@ -259,16 +260,6 @@
 
 **Change List:**
 * Carries forward the armor rating and durability changes from Some Assembly Required
-
-### Hellfire X-03 Redistribution.esp
-**Description:** Adjusts the availability of X-03 Power Armor in the world
-
-**Dependencies:** Hellfire X-03 Power Armor
-
-**Installed If:** The Redistribute Power Armor feature and Hellfire X-03 Power Armor boxes are both checked
-
-**Change List:**
-* Replaces the full set of X-03 placed by the original mod with a partial set
 
 ## Hellfire (Creation Club)
 
@@ -397,12 +388,12 @@
 **Compatibility:**
 * This makes changes to Proctor Teagan and the Atom Cats vendor lists, so it could conflict with anything that does the same without injection (such as Some Assembly Required - a patch is provided in this installer)
 
-### Classic Advanced Power Armor Redistribution - Some Assembly Required Patch.esp
+### Power Armor to the People - Classic Advanced Power Armor - SAR.esp
 **Description:** Preserves the vendor changes from Some Assembly Required
 
-**Dependencies:** Classic Advanced Power Armor, Some Assembly Required, Redistribution feature
+**Dependencies:** Classic Advanced Power Armor, Some Assembly Required
 
-**Installed If:** The Redistribute Power Armor feature and Classic Advanced Power Armor boxes are both checked, and either of the Some Assembly Required patch options is checked (Standard of No Stat Changes)
+**Installed If:** Classic Advanced Power Armor is selected, and either of the Some Assembly Required patch options is checked (Standard of No Stat Changes)
 
 **Change List:**
 * Carry forward the changes that Some Assembly Required makes to the Atom Cats vendor list
