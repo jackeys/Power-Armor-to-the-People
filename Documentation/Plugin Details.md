@@ -90,6 +90,11 @@
 
 **Dependencies:** Gunner Outfit Pack (Standalone)
 
+## Power Armor to the People - Gunner Outfit Pack LL Integration.esp
+**Description:** Allows the new enemies from both Power Armor to the People and from the Gunner Outfit Pack - NPC Leveled List Integration to spawn
+
+**Dependencies:** Gunner Outfit Pack - NPC Leveled List Integration
+
 ## Power Armor to the People - Gunners vs Minutemen CC.esp
 **Description:** Adds the paint jobs from the Gunners vs Minutemen Creation Club content to enemies in Power Armor to the People
 

@@ -151,6 +151,7 @@ If you enjoy playing with these mods, please endorse them!
 * Bordraw for [Consistent Power Armor Overhaul](https://www.nexusmods.com/fallout4/mods/11234), which made rusty T-51 available to our beloved raiders
 * Assultdragon for [X-02 Power Armor - All Factions Paintjob](https://www.nexusmods.com/fallout4/mods/34949) and [X-03 Power Armor - All Factions Paintjob](https://www.nexusmods.com/fallout4/mods/33891)
 * DefaltTheFixer for [Gunner Outfit Pack](https://www.nexusmods.com/fallout4/mods/43686)
+* Creodron for [Gunner Outfit Pack - NPC Leveled List Integration](https://www.nexusmods.com/fallout4/mods/45070)
 
 ## Tools
 
