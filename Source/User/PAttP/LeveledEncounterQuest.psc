@@ -26,7 +26,7 @@ Event OnInit()
 EndEvent
 
 Function SetAllEncountersToPending()
-    PendingLeveledEncounters = new Encounter[Encounters.length]
+    PendingLeveledEncounters = new Encounter[0]
 
     ; All of our encounters start as pending encounters
     int i = 0
