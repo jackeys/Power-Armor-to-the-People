@@ -398,17 +398,8 @@
 * Removes the Chosen One set from vendors so you have to go find it in the world
 
 **Compatibility:**
-* This makes changes to Proctor Teagan and the Atom Cats vendor lists, so it could conflict with anything that does the same without injection (such as Some Assembly Required - a patch is provided in this installer)
-
-### Power Armor to the People - Classic Advanced Power Armor - SAR.esp
-**Description:** Preserves the vendor changes from Some Assembly Required
-
-**Dependencies:** Classic Advanced Power Armor, Some Assembly Required
-
-**Installed If:** Classic Advanced Power Armor is selected, and either of the Some Assembly Required patch options is checked (Standard of No Stat Changes)
-
-**Change List:**
-* Carry forward the changes that Some Assembly Required makes to the Atom Cats vendor list
+* This makes changes to Proctor Teagan and the Atom Cats vendor lists, so it could conflict with anything that does the same without injection
+  * Some Assembly Required is a good example - if you place this plugin lower than SAR, you will get all of the power armor sets, but if you place SAR lower, you will only get T-45 
 
 ## X-01 Tesla Upgrade Kit
 
