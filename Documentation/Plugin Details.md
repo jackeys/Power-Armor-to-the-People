@@ -192,6 +192,7 @@
 * Adds Brotherhood of Steel combinations to the X-02 armor records
 * Injects X-02 power armor sets for the Brotherhood of Steel for ranks Knight and higher
 * Adds X-02 as an uncommon power armor piece available for purchase from Proctor Teagan starting at level 21 if the player is a Knight
+* Gives the X-02 worn by the Gunners a military paint job
 
 **Compatibility:**
 * Requires a patch for Some Assembly Required (included in the installer)
@@ -258,6 +259,7 @@
 * Adds Brotherhood of Steel combinations to the X-03 armor records
 * Injects X-03 power armor sets for the Brotherhood of Steel for ranks Knight and higher
 * Adds Hellfire X-03 as an uncommon item available from Proctor Teagan
+* Gives the X-03 worn by the Gunners a military paint job
 
 **Compatibility:**
 * Requires a patch for Some Assembly Required (included in the installer)
