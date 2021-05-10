@@ -327,8 +327,8 @@
 **Dependencies:** Institute Power Armor
 
 **Change List:**
-* Adds combinations for Linings B-F to every piece of the Institute power armor
 * Carries forward the armor rating and durability changes from Some Assembly Required
+* Removes the abandoned set of Institute power armor that is added by the Some Assembly Required patch
 
 **Compatibility:**
 * May conflict with mods that add additional paint jobs - placing this lower should resolve that
