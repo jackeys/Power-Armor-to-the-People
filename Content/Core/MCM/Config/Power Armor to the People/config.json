@@ -94,50 +94,67 @@
                 "function": "RefreshListInjections",
                 "params": []
             }
-        },
-        {
-            "text": "Legendary Power Armor",
-            "type": "section"
-        },
-        {
-            "text": "Legendary Power Armor Drop Chance",
-            "type": "slider",
-            "help": "The chance that legendary power armor drops instead of legendary armor. At 100%, no legendary armor will ever drop.",
-            "valueOptions": {
-                "min": 0,
-                "max": 100,
-                "step": 5,
-                "sourceType": "PropertyValueFloat",
-                "sourceForm": "Power Armor to the People.esp|8AA",
-                "propertyName": "MCM_LegendaryPowerArmorDropChance"
-            }
-        },
-        {
-            "text": "Power Armored Enemy Legendary Equipment Chance",
-            "type": "slider",
-            "help": "The chance that normal power armored enemies will have a single piece of legendary power armor equipped",
-            "valueOptions": {
-                "min": 0,
-                "max": 100,
-                "step": 5,
-                "sourceType": "GlobalValue",
-                "sourceForm": "Power Armor to the People.esp|898"
-            }
-        },
-        {
-            "text": "Legendary Power Armored Enemy Legendary Equipment Chance",
-            "type": "slider",
-            "help": "The chance that legendary power armored enemies will have a single piece of legendary power armor equipped",
-            "valueOptions": {
-                "min": 0,
-                "max": 100,
-                "step": 5,
-                "sourceType": "GlobalValue",
-                "sourceForm": "Power Armor to the People.esp|899"
-            }
         }
     ],
     "pages": [
+        {
+            "pageDisplayName": "Legendary Power Armor",
+            "content": [
+                {
+                    "text": "Legendary Power Armor Drop Chance",
+                    "type": "slider",
+                    "help": "The chance that legendary power armor drops instead of legendary armor. At 100%, no legendary armor will ever drop.",
+                    "valueOptions": {
+                        "min": 0,
+                        "max": 100,
+                        "step": 5,
+                        "sourceType": "PropertyValueFloat",
+                        "sourceForm": "Power Armor to the People.esp|8AA",
+                        "propertyName": "MCM_LegendaryPowerArmorDropChance"
+                    }
+                },
+                {
+                    "text": "Power Armored Enemy Legendary Equipment Chance",
+                    "type": "slider",
+                    "help": "The chance that normal power armored enemies will have a single piece of legendary power armor equipped",
+                    "valueOptions": {
+                        "min": 0,
+                        "max": 100,
+                        "step": 5,
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People.esp|898"
+                    }
+                },
+                {
+                    "text": "Legendary Power Armored Enemy Legendary Equipment Chance",
+                    "type": "slider",
+                    "help": "The chance that legendary power armored enemies will have a single piece of legendary power armor equipped",
+                    "valueOptions": {
+                        "min": 0,
+                        "max": 100,
+                        "step": 5,
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People.esp|899"
+                    }
+                },
+                {
+                    "text": "Mod-Specific Settings",
+                    "type": "section"
+                },
+                {
+                    "text": "Captain Cosmos Redemption Machine Legendary Chance",
+                    "type": "slider",
+                    "help": "The chance that power armor or cosmic cannons from a Captain Cosmos Redemption Machine will be legendary",
+                    "valueOptions": {
+                        "min": 0,
+                        "max": 100,
+                        "step": 5,
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - Captain Cosmos.esp|806"
+                    }
+                }
+            ]
+        },
         {
             "pageDisplayName": "Mod-Dependent Settings",
             "content": [

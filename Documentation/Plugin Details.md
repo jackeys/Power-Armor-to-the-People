@@ -456,3 +456,16 @@
 **Description:** Adds horse power armor as a rare piece in raider mixed power armor sets
 
 **Dependencies:** Horse Power Armor
+
+## Captain Cosmos (Creation Club)
+
+### Power Armor to the People - Captain Cosmos.esp
+**Description:** Adds horse power armor as a rare piece in raider mixed power armor sets
+
+**Dependencies:** Captain Cosmos Creation Club content
+
+**Change List:**
+* Adds a unique Scavenger enemy to Hubris Television Studios, wearing CC-00 power armor and wielding a Cosmic Cannon
+* Adds some additional feral ghouls to Hubris Television Studios
+* Replaces the scripts for the Captain Cosmos Redemption Machines to give a chance for legendary CC-00 power armor and Cosmic Cannons to be dispensed
+* Adds legendary naming rules for CC-00 power armor and the Cosmic Cannon
