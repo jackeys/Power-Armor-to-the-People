@@ -53,6 +53,7 @@ The following power armor sets are currently supported:
 * X-02 Power Armor (Creation Club) - Thanks to ImmortalAbsol!
 * Hellfire Power Armor (Creation Club) - Thanks to ImmortalAbsol!
 * Horse Power Armor (Creation Club) - Thanks to ImmortalAbsol!
+* Captain Cosmos Power Armor (Creation Club) - Thanks to ImmortalAbsol!
 
 ## Additional Patches
 

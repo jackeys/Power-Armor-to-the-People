@@ -27,6 +27,9 @@ By default, normal power armored enemies have a 5% chance of having a legendary 
 
 Because of a bug with the Institute Power Armor, equipped Institute power armor torsos cannot be legendary. Turning them into legendary items causes them to temporarily be unequipped, and when this happens, the arms and legs all turn invisible, so I disabled them. 
 
+### Captain Cosmos Redemption Machine
+If you own the Captain Cosmos Creation Club content, the redemption machines have a chance to provide legendary CC-00 power armor and Cosmic Cannons. By default, there is a 10% chance of getting a legendary with each redemption. If you are using Mod Configuration Menu, you can adjust this chance.
+
 ## Power Armored Enemies
 Each faction has different power armor sets that they can wear, with each faction having at least one unique set of power armor. There is typically a progression, based on enemy level, of stronger power armor sets.
 
@@ -95,9 +98,10 @@ Level | Power Armor Set       | Enemy Type
 ### Unique Enemies
 In addition to the standard enemies who can wear power armor, there are some unique enemies wearing special sets. These enemies can only be encountered once, and they usually only show up once the player has reached a certain level.
 
-Name          | Power Armor Set        | Location   | Level They First Appear
-------------- | ---------------------- | ---------- | -----------------------
-Sojourner     | Chosen One Classic APA | Libertalia | 60
+Name          | Power Armor Set        | Location          | Level They First Appear
+------------- | ---------------------- | ----------------- | -----------------------
+Scavenger     | CC-00 (Creation Club)  | Hubris TV Studios | 1
+Sojourner     | Chosen One Classic APA | Libertalia        | 60
 
 ## Vendors
 
