@@ -28,9 +28,10 @@
 * Carries forward AWKCR's keywords for the Unbreakable and Lightweight legendary mods
 * Carries forward AWKCR's naming rules for power armor, merging in the naming for the Unbreakable and Lightweight effects
 * Carries forward Some Assembly Required's armor and durability changes for Gunner painted power armor
+* Changes repair requirements for Gunner painted power armor to match Some Assembly Required
 
 ## Power Armor to the People - Some Assembly Required.esp
-**Description:** Carries forward armor rating and durability values from Some Assembly Required for painted power armor sets
+**Description:** Carries forward armor rating, durability, and repair values from Some Assembly Required for painted power armor sets
 
 **Dependencies:** Power Armor to the People
 
