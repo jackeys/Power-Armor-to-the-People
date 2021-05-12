@@ -15,6 +15,8 @@ FormList Property PATTP_LegendaryTierLists_Sorted Auto Const Mandatory
 {Autofill
 A form list containing all of the tiered item lists in order from lowest tier to highest tier}
 
+int LEVELS_BETWEEN_TIERS = 7 Const
+
 Function Inject()
 	InjectIntoList(PATTP_PossibleLegendaryItemBaseLists_PowerArmor_Top, itemToInject, level)
 
@@ -29,8 +31,7 @@ Function Inject()
 EndFunction
 
 LeveledItem Function LegendaryTierListForLevel(int level)
-	; Every 10 levels is a new tier, with the first starting at level 10
-	int index = (level / 10) - 1
+	int index = (level / LEVELS_BETWEEN_TIERS)
 
 	; Ensure we are in bounds
 	index = Math.Min(index, PATTP_LegendaryTierLists_Sorted.GetSize()) as int
