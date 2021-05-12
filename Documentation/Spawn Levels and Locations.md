@@ -4,13 +4,13 @@
 The following levels are when each of the power armor sets begin to drop from legendary enemies:
 Level | Power Armor Set
 ----- | ---------------
-10    | Raider Power Armor, Excavator Power Armor
-20    | T-45
-30    | T-51, T-51c
-40    | T-60, Institute Power Armor, Enclave X-02
-50    | X-01, X-02 (CC), Hellfire (CC)
-60    | T-65
-70    | Hellfire X-03, Ultracite
+1     | Raider Power Armor, Excavator Power Armor
+7     | T-45
+14    | T-51, T-51c
+21    | T-60, Institute Power Armor, Enclave X-02
+28    | X-01, X-02 (CC), Hellfire (CC), Hellfire X-03
+35    | T-65
+42    | Classic Advanced Power Armor, Ultracite
 
 * The levels indicated above show when the weakest lining for each piece of armor begins to drop. A stronger lining unlocks every 4 levels afterwards until all linings are available for that power armor set.
 
@@ -38,12 +38,11 @@ Raiders use scavenged sets of power armor. They typically have rusty sets of pow
 
 Level | Power Armor Set
 ----- | ---------------
-14    | Raider Power Armor, Excavator Power Armor, T-45
-20    | T-51*
-30    | T-60*, Horse Power Armor (rare, individual pieces only)
-40    | X-01 (rare, individual pieces only), X-02 CC* (rare)
-50    | T-65 (rare, individual pieces only - only arms and legs)
-60    | X-03 (rare, individual pieces only)
+11    | Raider Power Armor, Excavator Power Armor, T-45
+18    | T-51*
+25    | T-60*, Horse Power Armor (rare, individual pieces only)
+32    | X-01 (rare, individual pieces only), X-02 CC* (rare), X-03 (rare, individual pieces only)
+39    | T-65 (rare, individual pieces only - only arms and legs)
 
 * T-51 is not included by default, but is configurable - it is recommended if you are using Consistent Power Armor, which adds a rusty version
 * T-60 can be turned off in the configuration, since Some Assembly Required makes T-60 exclusive to the Brotherhood of Steel
@@ -53,15 +52,14 @@ Level | Power Armor Set
 ### Gunners
 Gunners have access to power armor sets that were previously used by offshoots of the US military. They maintain and can partially upgrade their power armor for increased defense, and legendary Gunners will often have exclusive power armor sets or paint jobs.
 
-Level | Power Armor Set                          | Enemy Type
------ | ---------------------------------------- | ----------
-20    | T-45, T-51, T-51c                        | All Gunners
-30    | T-60*, Enclave X-02                      | All Gunners
-40    | X-01, X-02 (CC)*, Hellfire (CC)          | Legendary Gunners
-50    | T-65                                     | Legendary Gunners
-55    | Enclave X-02 Tesla                       | Legendary Gunners
-60    | Hellfire X-03                            | Legendary Gunners
-65    | X-01 Tesla, Classic Advanced Power Armor | Legendary Gunners
+Level | Power Armor Set                                | Enemy Type
+----- | ---------------------------------------------- | ----------
+18    | T-45, T-51, T-51c                              | All Gunners
+25    | T-60*, Enclave X-02                            | All Gunners
+32    | X-01, X-02 (CC)*, Hellfire (CC), Hellfire X-03 | Legendary Gunners
+39    | T-65                                           | Legendary Gunners
+46    | Classic Advanced Power Armor                   | Legendary Gunners
+50    | X-01 Tesla, Enclave X-02 Tesla                 | Legendary Gunners
 
 * T-60 can be turned off in the configuration, since Some Assembly Required makes T-60 exclusive to the Brotherhood of Steel
 * If the setting to give X-02 Creation Club to raiders is used, it will not be available to Gunners - the X02 Raider Power Armor mod replaces the standard set with a Raider version
@@ -69,17 +67,16 @@ Level | Power Armor Set                          | Enemy Type
 ### Brotherhood of Steel
 The Brotherhood of Steel have made it their mission to reclaim and repair pre-war technology. They have also reclaimed technology created by the Enclave from the Capitol Wasteland. All power armor sets reclaimed by the Brotherhood of Steel are painted to allow for immediate recognition.
 
-Level | Power Armor Set                 | Rank
------ | ------------------------------- | ------------
---    | _T-45_                          | Knight
---    | _T-51_                          | Knight Captain
---    | T-60                            | Paladin and higher
---    | _X-01_                          | Elder
-30    | Enclave X-02*                   | Knight and higher*
-40    | X-01*, Hellfire (CC)            | Paladin and higher*
-50    | T-65                            | Paladin and higher*
-60    | Hellfire X-03*                  | Paladin and higher*
-67    | Ultracite Power Armor           | Star Paladin
+Level | Power Armor Set                      | Rank
+----- | ------------------------------------ | ------------
+--    | _T-45_                               | Knight
+--    | _T-51_                               | Knight Captain
+--    | T-60                                 | Paladin and higher
+--    | _X-01_                               | Elder
+25    | Enclave X-02*                        | Knight and higher*
+32    | X-01*, Hellfire (CC), Hellfire X-03* | Paladin and higher*
+39    | T-65                                 | Paladin and higher*
+67    | Ultracite Power Armor                | Star Paladin
 
 * Sets shown in italics are actually provided by the Brotherhood Power Armor Overhaul mod, if you are using that - they are included here for completeness
 * Without Brotherhood Power Armor Overhaul and the BPAO patch for Power Armored Enemies, only Ultracite Power Armor applies to a specific rank
@@ -93,7 +90,7 @@ With power armor in the hands of the raider factions on the surface, the Institu
 
 Level | Power Armor Set       | Enemy Type
 ----- | --------------------- | ----------
-30    | Institute Power Armor | Synths
+25    | Institute Power Armor | Synths
 
 ### Unique Enemies
 In addition to the standard enemies who can wear power armor, there are some unique enemies wearing special sets. These enemies can only be encountered once, and they usually only show up once the player has reached a certain level.
@@ -101,7 +98,7 @@ In addition to the standard enemies who can wear power armor, there are some uni
 Name          | Power Armor Set        | Location          | Level They First Appear
 ------------- | ---------------------- | ----------------- | -----------------------
 Scavenger     | CC-00 (Creation Club)  | Hubris TV Studios | 1
-Sojourner     | Chosen One Classic APA | Libertalia        | 60
+Sojourner     | Chosen One Classic APA | Libertalia        | 50
 
 ## Vendors
 
@@ -112,12 +109,12 @@ Power Armor Set              | Location                                       | 
 Institute Power Armor        | The Institute - Requisitions                   | Allied with The Institute
 Enclave X-02                 | The Prydwyn - Proctor Teagan*                  | Promoted to Knight, Level 21 (Uncommon)
 Enclave X-02                 | Atom Cats Garage                               | Level 21 (Rare)
-T-65                         | The Prdywyn - Proctor Teagan                   | Promoted to Paladin, Level 40
-T-65                         | Atom Cats Garage                               | Level 40 (Rare)
-Hellfire X-03                | The Prdywyn - Proctor Teagan                   | Promoted to Paladin, Level 50
-Hellfire X-03                | Atom Cats Garage                               | Level 50 (Rare)
+Hellfire X-03                | The Prdywyn - Proctor Teagan                   | Promoted to Paladin, Level 28 (Uncommon)
+Hellfire X-03                | Atom Cats Garage                               | Level 28 (Rare)
+T-65                         | The Prdywyn - Proctor Teagan                   | Promoted to Paladin, Level 35 (Uncommon)
+T-65                         | Atom Cats Garage                               | Level 35 (Rare)
 Ultracite Power Armor        | The Prydwyn - Proctor Teagan                   | Promoted to Sentinel
-Classic Advanced Power Armor | The Prydwyn - Proctor Teagan, Atom Cats Garage | Level 50 (Rare)
+Classic Advanced Power Armor | The Prydwyn - Proctor Teagan, Atom Cats Garage | Level 42 (Rare)
 
 * Enclave X-02 is only available at the Brotherhood of Steel if using the All Factions Paintjob patch that gives the Brotherhood painted sets for their Knights and Paladins
 * If using Some Assembly Required, the Atom Cats mostly carry T-45 instead of the items in the table above
@@ -141,9 +138,8 @@ A leveled Enclave set will include the highest level power armor set that is ins
 Power Armor Set              | Level
 ---------------------------- | -----
 Enclave X-02                 | 21
-X-01                         | 28
-Hellfire X-03                | 50
-Classic Advanced Power Armor | 50
+X-01, Hellfire X-03          | 28
+Classic Advanced Power Armor | 42
 
 * If the set is found at a lower level, it will have the lowest leveled that is currently available
 
@@ -151,16 +147,16 @@ Classic Advanced Power Armor | 50
 
 Power Armor Set              | Legendary Drop | On Enemies                     | On Non-Hostile NPCs         | At Vendors                | Abandoned Locations
 ---------------------------- | -------------- | ------------------------------ | --------------------------- | ------------------------- | -------------------
-Excavator Power Armor        | Level 10       | Raiders                        | N/A                         | N/A                       | Thicket Excavations, Quincy Quarries (partial sets)
-T-51c                        | Level 30       | Gunners                        | N/A                         | N/A                       | National Guard Training Yard Armory - Master locksmith or Expert hacking required
+Excavator Power Armor        | Level 1        | Raiders                        | N/A                         | N/A                       | Thicket Excavations, Quincy Quarries (partial sets)
+T-51c                        | Level 14       | Gunners                        | N/A                         | N/A                       | National Guard Training Yard Armory - Master locksmith or Expert hacking required
 Horse Power Armor            | N/A            | Raiders (Rare)                 | N/A                         | N/A                       | Atomatoys Factory (Giddyup! quest)
-Institute Power Armor        | Level 40       | Synths                         | Guards inside the Institute | Institute Requisitions    | None
-Enclave X-02 Power Armor     | Level 40       | Gunners                        | Brotherhood Knights         | N/A                       | Leveled set inside hatch near Vertibird Wreckage in the Glowing Sea - Master hacking required {requires X-03 Hellfire mod}
-X-02 (Creation Club)         | Level 50       | Gunners (Rare)                 | N/A                         | N/A                       | Boston Police Rationing Site (Speak of the Devil quest)
-Hellfire (Creation Club)     | Level 50       | Gunners (Rare), Pyro (quest)   | Brotherhood Paladins        | N/A                       | None
-T-65                         | Level 60       | Gunners (Rare), Raiders (Rare) | Brotherhood Paladins        | Proctor Teagan            | On leveled sets starting at level 35*
-X-03 Hellfire                | Level 70       | Gunners (Rare), Raiders (Rare) | Brotherhood Paladins        | N/A                       | Leveled set inside hatch near Vertibird Wreckage in the Glowing Sea - Master hacking required
-Classic Advanced Power Armor | Level 70       | Gunners (Rare), Unique enemy   | N/A                         | Proctor Teagan, Atom Cats | Leveled set inside hatch near Vertibird Wreckage in the Glowing Sea - Master hacking required {requires X-03 Hellfire mod}
-Ultracite Power Armor        | Level 70       | N/A                            | Brotherhood Star Paladins   | Proctor Teagan            | None
+Institute Power Armor        | Level 21       | Synths                         | Guards inside the Institute | Institute Requisitions    | None
+Enclave X-02 Power Armor     | Level 21       | Gunners                        | Brotherhood Knights         | N/A                       | Leveled set inside hatch near Vertibird Wreckage in the Glowing Sea - Master hacking required {requires X-03 Hellfire mod}
+X-02 (Creation Club)         | Level 28       | Gunners (Rare)                 | N/A                         | N/A                       | Boston Police Rationing Site (Speak of the Devil quest)
+Hellfire (Creation Club)     | Level 28       | Gunners (Rare), Pyro (quest)   | Brotherhood Paladins        | N/A                       | None
+X-03 Hellfire                | Level 28       | Gunners (Rare), Raiders (Rare) | Brotherhood Paladins        | N/A                       | Leveled set inside hatch near Vertibird Wreckage in the Glowing Sea - Master hacking required
+T-65                         | Level 35       | Gunners (Rare), Raiders (Rare) | Brotherhood Paladins        | Proctor Teagan            | On leveled sets starting at level 35*
+Classic Advanced Power Armor | Level 42       | Gunners (Rare), Unique enemy   | N/A                         | Proctor Teagan, Atom Cats | Leveled set inside hatch near Vertibird Wreckage in the Glowing Sea - Master hacking required {requires X-03 Hellfire mod}
+Ultracite Power Armor        | Level 42       | N/A                            | Brotherhood Star Paladins   | Proctor Teagan            | None
 
 * Standard leveled sets are unavailable if using Some Assembly Required, as that mod removes the frames they would appear on
