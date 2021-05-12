@@ -76,7 +76,7 @@ Level | Power Armor Set                      | Rank
 25    | Enclave X-02*                        | Knight and higher*
 32    | X-01*, Hellfire (CC), Hellfire X-03* | Paladin and higher*
 39    | T-65                                 | Paladin and higher*
-67    | Ultracite Power Armor                | Star Paladin
+57    | Ultracite Power Armor                | Paladin-Commander and higher
 
 * Sets shown in italics are actually provided by the Brotherhood Power Armor Overhaul mod, if you are using that - they are included here for completeness
 * Without Brotherhood Power Armor Overhaul and the BPAO patch for Power Armored Enemies, only Ultracite Power Armor applies to a specific rank
