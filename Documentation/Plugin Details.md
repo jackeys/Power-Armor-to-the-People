@@ -451,6 +451,16 @@
 **Change List:**
 * Carries forward the Some Assembly Required armor rating and durability changes for X-01 power armor
 
+## Midwest Power Armor Evolution
+
+### Power Armor to the People - Midwest Power Armor Evolution.esp
+**Description:** Adds Midwest Power Armor Evolution power armor to the world, on enemies, as legendary drops, and more
+
+**Dependencies:** Midwest Power Armor Evolution Power Armor
+
+**Change List:**
+* Add Midwest Power Armor Evolution to the Brotherhood of Steel ranks, with different adornments on the left arm for each rank (requires Brotherhood Power Armor Overhaul to have them fit with the right rank)
+
 ## Horse Power Armor (Creation Club)
 
 ### Power Armor to the People - Horse Power Armor.esp

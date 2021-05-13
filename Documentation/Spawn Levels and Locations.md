@@ -73,7 +73,8 @@ Level | Power Armor Set                      | Rank
 --    | _T-51_                               | Knight Captain
 --    | T-60                                 | Paladin and higher
 --    | _X-01_                               | Elder
-25    | Enclave X-02*                        | Knight and higher*
+--    | Enclave X-02*                        | Knight and higher*
+29    | Midwest Power Armor Evolution        | Knight and higher*
 32    | X-01*, Hellfire (CC), Hellfire X-03* | Paladin and higher*
 39    | T-65                                 | Paladin and higher*
 57    | Ultracite Power Armor                | Paladin-Commander and higher
