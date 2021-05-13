@@ -7,7 +7,7 @@ Level | Power Armor Set
 1     | Raider Power Armor, Excavator Power Armor
 7     | T-45
 14    | T-51, T-51c
-21    | T-60, Institute Power Armor, Enclave X-02
+21    | T-60, Institute Power Armor, Enclave X-02, Midwest Power Armor Evolution
 28    | X-01, X-02 (CC), Hellfire (CC), Hellfire X-03
 35    | T-65
 42    | Classic Advanced Power Armor, Ultracite
