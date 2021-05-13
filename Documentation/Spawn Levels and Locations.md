@@ -96,10 +96,11 @@ Level | Power Armor Set       | Enemy Type
 ### Unique Enemies
 In addition to the standard enemies who can wear power armor, there are some unique enemies wearing special sets. These enemies can only be encountered once, and they usually only show up once the player has reached a certain level.
 
-Name          | Power Armor Set        | Location          | Level They First Appear
-------------- | ---------------------- | ----------------- | -----------------------
-Scavenger     | CC-00 (Creation Club)  | Hubris TV Studios | 1
-Sojourner     | Chosen One Classic APA | Libertalia        | 50
+Name          | Power Armor Set               | Location                         | Level They First Appear
+------------- | ----------------------------- | -------------------------------- | -----------------------
+Scavenger     | CC-00 (Creation Club)         | Hubris TV Studios                | 1
+Feral Knight  | Commonwealth Knight (Midwest) | Glowing Sea Near Red Rocket Cave | 33
+Sojourner     | Chosen One Classic APA        | Libertalia                       | 50
 
 ## Vendors
 
