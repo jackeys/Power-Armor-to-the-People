@@ -93,6 +93,11 @@ Level | Power Armor Set       | Enemy Type
 ----- | --------------------- | ----------
 25    | Institute Power Armor | Synths
 
+A few synth guards within The Institute also wear Institute Power Armor.
+
+### Vault 81
+A small number of Vault-Tec Power Armor suits were available within the Vault 81 armory and are worn by Vault 81 guards.
+
 ### Unique Enemies
 In addition to the standard enemies who can wear power armor, there are some unique enemies wearing special sets. These enemies can only be encountered once, and they usually only show up once the player has reached a certain level.
 

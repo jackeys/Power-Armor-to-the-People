@@ -467,6 +467,16 @@
 * Disable the fetch quests pointing to the two abandoned sets (can be configured to add them back)
 * Add a unique enemy, Feral Knight, wearing the Commonwealth Knight unique set of Midwest Power Armor
 
+## Vault-Tec Power Armor
+
+### Power Armor to the People - Vault-Tec Power Armor.esp
+**Description:** Adds Vault-Tec Power Armor to the world, on enemies, as legendary items, and more
+
+**Dependencies:** Vault-Tec Power Armor
+
+**Change List:**
+* Add classic Vault-Tec Power Armor to two of the guards in Vault 81
+
 ## Horse Power Armor (Creation Club)
 
 ### Power Armor to the People - Horse Power Armor.esp
