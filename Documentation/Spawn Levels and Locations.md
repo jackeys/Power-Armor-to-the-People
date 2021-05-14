@@ -7,7 +7,7 @@ Level | Power Armor Set
 1     | Raider Power Armor, Excavator Power Armor
 7     | T-45
 14    | T-51, T-51c
-21    | T-60, Institute Power Armor, Enclave X-02
+21    | T-60, Institute Power Armor, Enclave X-02, Midwest Power Armor Evolution
 28    | X-01, X-02 (CC), Hellfire (CC), Hellfire X-03
 35    | T-65
 42    | Classic Advanced Power Armor, Ultracite
@@ -73,7 +73,8 @@ Level | Power Armor Set                      | Rank
 --    | _T-51_                               | Knight Captain
 --    | T-60                                 | Paladin and higher
 --    | _X-01_                               | Elder
-25    | Enclave X-02*                        | Knight and higher*
+--    | Enclave X-02*                        | Knight and higher*
+29    | Midwest Power Armor Evolution        | Knight and higher*
 32    | X-01*, Hellfire (CC), Hellfire X-03* | Paladin and higher*
 39    | T-65                                 | Paladin and higher*
 57    | Ultracite Power Armor                | Paladin-Commander and higher
@@ -95,26 +96,28 @@ Level | Power Armor Set       | Enemy Type
 ### Unique Enemies
 In addition to the standard enemies who can wear power armor, there are some unique enemies wearing special sets. These enemies can only be encountered once, and they usually only show up once the player has reached a certain level.
 
-Name          | Power Armor Set        | Location          | Level They First Appear
-------------- | ---------------------- | ----------------- | -----------------------
-Scavenger     | CC-00 (Creation Club)  | Hubris TV Studios | 1
-Sojourner     | Chosen One Classic APA | Libertalia        | 50
+Name          | Power Armor Set               | Location                         | Level They First Appear
+------------- | ----------------------------- | -------------------------------- | -----------------------
+Scavenger     | CC-00 (Creation Club)         | Hubris TV Studios                | 1
+Feral Knight  | Commonwealth Knight (Midwest) | Glowing Sea Near Red Rocket Cave | 33
+Sojourner     | Chosen One Classic APA        | Libertalia                       | 50
 
 ## Vendors
 
 Some power armor sets are available at vendors. A vendor will typically only have a few pieces available at any given time - you will have to come back a few times to get a full set.
 
-Power Armor Set              | Location                                       | Conditions
----------------------------- | ---------------------------------------------- | ----------
-Institute Power Armor        | The Institute - Requisitions                   | Allied with The Institute
-Enclave X-02                 | The Prydwyn - Proctor Teagan*                  | Promoted to Knight, Level 21 (Uncommon)
-Enclave X-02                 | Atom Cats Garage                               | Level 21 (Rare)
-Hellfire X-03                | The Prdywyn - Proctor Teagan                   | Promoted to Paladin, Level 28 (Uncommon)
-Hellfire X-03                | Atom Cats Garage                               | Level 28 (Rare)
-T-65                         | The Prdywyn - Proctor Teagan                   | Promoted to Paladin, Level 35 (Uncommon)
-T-65                         | Atom Cats Garage                               | Level 35 (Rare)
-Ultracite Power Armor        | The Prydwyn - Proctor Teagan                   | Promoted to Sentinel
-Classic Advanced Power Armor | The Prydwyn - Proctor Teagan, Atom Cats Garage | Level 42 (Rare)
+Power Armor Set               | Location                                       | Conditions
+----------------------------- | ---------------------------------------------- | ----------
+Institute Power Armor         | The Institute - Requisitions                   | Allied with The Institute
+Enclave X-02                  | The Prydwyn - Proctor Teagan*                  | Promoted to Knight, Level 21 (Uncommon)
+Enclave X-02                  | Atom Cats Garage                               | Level 21 (Rare)
+Midwest Power Armor Evolution | The Prydwyn - Proctor Teagan                   | Promoted to Knight, Level 25 (Uncommon)
+Hellfire X-03                 | The Prdywyn - Proctor Teagan                   | Promoted to Paladin, Level 28 (Uncommon)
+Hellfire X-03                 | Atom Cats Garage                               | Level 28 (Rare)
+T-65                          | The Prdywyn - Proctor Teagan                   | Promoted to Paladin, Level 35 (Uncommon)
+T-65                          | Atom Cats Garage                               | Level 35 (Rare)
+Ultracite Power Armor         | The Prydwyn - Proctor Teagan                   | Promoted to Sentinel
+Classic Advanced Power Armor  | The Prydwyn - Proctor Teagan, Atom Cats Garage | Level 42 (Rare)
 
 * Enclave X-02 is only available at the Brotherhood of Steel if using the All Factions Paintjob patch that gives the Brotherhood painted sets for their Knights and Paladins
 * If using Some Assembly Required, the Atom Cats mostly carry T-45 instead of the items in the table above
@@ -128,7 +131,7 @@ Quincy Quarries                                | Excavator Power Armor | Partial
 National Guard Training Yard - Armory          | T-51C                 | Partial or Full Set
 Bunker West of Glowing Sea Vertibird Wreckage* | Leveled Enclave Set   | Full Set
 
-* There is a configuration setting to permanently restore the power armor placement from the original mods, in which case the above table does not apply. For power armor sets that were replaced with a unique enemy, this means the unique enemy will show up regardless of player level.
+* There is a configuration setting to permanently restore the power armor placement from the original mods, in which case the above table does not apply. For power armor sets that were replaced with a unique enemy, this may mean the unique enemy will show up regardless of player level.
 * The bunker west of the Glowing Sea Vertibird Wreckage is added by the Hellfire X-03 mod, and is only available if that mod is installed
 
 ### Leveled Enclave Set

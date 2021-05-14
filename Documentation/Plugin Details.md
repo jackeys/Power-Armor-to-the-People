@@ -451,6 +451,22 @@
 **Change List:**
 * Carries forward the Some Assembly Required armor rating and durability changes for X-01 power armor
 
+## Midwest Power Armor Evolution
+
+### Power Armor to the People - Midwest Power Armor Evolution.esp
+**Description:** Adds Midwest Power Armor Evolution power armor to the world, on enemies, as legendary drops, and more
+
+**Dependencies:** Midwest Power Armor Evolution Power Armor
+
+**Change List:**
+* Add Midwest Power Armor Evolution to the Brotherhood of Steel ranks, with different adornments on the left arm for each rank (requires Brotherhood Power Armor Overhaul to have them fit with the right rank)
+* Add both Knight and Paladin sets to Proctor Teagan's vendor inventory
+* Add Midwest Power Armor as a possible legendary drop
+* Add legendary naming rules for Midwest Power Armor
+* Disable the two abandoned sets of power armor and the enemy added near one of them (can be configured to add them back)
+* Disable the fetch quests pointing to the two abandoned sets (can be configured to add them back)
+* Add a unique enemy, Feral Knight, wearing the Commonwealth Knight unique set of Midwest Power Armor
+
 ## Horse Power Armor (Creation Club)
 
 ### Power Armor to the People - Horse Power Armor.esp
