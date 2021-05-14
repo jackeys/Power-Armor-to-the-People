@@ -131,7 +131,7 @@ Quincy Quarries                                | Excavator Power Armor | Partial
 National Guard Training Yard - Armory          | T-51C                 | Partial or Full Set
 Bunker West of Glowing Sea Vertibird Wreckage* | Leveled Enclave Set   | Full Set
 
-* There is a configuration setting to permanently restore the power armor placement from the original mods, in which case the above table does not apply. For power armor sets that were replaced with a unique enemy, this means the unique enemy will show up regardless of player level.
+* There is a configuration setting to permanently restore the power armor placement from the original mods, in which case the above table does not apply. For power armor sets that were replaced with a unique enemy, this may mean the unique enemy will show up regardless of player level.
 * The bunker west of the Glowing Sea Vertibird Wreckage is added by the Hellfire X-03 mod, and is only available if that mod is installed
 
 ### Leveled Enclave Set

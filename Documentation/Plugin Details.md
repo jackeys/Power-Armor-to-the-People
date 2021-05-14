@@ -460,6 +460,12 @@
 
 **Change List:**
 * Add Midwest Power Armor Evolution to the Brotherhood of Steel ranks, with different adornments on the left arm for each rank (requires Brotherhood Power Armor Overhaul to have them fit with the right rank)
+* Add both Knight and Paladin sets to Proctor Teagan's vendor inventory
+* Add Midwest Power Armor as a possible legendary drop
+* Add legendary naming rules for Midwest Power Armor
+* Disable the two abandoned sets of power armor and the enemy added near one of them (can be configured to add them back)
+* Disable the fetch quests pointing to the two abandoned sets (can be configured to add them back)
+* Add a unique enemy, Feral Knight, wearing the Commonwealth Knight unique set of Midwest Power Armor
 
 ## Horse Power Armor (Creation Club)
 
