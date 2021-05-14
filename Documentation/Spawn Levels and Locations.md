@@ -117,6 +117,7 @@ Institute Power Armor         | The Institute - Requisitions                   |
 Enclave X-02                  | The Prydwyn - Proctor Teagan*                  | Promoted to Knight, Level 21 (Uncommon)
 Enclave X-02                  | Atom Cats Garage                               | Level 21 (Rare)
 Midwest Power Armor Evolution | The Prydwyn - Proctor Teagan                   | Promoted to Knight, Level 25 (Uncommon)
+Vault-Tec Power Armor         | Vault 81 - The Depot                           | Level 25 (Rare)
 Hellfire X-03                 | The Prdywyn - Proctor Teagan                   | Promoted to Paladin, Level 28 (Uncommon)
 Hellfire X-03                 | Atom Cats Garage                               | Level 28 (Rare)
 T-65                          | The Prdywyn - Proctor Teagan                   | Promoted to Paladin, Level 35 (Uncommon)

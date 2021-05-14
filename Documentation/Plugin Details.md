@@ -476,6 +476,7 @@
 
 **Change List:**
 * Add classic Vault-Tec Power Armor to two of the guards in Vault 81
+* Makes Vault-Tec Power Armor rarely available for sale in Vault 81
 
 ## Horse Power Armor (Creation Club)
 
