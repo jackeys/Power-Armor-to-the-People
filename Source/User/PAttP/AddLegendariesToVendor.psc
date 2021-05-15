@@ -15,7 +15,7 @@ EndStruct
 LegendaryPlacement[] Property Legendaries Auto Const Mandatory
 {Rules for what legendary items to produce and where to put them}
 
-float Property RefreshHours = 24.0 Auto Const
+float Property RefreshHours = 48.0 Auto Const
 {The number of in-game hours between trying to generate a new legendary and replacing unpurchased ones}
 
 LegendaryItemQuestScript Property LegendaryItemQuest Auto Const Mandatory
