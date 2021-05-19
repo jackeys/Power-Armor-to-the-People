@@ -130,6 +130,7 @@ Enclave X-02                  | The Prydwyn - Proctor Teagan*                  |
 Enclave X-02                  | Atom Cats Garage                               | Level 21 (Rare)
 Midwest Power Armor Evolution | The Prydwyn - Proctor Teagan                   | Promoted to Knight, Level 25 (Uncommon)
 Vault-Tec Power Armor         | Vault 81 - The Depot                           | Level 25 (Rare) - *Can be legendary*
+X-01                          | The Prdywyn - Proctor Teagan*                  | Promoted to Paladin, Level 28 (Uncommon)
 Hellfire X-03                 | The Prdywyn - Proctor Teagan                   | Promoted to Paladin, Level 28 (Uncommon)
 Hellfire X-03                 | Atom Cats Garage                               | Level 28 (Rare)
 T-65                          | The Prdywyn - Proctor Teagan                   | Promoted to Paladin, Level 35 (Uncommon)
@@ -137,6 +138,7 @@ T-65                          | Atom Cats Garage                               |
 Ultracite Power Armor         | The Prydwyn - Proctor Teagan                   | Promoted to Sentinel
 Classic Advanced Power Armor  | The Prydwyn - Proctor Teagan, Atom Cats Garage | Level 42 (Rare)
 
+* X-01 is only available at the Brotherhood of Steel if the setting to give the Brotherhood of Steel paladins X-01 is enabled
 * Enclave X-02 is only available at the Brotherhood of Steel if using the All Factions Paintjob patch that gives the Brotherhood painted sets for their Knights and Paladins
 * If using Some Assembly Required, the Atom Cats mostly carry T-45 instead of the items in the table above
 
