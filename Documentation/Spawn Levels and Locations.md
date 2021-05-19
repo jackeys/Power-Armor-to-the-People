@@ -126,6 +126,7 @@ Some power armor sets are available at vendors. A vendor will typically only hav
 Power Armor Set               | Location                                       | Conditions
 ----------------------------- | ---------------------------------------------- | ----------
 Institute Power Armor         | The Institute - Requisitions                   | Allied with The Institute
+T-51c                         | Atom Cats Garage                               | Level 14 (Uncommon)
 Enclave X-02                  | The Prydwyn - Proctor Teagan*                  | Promoted to Knight, Level 21 (Uncommon)
 Enclave X-02                  | Atom Cats Garage                               | Level 21 (Rare)
 Midwest Power Armor Evolution | The Prydwyn - Proctor Teagan                   | Promoted to Knight, Level 25 (Uncommon)
