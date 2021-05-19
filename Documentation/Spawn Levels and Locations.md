@@ -67,6 +67,7 @@ Level | Power Armor Set                                | Enemy Type
 ----- | ---------------------------------------------- | ----------
 18    | T-45, T-51, T-51c                              | All Gunners
 25    | T-60*, Enclave X-02                            | All Gunners
+29    | Vault-Tec Power Armor                          | Gunners in/around Vaults 75 and 95
 32    | X-01, X-02 (CC)*, Hellfire (CC), Hellfire X-03 | Legendary Gunners
 39    | T-65                                           | Legendary Gunners
 46    | Classic Advanced Power Armor                   | Legendary Gunners
