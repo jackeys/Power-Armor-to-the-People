@@ -163,10 +163,10 @@ A leveled Enclave set will include the highest level power armor set that is ins
 Power Armor Set              | Level
 ---------------------------- | -----
 Enclave X-02                 | 21
-X-01, Hellfire X-03          | 28
+Hellfire X-03                | 28
 Classic Advanced Power Armor | 42
 
-* If the set is found at a lower level, it will have the lowest leveled that is currently available
+* If Enclave X-02 is unavailable, X-01 is used as a fallback
 
 # Availability Matrix
 
