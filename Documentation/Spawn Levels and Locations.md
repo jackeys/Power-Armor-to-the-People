@@ -27,6 +27,17 @@ By default, normal power armored enemies have a 5% chance of having a legendary 
 
 Because of a bug with the Institute Power Armor, equipped Institute power armor torsos cannot be legendary. Turning them into legendary items causes them to temporarily be unequipped, and when this happens, the arms and legs all turn invisible, so I disabled them. 
 
+### Legendary Power Armor at Vendors
+Some power armor sets have a chance to be sold as legendary items from vendors. By default, there is a 15% chance that every 48 hours an eligible power armor piece will be made legendary at the corresponding vendor. If you are using Mod Configuration Menu, you can adjust this chance.
+
+Legendary items from the following power armor sets can be found for purchase:
+
+Level | Power Armor Set
+----- | ---------------
+25    | Vault-Tec Power Armor
+
+See the Vendors section below for details about which vendors sell these power armor pieces.
+
 ### Captain Cosmos Redemption Machine
 If you own the Captain Cosmos Creation Club content, the redemption machines have a chance to provide legendary CC-00 power armor and Cosmic Cannons. By default, there is a 10% chance of getting a legendary with each redemption. If you are using Mod Configuration Menu, you can adjust this chance.
 
@@ -56,6 +67,7 @@ Level | Power Armor Set                                | Enemy Type
 ----- | ---------------------------------------------- | ----------
 18    | T-45, T-51, T-51c                              | All Gunners
 25    | T-60*, Enclave X-02                            | All Gunners
+29    | Vault-Tec Power Armor                          | Gunners in/around Vaults 75 and 95
 32    | X-01, X-02 (CC)*, Hellfire (CC), Hellfire X-03 | Legendary Gunners
 39    | T-65                                           | Legendary Gunners
 46    | Classic Advanced Power Armor                   | Legendary Gunners
@@ -93,6 +105,11 @@ Level | Power Armor Set       | Enemy Type
 ----- | --------------------- | ----------
 25    | Institute Power Armor | Synths
 
+A few synth guards within The Institute also wear Institute Power Armor.
+
+### Vault 81
+A small number of Vault-Tec Power Armor suits were available within the Vault 81 armory and are worn by Vault 81 guards.
+
 ### Unique Enemies
 In addition to the standard enemies who can wear power armor, there are some unique enemies wearing special sets. These enemies can only be encountered once, and they usually only show up once the player has reached a certain level.
 
@@ -112,6 +129,7 @@ Institute Power Armor         | The Institute - Requisitions                   |
 Enclave X-02                  | The Prydwyn - Proctor Teagan*                  | Promoted to Knight, Level 21 (Uncommon)
 Enclave X-02                  | Atom Cats Garage                               | Level 21 (Rare)
 Midwest Power Armor Evolution | The Prydwyn - Proctor Teagan                   | Promoted to Knight, Level 25 (Uncommon)
+Vault-Tec Power Armor         | Vault 81 - The Depot                           | Level 25 (Rare) - *Can be legendary*
 Hellfire X-03                 | The Prdywyn - Proctor Teagan                   | Promoted to Paladin, Level 28 (Uncommon)
 Hellfire X-03                 | Atom Cats Garage                               | Level 28 (Rare)
 T-65                          | The Prdywyn - Proctor Teagan                   | Promoted to Paladin, Level 35 (Uncommon)
@@ -130,6 +148,8 @@ Thicket Excavations                            | Excavator Power Armor | Partial
 Quincy Quarries                                | Excavator Power Armor | Partial
 National Guard Training Yard - Armory          | T-51C                 | Partial or Full Set
 Bunker West of Glowing Sea Vertibird Wreckage* | Leveled Enclave Set   | Full Set
+Vault 75                                       | Vault-Tec Power Armor | Arm Only
+Vault 95                                       | Vault-Tec Power Armor | Leg Only
 
 * There is a configuration setting to permanently restore the power armor placement from the original mods, in which case the above table does not apply. For power armor sets that were replaced with a unique enemy, this may mean the unique enemy will show up regardless of player level.
 * The bunker west of the Glowing Sea Vertibird Wreckage is added by the Hellfire X-03 mod, and is only available if that mod is installed

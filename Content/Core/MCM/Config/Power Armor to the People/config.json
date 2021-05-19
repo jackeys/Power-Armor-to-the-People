@@ -138,6 +138,18 @@
                     }
                 },
                 {
+                    "text": "Legendary Vendor Chance",
+                    "type": "slider",
+                    "help": "For power armor sets that can be sold as legendary items, the chance that they will be",
+                    "valueOptions": {
+                        "min": 0,
+                        "max": 100,
+                        "step": 5,
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People.esp|90b"
+                    }
+                },
+                {
                     "text": "Mod-Specific Settings",
                     "type": "section"
                 },

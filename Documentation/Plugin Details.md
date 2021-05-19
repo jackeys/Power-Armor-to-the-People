@@ -467,6 +467,23 @@
 * Disable the fetch quests pointing to the two abandoned sets (can be configured to add them back)
 * Add a unique enemy, Feral Knight, wearing the Commonwealth Knight unique set of Midwest Power Armor
 
+## Vault-Tec Power Armor
+
+### Power Armor to the People - Vault-Tec Power Armor.esp
+**Description:** Adds Vault-Tec Power Armor to the world, on enemies, as legendary items, and more
+
+**Dependencies:** Vault-Tec Power Armor
+
+**Change List:**
+* Add classic Vault-Tec Power Armor to two of the guards in Vault 81
+* Makes Vault-Tec Power Armor rarely available for sale in Vault 81
+* Has a chance to make a piece of legendary Vault-Tec power armor available for sale at Vault 81 once per 48 hours
+* Adds legendary naming rules for Vault-Tec power armor
+* Removes the abandoned power armor pieces, their chests, and the note that indicates where they are (can be configured to add them back)
+* Places two abandoned pieces of Vault-Tec power armor in Vault 75 and 95
+* Adds a Gunner in Vault-Tec power armor inside of Vault 75 starting at level 29
+* Adds a Gunner in Vault-Tec power armor outside of Vault 95 starting at level 29
+
 ## Horse Power Armor (Creation Club)
 
 ### Power Armor to the People - Horse Power Armor.esp
