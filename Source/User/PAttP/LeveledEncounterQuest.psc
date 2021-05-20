@@ -15,6 +15,10 @@ Encounter[] Property Encounters Auto Const Mandatory
 {The list of encounters that should be enabled when their specified levels are reached}
 
 Event OnInit()
+    SetupEncounters()
+EndEvent
+
+Function SetupEncounters()
     SetAllEncountersToPending()
     EnableAllEncountersForLevel(Game.GetPlayer().GetLevel())
 
@@ -23,7 +27,7 @@ Event OnInit()
         debug.trace(self + " has pending leveled encounters - registering location change listener")
         RegisterForRemoteEvent(Game.GetPlayer(), "OnLocationChange")
     EndIf
-EndEvent
+EndFunction
 
 Function SetAllEncountersToPending()
     PendingLeveledEncounters = new Encounter[0]
