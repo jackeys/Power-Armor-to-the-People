@@ -1,45 +1,57 @@
-In the 210 years since the bombs dropped, many besides the Sole Survivor have uncovered the power armor of the Old World. Some have only been able to scrap together the rusty pieces they have found until they break down, while others have learned the craft of upgrading power armor themselves to become formidable foes.
+![Overview](../Images/Mod%20Page/Overview%20Heading.png)
 
-Power Armor to the People aims to incorporate many of the lore-friendly power armor sets available on the Nexus into the Commonwealth, making them feel like they are a part of the world. It imagines a world where power armor is a little more plentiful in the hands of the inhabitants of the Commonwealth, both as scavenged legendary items and on enemies who wear the suits themselves, and less commonly found abandoned. Effort has been taken to ensure that enemies who wear each set of power armor could plausibly have the armor.
+Power Armor to the People aims to incorporate lore-friendly power armor mods into the world. Factions will wear appropriate power armor, vendors may occasionally have pieces for sale, and legendary pieces can sometimes be scavenged. The inhabitants of the Commonwealth have been scavenging for power armor for much longer than the Sole Survivor, so power armor will more frequently be found on enemies.
 
-The mod itself is a series of ESL-flagged ESPs, so if you don't want to use some of the power armor sets, you don't have to. The installer contains patches for some common mods, and will auto-detect which ones you have to try and give you the best selection of patches for your setup automatically. Some additional configuration options are available in-game if you have [Mod Configuration Menu](https://www.nexusmods.com/fallout4/mods/21497) installed.
+![Requirements](../Images/Mod%20Page/Requirements%20Heading.png)
 
-# Features
+Power Armor to the People has no hard requirements, and will work with only the base game. However, some features require other mods:
+
+* [Mod Configuration Menu](https://www.nexusmods.com/fallout4/mods/21497) allows you to configure many aspects of Power Armor to the People in-game
+* [F4SE](https://www.nexusmods.com/fallout4/mods/42147) is required for power armored enemies to be able to wear legendary power armor
+
+Since the main goal of Power Armor to the People is to incorporate other power armor mods into the world, it is highly recommended that you download all of the supported power armor sets that appeal to you to get the full experience.
+
+![Features](../Images/Mod%20Page/Features%20Heading.png)
 
 ## Power Armored Enemies
 
-Each selected power armor set will be given to certain enemies for the player to encounter. These enemies are still relatively uncommon, but you'll probably find at least one in most locations.
-
 * Raiders are only able to scrap together what they can find, using mixed sets of rusted power armor
-* Gunners have learned how to maintain and upgrade power armor, and have working sets of armor from the different offshoots of the US military and former US government
+* Gunners have learned how to maintain and upgrade power armor, and have access to an array of military power armor sets (including some from Enclave defectors)
 * The Institute has their own set of power armor
-* The Brotherhood of Steel has reclaimed power armor sets from their fight with the Enclave, and has an advanced power armor set for their Star Paladins
-
-For a full breakdown of which sets are available to each group of enemies at each level, see this article: [Spawn Levels and Locations](Spawn%20Levels%20and%20Locations.md)
+* The Brotherhood of Steel has reclaimed power armor sets from throughout the world and from their fight with the Enclave, as well as a few special-built sets
+* A few individuals can be found who have discovered or modified special power armor sets
 
 ## Legendary Power Armor
 
-There is a chance for legendary power armor to spawn in one of these ways:
-* As a standard legendary drop, whenever you could get legendary armor
-* As an equipped item on a power armored enemy
+There is a rare chance for legendary power armor to spawn in one of these ways:
+* As a drop from legendary enemies
+* As an equipped item on a power armored enemy (requires [F4SE](https://www.nexusmods.com/fallout4/mods/42147))
+* For a few sets, for sale at a vendor or redemption machine
 
 All of the base game effects are supported (with the exception of fall damage reduction), as well as the Far Harbor effects (with the appropriate patch) and a few effects that are exclusive to power armor in the base game.
 
-For a full breakdown of what level each power armor set becomes available as a possible legendary drop, as well as the default legendary chance, see this article: [Spawn Levels and Locations](Spawn%20Levels%20and%20Locations.md)
+## Vendor Integration
 
-**[F4SE](https://www.nexusmods.com/fallout4/mods/42147) is required for legendary power armor to be worn by power armored enemies**
+Some vendors will occasionally sell pieces of these power armor sets once the Sole Survivor reaches an appropriate level or meets some other condition.
 
-## Redistribute Power Armor
+## Abandoned Power Armor Changes
 
-With this feature installed, the availability of each power armor set is changed. The full set that each power armor mod adds to the world is either removed or reduced to a partial set. This makes the hunt for each set of power armor more interesting, as you typically have to find the legendary pieces or fight an enemy wearing the armor to get it.
+Most power armor mods add a way to get a full set of the power armor right from the start of the game. Power Armor to the People makes changes to this so that the sets fit into the progression when starting a new game, with full sets either removed, turned into partial sets, or moved behind locked doors depending on how high level the set is.
 
-This also makes some power armor sets available for sale at vendors. For a full breakdown of which sets are available at which vendors, see this article: [Spawn Levels and Locations](Spawn%20Levels%20and%20Locations.md)
+**Note:** This feature does not affect Creation Club power armor, since they come with a quest to retrieve them and cost real money. I personally use [Creation Club Delayed](https://www.nexusmods.com/fallout4/mods/42753) to offset this (thanks to jsalex for pointing this out).
 
-**Note:** This feature does not affect Creation Club power armor, since they come with a quest to retrieve them and I didn't want to interfere with that.
+## Configurable
 
-# Power Armor Sets
+Many of the features can be configured using [Mod Configuration Menu](https://www.nexusmods.com/fallout4/mods/21497) so that you can customize the mod to your liking. Here is an example of the kind of configuration you can expect:
 
-## Fully Featured Sets
+* The chance of finding legendary power armor with each of the supported methods
+* How likely you are to find the Brotherhood of Steel wearing power armor sets besides the standard issue
+* Whether some power armor sets are available to a specific faction or not
+* Add all of the full sets of abandoned power armor back to the game instead of using the changes made by this mod
+
+**For a full breakdown of where all of the power armor sets are distributed using each of these features, see this article: [Spawn Levels and Locations](Spawn%20Levels%20and%20Locations.md)**
+
+![Power Armor Sets](../Images/Mod%20Page/Power%20Armor%20Sets%20Heading.png)
 
 The following power armor sets are currently supported:
 * [Enclave X-02](https://www.nexusmods.com/fallout4/mods/11017)
@@ -71,57 +83,43 @@ Patches are available for the following to add additional variety to power armor
 
 Patches are available for [AWKCR](https://www.nexusmods.com/fallout4/mods/6091) as well, but that's for compatibility reasons - it does not add any additional features in relation to this mod.
 
-# Highly Recommended Mods
+![Recommended Mods](../Images/Mod%20Page/Recommended%20Mods%20Heading.png)
 
 These mods naturally fit into what Power Armor to the People is trying to achieve and are highly recommended to be included alongside it. These are the mods I play with, and patches are included in the installer to support those that need them:
 * [Consistent Power Armor Overhaul](https://www.nexusmods.com/fallout4/mods/11234) - Among other things, it adds a rusty T-51 texture which raiders can use
     * Note: If you are using AWKCR's Consistent Power Armor Overhaul replacer plugin, be sure to download the [rusty T-51 fix](https://www.nexusmods.com/fallout4/mods/50798?tab=files)
 * [Children of Atom Power Armor](https://www.nexusmods.com/fallout4/mods/47586) - Unique variants and can be worn by the Children of Atom
 * [Some Assembly Required](https://www.nexusmods.com/fallout4/mods/12050) - Makes power armor rare in the world, contributing to the feeling that people have been scavenging it for the last 210 years
-    * The Atom Cats CPAO patch from Some Assembly Required is also highly recommended to make T-60 unique to the Brotherhood of Steel
-    * The No Stat Change version is recommended, as most of the power armor sets that Power Armor to the People supports do not have a Some Assembly Required patch to maintain balance between the sets and the increase makes power armored enemies more difficult
+    * The No Stat Change version is recommended, as most of the power armor sets that Power Armor to the People supports do not have a Some Assembly Required patch to maintain balance between the sets
 
-# Installation
+![Installation](../Images/Mod%20Page/Installation%20Heading.png)
 
-Use your preferred FOMOD-compatible mod manager, such as Vortex. The installer has many patches in it, which will auto-detect your current mods and should default to the correct set for your setup. **It is highly recommended that you install this mod after you have the other power armor sets you want as a result, especially since some power armor sets feature both an ESL and an ESP version and this installer will ensure you get the right files depending on which one you have.** You can also manually toggle each power armor set and patch to customize what you get. If you select a power armor set that you do not have installed and it supports both an ESL and an ESP version, it will install the files for the ESL version by default.
+1. If you are installing mid-playthrough, it is recommended that you back up your saved game before adding new mods
+2. Install the power armor sets and other recommended mods that you want to use
+3. Use your preferred FOMOD-compatible mod manager, such as Vortex, to install Power Armor to the People
+4. The installer will automatically detect most of your mods, but double-check the Creation Club ones since they don't always work
 
-Once again, while the installer can install many patches to support your selection, all of these plugins are ESL-flagged ESPs that will not count against the normal ESP limit. For a full reference of what plugins can be installed, what they do, and when the installer will select them, see [Plugin Details](Plugin%20Details.md). Note that this list is quite long and it is not necessary to understand all of it, but it is a useful reference if you are trying to figure out what a plugin in your load order does.
+For a full reference of what plugins can be installed, what they do, and when the installer will select them, see [Plugin Details](Plugin%20Details.md). Note that this list is quite long and it is not necessary to understand all of it, but it is a useful reference if you are trying to figure out what a plugin in your load order does.
 
 ## Load Order
 
 In general, these plugins should all be as close to the bottom of your load order as possible. Patches have been included to aid in compatibility, and there are no load order dependencies within Power Armor to the People itself (outside of making sure every plugin is lower than its masters).
 
-The only known load order issue has to do with the armor records for the power armor sets in the base game, since many of the recommended mods make changes to them. Assuming you have every recommended mod and patch installed, here is how those plugins should be ordered:
-
-```
-ArmorKeywords.esm
-LegendaryPAPieces.esp
-LegendaryPAPieces - AWKCR Patch.esp
-Some Assembly Required.esp
-RaiderOverhaul.esp / RaiderPAChopShop.esp
-Power Armored Enemies - Raider Chop Shop Patch.esp
-```
-
-If you don't have some of these mods installed, the order should still be maintained for the ones that you do. These mods don't necessarily need to be right next to each other in the order - other mods can be in between them - so long as this is the order these specific mods are in.
+If you use the Stat Change version of Some Assembly Required as well as Raider Overhaul / Raider Power Armor Chop-Shop, make sure Some Assembly Required is higher in the load order so the Raider changes take effect.
 
 ## Compatibility
 
 Many of the changes made for Power Armor to the People are new records, not changes to the base game. This should make it compatible with most mods. The biggest compatibility concerns are the following:
 * Changes to the armor records for the power armor in the base game, such as changing durability / armor, or possibly even adding new paint jobs if they add a new combination to the armor for spawning the set
-* Changes to leveled lists for NPC enemies if you are using the Power Armored Enemies feature
-* Changes to some vendor inventories for the Redistribute Power Armor feature
+* Changes to leveled lists for NPCs (Gunners, Synths, Brotherhood of Steel, and Raiders)
 
-If you use a mod that affects any of these things but there is not a patch available for it in Power Armor to the People, check the [Compatibility Reference](Compatibility%20Reference.md) to see how well supporting it is. This is an ongoing effort as the community starts using the mod, so if you are able to provide details about the compatibility of another mod, please leave a comment. If you do not see the mod on the list, that doesn't mean it isn't compatible, so feel free to try it out and report back.
+If you use a mod that affects any of these things but there is not a patch available for it in Power Armor to the People, check the [Compatibility Reference](Compatibility%20Reference.md) to see how well supporting it is. If you do not see the mod on the list, that doesn't mean it isn't compatible, so feel free to try it out and report back.
 
 ## Installing Mid-Playthrough
 
-Power Armor to the People is intended to work with a new game, with each set of power armor set to show up at certain levels to provide a progression throughout the game, but this is not a requirement. Installing mid-playthrough should be safe, as this is how I have done most of my testing. **However,** there are some important things to keep in mind if you do this:
+Power Armor to the People is intended to work with a new game, with each set of power armor introduced at a certain level to provide a progression throughout the game, but this is not a requirement. Installing mid-playthrough should be safe, as this is how I have done much of my testing. The only consequence is that you may have gotten a power armor set added by one of the mods before Power Armor to the People would normally make it available. Other than that, it is recommended that you back up your saved game before adding new mods.
 
-* Legendary power armor heavily leans in favour of giving you the strongest power armor set(s) available to you based on your level (>50%, with the exact chance depending on how many power armor sets you installed). If you install Power Armor to the People while you are already a high level, your chances of getting legendary power armor for a specific lower level set will be very low unless you visit zones that are still locked to a lower level.
-* If you have already obtained some of the power armor sets from around the world, you could skip some of the normal progression (e.g. with everything installed, it shouldn't be possible to get a full set of Hellfire X-03 until at least level 60, but you could have gotten this at a much lower level first)
-* If you have already obtained some of the power armor sets from around the world, it's possible that some of the partial sets that replaced the full sets will respawn
-
-# Credits
+![Credits](../Images/Mod%20Page/Credits%20Heading.png)
 
 Since this mod has patches for so many other mods, it is really built on the shoulders of giants. Thank you to all of the mod authors who gave me permission to make patches for your work, and a special nod to AtomicTEM for uploading the No Stat Change version of Some Assembly Required at my request.
 
@@ -129,8 +127,8 @@ If you enjoy playing with these mods, please endorse them!
 
 ## Mods Directly Incorporated
 
-* FAB001 for [Institute Power Armor Availability Tweak](https://www.nexusmods.com/fallout4/mods/49243?tab=description), with its main concepts being brought into this mod for Institute Power Armor
-* BitMage for [Buy Power Armor at the Institute](https://www.nexusmods.com/fallout4/mods/15731), which was brought into the Redistribution feature
+* FAB001 for [Institute Power Armor Availability Tweak](https://www.nexusmods.com/fallout4/mods/49243?tab=description), with the concepts of having Institute Power Armor available for sale and on guards within The Institute being brought into the Institute Power Armor patch
+* BitMage for [Buy Power Armor at the Institute](https://www.nexusmods.com/fallout4/mods/15731), which was brought into the Institute Power Armor patch
 * SweXavier05 for [SweXavier05's Power Armored Enemies](https://www.nexusmods.com/fallout4/mods/24635/), which is partially incorporated as the basis for power armored enemies and which served as a major inspiration
 * ferrari365 for [Legendary Power Armor Pieces](https://www.nexusmods.com/fallout4/mods/12834), which served as a major inspiration for how I now handle legendary power armor in this mod
 * Ablaze for [Gunner Power Armor Paint](https://www.nexusmods.com/fallout4/mods/29482), which is included to provide a default paint job for Gunner power armor 
@@ -163,6 +161,6 @@ If you enjoy playing with these mods, please endorse them!
 
 ## Images
 
-I took all of the screenshots, but I did not create any of the assets in them. All of those assets were made by the authors you see credited above for their respective mods.
+I took all of the screenshots, but I did not create any of the assets in them. All of those assets were made by the authors you see credited above for their respective mods. The font used in the header images is [Overseer](https://www.dafont.com/overseer.font?text=Fallout&psize=l#null) by [Pixel Sagas](https://www.pixelsagas.com).
 
 (CC BY-NC-SA 4.0)
