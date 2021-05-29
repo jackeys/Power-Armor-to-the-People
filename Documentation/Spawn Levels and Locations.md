@@ -25,7 +25,7 @@ Each power armored enemy has a chance that one of the pieces of power armor they
 
 By default, normal power armored enemies have a 5% chance of having a legendary power armor piece equipped, and legendary power armored enemies have a 20% chance of having a legendary power armor piece equipped in addition to the normal legendary item they drop. If you are using Mod Configuration Menu, you can adjust these chances.
 
-Because of a bug with the Institute Power Armor, equipped Institute power armor torsos cannot be legendary. Turning them into legendary items causes them to temporarily be unequipped, and when this happens, the arms and legs all turn invisible, so I disabled them. 
+Because of a bug with the Institute Power Armor, legendary versions cannot be equipped by enemies. Turning them into legendary items causes them to temporarily be unequipped, and when this happens, parts of the power armor turn invisible.
 
 ### Legendary Power Armor at Vendors
 Some power armor sets have a chance to be sold as legendary items from vendors. By default, there is a 15% chance that every 48 hours an eligible power armor piece will be made legendary at the corresponding vendor. If you are using Mod Configuration Menu, you can adjust this chance.
