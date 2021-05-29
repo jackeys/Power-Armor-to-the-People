@@ -51,6 +51,12 @@ GlobalVariable Property PAttP_Setting_AbandonedPowerArmorReplacementChance Auto 
 GlobalVariable Property PAttP_Setting_AbandonedPowerArmorReplacementChanceNone Auto Const Mandatory
 {AUTOFILL Variable to hold the chance the replacement should not be used for leveled lists that depend on the feature (inverse of the above)}
 
+GlobalVariable Property PATTP_Setting_T51ForRaiders Auto Const Mandatory
+{AUTOFILL}
+
+GlobalVariable Property PATTP_Setting_X01ForBoS Auto Const Mandatory
+{AUTOFILL}
+
 CustomEvent AbandonedPowerArmorEnabledChanged
 
 ; We set both a Chance and ChanceNone to give integrators flexibility
@@ -83,6 +89,7 @@ EndFunction
 Event OnQuestInit()
     RegisterForRemoteEvent(Game.GetPlayer(), "OnPlayerLoadGame")
     RegisterCustomEvents()
+    AutodetectSettings()
     SetMCMPropertiesForDisplay()
 EndEvent
 
@@ -94,6 +101,22 @@ EndEvent
 Function RegisterCustomEvents()
     debug.trace(self + " registering for MCM events")
     RegisterForExternalEvent("OnMCMClose", "OnMCMClose")
+EndFunction
+
+Function AutodetectSettings()
+    debug.trace(self + " auto-detecting settings")
+
+    ; Check to see if any plugins with automatic settings are installed
+    if Game.IsPluginInstalled("consistent power armor overhaul.esp")
+        debug.trace("Consistent Power Armor Overhaul is installed. Enabling T-51 for raiders and X-01 for BoS")
+        PATTP_Setting_T51ForRaiders.SetValueInt(1)
+        PATTP_Setting_X01ForBoS.SetValueInt(1)
+    EndIf
+
+    if Game.IsPluginInstalled("armorkeywords.esm")
+        debug.trace("AWKCR is installed. Enabling X-01 for BoS")
+        PATTP_Setting_X01ForBoS.SetValueInt(1)
+    EndIf
 EndFunction
 
 Function OnMCMClose()
