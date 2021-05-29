@@ -41,7 +41,7 @@
 **Dependencies:** Power Armor to the People
 
 **Change List:**
-* Merge naming rules containing all legendary effects into the power armor naming rules
+* Modify R88 power armor naming rules to include legendary effects
 
 **Compatibility:**
 * If used without Ruddy88's Simple Sorter, this will cause strange names
