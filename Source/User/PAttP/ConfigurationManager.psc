@@ -57,6 +57,9 @@ GlobalVariable Property PATTP_Setting_T51ForRaiders Auto Const Mandatory
 GlobalVariable Property PATTP_Setting_X01ForBoS Auto Const Mandatory
 {AUTOFILL}
 
+bool Property MCM_ManuallyManageModDependentSettings = False Auto
+{Whether the configuration manager should adjust settings that are dependent on other mods or let the user set them manually}
+
 CustomEvent AbandonedPowerArmorEnabledChanged
 
 ; We set both a Chance and ChanceNone to give integrators flexibility
@@ -89,12 +92,20 @@ EndFunction
 Event OnQuestInit()
     RegisterForRemoteEvent(Game.GetPlayer(), "OnPlayerLoadGame")
     RegisterCustomEvents()
+
+    ; Always auto-detect settings when the mod is first installed to give the player sensible defaults
     AutodetectSettings()
+    
     SetMCMPropertiesForDisplay()
 EndEvent
 
 Event Actor.OnPlayerLoadGame(Actor akSender)
     RegisterCustomEvents()
+
+    if !MCM_ManuallyManageModDependentSettings
+        AutodetectSettings()
+    EndIf
+
     SetMCMPropertiesForDisplay()
 EndEvent
 
