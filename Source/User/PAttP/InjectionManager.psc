@@ -1,12 +1,20 @@
 Scriptname PAttP:InjectionManager Extends Quest
 
+PAttP:UpgradeManager Property UpgradeManager Auto Const Mandatory
+
 LeveledItem[] modifiedListsRegistrar
 
 CustomEvent RefreshInjection
 
 Event OnInit()
     modifiedListsRegistrar = new LeveledItem[0]
+    RegisterCustomEvents()
 EndEvent
+
+Function RegisterCustomEvents()
+    debug.trace("Registering " + Self + " for Power Armor to the People version changes")
+    RegisterForCustomEvent(UpgradeManager, "VersionChanged")
+EndFunction
 
 Function RegisterInjection(LeveledItem modifiedItemList)
     if(modifiedItemList && modifiedListsRegistrar.Find(modifiedItemList) < 0)
@@ -40,3 +48,7 @@ Function RevertAllLists()
         i += 1
     EndWhile
 EndFunction
+
+Event PAttP:UpgradeManager.VersionChanged(PAttP:UpgradeManager akSender, Var[] akArgs)
+    RefreshListInjections()
+EndEvent
