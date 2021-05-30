@@ -121,16 +121,8 @@ Function AutodetectSettings()
     bool injectionRefreshNeeded = false
 
     ; Check to see if any plugins with automatic settings are installed
-    if Game.IsPluginInstalled("consistent power armor overhaul.esp")
-        debug.trace("Consistent Power Armor Overhaul is installed. Enabling T-51 for raiders and X-01 for BoS")
-        injectionRefreshNeeded = injectionRefreshNeeded || ChangeValueInt(PATTP_Setting_T51ForRaiders, 1)
-        injectionRefreshNeeded = injectionRefreshNeeded || ChangeValueInt(PATTP_Setting_X01ForBoS, 1)
-    EndIf
-    
-    if Game.IsPluginInstalled("armorkeywords.esm")
-        debug.trace("AWKCR is installed. Enabling X-01 for BoS")
-        injectionRefreshNeeded = injectionRefreshNeeded || ChangeValueInt(PATTP_Setting_X01ForBoS, 1)
-    EndIf
+    injectionRefreshNeeded = ChangeValueBool(PATTP_Setting_T51ForRaiders, Game.IsPluginInstalled("consistent power armor overhaul.esp")) || injectionRefreshNeeded
+    injectionRefreshNeeded = ChangeValueBool(PATTP_Setting_X01ForBoS, Game.IsPluginInstalled("consistent power armor overhaul.esp") || Game.IsPluginInstalled("armorkeywords.esm")) || injectionRefreshNeeded
 
     if injectionRefreshNeeded
         InjectionManager.RefreshListInjections(true)
@@ -138,12 +130,12 @@ Function AutodetectSettings()
 EndFunction
 
 ; Returns whether the value was changed or not
-bool Function ChangeValueInt(GlobalVariable akSetting, int value)
-    if akSetting.GetValueInt() == value
+bool Function ChangeValueBool(GlobalVariable akSetting, bool value)
+    if akSetting.GetValueInt() == value as int
         return False
     EndIf
 
-    akSetting.SetValueInt(value)
+    akSetting.SetValueInt(value as int)
     return True    
 EndFunction
 
