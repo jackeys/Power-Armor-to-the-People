@@ -14,17 +14,10 @@ Event OnQuestInit()
 EndEvent
 
 Event Actor.OnPlayerLoadGame(Actor akSender)
-    debug.trace(self + " is checking if a version change occurred")
+    debug.trace(self + " is checking if a version change occurred (last version = " + lastVersion + ", current version = " + Version + ")")
     If lastVersion != Version
-        ; Schedule the upgrade to allow time for any newly added modules to finish injection
-        ; This usually only takes 1 second, the player won't notice if it takes minutes to occur, so we'll wait for a longer time just in case
-        debug.trace(self + " is scheduling an update for 60 seconds from now")
-        StartTimer(60)
+        PerformUpgrade()
     EndIf
-EndEvent
-
-Event OnTimer(int aiTimerId)
-    PerformUpgrade()
 EndEvent
 
 Function PerformUpgrade()

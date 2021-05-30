@@ -31,8 +31,15 @@ Function RegisterInjections(LeveledItem[] modifiedItemLists)
     EndWhile
 EndFunction
 
-; Activated by MCM button / changing MCM toggles
-Function RefreshListInjections()
+; The delay should be set if this is happening when the game is loading, since new modules may be injecting
+Function RefreshListInjections(bool delay = false)
+    If delay
+        ; New injections usually only take 1 second, the player won't notice if it takes minutes to occur, so we'll wait for a longer time just in case
+        debug.trace(self + " is scheduling a refresh for 60 seconds from now")
+        StartTimer(60)
+        return
+    EndIf
+
     debug.trace("Refreshing all Power Armor to the People internal injections")
     RevertAllLists()
     SendCustomEvent("RefreshInjection")
@@ -49,6 +56,10 @@ Function RevertAllLists()
     EndWhile
 EndFunction
 
-Event PAttP:UpgradeManager.VersionChanged(PAttP:UpgradeManager akSender, Var[] akArgs)
+Event OnTimer(int aiTimerId)
     RefreshListInjections()
+EndEvent
+
+Event PAttP:UpgradeManager.VersionChanged(PAttP:UpgradeManager akSender, Var[] akArgs)
+    RefreshListInjections(true)
 EndEvent

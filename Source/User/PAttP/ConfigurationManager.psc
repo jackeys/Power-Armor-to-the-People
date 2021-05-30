@@ -57,6 +57,8 @@ GlobalVariable Property PATTP_Setting_T51ForRaiders Auto Const Mandatory
 GlobalVariable Property PATTP_Setting_X01ForBoS Auto Const Mandatory
 {AUTOFILL}
 
+PAttP:InjectionManager Property InjectionManager Auto Const Mandatory
+
 bool Property MCM_ManuallyManageModDependentSettings = False Auto
 {Whether the configuration manager should adjust settings that are dependent on other mods or let the user set them manually}
 
@@ -95,7 +97,7 @@ Event OnQuestInit()
 
     ; Always auto-detect settings when the mod is first installed to give the player sensible defaults
     AutodetectSettings()
-    
+
     SetMCMPropertiesForDisplay()
 EndEvent
 
@@ -116,18 +118,33 @@ EndFunction
 
 Function AutodetectSettings()
     debug.trace(self + " auto-detecting settings")
+    bool injectionRefreshNeeded = false
 
     ; Check to see if any plugins with automatic settings are installed
     if Game.IsPluginInstalled("consistent power armor overhaul.esp")
         debug.trace("Consistent Power Armor Overhaul is installed. Enabling T-51 for raiders and X-01 for BoS")
-        PATTP_Setting_T51ForRaiders.SetValueInt(1)
-        PATTP_Setting_X01ForBoS.SetValueInt(1)
+        injectionRefreshNeeded = injectionRefreshNeeded || ChangeValueInt(PATTP_Setting_T51ForRaiders, 1)
+        injectionRefreshNeeded = injectionRefreshNeeded || ChangeValueInt(PATTP_Setting_X01ForBoS, 1)
     EndIf
-
+    
     if Game.IsPluginInstalled("armorkeywords.esm")
         debug.trace("AWKCR is installed. Enabling X-01 for BoS")
-        PATTP_Setting_X01ForBoS.SetValueInt(1)
+        injectionRefreshNeeded = injectionRefreshNeeded || ChangeValueInt(PATTP_Setting_X01ForBoS, 1)
     EndIf
+
+    if injectionRefreshNeeded
+        InjectionManager.RefreshListInjections(true)
+    EndIf
+EndFunction
+
+; Returns whether the value was changed or not
+bool Function ChangeValueInt(GlobalVariable akSetting, int value)
+    if akSetting.GetValueInt() == value
+        return False
+    EndIf
+
+    akSetting.SetValueInt(value)
+    return True    
 EndFunction
 
 Function OnMCMClose()
