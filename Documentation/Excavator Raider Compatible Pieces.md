@@ -3,7 +3,6 @@ The Excavator Raider upgrade for the torso has very specific additions to each p
 
 ## Helmets
 * Excavator
-* T-45
 * X-02 CC
 * X-03
 * T-65
