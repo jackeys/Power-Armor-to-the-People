@@ -51,6 +51,17 @@ GlobalVariable Property PAttP_Setting_AbandonedPowerArmorReplacementChance Auto 
 GlobalVariable Property PAttP_Setting_AbandonedPowerArmorReplacementChanceNone Auto Const Mandatory
 {AUTOFILL Variable to hold the chance the replacement should not be used for leveled lists that depend on the feature (inverse of the above)}
 
+GlobalVariable Property PATTP_Setting_T51ForRaiders Auto Const Mandatory
+{AUTOFILL}
+
+GlobalVariable Property PATTP_Setting_X01ForBoS Auto Const Mandatory
+{AUTOFILL}
+
+PAttP:InjectionManager Property InjectionManager Auto Const Mandatory
+
+bool Property MCM_ManuallyManageModDependentSettings = False Auto
+{Whether the configuration manager should adjust settings that are dependent on other mods or let the user set them manually}
+
 CustomEvent AbandonedPowerArmorEnabledChanged
 
 ; We set both a Chance and ChanceNone to give integrators flexibility
@@ -83,17 +94,49 @@ EndFunction
 Event OnQuestInit()
     RegisterForRemoteEvent(Game.GetPlayer(), "OnPlayerLoadGame")
     RegisterCustomEvents()
+
+    ; Always auto-detect settings when the mod is first installed to give the player sensible defaults
+    AutodetectSettings()
+
     SetMCMPropertiesForDisplay()
 EndEvent
 
 Event Actor.OnPlayerLoadGame(Actor akSender)
     RegisterCustomEvents()
+
+    if !MCM_ManuallyManageModDependentSettings
+        AutodetectSettings()
+    EndIf
+
     SetMCMPropertiesForDisplay()
 EndEvent
 
 Function RegisterCustomEvents()
     debug.trace(self + " registering for MCM events")
     RegisterForExternalEvent("OnMCMClose", "OnMCMClose")
+EndFunction
+
+Function AutodetectSettings()
+    debug.trace(self + " auto-detecting settings")
+    bool injectionRefreshNeeded = false
+
+    ; Check to see if any plugins with automatic settings are installed
+    injectionRefreshNeeded = ChangeValueBool(PATTP_Setting_T51ForRaiders, Game.IsPluginInstalled("consistent power armor overhaul.esp")) || injectionRefreshNeeded
+    injectionRefreshNeeded = ChangeValueBool(PATTP_Setting_X01ForBoS, Game.IsPluginInstalled("consistent power armor overhaul.esp") || Game.IsPluginInstalled("armorkeywords.esm")) || injectionRefreshNeeded
+
+    if injectionRefreshNeeded
+        InjectionManager.RefreshListInjections(true)
+    EndIf
+EndFunction
+
+; Returns whether the value was changed or not
+bool Function ChangeValueBool(GlobalVariable akSetting, bool value)
+    if akSetting.GetValueInt() == value as int
+        return False
+    EndIf
+
+    akSetting.SetValueInt(value as int)
+    return True    
 EndFunction
 
 Function OnMCMClose()
