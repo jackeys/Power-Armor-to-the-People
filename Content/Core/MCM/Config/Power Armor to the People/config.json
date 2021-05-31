@@ -73,7 +73,7 @@
                 "type": "CallFunction",
                 "form": "Power Armor to the People.esp|873",
                 "function": "RefreshListInjections",
-                "params": []
+                "params": [false]
             }
         },
         {
@@ -92,7 +92,7 @@
                 "type": "CallFunction",
                 "form": "Power Armor to the People.esp|873",
                 "function": "RefreshListInjections",
-                "params": []
+                "params": [false]
             }
         }
     ],
@@ -202,7 +202,7 @@
                         "type": "CallFunction",
                         "form": "Power Armor to the People.esp|873",
                         "function": "RefreshListInjections",
-                        "params": []
+                        "params": [false]
                     },
                     "groupCondition": 1
                 },
@@ -223,7 +223,7 @@
                         "type": "CallFunction",
                         "form": "Power Armor to the People.esp|873",
                         "function": "RefreshListInjections",
-                        "params": []
+                        "params": [false]
                     },
                     "groupCondition": 1
                 },
@@ -251,7 +251,7 @@
                         "type": "CallFunction",
                         "form": "Power Armor to the People.esp|873",
                         "function": "RefreshListInjections",
-                        "params": []
+                        "params": [false]
                     }
                 }
             ]
