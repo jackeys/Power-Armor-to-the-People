@@ -7,7 +7,7 @@ Power Armor to the People is a Fallout 4 mod aimed at integrating other Power Ar
 
 The mod is a series of ESL-flagged ESPs that patch together and enhance features from the mods it aims to integrate, tied together into an installer that auto-detects which supported mods are already active.
 
-Check the [mod description](Documentation/Description.md) for complete details, including credits for the mods that Power Armor to the People is dependent on.
+Check the [wiki](https://github.com/jackeys/Power-Armor-to-the-People/wiki) for complete details, including where you can find all of the content added by the mod, how to install it, and credits for the mods that Power Armor to the People is dependent on.
 
 ## Using the Mod
 
