@@ -38,7 +38,7 @@
         {
             "text": "Chance to get rare power armor sets",
             "type": "slider",
-            "help": "The chance that raiders will get rare power armor sets, like full rusted sets of T-45 or full painted Excavator sets",
+            "help": "The chance that raiders will get rare power armor sets, like full painted Excavator sets",
             "valueOptions": {
                 "min": 0,
                 "max": 50,
