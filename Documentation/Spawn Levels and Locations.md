@@ -34,6 +34,7 @@ Legendary items from the following power armor sets can be found for purchase:
 
 Level | Power Armor Set
 ----- | ---------------
+1     | Institute Power Armor
 25    | Vault-Tec Power Armor
 
 See the Vendors section below for details about which vendors sell these power armor pieces.
@@ -125,7 +126,7 @@ Some power armor sets are available at vendors. A vendor will typically only hav
 
 Power Armor Set               | Location                                       | Conditions
 ----------------------------- | ---------------------------------------------- | ----------
-Institute Power Armor         | The Institute - Requisitions                   | Allied with The Institute
+Institute Power Armor         | The Institute - Requisitions                   | Allied with The Institute - *Can be legendary*
 T-51c                         | Atom Cats Garage                               | Level 14 (Uncommon)
 Enclave X-02                  | The Prydwyn - Proctor Teagan*                  | Promoted to Knight, Level 21 (Uncommon)
 Enclave X-02                  | Atom Cats Garage                               | Level 21 (Rare)
