@@ -2,16 +2,9 @@
 
 Power Armor to the People aims to incorporate lore-friendly power armor mods into the world. Factions will wear appropriate power armor, vendors may occasionally have pieces for sale, and legendary pieces can sometimes be scavenged. The inhabitants of the Commonwealth have been scavenging for power armor for much longer than the Sole Survivor, so power armor will more frequently be found on enemies.
 
-![Requirements](../Images/Mod%20Page/Requirements%20Heading.png)
-
-Power Armor to the People has no hard requirements, and will work with only the base game. However, some features require other mods:
-
-* [Mod Configuration Menu](https://www.nexusmods.com/fallout4/mods/21497) allows you to configure many aspects of Power Armor to the People in-game
-* [F4SE](https://www.nexusmods.com/fallout4/mods/42147) is required for power armored enemies to be able to wear legendary power armor
-
-Since the main goal of Power Armor to the People is to incorporate other power armor mods into the world, it is highly recommended that you download all of the supported power armor sets that appeal to you to get the full experience.
-
 ![Features](../Images/Mod%20Page/Features%20Heading.png)
+
+**For a full breakdown of where all of the power armor sets are distributed using each of these features, visit the [Power Armor to the People Wiki](https://github.com/jackeys/Power-Armor-to-the-People/wiki).**
 
 ## Power Armored Enemies
 
@@ -39,17 +32,6 @@ Some vendors will occasionally sell pieces of these power armor sets once the So
 Most power armor mods add a way to get a full set of the power armor right from the start of the game. Power Armor to the People makes changes to this so that the sets fit into the progression when starting a new game, with full sets either removed, turned into partial sets, or moved behind locked doors depending on how high level the set is.
 
 **Note:** This feature does not affect Creation Club power armor, since they come with a quest to retrieve them and cost real money. I personally use [Creation Club Delayed](https://www.nexusmods.com/fallout4/mods/42753) to offset this (thanks to jsalex for pointing this out).
-
-## Configurable
-
-Many of the features can be configured using [Mod Configuration Menu](https://www.nexusmods.com/fallout4/mods/21497) so that you can customize the mod to your liking. Here is an example of the kind of configuration you can expect:
-
-* The chance of finding legendary power armor with each of the supported methods
-* How likely you are to find the Brotherhood of Steel wearing power armor sets besides the standard issue
-* Whether some power armor sets are available to a specific faction or not
-* Add all of the full sets of abandoned power armor back to the game instead of using the changes made by this mod
-
-**For a full breakdown of where all of the power armor sets are distributed using each of these features, see this article: [Spawn Levels and Locations](Spawn%20Levels%20and%20Locations.md)**
 
 ![Power Armor Sets](../Images/Mod%20Page/Power%20Armor%20Sets%20Heading.png)
 
@@ -92,6 +74,15 @@ These mods naturally fit into what Power Armor to the People is trying to achiev
 * [Some Assembly Required](https://www.nexusmods.com/fallout4/mods/12050) - Makes power armor rare in the world, contributing to the feeling that people have been scavenging it for the last 210 years
     * The No Stat Change version is recommended, as most of the power armor sets that Power Armor to the People supports do not have a Some Assembly Required patch to maintain balance between the sets
 
+![Requirements](../Images/Mod%20Page/Requirements%20Heading.png)
+
+Power Armor to the People has no hard requirements, and will work with only the base game. However, some features require other mods:
+
+* [Mod Configuration Menu](https://www.nexusmods.com/fallout4/mods/21497) allows you to configure many aspects of Power Armor to the People in-game
+* [F4SE](https://www.nexusmods.com/fallout4/mods/42147) is required for power armored enemies to be able to wear legendary power armor
+
+Since the main goal of Power Armor to the People is to incorporate other power armor mods into the world, it is highly recommended that you download all of the supported power armor sets that appeal to you to get the full experience.
+
 ![Installation](../Images/Mod%20Page/Installation%20Heading.png)
 
 1. If you are installing mid-playthrough, it is recommended that you back up your saved game before adding new mods
@@ -99,25 +90,7 @@ These mods naturally fit into what Power Armor to the People is trying to achiev
 3. Use your preferred FOMOD-compatible mod manager, such as Vortex, to install Power Armor to the People
 4. The installer will automatically detect most of your mods, but double-check the Creation Club ones since they don't always work
 
-For a full reference of what plugins can be installed, what they do, and when the installer will select them, see [Plugin Details](Plugin%20Details.md). Note that this list is quite long and it is not necessary to understand all of it, but it is a useful reference if you are trying to figure out what a plugin in your load order does.
-
-## Load Order
-
-In general, these plugins should all be as close to the bottom of your load order as possible. Patches have been included to aid in compatibility, and there are no load order dependencies within Power Armor to the People itself (outside of making sure every plugin is lower than its masters).
-
-If you use the Stat Change version of Some Assembly Required as well as Raider Overhaul / Raider Power Armor Chop-Shop, make sure Some Assembly Required is higher in the load order so the Raider changes take effect.
-
-## Compatibility
-
-Many of the changes made for Power Armor to the People are new records, not changes to the base game. This should make it compatible with most mods. The biggest compatibility concerns are the following:
-* Changes to the armor records for the power armor in the base game, such as changing durability / armor, or possibly even adding new paint jobs if they add a new combination to the armor for spawning the set
-* Changes to leveled lists for NPCs (Gunners, Synths, Brotherhood of Steel, and Raiders)
-
-If you use a mod that affects any of these things but there is not a patch available for it in Power Armor to the People, check the [Compatibility Reference](Compatibility%20Reference.md) to see how well supporting it is. If you do not see the mod on the list, that doesn't mean it isn't compatible, so feel free to try it out and report back.
-
-## Installing Mid-Playthrough
-
-Power Armor to the People is intended to work with a new game, with each set of power armor introduced at a certain level to provide a progression throughout the game, but this is not a requirement. Installing mid-playthrough should be safe, as this is how I have done much of my testing. The only consequence is that you may have gotten a power armor set added by one of the mods before Power Armor to the People would normally make it available. Other than that, it is recommended that you back up your saved game before adding new mods.
+For a full installation reference, such as notes about compatibility or installing mid-playthrough, see the [Power Armor to the People Wiki](https://github.com/jackeys/Power-Armor-to-the-People/wiki/Installation).
 
 ![Credits](../Images/Mod%20Page/Credits%20Heading.png)
 
