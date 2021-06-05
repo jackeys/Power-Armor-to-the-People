@@ -77,6 +77,21 @@
             }
         },
         {
+            "text": "Make Overboss power armor rarely available to raiders",
+            "type": "switcher",
+            "help": "Give Nuka-World's Overboss power armor to other raiders besides Overboss Colter",
+            "valueOptions": {
+                "sourceType": "GlobalValue",
+                "sourceForm": "Power Armor to the People - Nuka-World.esp|802"
+            },
+            "action": {
+                "type": "CallFunction",
+                "form": "Power Armor to the People.esp|873",
+                "function": "RefreshListInjections",
+                "params": [false]
+            }
+        },
+        {
             "text": "Gunners",
             "type": "section"
         },
