@@ -165,6 +165,21 @@
                     }
                 },
                 {
+                    "text": "Allow Overboss power armor as a legendary drop",
+                    "type": "switcher",
+                    "help": "Make Nuka-World's Overboss power armor eligible as a drop from legendary enemies",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - Nuka-World.esp|804"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
                     "text": "Mod-Specific Settings",
                     "type": "section"
                 },
