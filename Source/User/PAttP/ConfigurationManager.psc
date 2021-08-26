@@ -45,6 +45,34 @@ float Property RaiderRareSetChance
     EndFunction
 EndProperty
 
+GlobalVariable Property PAttP_Setting_ScavengerPowerArmorChanceNone Auto Const Mandatory
+{AUTOFILL}
+
+; Convert our ChanceNone into a Chance so it makes more sense
+float Property MCM_ScavengerPowerArmorChance Auto
+float Property ScavengerPowerArmorChance
+    float Function get()
+        return 100.0 - PAttP_Setting_ScavengerPowerArmorChanceNone.GetValue()
+    EndFunction
+    Function set(float value)
+        PAttP_Setting_ScavengerPowerArmorChanceNone.SetValue(100.0 - value)
+    EndFunction
+EndProperty
+
+GlobalVariable Property PAttP_Setting_ScavengerFullSetChanceNone Auto Const Mandatory
+{AUTOFILL}
+
+; Convert our ChanceNone into a Chance so it makes more sense
+float Property MCM_ScavengerFullSetChance Auto
+float Property ScavengerFullSetChance
+    float Function get()
+        return 100.0 - PAttP_Setting_ScavengerFullSetChanceNone.GetValue()
+    EndFunction
+    Function set(float value)
+        PAttP_Setting_ScavengerFullSetChanceNone.SetValue(100.0 - value)
+    EndFunction
+EndProperty
+
 GlobalVariable Property PAttP_Setting_AbandonedPowerArmorReplacementChance Auto Const Mandatory
 {AUTOFILL Variable to hold the chance the replacement should be used for leveled lists that depend on the feature}
 
@@ -150,6 +178,8 @@ Function SetMCMPropertiesForDisplay()
     MCM_LegendaryPowerArmorDropChance = LegendaryPowerArmorDropChance
     MCM_RaiderRareMixedPieceChance = RaiderRareMixedPieceChance
     MCM_RaiderRareSetChance = RaiderRareSetChance
+    MCM_ScavengerFullSetChance = ScavengerFullSetChance
+    MCM_ScavengerPowerArmorChance = ScavengerPowerArmorChance
 EndFunction
 
 ; MCM properties are for display only, so this properly applies them to the game
@@ -158,4 +188,6 @@ Function ApplyMCMProperties()
     LegendaryPowerArmorDropChance = MCM_LegendaryPowerArmorDropChance
     RaiderRareMixedPieceChance = MCM_RaiderRareMixedPieceChance
     RaiderRareSetChance = MCM_RaiderRareSetChance
+    ScavengerFullSetChance = MCM_ScavengerFullSetChance
+    ScavengerPowerArmorChance = MCM_ScavengerPowerArmorChance
 EndFunction

@@ -49,9 +49,9 @@
             }
         },
         {
-            "text": "Chance to get rare rusted power armor pieces",
+            "text": "Chance to get rare power armor pieces",
             "type": "slider",
-            "help": "The chance that rusted mixed sets will contain rare power armor pieces like X-01",
+            "help": "The chance that mixed sets will contain rare power armor pieces like X-01",
             "valueOptions": {
                 "min": 0,
                 "max": 50,
@@ -108,6 +108,36 @@
                 "form": "Power Armor to the People.esp|873",
                 "function": "RefreshListInjections",
                 "params": [false]
+            }
+        },
+        {
+            "text": "Scavengers",
+            "type": "section"
+        },
+        {
+            "text": "Chance to get full power armor sets",
+            "type": "slider",
+            "help": "The chance that a scavenger in power armor will have a full rusty set instead of a mixed set",
+            "valueOptions": {
+                "min": 0,
+                "max": 50,
+                "step": 1,
+                "sourceType": "PropertyValueFloat",
+                "sourceForm": "Power Armor to the People.esp|8AA",
+                "propertyName": "MCM_ScavengerFullSetChance"
+            }
+        },
+        {
+            "text": "Chance to wear power armor",
+            "type": "slider",
+            "help": "The chance that a scavenger will be wearing power armor",
+            "valueOptions": {
+                "min": 0,
+                "max": 100,
+                "step": 1,
+                "sourceType": "PropertyValueFloat",
+                "sourceForm": "Power Armor to the People.esp|8AA",
+                "propertyName": "MCM_ScavengerPowerArmorChance"
             }
         }
     ],
