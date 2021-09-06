@@ -126,22 +126,64 @@
                 "sourceForm": "Power Armor to the People.esp|8AA",
                 "propertyName": "MCM_ScavengerFullSetChance"
             }
-        },
-        {
-            "text": "Chance to wear power armor",
-            "type": "slider",
-            "help": "The chance that a scavenger will be wearing power armor",
-            "valueOptions": {
-                "min": 0,
-                "max": 100,
-                "step": 1,
-                "sourceType": "PropertyValueFloat",
-                "sourceForm": "Power Armor to the People.esp|8AA",
-                "propertyName": "MCM_ScavengerPowerArmorChance"
-            }
         }
     ],
     "pages": [
+        {
+            "pageDisplayName": "Spawn Rates",
+            "content": [
+                {
+                    "text": "Scale Spawn Rate Based on Level",
+                    "type": "dropdown",
+                    "help": "If enabled, spawn rates will start at half what is configured and scale up linearly until around level 40",
+                    "valueOptions": {
+                      "options": ["No Scaling", "Normal Enemies Only", "Normal and Legendary Enemies"],
+                      "sourceType": "PropertyValueInt",
+                      "sourceForm": "Power Armor to the People.esp|8AA",
+                      "propertyName": "MCM_LevelScalePowerArmoredEnemies"
+                    }
+                },
+                {
+                    "text": "Raider Power Armor Chance",
+                    "type": "slider",
+                    "help": "The chance that normal raiders will spawn with power armor",
+                    "valueOptions": {
+                        "min": 0,
+                        "max": 100,
+                        "step": 1,
+                        "sourceType": "PropertyValueFloat",
+                        "sourceForm": "Power Armor to the People.esp|8AA",
+                        "propertyName": "MCM_RaiderPowerArmorChance"
+                    }
+                },
+                {
+                    "text": "Legendary Raider Power Armor Chance",
+                    "type": "slider",
+                    "help": "The chance that legendary raiders will spawn with power armor",
+                    "valueOptions": {
+                        "min": 0,
+                        "max": 100,
+                        "step": 1,
+                        "sourceType": "PropertyValueFloat",
+                        "sourceForm": "Power Armor to the People.esp|8AA",
+                        "propertyName": "MCM_LegendaryRaiderPowerArmorChance"
+                    }
+                },
+                {
+                    "text": "Scavenger Power Armor Chance",
+                    "type": "slider",
+                    "help": "The chance that scavengers will spawn with power armor",
+                    "valueOptions": {
+                        "min": 0,
+                        "max": 100,
+                        "step": 1,
+                        "sourceType": "PropertyValueFloat",
+                        "sourceForm": "Power Armor to the People.esp|8AA",
+                        "propertyName": "MCM_ScavengerPowerArmorChance"
+                    }
+                }
+            ]
+        },
         {
             "pageDisplayName": "Legendary Power Armor",
             "content": [
