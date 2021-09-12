@@ -126,22 +126,175 @@
                 "sourceForm": "Power Armor to the People.esp|8AA",
                 "propertyName": "MCM_ScavengerFullSetChance"
             }
-        },
-        {
-            "text": "Chance to wear power armor",
-            "type": "slider",
-            "help": "The chance that a scavenger will be wearing power armor",
-            "valueOptions": {
-                "min": 0,
-                "max": 100,
-                "step": 1,
-                "sourceType": "PropertyValueFloat",
-                "sourceForm": "Power Armor to the People.esp|8AA",
-                "propertyName": "MCM_ScavengerPowerArmorChance"
-            }
         }
     ],
     "pages": [
+        {
+            "pageDisplayName": "Spawn Rates",
+            "content": [
+                {
+                    "text": "These settings affect how often you will see power armored enemies. These only apply to enemies that Power Armor to the People knows about, and only if the area / enemy is high enough level, so setting a spawn rate to 100% does not mean every enemy will have power armor.",
+                    "type": "text"
+                },
+                {
+                    "text": "Scale Spawn Rate Based on Level",
+                    "type": "dropdown",
+                    "help": "If enabled, spawn rates will start at half what is configured and scale up linearly until around level 40",
+                    "valueOptions": {
+                      "options": ["No Scaling", "Normal Enemies", "Normal and Boss Enemies", "All Enemies"],
+                      "sourceType": "PropertyValueInt",
+                      "sourceForm": "Power Armor to the People.esp|8AA",
+                      "propertyName": "MCM_LevelScalePowerArmoredEnemies"
+                    }
+                },
+                {
+                    "text": "Raiders",
+                    "type": "section"
+                },
+                {
+                    "text": "Raider Power Armor Chance",
+                    "type": "slider",
+                    "help": "The chance that normal raiders will spawn with power armor",
+                    "valueOptions": {
+                        "min": 0,
+                        "max": 100,
+                        "step": 1,
+                        "sourceType": "PropertyValueFloat",
+                        "sourceForm": "Power Armor to the People.esp|8AA",
+                        "propertyName": "MCM_RaiderPowerArmorChance"
+                    }
+                },
+                {
+                    "text": "Raider Veteran Power Armor Chance",
+                    "type": "slider",
+                    "help": "The chance that Raider Veterans will spawn with power armor",
+                    "valueOptions": {
+                        "min": 0,
+                        "max": 100,
+                        "step": 1,
+                        "sourceType": "PropertyValueFloat",
+                        "sourceForm": "Power Armor to the People.esp|8AA",
+                        "propertyName": "MCM_RaiderBossPowerArmorChance"
+                    }
+                },
+                {
+                    "text": "Legendary Raider Power Armor Chance",
+                    "type": "slider",
+                    "help": "The chance that legendary raiders will spawn with power armor",
+                    "valueOptions": {
+                        "min": 0,
+                        "max": 100,
+                        "step": 1,
+                        "sourceType": "PropertyValueFloat",
+                        "sourceForm": "Power Armor to the People.esp|8AA",
+                        "propertyName": "MCM_LegendaryRaiderPowerArmorChance"
+                    }
+                },
+                {
+                    "text": "Gunners",
+                    "type": "section"
+                },
+                {
+                    "text": "Gunner Power Armor Chance",
+                    "type": "slider",
+                    "help": "The chance that normal Gunners will spawn with power armor",
+                    "valueOptions": {
+                        "min": 0,
+                        "max": 100,
+                        "step": 1,
+                        "sourceType": "PropertyValueFloat",
+                        "sourceForm": "Power Armor to the People.esp|8AA",
+                        "propertyName": "MCM_GunnerPowerArmorChance"
+                    }
+                },
+                {
+                    "text": "Gunner Commander Power Armor Chance",
+                    "type": "slider",
+                    "help": "The chance that Gunner Commanders will spawn with power armor",
+                    "valueOptions": {
+                        "min": 0,
+                        "max": 100,
+                        "step": 1,
+                        "sourceType": "PropertyValueFloat",
+                        "sourceForm": "Power Armor to the People.esp|8AA",
+                        "propertyName": "MCM_GunnerBossPowerArmorChance"
+                    }
+                },
+                {
+                    "text": "Legendary Gunner Power Armor Chance",
+                    "type": "slider",
+                    "help": "The chance that legendary Gunners will spawn with power armor",
+                    "valueOptions": {
+                        "min": 0,
+                        "max": 100,
+                        "step": 1,
+                        "sourceType": "PropertyValueFloat",
+                        "sourceForm": "Power Armor to the People.esp|8AA",
+                        "propertyName": "MCM_LegendaryGunnerPowerArmorChance"
+                    }
+                },
+                {
+                    "text": "Synths",
+                    "type": "section"
+                },
+                {
+                    "text": "Synth Power Armor Chance",
+                    "type": "slider",
+                    "help": "The chance that normal Synths will spawn with power armor",
+                    "valueOptions": {
+                        "min": 0,
+                        "max": 100,
+                        "step": 1,
+                        "sourceType": "PropertyValueFloat",
+                        "sourceForm": "Power Armor to the People.esp|8AA",
+                        "propertyName": "MCM_SynthPowerArmorChance"
+                    }
+                },
+                {
+                    "text": "Synth Leader Power Armor Chance",
+                    "type": "slider",
+                    "help": "The chance that Synth Leaders will spawn with power armor",
+                    "valueOptions": {
+                        "min": 0,
+                        "max": 100,
+                        "step": 1,
+                        "sourceType": "PropertyValueFloat",
+                        "sourceForm": "Power Armor to the People.esp|8AA",
+                        "propertyName": "MCM_SynthBossPowerArmorChance"
+                    }
+                },
+                {
+                    "text": "Legendary Synth Power Armor Chance",
+                    "type": "slider",
+                    "help": "The chance that legendary Synths will spawn with power armor",
+                    "valueOptions": {
+                        "min": 0,
+                        "max": 100,
+                        "step": 1,
+                        "sourceType": "PropertyValueFloat",
+                        "sourceForm": "Power Armor to the People.esp|8AA",
+                        "propertyName": "MCM_LegendarySynthPowerArmorChance"
+                    }
+                },
+                {
+                    "text": "Scavengers",
+                    "type": "section"
+                },
+                {
+                    "text": "Scavenger Power Armor Chance",
+                    "type": "slider",
+                    "help": "The chance that scavengers will spawn with power armor",
+                    "valueOptions": {
+                        "min": 0,
+                        "max": 100,
+                        "step": 1,
+                        "sourceType": "PropertyValueFloat",
+                        "sourceForm": "Power Armor to the People.esp|8AA",
+                        "propertyName": "MCM_ScavengerPowerArmorChance"
+                    }
+                }
+            ]
+        },
         {
             "pageDisplayName": "Legendary Power Armor",
             "content": [

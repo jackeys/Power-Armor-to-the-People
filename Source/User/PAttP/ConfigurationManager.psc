@@ -45,6 +45,20 @@ float Property RaiderRareSetChance
     EndFunction
 EndProperty
 
+GlobalVariable Property PAttP_Setting_ScavengerFullSetChanceNone Auto Const Mandatory
+{AUTOFILL}
+
+; Convert our ChanceNone into a Chance so it makes more sense
+float Property MCM_ScavengerFullSetChance Auto
+float Property ScavengerFullSetChance
+    float Function get()
+        return 100.0 - PAttP_Setting_ScavengerFullSetChanceNone.GetValue()
+    EndFunction
+    Function set(float value)
+        PAttP_Setting_ScavengerFullSetChanceNone.SetValue(100.0 - value)
+    EndFunction
+EndProperty
+
 GlobalVariable Property PAttP_Setting_ScavengerPowerArmorChanceNone Auto Const Mandatory
 {AUTOFILL}
 
@@ -59,17 +73,181 @@ float Property ScavengerPowerArmorChance
     EndFunction
 EndProperty
 
-GlobalVariable Property PAttP_Setting_ScavengerFullSetChanceNone Auto Const Mandatory
+GlobalVariable Property PAttP_Setting_RaiderPowerArmorChanceNone Auto Const Mandatory
 {AUTOFILL}
 
 ; Convert our ChanceNone into a Chance so it makes more sense
-float Property MCM_ScavengerFullSetChance Auto
-float Property ScavengerFullSetChance
+float Property MCM_RaiderPowerArmorChance Auto
+float Property RaiderPowerArmorChance
     float Function get()
-        return 100.0 - PAttP_Setting_ScavengerFullSetChanceNone.GetValue()
+        return 100.0 - PAttP_Setting_RaiderPowerArmorChanceNone.GetValue()
     EndFunction
     Function set(float value)
-        PAttP_Setting_ScavengerFullSetChanceNone.SetValue(100.0 - value)
+        PAttP_Setting_RaiderPowerArmorChanceNone.SetValue(100.0 - value)
+    EndFunction
+EndProperty
+
+GlobalVariable Property PAttP_Setting_RaiderBossPowerArmorChanceNone Auto Const Mandatory
+{AUTOFILL}
+
+; Convert our ChanceNone into a Chance so it makes more sense
+float Property MCM_RaiderBossPowerArmorChance Auto
+float Property RaiderBossPowerArmorChance
+    float Function get()
+        return 100.0 - PAttP_Setting_RaiderBossPowerArmorChanceNone.GetValue()
+    EndFunction
+    Function set(float value)
+        PAttP_Setting_RaiderBossPowerArmorChanceNone.SetValue(100.0 - value)
+    EndFunction
+EndProperty
+
+GlobalVariable Property PAttP_Setting_LegendaryRaiderPowerArmorChanceNone Auto Const Mandatory
+{AUTOFILL}
+
+; Convert our ChanceNone into a Chance so it makes more sense
+float Property MCM_LegendaryRaiderPowerArmorChance Auto
+float Property LegendaryRaiderPowerArmorChance
+    float Function get()
+        return 100.0 - PAttP_Setting_LegendaryRaiderPowerArmorChanceNone.GetValue()
+    EndFunction
+    Function set(float value)
+        PAttP_Setting_LegendaryRaiderPowerArmorChanceNone.SetValue(100.0 - value)
+    EndFunction
+EndProperty
+
+GlobalVariable Property PAttP_Setting_GunnerPowerArmorChanceNone Auto Const Mandatory
+{AUTOFILL}
+
+; Convert our ChanceNone into a Chance so it makes more sense
+float Property MCM_GunnerPowerArmorChance Auto
+float Property GunnerPowerArmorChance
+    float Function get()
+        return 100.0 - PAttP_Setting_GunnerPowerArmorChanceNone.GetValue()
+    EndFunction
+    Function set(float value)
+        PAttP_Setting_GunnerPowerArmorChanceNone.SetValue(100.0 - value)
+    EndFunction
+EndProperty
+
+GlobalVariable Property PAttP_Setting_GunnerBossPowerArmorChanceNone Auto Const Mandatory
+{AUTOFILL}
+
+; Convert our ChanceNone into a Chance so it makes more sense
+float Property MCM_GunnerBossPowerArmorChance Auto
+float Property GunnerBossPowerArmorChance
+    float Function get()
+        return 100.0 - PAttP_Setting_GunnerBossPowerArmorChanceNone.GetValue()
+    EndFunction
+    Function set(float value)
+        PAttP_Setting_GunnerBossPowerArmorChanceNone.SetValue(100.0 - value)
+    EndFunction
+EndProperty
+
+GlobalVariable Property PAttP_Setting_LegendaryGunnerPowerArmorChanceNone Auto Const Mandatory
+{AUTOFILL}
+
+; Convert our ChanceNone into a Chance so it makes more sense
+float Property MCM_LegendaryGunnerPowerArmorChance Auto
+float Property LegendaryGunnerPowerArmorChance
+    float Function get()
+        return 100.0 - PAttP_Setting_LegendaryGunnerPowerArmorChanceNone.GetValue()
+    EndFunction
+    Function set(float value)
+        PAttP_Setting_LegendaryGunnerPowerArmorChanceNone.SetValue(100.0 - value)
+    EndFunction
+EndProperty
+
+GlobalVariable Property PAttP_Setting_SynthPowerArmorChanceNone Auto Const Mandatory
+{AUTOFILL}
+
+; Convert our ChanceNone into a Chance so it makes more sense
+float Property MCM_SynthPowerArmorChance Auto
+float Property SynthPowerArmorChance
+    float Function get()
+        return 100.0 - PAttP_Setting_SynthPowerArmorChanceNone.GetValue()
+    EndFunction
+    Function set(float value)
+        PAttP_Setting_SynthPowerArmorChanceNone.SetValue(100.0 - value)
+    EndFunction
+EndProperty
+
+GlobalVariable Property PAttP_Setting_SynthBossPowerArmorChanceNone Auto Const Mandatory
+{AUTOFILL}
+
+; Convert our ChanceNone into a Chance so it makes more sense
+float Property MCM_SynthBossPowerArmorChance Auto
+float Property SynthBossPowerArmorChance
+    float Function get()
+        return 100.0 - PAttP_Setting_SynthBossPowerArmorChanceNone.GetValue()
+    EndFunction
+    Function set(float value)
+        PAttP_Setting_SynthBossPowerArmorChanceNone.SetValue(100.0 - value)
+    EndFunction
+EndProperty
+
+GlobalVariable Property PAttP_Setting_LegendarySynthPowerArmorChanceNone Auto Const Mandatory
+{AUTOFILL}
+
+; Convert our ChanceNone into a Chance so it makes more sense
+float Property MCM_LegendarySynthPowerArmorChance Auto
+float Property LegendarySynthPowerArmorChance
+    float Function get()
+        return 100.0 - PAttP_Setting_LegendarySynthPowerArmorChanceNone.GetValue()
+    EndFunction
+    Function set(float value)
+        PAttP_Setting_LegendarySynthPowerArmorChanceNone.SetValue(100.0 - value)
+    EndFunction
+EndProperty
+
+GlobalVariable Property PAttP_Setting_LevelScalePowerArmorEnemyChanceNone Auto Const Mandatory
+{AUTOFILL}
+GlobalVariable Property PAttP_Setting_LevelScalePowerArmorBossEnemyChanceNone Auto Const Mandatory
+{AUTOFILL}
+GlobalVariable Property PAttP_Setting_LevelScalePowerArmorLegendaryEnemyChanceNone Auto Const Mandatory
+{AUTOFILL}
+
+; A dropdown (which returns an int) can toggle these two ChanceNones between 0 (enabled) and 100 (disabled)
+int Property LEVEL_SCALING_DISABLED = 0 autoReadOnly hidden
+int Property LEVEL_SCALING_NORMAL_ENEMIES = 1 autoReadOnly hidden
+int Property LEVEL_SCALING_NORMAL_AND_BOSS_ENEMIES = 2 autoReadOnly hidden
+int Property LEVEL_SCALING_ALL_ENEMIES = 3 autoReadOnly hidden
+
+int Property LEVEL_SCALING_ON_VALUE = 0 autoReadOnly hidden
+int Property LEVEL_SCALING_OFF_VALUE = 100 autoReadOnly hidden
+
+int Property MCM_LevelScalePowerArmoredEnemies Auto
+int Property LevelScalePowerArmoredEnemies
+    int Function get()
+        If PAttP_Setting_LevelScalePowerArmorLegendaryEnemyChanceNone.GetValue() == LEVEL_SCALING_ON_VALUE
+            return LEVEL_SCALING_ALL_ENEMIES
+        Elseif PAttP_Setting_LevelScalePowerArmorBossEnemyChanceNone.GetValue() == LEVEL_SCALING_ON_VALUE
+            return LEVEL_SCALING_NORMAL_AND_BOSS_ENEMIES
+        Elseif PAttP_Setting_LevelScalePowerArmorEnemyChanceNone.GetValue() == LEVEL_SCALING_ON_VALUE
+            return LEVEL_SCALING_NORMAL_ENEMIES
+        Else
+            return LEVEL_SCALING_DISABLED
+        EndIf
+    EndFunction
+    Function set(int value)
+        If value == LEVEL_SCALING_DISABLED
+            PAttP_Setting_LevelScalePowerArmorEnemyChanceNone.SetValue(LEVEL_SCALING_OFF_VALUE)
+            PAttP_Setting_LevelScalePowerArmorBossEnemyChanceNone.SetValue(LEVEL_SCALING_OFF_VALUE)
+            PAttP_Setting_LevelScalePowerArmorLegendaryEnemyChanceNone.SetValue(LEVEL_SCALING_OFF_VALUE)
+        ElseIf value == LEVEL_SCALING_NORMAL_ENEMIES
+            PAttP_Setting_LevelScalePowerArmorEnemyChanceNone.SetValue(LEVEL_SCALING_ON_VALUE)
+            PAttP_Setting_LevelScalePowerArmorBossEnemyChanceNone.SetValue(LEVEL_SCALING_OFF_VALUE)
+            PAttP_Setting_LevelScalePowerArmorLegendaryEnemyChanceNone.SetValue(LEVEL_SCALING_OFF_VALUE)
+        ElseIf value == LEVEL_SCALING_NORMAL_AND_BOSS_ENEMIES
+            PAttP_Setting_LevelScalePowerArmorEnemyChanceNone.SetValue(LEVEL_SCALING_ON_VALUE)
+            PAttP_Setting_LevelScalePowerArmorBossEnemyChanceNone.SetValue(LEVEL_SCALING_ON_VALUE)
+            PAttP_Setting_LevelScalePowerArmorLegendaryEnemyChanceNone.SetValue(LEVEL_SCALING_OFF_VALUE)
+        ElseIf value == LEVEL_SCALING_ALL_ENEMIES
+            PAttP_Setting_LevelScalePowerArmorEnemyChanceNone.SetValue(LEVEL_SCALING_ON_VALUE)
+            PAttP_Setting_LevelScalePowerArmorBossEnemyChanceNone.SetValue(LEVEL_SCALING_ON_VALUE)
+            PAttP_Setting_LevelScalePowerArmorLegendaryEnemyChanceNone.SetValue(LEVEL_SCALING_ON_VALUE)
+        Else
+            debug.trace(self + "Received invalid enemy level scaling option " + value)
+        EndIf
     EndFunction
 EndProperty
 
@@ -180,6 +358,16 @@ Function SetMCMPropertiesForDisplay()
     MCM_RaiderRareSetChance = RaiderRareSetChance
     MCM_ScavengerFullSetChance = ScavengerFullSetChance
     MCM_ScavengerPowerArmorChance = ScavengerPowerArmorChance
+    MCM_RaiderPowerArmorChance = RaiderPowerArmorChance
+    MCM_RaiderBossPowerArmorChance = RaiderBossPowerArmorChance
+    MCM_LegendaryRaiderPowerArmorChance = LegendaryRaiderPowerArmorChance
+    MCM_GunnerPowerArmorChance = GunnerPowerArmorChance
+    MCM_GunnerBossPowerArmorChance = GunnerBossPowerArmorChance
+    MCM_LegendaryGunnerPowerArmorChance = LegendaryGunnerPowerArmorChance
+    MCM_SynthPowerArmorChance = SynthPowerArmorChance
+    MCM_SynthBossPowerArmorChance = SynthBossPowerArmorChance
+    MCM_LegendarySynthPowerArmorChance = LegendarySynthPowerArmorChance
+    MCM_LevelScalePowerArmoredEnemies = LevelScalePowerArmoredEnemies
 EndFunction
 
 ; MCM properties are for display only, so this properly applies them to the game
@@ -190,4 +378,14 @@ Function ApplyMCMProperties()
     RaiderRareSetChance = MCM_RaiderRareSetChance
     ScavengerFullSetChance = MCM_ScavengerFullSetChance
     ScavengerPowerArmorChance = MCM_ScavengerPowerArmorChance
+    RaiderPowerArmorChance = MCM_RaiderPowerArmorChance
+    RaiderBossPowerArmorChance = MCM_RaiderBossPowerArmorChance
+    LegendaryRaiderPowerArmorChance = MCM_LegendaryRaiderPowerArmorChance
+    GunnerPowerArmorChance = MCM_GunnerPowerArmorChance
+    GunnerBossPowerArmorChance = MCM_GunnerBossPowerArmorChance
+    LegendaryGunnerPowerArmorChance = MCM_LegendaryGunnerPowerArmorChance
+    SynthPowerArmorChance = MCM_SynthPowerArmorChance
+    SynthBossPowerArmorChance = MCM_SynthBossPowerArmorChance
+    LegendarySynthPowerArmorChance = MCM_LegendarySynthPowerArmorChance
+    LevelScalePowerArmoredEnemies = MCM_LevelScalePowerArmoredEnemies
 EndFunction
