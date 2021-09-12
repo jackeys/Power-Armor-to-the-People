@@ -129,6 +129,34 @@ float Property LegendaryGunnerPowerArmorChance
     EndFunction
 EndProperty
 
+GlobalVariable Property PAttP_Setting_SynthPowerArmorChanceNone Auto Const Mandatory
+{AUTOFILL}
+
+; Convert our ChanceNone into a Chance so it makes more sense
+float Property MCM_SynthPowerArmorChance Auto
+float Property SynthPowerArmorChance
+    float Function get()
+        return 100.0 - PAttP_Setting_SynthPowerArmorChanceNone.GetValue()
+    EndFunction
+    Function set(float value)
+        PAttP_Setting_SynthPowerArmorChanceNone.SetValue(100.0 - value)
+    EndFunction
+EndProperty
+
+GlobalVariable Property PAttP_Setting_LegendarySynthPowerArmorChanceNone Auto Const Mandatory
+{AUTOFILL}
+
+; Convert our ChanceNone into a Chance so it makes more sense
+float Property MCM_LegendarySynthPowerArmorChance Auto
+float Property LegendarySynthPowerArmorChance
+    float Function get()
+        return 100.0 - PAttP_Setting_LegendarySynthPowerArmorChanceNone.GetValue()
+    EndFunction
+    Function set(float value)
+        PAttP_Setting_LegendarySynthPowerArmorChanceNone.SetValue(100.0 - value)
+    EndFunction
+EndProperty
+
 GlobalVariable Property PAttP_Setting_LevelScalePowerArmorEnemyChanceNone Auto Const Mandatory
 {AUTOFILL}
 GlobalVariable Property PAttP_Setting_LevelScalePowerArmorLegendaryEnemyChanceNone Auto Const Mandatory
@@ -280,6 +308,8 @@ Function SetMCMPropertiesForDisplay()
     MCM_LegendaryRaiderPowerArmorChance = LegendaryRaiderPowerArmorChance
     MCM_GunnerPowerArmorChance = GunnerPowerArmorChance
     MCM_LegendaryGunnerPowerArmorChance = LegendaryGunnerPowerArmorChance
+    MCM_SynthPowerArmorChance = SynthPowerArmorChance
+    MCM_LegendarySynthPowerArmorChance = LegendarySynthPowerArmorChance
     MCM_LevelScalePowerArmoredEnemies = LevelScalePowerArmoredEnemies
 EndFunction
 
@@ -295,5 +325,7 @@ Function ApplyMCMProperties()
     LegendaryRaiderPowerArmorChance = MCM_LegendaryRaiderPowerArmorChance
     GunnerPowerArmorChance = MCM_GunnerPowerArmorChance
     LegendaryGunnerPowerArmorChance = MCM_LegendaryGunnerPowerArmorChance
+    SynthPowerArmorChance = MCM_SynthPowerArmorChance
+    LegendarySynthPowerArmorChance = MCM_LegendarySynthPowerArmorChance
     LevelScalePowerArmoredEnemies = MCM_LevelScalePowerArmoredEnemies
 EndFunction

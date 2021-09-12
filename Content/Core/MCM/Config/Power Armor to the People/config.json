@@ -208,6 +208,36 @@
                     }
                 },
                 {
+                    "text": "Synths",
+                    "type": "section"
+                },
+                {
+                    "text": "Synth Power Armor Chance",
+                    "type": "slider",
+                    "help": "The chance that normal Synths will spawn with power armor",
+                    "valueOptions": {
+                        "min": 0,
+                        "max": 100,
+                        "step": 1,
+                        "sourceType": "PropertyValueFloat",
+                        "sourceForm": "Power Armor to the People.esp|8AA",
+                        "propertyName": "MCM_SynthPowerArmorChance"
+                    }
+                },
+                {
+                    "text": "Legendary Synth Power Armor Chance",
+                    "type": "slider",
+                    "help": "The chance that legendary Synths will spawn with power armor",
+                    "valueOptions": {
+                        "min": 0,
+                        "max": 100,
+                        "step": 1,
+                        "sourceType": "PropertyValueFloat",
+                        "sourceForm": "Power Armor to the People.esp|8AA",
+                        "propertyName": "MCM_LegendarySynthPowerArmorChance"
+                    }
+                },
+                {
                     "text": "Scavengers",
                     "type": "section"
                 },
