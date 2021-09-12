@@ -141,7 +141,7 @@
                     "type": "dropdown",
                     "help": "If enabled, spawn rates will start at half what is configured and scale up linearly until around level 40",
                     "valueOptions": {
-                      "options": ["No Scaling", "Normal Enemies Only", "Normal and Legendary Enemies"],
+                      "options": ["No Scaling", "Normal Enemies", "Normal and Boss Enemies", "All Enemies"],
                       "sourceType": "PropertyValueInt",
                       "sourceForm": "Power Armor to the People.esp|8AA",
                       "propertyName": "MCM_LevelScalePowerArmoredEnemies"
@@ -162,6 +162,19 @@
                         "sourceType": "PropertyValueFloat",
                         "sourceForm": "Power Armor to the People.esp|8AA",
                         "propertyName": "MCM_RaiderPowerArmorChance"
+                    }
+                },
+                {
+                    "text": "Raider Veteran Power Armor Chance",
+                    "type": "slider",
+                    "help": "The chance that Raider Veterans will spawn with power armor",
+                    "valueOptions": {
+                        "min": 0,
+                        "max": 100,
+                        "step": 1,
+                        "sourceType": "PropertyValueFloat",
+                        "sourceForm": "Power Armor to the People.esp|8AA",
+                        "propertyName": "MCM_RaiderBossPowerArmorChance"
                     }
                 },
                 {
@@ -195,6 +208,19 @@
                     }
                 },
                 {
+                    "text": "Gunner Commander Power Armor Chance",
+                    "type": "slider",
+                    "help": "The chance that Gunner Commanders will spawn with power armor",
+                    "valueOptions": {
+                        "min": 0,
+                        "max": 100,
+                        "step": 1,
+                        "sourceType": "PropertyValueFloat",
+                        "sourceForm": "Power Armor to the People.esp|8AA",
+                        "propertyName": "MCM_GunnerBossPowerArmorChance"
+                    }
+                },
+                {
                     "text": "Legendary Gunner Power Armor Chance",
                     "type": "slider",
                     "help": "The chance that legendary Gunners will spawn with power armor",
@@ -222,6 +248,19 @@
                         "sourceType": "PropertyValueFloat",
                         "sourceForm": "Power Armor to the People.esp|8AA",
                         "propertyName": "MCM_SynthPowerArmorChance"
+                    }
+                },
+                {
+                    "text": "Synth Leader Power Armor Chance",
+                    "type": "slider",
+                    "help": "The chance that Synth Leaders will spawn with power armor",
+                    "valueOptions": {
+                        "min": 0,
+                        "max": 100,
+                        "step": 1,
+                        "sourceType": "PropertyValueFloat",
+                        "sourceForm": "Power Armor to the People.esp|8AA",
+                        "propertyName": "MCM_SynthBossPowerArmorChance"
                     }
                 },
                 {
