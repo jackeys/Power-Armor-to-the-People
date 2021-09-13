@@ -24,6 +24,14 @@ Bool  Property ThunderboltEnabled = false Auto
 LeveledItem[] Property ThunderboltInjectionPoints Auto Mandatory Const
 int Property ThunderboltLevel Auto Mandatory Const
 
+Bool  Property BroadsiderEnabled = false Auto
+LeveledItem[] Property BroadsiderInjectionPoints Auto Mandatory Const
+int Property BroadsiderLevel Auto Mandatory Const
+
+Bool  Property CryolatorEnabled = false Auto
+LeveledItem[] Property CryolatorInjectionPoints Auto Mandatory Const
+int Property CryolatorLevel Auto Mandatory Const
+
 Function Inject()
 	; Insert all of the enabled weapons for plugins that have been detected
 	if TeslaCannonEnabled
@@ -44,6 +52,14 @@ Function Inject()
 	
 	if ThunderboltEnabled
 		InjectIfPluginPresent(0x00000872, "ccbgsfo4047-qthund.esl", ThunderboltInjectionPoints, ThunderboltLevel)
+	endif
+	
+	if BroadsiderEnabled
+		InjectIfPluginPresent(0x00188A6E, "Fallout4.esm", BroadsiderInjectionPoints, BroadsiderLevel)
+	endif
+
+	if CryolatorEnabled
+		InjectIfPluginPresent(0x00188A70, "Fallout4.esm", CryolatorInjectionPoints, CryolatorLevel)
 	endif
 EndFunction
 

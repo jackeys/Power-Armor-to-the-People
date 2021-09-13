@@ -470,6 +470,42 @@
                         "function": "RefreshListInjections",
                         "params": [false]
                     }
+                },
+                {
+                    "text": "Unique Weapons",
+                    "type": "section"
+                },
+                {
+                    "text": "Broadsider",
+                    "type": "switcher",
+                    "help": "Provide Broadsiders to power armored Raiders",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|998",
+                        "propertyName": "BroadsiderEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
+                    "text": "Cryolator",
+                    "type": "switcher",
+                    "help": "Provide Cryolators to power armored Gunners",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|998",
+                        "propertyName": "CryolatorEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
                 }
             ]
         },
