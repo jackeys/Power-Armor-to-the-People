@@ -4,6 +4,16 @@
     "minMcmVersion": 2,
     "content": [
         {
+            "text": "Indestructible Power Armor",
+            "type": "dropdown",
+            "help": "Whether enemies added by this mod have unbreakable power armor, making them harder to defeat",
+            "valueOptions": {
+              "options": ["Disabled", "Legendary Enemies", "All Enemies"],
+              "sourceType": "GlobalValue",
+              "sourceForm": "Power Armor to the People.esp|99A"
+            }
+        },
+        {
             "text": "Brotherhood of Steel",
             "type": "section"
         },
