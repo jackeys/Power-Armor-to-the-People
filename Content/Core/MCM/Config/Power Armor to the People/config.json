@@ -381,6 +381,135 @@
             ]
         },
         {
+            "pageDisplayName": "Weapons",
+            "content": [
+                {
+                    "text": "Most weapon mods that are distributed via leveled list will be available to power armored enemies as well. However, some weapons are not available this way and may be desirable only for power armored enemies. If the mod containing a weapon below is available and the setting is enabled, it will be made available.",
+                    "type": "text"
+                },
+                {
+                    "text": "Creation Club",
+                    "type": "section"
+                },
+                {
+                    "text": "Tesla Cannon",
+                    "type": "switcher",
+                    "help": "Provide tesla cannons to power armored Gunners at high levels",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|998",
+                        "propertyName": "TeslaCannonEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
+                    "text": "Heavy Incinerator",
+                    "type": "switcher",
+                    "help": "Provide heavy incinerators to power armored Gunners",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|998",
+                        "propertyName": "HeavyIncineratorEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
+                    "text": "Solar Cannon",
+                    "type": "switcher",
+                    "help": "Provide solar cannons to power armored Gunners",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|998",
+                        "propertyName": "SolarCannonEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
+                    "text": "Cosmic Cannon",
+                    "type": "switcher",
+                    "help": "Provide cosmic cannons to power armored Gunners",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|998",
+                        "propertyName": "CosmicCannonEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
+                    "text": "Thunderbolt",
+                    "type": "switcher",
+                    "help": "Provide Thunderbolts to power armored Gunners",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|998",
+                        "propertyName": "ThunderboltEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
+                    "text": "Unique Weapons",
+                    "type": "section"
+                },
+                {
+                    "text": "Broadsider",
+                    "type": "switcher",
+                    "help": "Provide Broadsiders to power armored Raiders",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|998",
+                        "propertyName": "BroadsiderEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
+                    "text": "Cryolator",
+                    "type": "switcher",
+                    "help": "Provide Cryolators to power armored Gunners",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|998",
+                        "propertyName": "CryolatorEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                }
+            ]
+        },
+        {
             "pageDisplayName": "Mod-Dependent Settings",
             "content": [
                 {
