@@ -8,7 +8,7 @@
             "type": "dropdown",
             "help": "Whether enemies added by this mod have unbreakable power armor, making them harder to defeat",
             "valueOptions": {
-              "options": ["Disabled", "Legendary Enemies", "All Enemies"],
+              "options": ["Disabled", "All Enemies", "Unique Enemies", "Legendary and Unique"],
               "sourceType": "GlobalValue",
               "sourceForm": "Power Armor to the People.esp|99A"
             }
