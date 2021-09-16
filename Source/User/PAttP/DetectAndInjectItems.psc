@@ -4,6 +4,8 @@ Scriptname PAttP:DetectAndInjectItems extends PAttP:InjectionQuest
 
 ; Keep these as separate properties instead of a struct so the Enabled properties can be set by MCM
 
+; CREATION CLUB
+
 Bool Property TeslaCannonEnabled = false Auto
 LeveledItem[] Property TeslaCannonInjectionPoints Auto Mandatory Const
 int Property TeslaCannonLevel Auto Mandatory Const
@@ -24,6 +26,8 @@ Bool  Property ThunderboltEnabled = false Auto
 LeveledItem[] Property ThunderboltInjectionPoints Auto Mandatory Const
 int Property ThunderboltLevel Auto Mandatory Const
 
+; UNIQUE WEAPONS
+
 Bool  Property BroadsiderEnabled = false Auto
 LeveledItem[] Property BroadsiderInjectionPoints Auto Mandatory Const
 int Property BroadsiderLevel Auto Mandatory Const
@@ -31,6 +35,16 @@ int Property BroadsiderLevel Auto Mandatory Const
 Bool  Property CryolatorEnabled = false Auto
 LeveledItem[] Property CryolatorInjectionPoints Auto Mandatory Const
 int Property CryolatorLevel Auto Mandatory Const
+
+; MOD WEAPONS
+
+Bool  Property UltraciteEnabled = false Auto
+LeveledItem[] Property UltraciteLaserAutoInjectionPoints Auto Mandatory Const
+int Property UltraciteLaserAutoLevel Auto Mandatory Const
+LeveledItem[] Property UltraciteLaserSemiAutoInjectionPoints Auto Mandatory Const
+int Property UltraciteLaserSemiAutoLevel Auto Mandatory Const
+LeveledItem[] Property UltraciteGatlingInjectionPoints Auto Mandatory Const
+int Property UltraciteGatlingLevel Auto Mandatory Const
 
 Function Inject()
 	; Insert all of the enabled weapons for plugins that have been detected
@@ -60,6 +74,12 @@ Function Inject()
 
 	if CryolatorEnabled
 		InjectIfPluginPresent(0x00188A70, "Fallout4.esm", CryolatorInjectionPoints, CryolatorLevel)
+	endif
+
+	if UltraciteEnabled
+		InjectIfPluginPresent(0x00000806, "Power Armor to the People - Ultracite Power Armor.esp", UltraciteLaserAutoInjectionPoints, UltraciteLaserAutoLevel)
+		InjectIfPluginPresent(0x0000081F, "Power Armor to the People - Ultracite Power Armor.esp", UltraciteLaserSemiAutoInjectionPoints, UltraciteLaserSemiAutoLevel)
+		InjectIfPluginPresent(0x00000820, "Power Armor to the People - Ultracite Power Armor.esp", UltraciteGatlingInjectionPoints, UltraciteGatlingLevel)
 	endif
 EndFunction
 

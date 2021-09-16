@@ -404,7 +404,7 @@
                 {
                     "text": "Tesla Cannon",
                     "type": "switcher",
-                    "help": "Provide tesla cannons to power armored Gunners at high levels",
+                    "help": "Provide tesla cannons to power armored Gunners and Brotherhood of Steel at high levels",
                     "valueOptions": {
                         "sourceType": "PropertyValueBool",
                         "sourceForm": "Power Armor to the People.esp|998",
@@ -509,6 +509,26 @@
                         "sourceType": "PropertyValueBool",
                         "sourceForm": "Power Armor to the People.esp|998",
                         "propertyName": "CryolatorEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
+                    "text": "Mods",
+                    "type": "section"
+                },
+                {
+                    "text": "Ultracite Weapons",
+                    "type": "switcher",
+                    "help": "Provide Ultracite laser rifles and gatling lasers to power armored Brotherhood of Steel",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|998",
+                        "propertyName": "UltraciteEnabled"
                     },
                     "action": {
                         "type": "CallFunction",
