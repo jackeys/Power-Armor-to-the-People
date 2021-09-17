@@ -420,7 +420,7 @@
                 {
                     "text": "Heavy Incinerator",
                     "type": "switcher",
-                    "help": "Provide heavy incinerators to power armored Gunners",
+                    "help": "Provide heavy incinerators to power armored Gunners and Forged",
                     "valueOptions": {
                         "sourceType": "PropertyValueBool",
                         "sourceForm": "Power Armor to the People.esp|998",
