@@ -199,6 +199,20 @@ float Property LegendarySynthPowerArmorChance
     EndFunction
 EndProperty
 
+GlobalVariable Property PAttP_Setting_MinutemenPowerArmorChanceNone Auto Const Mandatory
+{AUTOFILL}
+
+; Convert our ChanceNone into a Chance so it makes more sense
+float Property MCM_MinutemenPowerArmorChance Auto
+float Property MinutemenPowerArmorChance
+    float Function get()
+        return 100.0 - PAttP_Setting_MinutemenPowerArmorChanceNone.GetValue()
+    EndFunction
+    Function set(float value)
+        PAttP_Setting_MinutemenPowerArmorChanceNone.SetValue(100.0 - value)
+    EndFunction
+EndProperty
+
 GlobalVariable Property PAttP_Setting_LevelScalePowerArmorEnemyChanceNone Auto Const Mandatory
 {AUTOFILL}
 GlobalVariable Property PAttP_Setting_LevelScalePowerArmorBossEnemyChanceNone Auto Const Mandatory
@@ -367,6 +381,7 @@ Function SetMCMPropertiesForDisplay()
     MCM_SynthPowerArmorChance = SynthPowerArmorChance
     MCM_SynthBossPowerArmorChance = SynthBossPowerArmorChance
     MCM_LegendarySynthPowerArmorChance = LegendarySynthPowerArmorChance
+    MCM_MinutemenPowerArmorChance = MinutemenPowerArmorChance
     MCM_LevelScalePowerArmoredEnemies = LevelScalePowerArmoredEnemies
 EndFunction
 
@@ -387,5 +402,6 @@ Function ApplyMCMProperties()
     SynthPowerArmorChance = MCM_SynthPowerArmorChance
     SynthBossPowerArmorChance = MCM_SynthBossPowerArmorChance
     LegendarySynthPowerArmorChance = MCM_LegendarySynthPowerArmorChance
+    MinutemenPowerArmorChance = MCM_MinutemenPowerArmorChance
     LevelScalePowerArmoredEnemies = MCM_LevelScalePowerArmoredEnemies
 EndFunction

@@ -287,6 +287,23 @@
                     }
                 },
                 {
+                    "text": "Minutemen",
+                    "type": "section"
+                },
+                {
+                    "text": "Minutemen Power Armor Chance",
+                    "type": "slider",
+                    "help": "The chance that Minutemen will spawn with power armor",
+                    "valueOptions": {
+                        "min": 0,
+                        "max": 100,
+                        "step": 1,
+                        "sourceType": "PropertyValueFloat",
+                        "sourceForm": "Power Armor to the People.esp|8AA",
+                        "propertyName": "MCM_MinutemenPowerArmorChance"
+                    }
+                },
+                {
                     "text": "Scavengers",
                     "type": "section"
                 },
