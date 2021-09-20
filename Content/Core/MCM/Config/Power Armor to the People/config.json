@@ -42,6 +42,21 @@
             }
         },
         {
+            "text": "Make T-60 exclusive to the Brotherhood of Steel",
+            "type": "switcher",
+            "help": "Some Assembly Required removes T-60 from everywhere but the Brotherhood of Steel, if you want that consistency",
+            "valueOptions": {
+                "sourceType": "GlobalValue",
+                "sourceForm": "Power Armor to the People.esp|A1D"
+            },
+            "action": {
+                "type": "CallFunction",
+                "form": "Power Armor to the People.esp|873",
+                "function": "RefreshListInjections",
+                "params": [false]
+            }
+        },
+        {
             "text": "Raiders",
             "type": "section"
         },
@@ -72,46 +87,12 @@
             }
         },
         {
-            "text": "Make T-60 available to raiders",
-            "type": "switcher",
-            "help": "Some Assembly Required makes T-60 exclusive to the Brotherhood of Steel, if you want that consistency",
-            "valueOptions": {
-                "sourceType": "GlobalValue",
-                "sourceForm": "Power Armor to the People.esp|87B"
-            },
-            "action": {
-                "type": "CallFunction",
-                "form": "Power Armor to the People.esp|873",
-                "function": "RefreshListInjections",
-                "params": [false]
-            }
-        },
-        {
             "text": "Make Overboss power armor rarely available to raiders",
             "type": "switcher",
             "help": "Give Nuka-World's Overboss power armor to other raiders besides Overboss Colter",
             "valueOptions": {
                 "sourceType": "GlobalValue",
                 "sourceForm": "Power Armor to the People - Nuka-World.esp|802"
-            },
-            "action": {
-                "type": "CallFunction",
-                "form": "Power Armor to the People.esp|873",
-                "function": "RefreshListInjections",
-                "params": [false]
-            }
-        },
-        {
-            "text": "Gunners",
-            "type": "section"
-        },
-        {
-            "text": "Make T-60 available to Gunners",
-            "type": "switcher",
-            "help": "Some Assembly Required makes T-60 exclusive to the Brotherhood of Steel, if you want that consistency",
-            "valueOptions": {
-                "sourceType": "GlobalValue",
-                "sourceForm": "Power Armor to the People.esp|87A"
             },
             "action": {
                 "type": "CallFunction",
