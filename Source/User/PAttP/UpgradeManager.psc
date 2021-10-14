@@ -11,6 +11,10 @@ Initial quest, used to determine if the mod has been installed mid-game or not}
 Actor[] Property ActorsToResetWhenInstalledMidgame_1 Auto Const
 {Actors that need to be reset due to template changes that make them appear naked and/or without names - this only applies to actors that will never respawn by passing time in an interior cell (the Forged)}
 
+GlobalVariable Property PATTP_Setting_T60ForGunners_OBSOLETE Auto Const
+GlobalVariable Property PATTP_Setting_T60ForRaiders_OBSOLETE Auto Const
+GlobalVariable Property PATTP_Setting_T60ExclusiveToBoS Auto Const
+
 int lastVersion
 
 CustomEvent VersionChanged
@@ -30,22 +34,35 @@ Event Actor.OnPlayerLoadGame(Actor akSender)
     debug.trace(self + " is checking if a version change occurred (last version = " + lastVersion + ", current version = " + Version + ")")
     If lastVersion != Version
         PerformUpgrade()
-        lastVersion = Version
     EndIf
 EndEvent
 
 Function PerformUpgrade()
     debug.trace(self + " performing upgrade from version " + lastVersion + " to version " + Version)
+    
+    If Version >= 1 && lastVersion < 1
+        UpgradeToVersion1()
+    EndIf
+    
     Var[] args = new Var[2]
     args[0] = lastVersion
     args[1] = Version
     SendCustomEvent("VersionChanged", args)
     
-    If Version >= 1 && lastVersion < 1
-        debug.trace(self + " is resetting actors for version 1")
-        ResetActors(ActorsToResetWhenInstalledMidgame_1)
-        FixPossiblyNullForgedActors()
-    EndIf
+    lastVersion = Version
+EndFunction
+
+Function UpgradeToVersion1()
+    debug.trace(self + " is upgrading to version 1")
+    debug.trace(self + " is resetting The Forged")
+    ResetActors(ActorsToResetWhenInstalledMidgame_1)
+    FixPossiblyNullForgedActors()
+    
+    ; If T-60 was removed from Gunners or Raiders, the closest parallel is to make T-60 exclusive to the BoS
+    if PATTP_Setting_T60ForGunners_OBSOLETE.value == 0 || PATTP_Setting_T60ForRaiders_OBSOLETE.value == 0
+        debug.trace(self + " is making T-60 exclusive to the Brotherhood of Steel based on previous settings")
+        PATTP_Setting_T60ExclusiveToBoS.value = 1
+    endif
 EndFunction
 
 bool Function IsGameInProgress()
