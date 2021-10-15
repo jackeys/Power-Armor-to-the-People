@@ -34,7 +34,7 @@ EndFunction
 Bool RunOnce = false
 
 Function AttachLegendaryModToPowerArmor(Actor akRecipient)
-	debug.trace("Checking if we should attach a legendary mod to power armor for " + akRecipient)
+	debug.trace(self + " Checking if we should attach a legendary mod to power armor for " + akRecipient)
 
     ; We only want to do this once to prevent duplicate legendaries or skewed probability
     if(RunOnce)
@@ -45,7 +45,7 @@ Function AttachLegendaryModToPowerArmor(Actor akRecipient)
 	RunOnce = true
 
 	if(Utility.RandomInt(1, 100) <= LegendaryChance(akRecipient))
-		debug.trace(akRecipient + "Looking for power armor to attach a legendary mod to")
+		debug.trace(self + " Looking for power armor to attach a legendary mod to for " + akRecipient)
 
 		; This requires F4SE - be aware
 		Form[] inventory = akRecipient.GetInventoryItems()
