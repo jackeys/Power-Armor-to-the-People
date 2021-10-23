@@ -14,7 +14,7 @@ EndFunction
 Function Fragment_Terminal_02(ObjectReference akTerminalRef)
 ;BEGIN CODE
 PAttP:RedemptionMachine redemptionMachine = akTerminalRef as PAttP:RedemptionMachine
-redemptionMachine.PurchaseLegendaryItem(NewerMind43_Armor_Power_T51_ArmLeft_Settler, 100, PATTP_Setting_VendingMachineLegendaryChance)
+redemptionMachine.PurchaseLegendaryItem(NewerMind43_Armor_Power_T51_ArmLeft_Settler, 200, PATTP_Setting_VendingMachineLegendaryChance)
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -23,7 +23,7 @@ EndFunction
 Function Fragment_Terminal_03(ObjectReference akTerminalRef)
 ;BEGIN CODE
 PAttP:RedemptionMachine redemptionMachine = akTerminalRef as PAttP:RedemptionMachine
-redemptionMachine.PurchaseLegendaryItem(NewerMind43_Armor_Power_T51_ArmRight_Settler, 100, PATTP_Setting_VendingMachineLegendaryChance)
+redemptionMachine.PurchaseLegendaryItem(NewerMind43_Armor_Power_T51_ArmRight_Settler, 200, PATTP_Setting_VendingMachineLegendaryChance)
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -32,7 +32,7 @@ EndFunction
 Function Fragment_Terminal_04(ObjectReference akTerminalRef)
 ;BEGIN CODE
 PAttP:RedemptionMachine redemptionMachine = akTerminalRef as PAttP:RedemptionMachine
-redemptionMachine.PurchaseLegendaryItem(NewerMind43_Armor_Power_T51_Helmet_Settler, 100, PATTP_Setting_VendingMachineLegendaryChance)
+redemptionMachine.PurchaseLegendaryItem(NewerMind43_Armor_Power_T51_Helmet_Settler, 200, PATTP_Setting_VendingMachineLegendaryChance)
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -41,7 +41,7 @@ EndFunction
 Function Fragment_Terminal_05(ObjectReference akTerminalRef)
 ;BEGIN CODE
 PAttP:RedemptionMachine redemptionMachine = akTerminalRef as PAttP:RedemptionMachine
-redemptionMachine.PurchaseLegendaryItem(NewerMind43_Armor_Power_T51_LegLeft_Settler, 100, PATTP_Setting_VendingMachineLegendaryChance)
+redemptionMachine.PurchaseLegendaryItem(NewerMind43_Armor_Power_T51_LegLeft_Settler, 200, PATTP_Setting_VendingMachineLegendaryChance)
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -50,7 +50,7 @@ EndFunction
 Function Fragment_Terminal_06(ObjectReference akTerminalRef)
 ;BEGIN CODE
 PAttP:RedemptionMachine redemptionMachine = akTerminalRef as PAttP:RedemptionMachine
-redemptionMachine.PurchaseLegendaryItem(NewerMind43_Armor_Power_T51_LegRight_Settler, 100, PATTP_Setting_VendingMachineLegendaryChance)
+redemptionMachine.PurchaseLegendaryItem(NewerMind43_Armor_Power_T51_LegRight_Settler, 200, PATTP_Setting_VendingMachineLegendaryChance)
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -59,7 +59,7 @@ EndFunction
 Function Fragment_Terminal_07(ObjectReference akTerminalRef)
 ;BEGIN CODE
 PAttP:RedemptionMachine redemptionMachine = akTerminalRef as PAttP:RedemptionMachine
-redemptionMachine.PurchaseLegendaryItem(NewerMind43_Armor_Power_T51_Torso_Settler, 100, PATTP_Setting_VendingMachineLegendaryChance)
+redemptionMachine.PurchaseLegendaryItem(NewerMind43_Armor_Power_T51_Torso_Settler, 200, PATTP_Setting_VendingMachineLegendaryChance)
 ;END CODE
 EndFunction
 ;END FRAGMENT
