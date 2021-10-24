@@ -381,9 +381,21 @@
                     "valueOptions": {
                         "min": 0,
                         "max": 100,
-                        "step": 5,
+                        "step": 1,
                         "sourceType": "GlobalValue",
                         "sourceForm": "Power Armor to the People - Captain Cosmos.esp|806"
+                    }
+                },
+                {
+                    "text": "Settler Vendor-O-Tron Legendary Chance",
+                    "type": "slider",
+                    "help": "The chance of getting legendary items from the Settler Vigilante vendor-o-tron",
+                    "valueOptions": {
+                        "min": 0,
+                        "max": 100,
+                        "step": 1,
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People.esp|A45"
                     }
                 }
             ]
