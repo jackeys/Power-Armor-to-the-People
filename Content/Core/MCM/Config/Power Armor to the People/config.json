@@ -568,6 +568,27 @@
                     "groupControl": 1
                 },
                 {
+                    "text": "Consistent Power Armor Overhaul OR AWKCR, but NOT Brotherhood Power Armor Overhaul",
+                    "type": "section",
+                    "groupCondition": 1
+                },
+                {
+                    "text": "Make T-45 and T-51 available to Brotherhood of Steel Paladins",
+                    "type": "switcher",
+                    "help": "These mods provide a Knight paint job for T-45 and T-51, so it can be given to the Brotherhood of Steel. BPAO already does this.",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People.esp|A56"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    },
+                    "groupCondition": 1
+                },
+                {
                     "text": "Consistent Power Armor Overhaul OR AWKCR",
                     "type": "section",
                     "groupCondition": 1
@@ -575,7 +596,7 @@
                 {
                     "text": "Make X-01 available to Brotherhood of Steel Paladins",
                     "type": "switcher",
-                    "help": "These mods provide a Paladin paint job for X-01, so it can be give to the Brotherhood of Steel",
+                    "help": "These mods provide a Paladin paint job for X-01, so it can be given to the Brotherhood of Steel",
                     "valueOptions": {
                         "sourceType": "GlobalValue",
                         "sourceForm": "Power Armor to the People.esp|878"

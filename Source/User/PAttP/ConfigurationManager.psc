@@ -277,6 +277,9 @@ GlobalVariable Property PATTP_Setting_T51ForRaiders Auto Const Mandatory
 GlobalVariable Property PATTP_Setting_X01ForBoS Auto Const Mandatory
 {AUTOFILL}
 
+GlobalVariable Property PATTP_Setting_T45T51ForBoS Auto Const Mandatory
+{AUTOFILL}
+
 PAttP:InjectionManager Property InjectionManager Auto Const Mandatory
 
 bool Property MCM_ManuallyManageModDependentSettings = False Auto
@@ -343,6 +346,7 @@ Function AutodetectSettings()
     ; Check to see if any plugins with automatic settings are installed
     injectionRefreshNeeded = ChangeValueBool(PATTP_Setting_T51ForRaiders, Game.IsPluginInstalled("consistent power armor overhaul.esp")) || injectionRefreshNeeded
     injectionRefreshNeeded = ChangeValueBool(PATTP_Setting_X01ForBoS, Game.IsPluginInstalled("consistent power armor overhaul.esp") || Game.IsPluginInstalled("armorkeywords.esm")) || injectionRefreshNeeded
+    injectionRefreshNeeded = ChangeValueBool(PATTP_Setting_T45T51ForBoS, !Game.IsPluginInstalled("brotherhood power armor overhaul.esp") && (Game.IsPluginInstalled("consistent power armor overhaul.esp") || Game.IsPluginInstalled("armorkeywords.esm"))) || injectionRefreshNeeded
 
     if injectionRefreshNeeded
         InjectionManager.RefreshListInjections(true)
