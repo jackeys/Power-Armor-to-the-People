@@ -24,46 +24,11 @@ const
   FormID_Science02Perk = $000264DA;
   FormID_Science03Perk = $000264DB;
 
-function GetRepairRequirements(rec: IInterface): TIntArray;
-var
-  i: integer;
-begin
-  Result := nil;
-
-  //Find the repair requirements for this power armor piece
-  if HasKeyword(rec, 'ma_PA_Raider') then begin
-    AddMessage(Format('%s has the keyword %s', [Name(rec), 'ma_PA_Raider']));
-    Result := [FormID_Armorer01Perk];
-    exit;
-  end;
-  if HasKeyword(rec, 'ma_PA_T45') then begin
-    AddMessage(Format('%s has the keyword %s', [Name(rec), 'ma_PA_T45']));
-    Result := [FormID_Armorer01Perk, FormID_Science01Perk];
-    exit;
-  end;
-  if HasKeyword(rec, 'ma_PA_T51') then begin
-    AddMessage(Format('%s has the keyword %s', [Name(rec), 'ma_PA_T51']));
-    Result := [FormID_Armorer02Perk, FormID_Science01Perk];
-    exit;
-  end;
-  if HasKeyword(rec, 'ma_PA_T60') then begin
-    AddMessage(Format('%s has the keyword %s', [Name(rec), 'ma_PA_T60']));
-    Result := [FormID_Armorer02Perk, FormID_Science02Perk];
-    exit;
-  end;
-  if HasKeyword(rec, 'ma_PA_X01') then begin
-    AddMessage(Format('%s has the keyword %s', [Name(rec), 'ma_PA_X01']));
-    Result := [FormID_Armorer03Perk, FormID_Science02Perk, FormID_NuclearPhysicist02Perk];
-    exit;
-  end;
-end;
-
 function Initialize: Integer;
 var
   i: integer;
   createdObject: string;
   rec, armoRec: IInterface;
-  perks: array of integer;
   repairRequirements: TStringList;
 begin
   // set MXPF options and initialize it
@@ -99,6 +64,9 @@ begin
   
   // call PrintMXPFReport for a report on successes and failures
   PrintMXPFReport;
+
+  // Remove anything we didn't end up change and clean the masters
+  CleanMasters(mxPatchFile);
   
   // always call FinalizeMXPF when done
   FinalizeMXPF;
@@ -137,7 +105,9 @@ begin
     perks[2] := FormID_NuclearPhysicist02Perk;
   end;
 
-  if perks[0] = 0 then begin 
+  if perks[0] = 0 then begin
+    AddMessage(Format('No changes required for %s - skipping', [Name(rec)]));
+    Remove(rec);
     exit;
   end;
 
@@ -146,7 +116,7 @@ begin
     // The first condition is special and has to be done differently
     conditions := Add(rec, 'Conditions', true);
     ctda       := ElementByPath(rec, 'Conditions\Condition\CTDA');
-    
+
     // Type is "Equal to"
     SetEditValue(ElementByName(ctda, 'Type'), '10000000');
     SetNativeValue(ElementByName(ctda, 'Comparison Value - Float'), 1.0);
@@ -155,7 +125,7 @@ begin
 
     for i := 1 to (Length(perks) - 1) do begin
       if perks[i] = 0 then break;
-      
+
       condition  := ElementAssign(conditions, i, nil, true);
       ctda       := ElementBySignature(ElementByIndex(conditions, i), 'CTDA');
 
