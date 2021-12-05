@@ -23,6 +23,9 @@ const
   FormID_Science01Perk = $000264D9;
   FormID_Science02Perk = $000264DA;
   FormID_Science03Perk = $000264DB;
+  FormID_Science04Perk = $0016578F;
+  UNKNOWN_POWER_ARMOR = -1;
+  NO_REPAIR_REQUIREMENTS = 0;
 
 function Initialize: Integer;
 var
@@ -78,38 +81,107 @@ item, conditions, condition, ctda, lastcondition, checkctda: IInterface;
 i: integer;
 perks: array[0..2] of integer;
 begin
+  //Initialize the array to make sure there are no surprises
+  perks[0] := UNKNOWN_POWER_ARMOR;
+  perks[1] := NO_REPAIR_REQUIREMENTS;
+  perks[2] := NO_REPAIR_REQUIREMENTS;
+
   //Find the repair requirements for this power armor piece
-  if HasKeyword(armoRec, 'ma_PA_Raider') then begin
-    AddMessage(Format('%s has the keyword %s', [Name(armoRec), 'ma_PA_Raider']));
-    perks[0] := FormID_Armorer01Perk;
+
+  //////////////////////////////
+  // Non-Military Power Armor //
+  //////////////////////////////
+
+  if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_Excavator') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_Construct') then begin
+    perks[0] := NO_REPAIR_REQUIREMENTS;
   end;
-  if HasKeyword(armoRec, 'ma_PA_T45') then begin
-    AddMessage(Format('%s has the keyword %s', [Name(armoRec), 'ma_PA_T45']));
+  
+  //////////////////////////////
+  /// Improvised Power Armor ///
+  //////////////////////////////
+
+  if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_Raider') then begin
+    // Overboss doesn't have its own keyword, so we have to look at the name
+    if ContainsText(Name(armoRec), 'Overboss') then perks[0] := FormID_Armorer03Perk
+    else perks[0] := FormID_Armorer01Perk;
+  end;
+  if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_Horse') then begin
+    perks[0] := FormID_Armorer02Perk;
+  end;
+  
+  //////////////////////////////
+  //// Standard Power Armor ////
+  //////////////////////////////
+
+  if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_T45') or IsPowerArmorSubtype(armoRec, 'ma_PA_T49') then begin
     perks[0] := FormID_Armorer01Perk;
     perks[1] := FormID_Science01Perk;
   end;
-  if HasKeyword(armoRec, 'ma_PA_T51') then begin
-    AddMessage(Format('%s has the keyword %s', [Name(armoRec), 'ma_PA_T51']));
+  if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_T51') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_T52') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_Hellcat') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_CHS') then begin
     perks[0] := FormID_Armorer02Perk;
     perks[1] := FormID_Science01Perk;
   end;
-  if HasKeyword(armoRec, 'ma_PA_T60') then begin
-    AddMessage(Format('%s has the keyword %s', [Name(armoRec), 'ma_PA_T60']));
+  if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_T60') or IsPowerArmorSubtype(armoRec, 'zzzM150IPAdn_PowerArmor_I01') or IsPowerArmorSubtype(armoRec, 'tumba_dn_PowerArmor_CPA') or IsPowerArmorSubtype(armoRec, 'ccSWKFO4001_dn_PowerArmor_CC1') then begin
     perks[0] := FormID_Armorer02Perk;
     perks[1] := FormID_Science02Perk;
   end;
-  if HasKeyword(armoRec, 'ma_PA_X01') then begin
-    AddMessage(Format('%s has the keyword %s', [Name(armoRec), 'ma_PA_X01']));
+  if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_VaultTec') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_MidWest') then begin
+    perks[0] := FormID_Armorer03Perk;
+    perks[1] := FormID_Science02Perk;
+  end;
+  if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_T65') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_Liberty') then begin
+    perks[0] := FormID_Armorer03Perk;
+    perks[1] := FormID_Science03Perk;
+  end;
+  if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_Ultracite') then begin
+    perks[0] := FormID_Armorer04Perk;
+    perks[1] := FormID_Science04Perk;
+  end;
+  
+  //////////////////////////////
+  //// Advanced Power Armor ////
+  //////////////////////////////
+
+  // Unoctium's Enclave X-02
+  if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_X02') then begin
+    perks[0] := FormID_Armorer02Perk;
+    perks[1] := FormID_Science02Perk;
+    perks[2] := FormID_NuclearPhysicist01Perk;
+  end;
+  // Creation Club X-02
+  if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_X01') or IsPowerArmorSubtype(armoRec, 'ccBGSFO4115_dn_PowerArmor_X02') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_Hellfire') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_X03') then begin
     perks[0] := FormID_Armorer03Perk;
     perks[1] := FormID_Science02Perk;
     perks[2] := FormID_NuclearPhysicist02Perk;
   end;
+  // C1PH3RR's Enclave X-02 Black Devil
+  if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_CW_X02') then begin
+    perks[0] := FormID_Armorer03Perk;
+    perks[1] := FormID_Science03Perk;
+    perks[2] := FormID_NuclearPhysicist02Perk;
+  end;
+  // The Chosen One version of Classic Advanced Power Armor uses a different naming keyword
+  if IsPowerArmorSubtype(armoRec, 'ma_PA_CAPA') then begin
+    perks[0] := FormID_Armorer04Perk;
+    perks[1] := FormID_Science04Perk;
+    perks[2] := FormID_NuclearPhysicist03Perk;
+  end;
 
-  if perks[0] = 0 then begin
+  // Check to make sure we should actually make changes
+
+  if perks[0] = NO_REPAIR_REQUIREMENTS then begin
     AddMessage(Format('No changes required for %s - skipping', [Name(rec)]));
     Remove(rec);
     exit;
   end;
+
+  if perks[0] = UNKNOWN_POWER_ARMOR then begin
+    AddMessage(Format('%s is an unknown type of power armor - skipping', [Name(rec)]));
+    Remove(rec);
+    exit;
+  end;
+
+  // Time to add the conditions
 
   conditions := ElementByName(rec, 'Conditions');
   if not Assigned(conditions) then begin
@@ -137,7 +209,17 @@ begin
     end;
   end
   else
-    AddMessage(Format('WARNING: %s already has conditions, skipping', [Name(rec)]));
+    AddMessage(Format('WARNING: %s already has conditions - skipping', [Name(rec)]));
+end;
+
+function IsPowerArmorSubtype(rec: IInterface; keyword: string): boolean;
+begin
+  Result := false;
+
+  if HasKeyword(rec, keyword) then begin
+    AddMessage(Format('%s has the keyword %s', [Name(rec), keyword]));
+    Result := true;
+  end;
 end;
 
 function Perk(formID: integer): IInterface;
