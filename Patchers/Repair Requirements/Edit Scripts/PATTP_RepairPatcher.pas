@@ -89,7 +89,7 @@ begin
   FinalizeMXPF;
 end;
 
-function AddRepairConditions(rec: IInterface): IInterface;
+procedure AddRepairConditions(rec: IInterface);
 var
 item, conditions, condition, ctda, lastcondition, checkctda: IInterface;
 begin
@@ -102,10 +102,18 @@ begin
     SetEditValue(ElementByName(ctda, 'Type'), '10000000');
     SetNativeValue(ElementByName(ctda, 'Comparison Value - Float'), 1.0);
     SetEditValue(ElementByName(ctda, 'Function'), 'HasPerk');
-    SetEditValue(ElementByName(ctda, 'Perk'), Name(RecordByFormID(FileByName('Fallout4.esm'), FormID_Science01Perk, false)));
+    SetEditValue(ElementByName(ctda, 'Perk'), Name(Perk(FormID_Science01Perk)));
   end
   else
     AddMessage(Format('WARNING: %s already has conditions, skipping', [Name(rec)]));
+end;
+
+function Perk(formID: integer): IInterface;
+var
+  fFallout4: IInterface;
+begin
+  fFallout4 := FileByName('Fallout4.esm');
+  Result := RecordByFormID(fFallout4, (MasterCount(fFallout4) * $01000000 + formID), false);
 end;
 
 end.
