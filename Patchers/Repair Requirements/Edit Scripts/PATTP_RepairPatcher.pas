@@ -82,6 +82,15 @@ begin
     SetNativeValue(ElementByName(ctda, 'Comparison Value - Float'), 1.0);
     SetEditValue(ElementByName(ctda, 'Function'), 'HasPerk');
     SetEditValue(ElementByName(ctda, 'Perk'), Name(Perk(FormID_Science01Perk)));
+
+    condition  := ElementAssign(conditions, 1, nil, true);
+    ctda       := ElementBySignature(ElementByIndex(conditions, 1), 'CTDA');
+
+    // Type is "Equal to"
+    SetEditValue(ElementByName(ctda, 'Type'), '10000000');
+    SetNativeValue(ElementByName(ctda, 'Comparison Value - Float'), 1.0);
+    SetEditValue(ElementByName(ctda, 'Function'), 'HasPerk');
+    SetEditValue(ElementByName(ctda, 'Perk'), Name(Perk(FormID_Armorer01Perk)));
   end
   else
     AddMessage(Format('WARNING: %s already has conditions, skipping', [Name(rec)]));
