@@ -184,32 +184,34 @@ begin
   // Time to add the conditions
 
   conditions := ElementByName(rec, 'Conditions');
-  if not Assigned(conditions) then begin
-    // The first condition is special and has to be done differently
-    conditions := Add(rec, 'Conditions', true);
-    ctda       := ElementByPath(rec, 'Conditions\Condition\CTDA');
+  if Assigned(conditions) then begin
+    AddMessage(Format('WARNING: %s already has conditions - skipping', [Name(rec)]));
+    Remove(rec);
+    exit;
+  end;
+
+  // The first condition is special and has to be done differently
+  conditions := Add(rec, 'Conditions', true);
+  ctda       := ElementByPath(rec, 'Conditions\Condition\CTDA');
+
+  // Type is "Equal to"
+  SetEditValue(ElementByName(ctda, 'Type'), '10000000');
+  SetNativeValue(ElementByName(ctda, 'Comparison Value - Float'), 1.0);
+  SetEditValue(ElementByName(ctda, 'Function'), 'HasPerk');
+  SetEditValue(ElementByName(ctda, 'Perk'), Name(Perk(perks[i])));
+
+  for i := 1 to (Length(perks) - 1) do begin
+    if perks[i] = 0 then break;
+
+    condition  := ElementAssign(conditions, i, nil, true);
+    ctda       := ElementBySignature(ElementByIndex(conditions, i), 'CTDA');
 
     // Type is "Equal to"
     SetEditValue(ElementByName(ctda, 'Type'), '10000000');
     SetNativeValue(ElementByName(ctda, 'Comparison Value - Float'), 1.0);
     SetEditValue(ElementByName(ctda, 'Function'), 'HasPerk');
     SetEditValue(ElementByName(ctda, 'Perk'), Name(Perk(perks[i])));
-
-    for i := 1 to (Length(perks) - 1) do begin
-      if perks[i] = 0 then break;
-
-      condition  := ElementAssign(conditions, i, nil, true);
-      ctda       := ElementBySignature(ElementByIndex(conditions, i), 'CTDA');
-
-      // Type is "Equal to"
-      SetEditValue(ElementByName(ctda, 'Type'), '10000000');
-      SetNativeValue(ElementByName(ctda, 'Comparison Value - Float'), 1.0);
-      SetEditValue(ElementByName(ctda, 'Function'), 'HasPerk');
-      SetEditValue(ElementByName(ctda, 'Perk'), Name(Perk(perks[i])));
-    end;
-  end
-  else
-    AddMessage(Format('WARNING: %s already has conditions - skipping', [Name(rec)]));
+  end;
 end;
 
 function IsPowerArmorSubtype(rec: IInterface; keyword: string): boolean;
