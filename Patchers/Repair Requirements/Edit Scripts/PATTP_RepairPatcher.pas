@@ -24,14 +24,38 @@ const
   FormID_Science02Perk = $000264DA;
   FormID_Science03Perk = $000264DB;
 
-function PowerArmorRepairRequirements: TStringList;
+function GetRepairRequirements(rec: IInterface): TIntArray;
+var
+  i: integer;
 begin
-  Result := TStringList.Create;
-  Result.Values['ma_PA_Raider'] = [FormID_Armorer01Perk];
-  Result.Values['ma_PA_T45'] = [FormID_Armorer01Perk, FormID_Science01Perk];
-  Result.Values['ma_PA_T51'] = [FormID_Armorer02Perk, FormID_Science01Perk];
-  Result.Values['ma_PA_T60'] = [FormID_Armorer02Perk, FormID_Science02Perk];
-  Result.Values['ma_PA_X01'] = [FormID_Armorer03Perk, FormID_Science02Perk, FormID_NuclearPhysicist02Perk];
+  Result := nil;
+
+  //Find the repair requirements for this power armor piece
+  if HasKeyword(rec, 'ma_PA_Raider') then begin
+    AddMessage(Format('%s has the keyword %s', [Name(rec), 'ma_PA_Raider']));
+    Result := [FormID_Armorer01Perk];
+    exit;
+  end;
+  if HasKeyword(rec, 'ma_PA_T45') then begin
+    AddMessage(Format('%s has the keyword %s', [Name(rec), 'ma_PA_T45']));
+    Result := [FormID_Armorer01Perk, FormID_Science01Perk];
+    exit;
+  end;
+  if HasKeyword(rec, 'ma_PA_T51') then begin
+    AddMessage(Format('%s has the keyword %s', [Name(rec), 'ma_PA_T51']));
+    Result := [FormID_Armorer02Perk, FormID_Science01Perk];
+    exit;
+  end;
+  if HasKeyword(rec, 'ma_PA_T60') then begin
+    AddMessage(Format('%s has the keyword %s', [Name(rec), 'ma_PA_T60']));
+    Result := [FormID_Armorer02Perk, FormID_Science02Perk];
+    exit;
+  end;
+  if HasKeyword(rec, 'ma_PA_X01') then begin
+    AddMessage(Format('%s has the keyword %s', [Name(rec), 'ma_PA_X01']));
+    Result := [FormID_Armorer03Perk, FormID_Science02Perk, FormID_NuclearPhysicist02Perk];
+    exit;
+  end;
 end;
 
 function Initialize: Integer;
@@ -64,23 +88,13 @@ begin
   // then copy records to the patch file
   CopyRecordsToPatch;
 
-  repairRequirements := PowerArmorRepairRequirements;
-  
   // and set values on them
   for i := 0 to MaxPatchRecordIndex do begin
     rec := GetPatchRecord(i);
-    createdObject := GetElementEditValues(rec, 'CNAM');
-    AddMessage(Format('Copied %s, which creates %s', [Name(rec), createdObject]));
+    armoRec := WinningOverride(LinksTo(ElementBySignature(rec, 'CNAM')));
+    AddMessage(Format('Copied %s, which creates %s', [Name(rec), Name(armoRec)]));
 
-    //Find the repair requirements for this power armor piece
-    perks := FindPerksForArmor(rec, repairRequirements);
-
-    if perks = nil then begin
-      AddMessage(Format('%s is an unknown type of power armor - skipping'), [Name(rec)]);
-      continue;
-    end;
-
-    AddRepairConditions(rec, perks);
+    AddRepairConditions(rec, armoRec);
   end;
   
   // call PrintMXPFReport for a report on successes and failures
@@ -90,29 +104,58 @@ begin
   FinalizeMXPF;
 end;
 
-function FindPerksForArmor(rec: IInterface, repairRequirements: TStringList): array of integer;
-var
-  i: integer;
-begin
-  Result := nil;
-  for i := 0 to repairRequirements.Length do begin
-    if HasKeyword(rec, repairRequirements.Names[i]) then begin
-      Result := repairRequirements.ValueFromIndex[i];
-      break;
-    end;
-  end;
-end;
-
-procedure AddRepairConditions(rec: IInterface, perks: array of integer);
+procedure AddRepairConditions(rec: IInterface; armoRec: IInterface);
 var
 item, conditions, condition, ctda, lastcondition, checkctda: IInterface;
 i: integer;
+perks: array[0..2] of integer;
 begin
+  //Find the repair requirements for this power armor piece
+  if HasKeyword(armoRec, 'ma_PA_Raider') then begin
+    AddMessage(Format('%s has the keyword %s', [Name(armoRec), 'ma_PA_Raider']));
+    perks[0] := FormID_Armorer01Perk;
+  end;
+  if HasKeyword(armoRec, 'ma_PA_T45') then begin
+    AddMessage(Format('%s has the keyword %s', [Name(armoRec), 'ma_PA_T45']));
+    perks[0] := FormID_Armorer01Perk;
+    perks[1] := FormID_Science01Perk;
+  end;
+  if HasKeyword(armoRec, 'ma_PA_T51') then begin
+    AddMessage(Format('%s has the keyword %s', [Name(armoRec), 'ma_PA_T51']));
+    perks[0] := FormID_Armorer02Perk;
+    perks[1] := FormID_Science01Perk;
+  end;
+  if HasKeyword(armoRec, 'ma_PA_T60') then begin
+    AddMessage(Format('%s has the keyword %s', [Name(armoRec), 'ma_PA_T60']));
+    perks[0] := FormID_Armorer02Perk;
+    perks[1] := FormID_Science02Perk;
+  end;
+  if HasKeyword(armoRec, 'ma_PA_X01') then begin
+    AddMessage(Format('%s has the keyword %s', [Name(armoRec), 'ma_PA_X01']));
+    perks[0] := FormID_Armorer03Perk;
+    perks[1] := FormID_Science02Perk;
+    perks[2] := FormID_NuclearPhysicist02Perk;
+  end;
+
+  if perks[0] = 0 then begin 
+    exit;
+  end;
+
   conditions := ElementByName(rec, 'Conditions');
   if not Assigned(conditions) then begin
+    // The first condition is special and has to be done differently
     conditions := Add(rec, 'Conditions', true);
+    ctda       := ElementByPath(rec, 'Conditions\Condition\CTDA');
+    
+    // Type is "Equal to"
+    SetEditValue(ElementByName(ctda, 'Type'), '10000000');
+    SetNativeValue(ElementByName(ctda, 'Comparison Value - Float'), 1.0);
+    SetEditValue(ElementByName(ctda, 'Function'), 'HasPerk');
+    SetEditValue(ElementByName(ctda, 'Perk'), Name(Perk(perks[i])));
 
-    for i := 0 to (perks.Length - 1) do begin
+    for i := 1 to (Length(perks) - 1) do begin
+      if perks[i] = 0 then break;
+      
       condition  := ElementAssign(conditions, i, nil, true);
       ctda       := ElementBySignature(ElementByIndex(conditions, i), 'CTDA');
 
