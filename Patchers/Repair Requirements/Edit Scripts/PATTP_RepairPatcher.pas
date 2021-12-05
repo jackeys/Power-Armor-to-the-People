@@ -12,6 +12,18 @@ unit UserScript;
 // Import MXPF functions
 uses 'lib\mxpf';
 
+const
+  FormID_Armorer01Perk = $0004B254;
+  FormID_Armorer02Perk = $0004B255;
+  FormID_Armorer03Perk = $0004B256;
+  FormID_Armorer04Perk = $001797EA;
+  FormID_NuclearPhysicist01Perk = $001D246F;
+  FormID_NuclearPhysicist02Perk = $001D2470;
+  FormID_NuclearPhysicist03Perk = $001D2471;
+  FormID_Science01Perk = $000264D9;
+  FormID_Science02Perk = $000264DA;
+  FormID_Science03Perk = $000264DB;
+
 function Initialize: Integer;
 var
   i, j: integer;
@@ -67,6 +79,7 @@ begin
     rec := GetPatchRecord(i);
     createdObject := GetElementEditValues(rec, 'CNAM');
     AddMessage(Format('Copied %s, which creates %s', [Name(rec), createdObject]));
+    AddRepairConditions(rec);
   end;
   
   // call PrintMXPFReport for a report on successes and failures
@@ -74,6 +87,25 @@ begin
   
   // always call FinalizeMXPF when done
   FinalizeMXPF;
+end;
+
+function AddRepairConditions(rec: IInterface): IInterface;
+var
+item, conditions, condition, ctda, lastcondition, checkctda: IInterface;
+begin
+  conditions := ElementByName(rec, 'Conditions');
+  if not Assigned(conditions) then begin
+    conditions := Add(rec, 'Conditions', true);
+    ctda       := ElementByPath(rec, 'Conditions\Condition\CTDA');
+
+    // Type is "Equal to"
+    SetEditValue(ElementByName(ctda, 'Type'), '10000000');
+    SetNativeValue(ElementByName(ctda, 'Comparison Value - Float'), 1.0);
+    SetEditValue(ElementByName(ctda, 'Function'), 'HasPerk');
+    SetEditValue(ElementByName(ctda, 'Perk'), Name(RecordByFormID(FileByName('Fallout4.esm'), FormID_Science01Perk, false)));
+  end
+  else
+    AddMessage(Format('WARNING: %s already has conditions, skipping', [Name(rec)]));
 end;
 
 end.
