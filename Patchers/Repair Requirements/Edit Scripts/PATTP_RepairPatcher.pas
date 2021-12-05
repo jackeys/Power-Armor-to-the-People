@@ -24,12 +24,23 @@ const
   FormID_Science02Perk = $000264DA;
   FormID_Science03Perk = $000264DB;
 
+function PowerArmorRepairRequirements: TStringList;
+begin
+  Result := TStringList.Create;
+  Result.Values['ma_PA_Raider'] = [FormID_Armorer01Perk];
+  Result.Values['ma_PA_T45'] = [FormID_Armorer01Perk, FormID_Science01Perk];
+  Result.Values['ma_PA_T51'] = [FormID_Armorer02Perk, FormID_Science01Perk];
+  Result.Values['ma_PA_T60'] = [FormID_Armorer02Perk, FormID_Science02Perk];
+  Result.Values['ma_PA_X01'] = [FormID_Armorer03Perk, FormID_Science02Perk, FormID_NuclearPhysicist02Perk];
+end;
+
 function Initialize: Integer;
 var
   i: integer;
   createdObject: string;
   rec, armoRec: IInterface;
-  matchFound: boolean;
+  perks: array of integer;
+  repairRequirements: TStringList;
 begin
   // set MXPF options and initialize it
   DefaultOptionsMXPF;
@@ -52,13 +63,24 @@ begin
   
   // then copy records to the patch file
   CopyRecordsToPatch;
+
+  repairRequirements := PowerArmorRepairRequirements;
   
   // and set values on them
   for i := 0 to MaxPatchRecordIndex do begin
     rec := GetPatchRecord(i);
     createdObject := GetElementEditValues(rec, 'CNAM');
     AddMessage(Format('Copied %s, which creates %s', [Name(rec), createdObject]));
-    AddRepairConditions(rec);
+
+    //Find the repair requirements for this power armor piece
+    perks := FindPerksForArmor(rec, repairRequirements);
+
+    if perks = nil then begin
+      AddMessage(Format('%s is an unknown type of power armor - skipping'), [Name(rec)]);
+      continue;
+    end;
+
+    AddRepairConditions(rec, perks);
   end;
   
   // call PrintMXPFReport for a report on successes and failures
@@ -68,29 +90,38 @@ begin
   FinalizeMXPF;
 end;
 
-procedure AddRepairConditions(rec: IInterface);
+function FindPerksForArmor(rec: IInterface, repairRequirements: TStringList): array of integer;
+var
+  i: integer;
+begin
+  Result := nil;
+  for i := 0 to repairRequirements.Length do begin
+    if HasKeyword(rec, repairRequirements.Names[i]) then begin
+      Result := repairRequirements.ValueFromIndex[i];
+      break;
+    end;
+  end;
+end;
+
+procedure AddRepairConditions(rec: IInterface, perks: array of integer);
 var
 item, conditions, condition, ctda, lastcondition, checkctda: IInterface;
+i: integer;
 begin
   conditions := ElementByName(rec, 'Conditions');
   if not Assigned(conditions) then begin
     conditions := Add(rec, 'Conditions', true);
-    ctda       := ElementByPath(rec, 'Conditions\Condition\CTDA');
 
-    // Type is "Equal to"
-    SetEditValue(ElementByName(ctda, 'Type'), '10000000');
-    SetNativeValue(ElementByName(ctda, 'Comparison Value - Float'), 1.0);
-    SetEditValue(ElementByName(ctda, 'Function'), 'HasPerk');
-    SetEditValue(ElementByName(ctda, 'Perk'), Name(Perk(FormID_Science01Perk)));
+    for i := 0 to (perks.Length - 1) do begin
+      condition  := ElementAssign(conditions, i, nil, true);
+      ctda       := ElementBySignature(ElementByIndex(conditions, i), 'CTDA');
 
-    condition  := ElementAssign(conditions, 1, nil, true);
-    ctda       := ElementBySignature(ElementByIndex(conditions, 1), 'CTDA');
-
-    // Type is "Equal to"
-    SetEditValue(ElementByName(ctda, 'Type'), '10000000');
-    SetNativeValue(ElementByName(ctda, 'Comparison Value - Float'), 1.0);
-    SetEditValue(ElementByName(ctda, 'Function'), 'HasPerk');
-    SetEditValue(ElementByName(ctda, 'Perk'), Name(Perk(FormID_Armorer01Perk)));
+      // Type is "Equal to"
+      SetEditValue(ElementByName(ctda, 'Type'), '10000000');
+      SetNativeValue(ElementByName(ctda, 'Comparison Value - Float'), 1.0);
+      SetEditValue(ElementByName(ctda, 'Function'), 'HasPerk');
+      SetEditValue(ElementByName(ctda, 'Perk'), Name(Perk(perks[i])));
+    end;
   end
   else
     AddMessage(Format('WARNING: %s already has conditions, skipping', [Name(rec)]));
