@@ -34,3 +34,12 @@ install_all.ps1 "C:\Program Files (x86)\Steam\steamapps\common\Fallout 4"
 **Important Note:** When you run this script, it will request administrator access because Windows only allows an administrator to create symbolic links. Use with caution, as this will overwrite any files with the same names already in your game folder.
 
 If you add any new files to the mod, you will need to manually place those within the project directory and run this script again to link them.
+
+## Patchers
+
+Patchers go through a load order and use a script to create a new plugin with overwrites for records in the load order. They have the following prerequisites:
+
+* [FO4Edit](https://www.nexusmods.com/fallout4/mods/2737)
+* [MXPF](https://www.nexusmods.com/skyrim/mods/68617/)
+
+With the prerequisites installed, copy the contents of the patcher to the directory containing the `FO4Edit.exe` and `Edit Scripts` directory. Then, simply run the `bat` file from that directory.
