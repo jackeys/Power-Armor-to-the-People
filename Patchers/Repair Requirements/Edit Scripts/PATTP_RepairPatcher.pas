@@ -182,13 +182,7 @@ begin
     perks[2] := FormID_NuclearPhysicist03Perk;
   end;
 
-  // Check to make sure we should actually make changes
-
-  if perks[0] = NO_REPAIR_REQUIREMENTS then begin
-    if bVerboseLogging then AddMessage(Format('No changes required for %s - skipping', [Name(rec)]));
-    Remove(rec);
-    exit;
-  end;
+  // We won't patch anything we don't know about
 
   if perks[0] = UNKNOWN_POWER_ARMOR then begin
     AddMessage(Format('%s is an unknown type of power armor - skipping', [Name(rec)]));
@@ -196,7 +190,37 @@ begin
     exit;
   end;
 
-  // Time to add the conditions
+  // If this has a workbench associated with it, it's a recipe for constructing power armor, not repairing it
+  // We want to check now, because even if no conditions need to be added for repair, we still want to disable recipes
+  workbench := ElementBySignature(rec, 'BNAM');
+  if Assigned(workbench) and bRemoveConstruction then begin
+    AddMessage(Format('%s is a recipe for constructing power armor - disabling', [Name(rec)]));
+
+    // Liberty Power Armor uses the same constructible object for repairs and construction, so we have to remove the workbench and let patching continue
+    if ContainsText(Name(rec), 'co_Armor_Power_Liberty') then begin
+      Remove(workbench);
+      // We explicitly do not want to exit here - we still need to add perks, since this gets used for repair
+    end
+    else begin
+      conditions := Add(rec, 'Conditions', true);
+      ctda       := ElementByPath(rec, 'Conditions\Condition\CTDA');
+
+      // We can disable the recipe by requiring that a global variable that is always set to 0 is equal to 1
+      SetEditValue(ElementByName(ctda, 'Type'), '10000000');
+      SetNativeValue(ElementByName(ctda, 'Comparison Value - Float'), 1.0);
+      SetEditValue(ElementByName(ctda, 'Function'), 'GetGlobalValue');
+      SetEditValue(ElementByName(ctda, 'Global'), MainFileFormName(FormID_GlobalZero));
+      exit;
+    end;
+  end;
+
+  if perks[0] = NO_REPAIR_REQUIREMENTS then begin
+    if bVerboseLogging then AddMessage(Format('No conditions required for %s - skipping', [Name(rec)]));
+    Remove(rec);
+    exit;
+  end;
+
+  // Unless configured to, we won't override any existing conditions
 
   conditions := ElementByName(rec, 'Conditions');
   if Assigned(conditions) then begin
@@ -214,26 +238,6 @@ begin
   // The first condition is special and has to be done differently
   conditions := Add(rec, 'Conditions', true);
   ctda       := ElementByPath(rec, 'Conditions\Condition\CTDA');
-
-  // If this has a workbench associated with it, it's a recipe for constructing power armor, not repairing it
-  workbench := ElementBySignature(rec, 'BNAM');
-  if Assigned(workbench) and bRemoveConstruction then begin
-    AddMessage(Format('%s is a recipe for constructing power armor - disabling', [Name(rec)]));
-
-    // Liberty Power Armor uses the same constructible object for repairs and construction, so we have to remove the workbench and let patching continue
-    if ContainsText(Name(rec), 'co_Armor_Power_Liberty') then begin
-      Remove(workbench);
-      // We explicitly do not want to exit here - we still need to add perks, since this gets used for repair
-    end
-    else begin
-      // We can disable the recipe by requiring that a global variable that is always set to 0 is equal to 1
-      SetEditValue(ElementByName(ctda, 'Type'), '10000000');
-      SetNativeValue(ElementByName(ctda, 'Comparison Value - Float'), 1.0);
-      SetEditValue(ElementByName(ctda, 'Function'), 'GetGlobalValue');
-      SetEditValue(ElementByName(ctda, 'Global'), MainFileFormName(FormID_GlobalZero));
-      exit;
-    end;
-  end;
 
   // Type is "Equal to"
   SetEditValue(ElementByName(ctda, 'Type'), '10000000');
