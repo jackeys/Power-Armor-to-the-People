@@ -220,12 +220,19 @@ begin
   if Assigned(workbench) and bRemoveConstruction then begin
     AddMessage(Format('%s is a recipe for constructing power armor - disabling', [Name(rec)]));
 
-    // We can disable the recipe by requiring that a global variable that is always set to 0 is equal to 1
-    SetEditValue(ElementByName(ctda, 'Type'), '10000000');
-    SetNativeValue(ElementByName(ctda, 'Comparison Value - Float'), 1.0);
-    SetEditValue(ElementByName(ctda, 'Function'), 'GetGlobalValue');
-    SetEditValue(ElementByName(ctda, 'Global'), MainFileFormName(FormID_GlobalZero));
-    exit;
+    // Liberty Power Armor uses the same constructible object for repairs and construction, so we have to remove the workbench and let patching continue
+    if ContainsText(Name(rec), 'co_Armor_Power_Liberty') then begin
+      Remove(workbench);
+      // We explicitly do not want to exit here - we still need to add perks, since this gets used for repair
+    end
+    else begin
+      // We can disable the recipe by requiring that a global variable that is always set to 0 is equal to 1
+      SetEditValue(ElementByName(ctda, 'Type'), '10000000');
+      SetNativeValue(ElementByName(ctda, 'Comparison Value - Float'), 1.0);
+      SetEditValue(ElementByName(ctda, 'Function'), 'GetGlobalValue');
+      SetEditValue(ElementByName(ctda, 'Global'), MainFileFormName(FormID_GlobalZero));
+      exit;
+    end;
   end;
 
   // Type is "Equal to"
