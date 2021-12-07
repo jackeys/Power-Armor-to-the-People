@@ -27,6 +27,7 @@ const
   FormID_GlobalZero = $00022B43;
   UNKNOWN_POWER_ARMOR = -1;
   NO_REPAIR_REQUIREMENTS = 0;
+  bVerboseLogging = false;
 
 var
   bOverwriteConditions, bRemoveConstruction, bReset, bUserCancelled: boolean;
@@ -73,6 +74,8 @@ begin
   for i := 0 to MaxPatchRecordIndex do begin
     rec := GetPatchRecord(i);
     armoRec := WinningOverride(LinksTo(ElementBySignature(rec, 'CNAM')));
+
+    if bVerboseLogging then AddMessage(Format('Patching %s, which creates %s', [Name(rec), Name(armoRec)]));
 
     AddRepairConditions(rec, armoRec);
   end;
@@ -182,7 +185,7 @@ begin
   // Check to make sure we should actually make changes
 
   if perks[0] = NO_REPAIR_REQUIREMENTS then begin
-    AddMessage(Format('No changes required for %s - skipping', [Name(rec)]));
+    if bVerboseLogging then AddMessage(Format('No changes required for %s - skipping', [Name(rec)]));
     Remove(rec);
     exit;
   end;
@@ -250,7 +253,7 @@ begin
   Result := false;
 
   if HasKeyword(rec, keyword) then begin
-    AddMessage(Format('%s has the keyword %s', [Name(rec), keyword]));
+    if bVerboseLogging then AddMessage(Format('%s has the keyword %s', [Name(rec), keyword]));
     Result := true;
   end;
 end;
