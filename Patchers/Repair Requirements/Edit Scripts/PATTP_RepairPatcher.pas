@@ -107,7 +107,7 @@ begin
   // Non-Military Power Armor //
   //////////////////////////////
 
-  if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_Excavator') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_Construct') then begin
+  if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_Excavator') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_Construct') or IsPowerArmorSubtype(armoRec, 'ma_PA_SubRedux') then begin
     perks[0] := NO_REPAIR_REQUIREMENTS;
   end;
   
@@ -128,7 +128,7 @@ begin
   //// Standard Power Armor ////
   //////////////////////////////
 
-  if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_T45') or IsPowerArmorSubtype(armoRec, 'ma_PA_T49') then begin
+  if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_T45') or IsPowerArmorSubtype(armoRec, 'ma_PA_T49') or IsPowerArmorSubtype(armoRec, 'TNPA_ma_PA_Atomite') then begin
     perks[0] := FormID_Armorer01Perk;
     perks[1] := FormID_Science01Perk;
   end;
@@ -140,7 +140,7 @@ begin
     perks[0] := FormID_Armorer02Perk;
     perks[1] := FormID_Science02Perk;
   end;
-  if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_VaultTec') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_MidWest') then begin
+  if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_VaultTec') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_MidWest') or IsPowerArmorSubtype(armoRec, 'tumba_ma_PA_Tank') or IsPowerArmorSubtype(armoRec, 'ma_PA_TES51') then begin
     perks[0] := FormID_Armorer03Perk;
     perks[1] := FormID_Science02Perk;
   end;
