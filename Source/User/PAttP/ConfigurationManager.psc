@@ -213,11 +213,11 @@ float Property MinutemenPowerArmorChance
     EndFunction
 EndProperty
 
-GlobalVariable Property PAttP_Setting_LevelScalePowerArmorEnemyChanceNone Auto Const Mandatory
+GlobalVariable Property PAttP_Setting_LevelScalePowerArmorEnemyChance Auto Const Mandatory
 {AUTOFILL}
-GlobalVariable Property PAttP_Setting_LevelScalePowerArmorBossEnemyChanceNone Auto Const Mandatory
+GlobalVariable Property PAttP_Setting_LevelScalePowerArmorBossEnemyChance Auto Const Mandatory
 {AUTOFILL}
-GlobalVariable Property PAttP_Setting_LevelScalePowerArmorLegendaryEnemyChanceNone Auto Const Mandatory
+GlobalVariable Property PAttP_Setting_LevelScalePowerArmorLegendaryEnemyChance Auto Const Mandatory
 {AUTOFILL}
 
 ; A dropdown (which returns an int) can toggle these two ChanceNones between 0 (enabled) and 100 (disabled)
@@ -226,17 +226,17 @@ int Property LEVEL_SCALING_NORMAL_ENEMIES = 1 autoReadOnly hidden
 int Property LEVEL_SCALING_NORMAL_AND_BOSS_ENEMIES = 2 autoReadOnly hidden
 int Property LEVEL_SCALING_ALL_ENEMIES = 3 autoReadOnly hidden
 
-int Property LEVEL_SCALING_ON_VALUE = 0 autoReadOnly hidden
-int Property LEVEL_SCALING_OFF_VALUE = 100 autoReadOnly hidden
+int Property LEVEL_SCALING_ON_VALUE = 100 autoReadOnly hidden
+int Property LEVEL_SCALING_OFF_VALUE = 0 autoReadOnly hidden
 
 int Property MCM_LevelScalePowerArmoredEnemies Auto
 int Property LevelScalePowerArmoredEnemies
     int Function get()
-        If PAttP_Setting_LevelScalePowerArmorLegendaryEnemyChanceNone.GetValue() == LEVEL_SCALING_ON_VALUE
+        If PAttP_Setting_LevelScalePowerArmorLegendaryEnemyChance.GetValue() == LEVEL_SCALING_ON_VALUE
             return LEVEL_SCALING_ALL_ENEMIES
-        Elseif PAttP_Setting_LevelScalePowerArmorBossEnemyChanceNone.GetValue() == LEVEL_SCALING_ON_VALUE
+        Elseif PAttP_Setting_LevelScalePowerArmorBossEnemyChance.GetValue() == LEVEL_SCALING_ON_VALUE
             return LEVEL_SCALING_NORMAL_AND_BOSS_ENEMIES
-        Elseif PAttP_Setting_LevelScalePowerArmorEnemyChanceNone.GetValue() == LEVEL_SCALING_ON_VALUE
+        Elseif PAttP_Setting_LevelScalePowerArmorEnemyChance.GetValue() == LEVEL_SCALING_ON_VALUE
             return LEVEL_SCALING_NORMAL_ENEMIES
         Else
             return LEVEL_SCALING_DISABLED
@@ -244,21 +244,21 @@ int Property LevelScalePowerArmoredEnemies
     EndFunction
     Function set(int value)
         If value == LEVEL_SCALING_DISABLED
-            PAttP_Setting_LevelScalePowerArmorEnemyChanceNone.SetValue(LEVEL_SCALING_OFF_VALUE)
-            PAttP_Setting_LevelScalePowerArmorBossEnemyChanceNone.SetValue(LEVEL_SCALING_OFF_VALUE)
-            PAttP_Setting_LevelScalePowerArmorLegendaryEnemyChanceNone.SetValue(LEVEL_SCALING_OFF_VALUE)
+            PAttP_Setting_LevelScalePowerArmorEnemyChance.SetValue(LEVEL_SCALING_OFF_VALUE)
+            PAttP_Setting_LevelScalePowerArmorBossEnemyChance.SetValue(LEVEL_SCALING_OFF_VALUE)
+            PAttP_Setting_LevelScalePowerArmorLegendaryEnemyChance.SetValue(LEVEL_SCALING_OFF_VALUE)
         ElseIf value == LEVEL_SCALING_NORMAL_ENEMIES
-            PAttP_Setting_LevelScalePowerArmorEnemyChanceNone.SetValue(LEVEL_SCALING_ON_VALUE)
-            PAttP_Setting_LevelScalePowerArmorBossEnemyChanceNone.SetValue(LEVEL_SCALING_OFF_VALUE)
-            PAttP_Setting_LevelScalePowerArmorLegendaryEnemyChanceNone.SetValue(LEVEL_SCALING_OFF_VALUE)
+            PAttP_Setting_LevelScalePowerArmorEnemyChance.SetValue(LEVEL_SCALING_ON_VALUE)
+            PAttP_Setting_LevelScalePowerArmorBossEnemyChance.SetValue(LEVEL_SCALING_OFF_VALUE)
+            PAttP_Setting_LevelScalePowerArmorLegendaryEnemyChance.SetValue(LEVEL_SCALING_OFF_VALUE)
         ElseIf value == LEVEL_SCALING_NORMAL_AND_BOSS_ENEMIES
-            PAttP_Setting_LevelScalePowerArmorEnemyChanceNone.SetValue(LEVEL_SCALING_ON_VALUE)
-            PAttP_Setting_LevelScalePowerArmorBossEnemyChanceNone.SetValue(LEVEL_SCALING_ON_VALUE)
-            PAttP_Setting_LevelScalePowerArmorLegendaryEnemyChanceNone.SetValue(LEVEL_SCALING_OFF_VALUE)
+            PAttP_Setting_LevelScalePowerArmorEnemyChance.SetValue(LEVEL_SCALING_ON_VALUE)
+            PAttP_Setting_LevelScalePowerArmorBossEnemyChance.SetValue(LEVEL_SCALING_ON_VALUE)
+            PAttP_Setting_LevelScalePowerArmorLegendaryEnemyChance.SetValue(LEVEL_SCALING_OFF_VALUE)
         ElseIf value == LEVEL_SCALING_ALL_ENEMIES
-            PAttP_Setting_LevelScalePowerArmorEnemyChanceNone.SetValue(LEVEL_SCALING_ON_VALUE)
-            PAttP_Setting_LevelScalePowerArmorBossEnemyChanceNone.SetValue(LEVEL_SCALING_ON_VALUE)
-            PAttP_Setting_LevelScalePowerArmorLegendaryEnemyChanceNone.SetValue(LEVEL_SCALING_ON_VALUE)
+            PAttP_Setting_LevelScalePowerArmorEnemyChance.SetValue(LEVEL_SCALING_ON_VALUE)
+            PAttP_Setting_LevelScalePowerArmorBossEnemyChance.SetValue(LEVEL_SCALING_ON_VALUE)
+            PAttP_Setting_LevelScalePowerArmorLegendaryEnemyChance.SetValue(LEVEL_SCALING_ON_VALUE)
         Else
             debug.trace(self + "Received invalid enemy level scaling option " + value)
         EndIf
