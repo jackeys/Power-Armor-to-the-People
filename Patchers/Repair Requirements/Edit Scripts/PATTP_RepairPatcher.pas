@@ -104,7 +104,7 @@ begin
   //Find the repair requirements for this power armor piece
 
   //////////////////////////////
-  // Non-Military Power Armor //
+  //// Civilian Power Armor ////
   //////////////////////////////
 
   if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_Excavator') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_Construct') or IsPowerArmorSubtype(armoRec, 'ma_PA_SubRedux') then begin
