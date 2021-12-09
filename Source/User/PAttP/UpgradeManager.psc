@@ -12,8 +12,17 @@ Actor[] Property ActorsToResetWhenInstalledMidgame_1 Auto Const
 {Actors that need to be reset due to template changes that make them appear naked and/or without names - this only applies to actors that will never respawn by passing time in an interior cell (the Forged)}
 
 GlobalVariable Property PATTP_Setting_T60ForGunners_OBSOLETE Auto Const
+{AUTOFILL}
 GlobalVariable Property PATTP_Setting_T60ForRaiders_OBSOLETE Auto Const
+{AUTOFILL}
 GlobalVariable Property PATTP_Setting_T60ExclusiveToBoS Auto Const
+{AUTOFILL}
+GlobalVariable Property PAttP_Setting_LevelScalePowerArmorEnemyChance Auto Const Mandatory
+{AUTOFILL}
+GlobalVariable Property PAttP_Setting_LevelScalePowerArmorBossEnemyChance Auto Const Mandatory
+{AUTOFILL}
+GlobalVariable Property PAttP_Setting_LevelScalePowerArmorLegendaryEnemyChance Auto Const Mandatory
+{AUTOFILL}
 
 int lastVersion
 
@@ -43,6 +52,9 @@ Function PerformUpgrade()
     If Version >= 1 && lastVersion < 1
         UpgradeToVersion1()
     EndIf
+    If Version >= 2 && lastVersion < 2
+        UpgradeToVersion2()
+    EndIf
     
     Var[] args = new Var[2]
     args[0] = lastVersion
@@ -63,6 +75,16 @@ Function UpgradeToVersion1()
         debug.trace(self + " is making T-60 exclusive to the Brotherhood of Steel based on previous settings")
         PATTP_Setting_T60ExclusiveToBoS.value = 1
     endif
+EndFunction
+
+Function UpgradeToVersion2()
+    debug.trace(self + " is upgrading to version 1")
+    
+    ; This used to be a ChanceNone, so to preserve the settings, invert (e.g. 0 becomes 100, 100 becomes 0)
+    debug.trace(self + " is inverting level scaling ChanceNones to Chances")
+    PAttP_Setting_LevelScalePowerArmorEnemyChance.value = 100 - PAttP_Setting_LevelScalePowerArmorEnemyChance.value
+    PAttP_Setting_LevelScalePowerArmorBossEnemyChance.value = 100 - PAttP_Setting_LevelScalePowerArmorBossEnemyChance.value
+    PAttP_Setting_LevelScalePowerArmorLegendaryEnemyChance.value = 100 - PAttP_Setting_LevelScalePowerArmorLegendaryEnemyChance.value
 EndFunction
 
 bool Function IsGameInProgress()
