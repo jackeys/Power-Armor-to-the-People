@@ -1,11 +1,8 @@
 Scriptname PAttP:ChangeJetpackSettingsMagicEffect extends ActiveMagicEffect
 {Possibly attaches a legendary mod to a piece of power armor in the object's inventory}
 
-ActorValue Property PATTP_AV_PA_LessJetpackDrain Auto Const Mandatory
+ActorValue Property PATTP_AV_JetpackDrainReductionPercent Auto Const Mandatory
 {AUTOFILL}
-
-float Property DrainReductionPercent = 15.0 Auto Const
-{The percentage that jetpack AP drain should be reduced by for every piece that is equipped}
 
 GlobalVariable Property PATTP_Setting_DefaultJetpackAPDrain Auto Const Mandatory
 
@@ -18,7 +15,7 @@ Event OnEffectStart(Actor akTarget, Actor akCaster)
         return
     endIf
 
-    ChangeJetpackSettings(akTarget.GetValue(PATTP_AV_PA_LessJetpackDrain))
+    ChangeJetpackSettings(akTarget.GetValue(PATTP_AV_JetpackDrainReductionPercent))
 EndEvent
 
 Event OnEffectFinish(Actor akTarget, Actor akCaster)
@@ -28,12 +25,12 @@ Event OnEffectFinish(Actor akTarget, Actor akCaster)
     endIf
 
     ; The item with this effect should have already modified our actor value, so we can just change the settings again
-    ChangeJetpackSettings(akTarget.GetValue(PATTP_AV_PA_LessJetpackDrain))
+    ChangeJetpackSettings(akTarget.GetValue(PATTP_AV_JetpackDrainReductionPercent))
 EndEvent
 
-Function ChangeJetpackSettings(float afNumberOfEffectsToApply)
-    float TotalDrainReduction = Math.Min(afNumberOfEffectsToApply * DrainReductionPercent, 90)
-    debug.trace("Found  " + afNumberOfEffectsToApply + " power armor pieces that reduce jetpack drain, reducing AP drain by " + TotalDrainReduction + "%")
+Function ChangeJetpackSettings(float afPercentReduction)
+    float TotalDrainReduction = Math.Min(afPercentReduction, 90)
+    debug.trace("Reducing AP drain by " + TotalDrainReduction + "%")
     
     ; The typo is in the actual game setting, not this script
     Game.SetGameSettingFloat(JetpackInitialDrainSettingName, PATTP_Setting_DefaultJetpackAPDrain.GetValue() * (1 - (TotalDrainReduction / 100)))
