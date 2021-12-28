@@ -39,8 +39,13 @@ Event OnEffectFinish(Actor akTarget, Actor akCaster)
 EndEvent
 
 Event Actor.OnPlayerLoadGame(Actor akSender)
-    ; When we load the game, the game settings match what is in the game files, not the saved game
-    ; We can listen here to apply any changes that may have happened from other mods being installed
+    float expectedDrainValue = AdjustedDrainValue(Game.GetPlayer().GetValue(PATTP_AV_JetpackDrainReductionPercent))
+    if Game.GetGameSettingFloat(JetpackSustainedDrainSettingName) == expectedDrainValue
+        debug.trace("Jetpack drain is already set to the correct value: " + expectedDrainValue)
+        return
+    endif
+    
+    ; If the game setting doesn't match what we set it to when the game was saved, it changed in the game files
     debug.trace("Setting default jetpack AP drain to " + Game.GetGameSettingFloat(JetpackSustainedDrainSettingName))
     PATTP_Setting_DefaultJetpackAPDrain.SetValue(Game.GetGameSettingFloat(JetpackSustainedDrainSettingName))
 
@@ -48,11 +53,16 @@ Event Actor.OnPlayerLoadGame(Actor akSender)
 EndEvent
 
 Function ChangeJetpackSettings(float afPercentReduction)
-    float TotalDrainReduction = Math.Min(afPercentReduction, 90)
-    debug.trace("Reducing jetpack AP drain by " + TotalDrainReduction + "%")
+    float newValue = AdjustedDrainValue(afPercentReduction)
     
     ; The typo is in the actual game setting, not this script
-    Game.SetGameSettingFloat(JetpackInitialDrainSettingName, PATTP_Setting_DefaultJetpackAPDrain.GetValue() * (1 - (TotalDrainReduction / 100)))
-    Game.SetGameSettingFloat(JetpackSustainedDrainSettingName, PATTP_Setting_DefaultJetpackAPDrain.GetValue() * (1 - (TotalDrainReduction / 100)))
+    Game.SetGameSettingFloat(JetpackInitialDrainSettingName, newValue)
+    Game.SetGameSettingFloat(JetpackSustainedDrainSettingName, newValue)
     debug.trace("Jetpack settings are now " + Game.GetGameSettingFloat(JetpackInitialDrainSettingName) + " initial, " + Game.GetGameSettingFloat(JetpackSustainedDrainSettingName) + " sustained")
+EndFunction
+
+float Function AdjustedDrainValue(float afPercentReduction)
+    float TotalDrainReduction = Math.Min(afPercentReduction, 90)
+    debug.trace("Jetpack AP drain should be lowered by " + TotalDrainReduction + "%")
+    return PATTP_Setting_DefaultJetpackAPDrain.GetValue() * (1 - (TotalDrainReduction / 100))
 EndFunction
