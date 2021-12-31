@@ -21,7 +21,7 @@ Event OnHit(ObjectReference akTarget, ObjectReference akAggressor, Form akSource
 	Actor targetActor = akTarget as Actor
 	if sourceWeapon && targetActor && WeaponShouldBeIncluded(sourceWeapon) && Utility.RandomFloat(0, 100) <= SpellChance
 		debug.trace(targetActor + " was hit, adding spell " + SpellToApply)
-		targetActor.AddSpell(SpellToApply, false)
+		SpellToApply.Cast(akTarget, akTarget)
 		if Duration > 0
 			StartTimer(Duration)
 		EndIf
