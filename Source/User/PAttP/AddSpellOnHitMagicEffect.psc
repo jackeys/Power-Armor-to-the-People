@@ -1,4 +1,4 @@
-Scriptname PAttP:AddSpellOnHitMagicEffect extends ActiveMagicEffect
+Scriptname PAttP:AddSpellOnHitMagicEffect extends ActiveMagicEffect const
 {Has a chance of applying a spell to the target of an attack}
 
 Spell Property SpellToApply Auto Const Mandatory
@@ -12,18 +12,16 @@ FormList Property IncludedWeaponKeywords Auto Const
 
 float Property Duration = 0.0 Auto Const
 
-Actor TargetActor
-
 Event OnEffectStart(Actor akTarget, Actor akCaster)
 	RegisterForHitEvent(akTarget)
 EndEvent
 
 Event OnHit(ObjectReference akTarget, ObjectReference akAggressor, Form akSource, Projectile akProjectile, bool abPowerAttack, bool abSneakAttack, bool abBashAttack, bool abHitBlocked, string apMaterial)
 	Weapon sourceWeapon = akSource as Weapon
-	TargetActor = akTarget as Actor
-	if sourceWeapon && TargetActor && WeaponShouldBeIncluded(sourceWeapon) && Utility.RandomFloat(0, 100) <= SpellChance
-		debug.trace(TargetActor + " was hit, adding spell " + SpellToApply)
-		TargetActor.AddSpell(SpellToApply, false)
+	Actor targetActor = akTarget as Actor
+	if sourceWeapon && targetActor && WeaponShouldBeIncluded(sourceWeapon) && Utility.RandomFloat(0, 100) <= SpellChance
+		debug.trace(targetActor + " was hit, adding spell " + SpellToApply)
+		targetActor.AddSpell(SpellToApply, false)
 		if Duration > 0
 			StartTimer(Duration)
 		EndIf
@@ -33,16 +31,17 @@ Event OnHit(ObjectReference akTarget, ObjectReference akAggressor, Form akSource
 EndEvent
 
 Event OnEffectFinish(Actor akTarget, Actor akCaster)
-	TargetActor = akTarget as Actor
-	if TargetActor
-		TargetActor.RemoveSpell(SpellToApply)
+	Actor targetActor = akTarget as Actor
+	if targetActor
+		targetActor.RemoveSpell(SpellToApply)
 	endIf
 	CancelTimer()
 EndEvent
 
 Event OnTimer(int aiTimerID)
-	debug.trace("Removing spell " + SpellToApply + " from " + TargetActor)
-	TargetActor.RemoveSpell(SpellToApply)
+	Actor targetActor = GetTargetActor()
+	debug.trace("Removing spell " + SpellToApply + " from " + targetActor)
+	targetActor.RemoveSpell(SpellToApply)
 EndEvent
 
 bool Function WeaponShouldBeIncluded(Weapon akWeapon)

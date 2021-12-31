@@ -1,4 +1,4 @@
-Scriptname PAttP:SpawnNPCOnHitMagicEffect extends ActiveMagicEffect
+Scriptname PAttP:SpawnNPCOnHitMagicEffect extends ActiveMagicEffect const
 {Has a chance of spawning an NPC at the target's location when they are hit}
 
 Form Property NPCToSpawn Auto Const Mandatory
@@ -16,6 +16,6 @@ Event OnHit(ObjectReference akTarget, ObjectReference akAggressor, Form akSource
 		debug.trace(akTarget + " was hit, spawning " + NPCToSpawn)
 		akTarget.PlaceAtMe(NPCToSpawn)
 	endIf
-	
+
 	RegisterForHitEvent(akTarget)
 EndEvent

@@ -1,4 +1,4 @@
-Scriptname PAttP:ApplyKeywordMagicEffect extends ActiveMagicEffect
+Scriptname PAttP:ApplyKeywordMagicEffect extends ActiveMagicEffect const
 {Possibly attaches a legendary mod to a piece of power armor in the object's inventory}
 
 GlobalVariable Property AffectedActorSetting Auto Const Mandatory

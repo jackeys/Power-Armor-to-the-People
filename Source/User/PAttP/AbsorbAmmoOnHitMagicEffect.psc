@@ -1,4 +1,4 @@
-Scriptname PAttP:AbsorbAmmoOnHitMagicEffect extends ActiveMagicEffect
+Scriptname PAttP:AbsorbAmmoOnHitMagicEffect extends ActiveMagicEffect const
 {Has a chance of absorbing ammo from a hit}
 
 float Property AbsorbChance Auto Const Mandatory

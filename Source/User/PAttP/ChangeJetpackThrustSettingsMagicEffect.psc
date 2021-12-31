@@ -1,4 +1,4 @@
-Scriptname PAttP:ChangeJetpackThrustSettingsMagicEffect extends ActiveMagicEffect
+Scriptname PAttP:ChangeJetpackThrustSettingsMagicEffect extends ActiveMagicEffect const
 {Possibly attaches a legendary mod to a piece of power armor in the object's inventory}
 
 ActorValue Property PATTP_AV_JetpackThrustIncreasePercent Auto Const Mandatory
@@ -7,7 +7,7 @@ ActorValue Property PATTP_AV_JetpackThrustIncreasePercent Auto Const Mandatory
 GlobalVariable Property PATTP_Cache_DefaultJetpackThrust Auto Const Mandatory
 {AUTOFILL}
 
-string JetpackInitialThrustSettingName = "fJetpackThrustInitial"
+string Property JetpackInitialThrustSettingName = "fJetpackThrustInitial" autoReadOnly Hidden
 
 Event OnEffectStart(Actor akTarget, Actor akCaster)
     ; This should only apply to the player

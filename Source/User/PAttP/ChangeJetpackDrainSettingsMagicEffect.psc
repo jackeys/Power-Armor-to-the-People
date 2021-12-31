@@ -1,4 +1,4 @@
-Scriptname PAttP:ChangeJetpackDrainSettingsMagicEffect extends ActiveMagicEffect
+Scriptname PAttP:ChangeJetpackDrainSettingsMagicEffect extends ActiveMagicEffect const
 {Possibly attaches a legendary mod to a piece of power armor in the object's inventory}
 
 ActorValue Property PATTP_AV_JetpackDrainReductionPercent Auto Const Mandatory
@@ -8,8 +8,8 @@ GlobalVariable Property PATTP_Cache_DefaultJetpackAPDrain Auto Const Mandatory
 {AUTOFILL}
 
 ; The typo "inital" is in the actual game setting name
-string JetpackInitialDrainSettingName = "fJetpackDrainInital"
-string JetpackSustainedDrainSettingName = "fJetpackDrainSustained"
+string Property JetpackInitialDrainSettingName = "fJetpackDrainInital" autoReadOnly
+string Property JetpackSustainedDrainSettingName = "fJetpackDrainSustained" autoReadOnly
 
 Event OnEffectStart(Actor akTarget, Actor akCaster)
     ; This should only apply to the player
