@@ -280,6 +280,9 @@ GlobalVariable Property PATTP_Setting_X01ForBoS Auto Const Mandatory
 GlobalVariable Property PATTP_Setting_T45T51ForBoS Auto Const Mandatory
 {AUTOFILL}
 
+GlobalVariable Property PAttP_Setting_CarryMoreHeavyGunsAlsoAffectsAmmo Auto Const Mandatory
+{AUTOFILL}
+
 PAttP:InjectionManager Property InjectionManager Auto Const Mandatory
 
 bool Property MCM_ManuallyManageModDependentSettings = False Auto
@@ -314,22 +317,34 @@ Function RestoreOriginalAbandonedPowerArmorSets()
     debug.notification("Original abandoned power armor sets restored")
 EndFunction
 
+bool RegisteredForDifficultyChanges = false
+
 Event OnQuestInit()
     RegisterForRemoteEvent(Game.GetPlayer(), "OnPlayerLoadGame")
+    RegisterForRemoteEvent(Game.GetPlayer(), "OnDifficultyChanged")
+    RegisteredForDifficultyChanges = true
     RegisterCustomEvents()
-
+    
     ; Always auto-detect settings when the mod is first installed to give the player sensible defaults
     AutodetectSettings()
-
+    ChangeSettingsBasedOnDifficulty(Game.GetDifficulty())
+    
     SetMCMPropertiesForDisplay()
 EndEvent
 
 Event Actor.OnPlayerLoadGame(Actor akSender)
     RegisterCustomEvents()
-
+    
     if !MCM_ManuallyManageModDependentSettings
         AutodetectSettings()
     EndIf
+    
+    ; If we updated, we may not have ever registered for difficulty changes
+    if !RegisteredForDifficultyChanges
+        RegisterForRemoteEvent(Game.GetPlayer(), "OnDifficultyChanged")
+        RegisteredForDifficultyChanges = true
+        ChangeSettingsBasedOnDifficulty(Game.GetDifficulty())
+    endIf
 
     SetMCMPropertiesForDisplay()
 EndEvent
@@ -342,15 +357,30 @@ EndFunction
 Function AutodetectSettings()
     debug.trace(self + " auto-detecting settings")
     bool injectionRefreshNeeded = false
-
+    
     ; Check to see if any plugins with automatic settings are installed
     injectionRefreshNeeded = ChangeValueBool(PATTP_Setting_T51ForRaiders, Game.IsPluginInstalled("consistent power armor overhaul.esp")) || injectionRefreshNeeded
     injectionRefreshNeeded = ChangeValueBool(PATTP_Setting_X01ForBoS, Game.IsPluginInstalled("consistent power armor overhaul.esp") || Game.IsPluginInstalled("armorkeywords.esm")) || injectionRefreshNeeded
     injectionRefreshNeeded = ChangeValueBool(PATTP_Setting_T45T51ForBoS, !Game.IsPluginInstalled("brotherhood power armor overhaul.esp") && (Game.IsPluginInstalled("consistent power armor overhaul.esp") || Game.IsPluginInstalled("armorkeywords.esm"))) || injectionRefreshNeeded
-
+    
     if injectionRefreshNeeded
         InjectionManager.RefreshListInjections(true)
     EndIf
+EndFunction
+
+Event Actor.OnDifficultyChanged(Actor akSender, int aOldDifficulty, int aNewDifficulty)
+    ChangeSettingsBasedOnDifficulty(aNewDifficulty)
+EndEvent
+
+Function ChangeSettingsBasedOnDifficulty(int aiDifficulty)
+    ; Survival Mode
+    if aiDifficulty == 6
+        debug.trace(self + " is enabling weight compensation for Heavy Metal unique effect because the game is in Survival Mode")
+        PAttP_Setting_CarryMoreHeavyGunsAlsoAffectsAmmo.SetValueInt(1)
+    else
+        debug.trace(self + " is disabling weight compensation for Heavy Metal unique effect because the game is no longer in Survival Mode")
+        PAttP_Setting_CarryMoreHeavyGunsAlsoAffectsAmmo.SetValueInt(0)
+    endIf
 EndFunction
 
 ; Returns whether the value was changed or not
