@@ -683,6 +683,24 @@
                     }
                 }
             ]
+        },
+        {
+            "pageDisplayName": "Unique Power Armor",
+            "content": [
+                {
+                    "text": "Effect Options",
+                    "type": "section"
+                },
+                {
+                    "text": "Heavy Metal - Add Carry Capacity for Mini-Nukes and Missiles",
+                    "type": "switcher",
+                    "help": "Recommended for Survival Mode if you don't disable ammo weight",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People.esp|AAB"
+                    }
+                }
+            ]
         }
     ]
 }
