@@ -1,7 +1,7 @@
 Scriptname PAttP:AddItemPeriodicallyMagicEffect extends ActiveMagicEffect const
 {Adds a specific item to the target's inventory on a specific game timer period}
 
-Form Property ItemToAdd Auto Const Mandatory
+Form Property ItemToAdd Auto Const
 {The item that should be added to the target's inventory}
 
 float Property IntervalInSeconds Auto Const Mandatory
@@ -19,9 +19,11 @@ Event OnEffectFinish(Actor akTarget, Actor akCaster)
 EndEvent
 
 Event OnTimer(int aiTimerID)
-	Actor target = GetTargetActor()
-	debug.trace(self + " adding " + NumberToAdd + " " + ItemToAdd + " to inventory of " + target)
-	target.AddItem(ItemToAdd, NumberToAdd, true)
+	if IsBoundGameObjectAvailable()
+		Actor target = GetTargetActor()		
+		debug.trace(self + " adding " + NumberToAdd + " " + ItemToAdd + " to inventory of " + target)
+		target.AddItem(ItemToAdd, NumberToAdd, true)
 
-	StartTimer(IntervalInSeconds)
+		StartTimer(IntervalInSeconds)
+	endIf
 EndEvent

@@ -688,16 +688,41 @@
             "pageDisplayName": "Unique Power Armor",
             "content": [
                 {
-                    "text": "Effect Options",
+                    "text": "Heavy Metal",
                     "type": "section"
                 },
                 {
-                    "text": "Heavy Metal - Add Carry Capacity for Mini-Nukes and Missiles",
+                    "text": "Add Carry Capacity for Mini-Nukes and Missiles",
                     "type": "switcher",
                     "help": "Recommended for Survival Mode if you don't disable ammo weight",
                     "valueOptions": {
                         "sourceType": "GlobalValue",
                         "sourceForm": "Power Armor to the People.esp|AAB"
+                    }
+                },
+                {
+                    "text": "Cryogenerator",
+                    "type": "section"
+                },
+                {
+                    "text": "Require a Cryolator in Inventory",
+                    "type": "switcher",
+                    "help": "Whether you need to have a Cryolator in their inventory for Cryogenerator to produce cryo cells",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People.esp|AC0"
+                    }
+                },
+                {
+                    "text": "Maximum Cryo Cells in Inventory",
+                    "type": "slider",
+                    "help": "Cryogenerator won't produce cryo cells if you already have at least this many",
+                    "valueOptions": {
+                        "min": 50,
+                        "max": 500,
+                        "step": 10,
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People.esp|AC1"
                     }
                 }
             ]
