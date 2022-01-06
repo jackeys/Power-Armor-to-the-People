@@ -397,6 +397,134 @@
                         "sourceType": "GlobalValue",
                         "sourceForm": "Power Armor to the People.esp|A45"
                     }
+                },
+                {
+                    "text": "Legendary Effects",
+                    "type": "section"
+                },
+                {
+                    "text": "Toggle which effects are available to be applied to power armor when a legendary drop occurs. The legendary effects that apply to standard armor are always enabled.",
+                    "type": "text"
+                },
+                {
+                    "text": "Aerodynamic",
+                    "type": "switcher",
+                    "help": "Reduces jet pack AP drain by 15% and weighs significantly less",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|A61",
+                        "propertyName": "AerodynamicEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|A61",
+                        "function": "UpdateLegendaryModRules"
+                    }
+                },
+                {
+                    "text": "Almost Unbreakable",
+                    "type": "switcher",
+                    "help": "Quadruples durability",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|A61",
+                        "propertyName": "AlmostUnbreakableEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|A61",
+                        "function": "UpdateLegendaryModRules"
+                    }
+                },
+                {
+                    "text": "Amphibious",
+                    "type": "switcher",
+                    "help": "Increases underwater movement speed by 30%",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|A61",
+                        "propertyName": "AmphibiousEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|A61",
+                        "function": "UpdateLegendaryModRules"
+                    }
+                },
+                {
+                    "text": "Custom",
+                    "type": "switcher",
+                    "help": "Can be upgraded with an additional miscellaneous mod",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|A61",
+                        "propertyName": "CustomEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|A61",
+                        "function": "UpdateLegendaryModRules"
+                    }
+                },
+                {
+                    "text": "Drop Trooper",
+                    "type": "switcher",
+                    "help": "Impact landing does double damage",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|A61",
+                        "propertyName": "DropTrooperEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|A61",
+                        "function": "UpdateLegendaryModRules"
+                    }
+                },
+                {
+                    "text": "Efficient",
+                    "type": "switcher",
+                    "help": "Fusion cores last 10% longer",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|A61",
+                        "propertyName": "EfficientEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|A61",
+                        "function": "UpdateLegendaryModRules"
+                    }
+                },
+                {
+                    "text": "Hardening",
+                    "type": "switcher",
+                    "help": "Grants increasing energy and damage resistance the closer it is to breaking (up to +45)",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|A61",
+                        "propertyName": "HardeningEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|A61",
+                        "function": "UpdateLegendaryModRules"
+                    }
+                },
+                {
+                    "text": "Heavy Gunner's",
+                    "type": "switcher",
+                    "help": "Reload heavy guns 20% faster",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|A61",
+                        "propertyName": "HeavyGunnersEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|A61",
+                        "function": "UpdateLegendaryModRules"
+                    }
                 }
             ]
         },
