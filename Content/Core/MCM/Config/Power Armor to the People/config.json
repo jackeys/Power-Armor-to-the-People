@@ -307,6 +307,10 @@
             "pageDisplayName": "Legendary Power Armor",
             "content": [
                 {
+                    "text": "These settings change the chance of seeing legendary power armor and what kinds of legendary effects they can have. These effects may be restricted to only certain parts, such as the chest or legs, but many can apply to any piece.",
+                    "type": "text"
+                },
+                {
                     "text": "Legendary Power Armor Drop Chance",
                     "type": "slider",
                     "help": "The chance that legendary power armor drops instead of legendary armor. At 100%, no legendary armor will ever drop.",
@@ -401,10 +405,6 @@
                 {
                     "text": "Legendary Effects",
                     "type": "section"
-                },
-                {
-                    "text": "Toggle which effects are available to be applied to power armor when a legendary item is created. These effects may be restricted to only certain parts, such as the chest or legs, but many can apply to any piece.",
-                    "type": "text"
                 },
                 {
                     "text": "Standard Armor Legendary Effects",
