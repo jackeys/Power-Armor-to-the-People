@@ -403,8 +403,38 @@
                     "type": "section"
                 },
                 {
-                    "text": "Toggle which effects are available to be applied to power armor when a legendary drop occurs. The legendary effects that apply to standard armor are always enabled.",
+                    "text": "Toggle which effects are available to be applied to power armor when a legendary item is created. These effects may be restricted to only certain parts, such as the chest or legs, but many can apply to any piece.",
                     "type": "text"
+                },
+                {
+                    "text": "Standard Armor Legendary Effects",
+                    "type": "switcher",
+                    "help": "Legendary effects that can apply to any piece of standard armor (Bolstering, VATS Enhanced, etc)",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|A61",
+                        "propertyName": "VanillaArmorEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|A61",
+                        "function": "UpdateLegendaryModRules"
+                    }
+                },
+                {
+                    "text": "Standard Chest Armor Legendary Effects",
+                    "type": "switcher",
+                    "help": "Legendary effects that can apply only to the chest piece of standard armor (Unyielding, Cryogenic, etc)",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|A61",
+                        "propertyName": "VanillaChestOnlyEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|A61",
+                        "function": "UpdateLegendaryModRules"
+                    }
                 },
                 {
                     "text": "Aerodynamic",
@@ -519,6 +549,21 @@
                         "sourceType": "PropertyValueBool",
                         "sourceForm": "Power Armor to the People.esp|A61",
                         "propertyName": "HeavyGunnersEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|A61",
+                        "function": "UpdateLegendaryModRules"
+                    }
+                },
+                {
+                    "text": "Sprinter's",
+                    "type": "switcher",
+                    "help": "Increases wearer's movement speed by 10%",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|A61",
+                        "propertyName": "SprintersEnabled"
                     },
                     "action": {
                         "type": "CallFunction",
