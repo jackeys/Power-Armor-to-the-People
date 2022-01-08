@@ -572,6 +572,21 @@
                     }
                 },
                 {
+                    "text": "Reflecting",
+                    "type": "switcher",
+                    "help": "5% chance to deal 100 damage to ranged attackers",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|A61",
+                        "propertyName": "ReflectingEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|A61",
+                        "function": "UpdateLegendaryModRules"
+                    }
+                },
+                {
                     "text": "Sprinter's",
                     "type": "switcher",
                     "help": "Increases wearer's movement speed by 10%",

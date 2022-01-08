@@ -31,6 +31,9 @@ LegendaryItemQuestScript:LegendaryModRule Property SprintersModRule Const Auto M
 bool Property OverpoweringEnabled = true Auto
 LegendaryItemQuestScript:LegendaryModRule Property OverpoweringModRule Const Auto Mandatory
 
+bool Property ReflectingEnabled = true Auto
+LegendaryItemQuestScript:LegendaryModRule Property ReflectingModRule Const Auto Mandatory
+
 bool Property HardeningEnabled = true Auto
 LegendaryItemQuestScript:LegendaryModRule[] Property HardeningModRules Const Auto Mandatory
 
@@ -63,6 +66,7 @@ Function UpdateLegendaryModRules()
 	UpdateModRule("Drop Trooper", DropTrooperEnabled, DropTrooperModRule)
 	UpdateModRule("Sprinter's", SprintersEnabled, SprintersModRule)
 	UpdateModRule("Overpowering", OverpoweringEnabled, OverpoweringModRule)
+	UpdateModRule("Reflecting", ReflectingEnabled, ReflectingModRule)
 	
 	int i = 0
 	while i < HardeningModRules.Length

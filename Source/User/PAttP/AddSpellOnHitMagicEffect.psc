@@ -4,11 +4,14 @@ Scriptname PAttP:AddSpellOnHitMagicEffect extends ActiveMagicEffect const
 Spell Property SpellToApply Auto Const Mandatory
 {The spell that should be applied to the target of the attack}
 
-float Property SpellChance Auto Const Mandatory
-{The chance that the spell will be added when the target is hit}
+float Property SpellChance = 100.0 Auto Const
+{The chance that the spell will be added when the target is hit - unused if SpellChanceAV is provided}
+
+ActorValue Property SpellChanceAV Auto Const
+{An actor value that governs the chance that the spell will be added when the target is hit - overrides SpellChance if provided}
 
 float Property AutomaticWeaponChanceModifier = 1.0 Auto Const
-{Multiplier for SpellChance if the weapon is an automatic weapon}
+{Multiplier for spell chance if the weapon is an automatic weapon}
 
 Keyword Property WeaponTypeAutomatic Auto Const Mandatory
 {AUTOFILL}
@@ -31,21 +34,14 @@ EndEvent
 Event OnHit(ObjectReference akTarget, ObjectReference akAggressor, Form akSource, Projectile akProjectile, bool abPowerAttack, bool abSneakAttack, bool abBashAttack, bool abHitBlocked, string apMaterial)
 	Weapon sourceWeapon = akSource as Weapon
 	Actor targetActor = akTarget as Actor
-	if (!IgnoreMeleeAttacks || akProjectile) && sourceWeapon && targetActor && WeaponShouldBeIncluded(sourceWeapon)
-		float adjustedSpellChance = SpellChance
-		if sourceWeapon.HasKeyword(WeaponTypeAutomatic)
-			adjustedSpellChance *= AutomaticWeaponChanceModifier
-		EndIf
-
-		if Utility.RandomFloat(0, 100) <= adjustedSpellChance
+	if (!IgnoreMeleeAttacks || akProjectile) && sourceWeapon && targetActor && WeaponShouldBeIncluded(sourceWeapon) && Utility.RandomFloat(0, 100) <= GetSpellChance(akTarget, sourceWeapon)
 		ObjectReference spellTarget = targetActor
-			if ApplySpellToAggressor
-				spellTarget = akAggressor
-			endIf
-
-			debug.trace(targetActor + " was hit, adding spell " + SpellToApply + " to " + spellTarget)
-			SpellToApply.Cast(akTarget, spellTarget)
+		if ApplySpellToAggressor
+			spellTarget = akAggressor
 		endIf
+
+		debug.trace(targetActor + " was hit, adding spell " + SpellToApply + " to " + spellTarget)
+		SpellToApply.Cast(akTarget, spellTarget)
 	endIf
 	
 	RegisterForHitEvent(akTarget)
@@ -57,6 +53,22 @@ Event OnEffectFinish(Actor akTarget, Actor akCaster)
 		targetActor.RemoveSpell(SpellToApply)
 	endIf
 EndEvent
+
+float Function GetSpellChance(ObjectReference akTarget, Weapon akSourceWeapon)
+	float adjustedSpellChance
+	
+	if SpellChanceAV
+		adjustedSpellChance = akTarget.GetValue(SpellChanceAV)
+	else
+		adjustedSpellChance = SpellChance
+	EndIf
+
+	if akSourceWeapon.HasKeyword(WeaponTypeAutomatic)
+		adjustedSpellChance *= AutomaticWeaponChanceModifier
+	EndIf
+
+	return adjustedSpellChance
+EndFunction
 
 bool Function WeaponShouldBeIncluded(Weapon akWeapon)
 	return WeaponIsOnInclusionList(akWeapon) && !WeaponIsOnExclusionList(akWeapon)
