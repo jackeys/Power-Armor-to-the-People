@@ -557,6 +557,21 @@
                     }
                 },
                 {
+                    "text": "Overpowering",
+                    "type": "switcher",
+                    "help": "Power attacks and gun bashing do 25% more damage",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|A61",
+                        "propertyName": "OverpoweringEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|A61",
+                        "function": "UpdateLegendaryModRules"
+                    }
+                },
+                {
                     "text": "Sprinter's",
                     "type": "switcher",
                     "help": "Increases wearer's movement speed by 10%",
