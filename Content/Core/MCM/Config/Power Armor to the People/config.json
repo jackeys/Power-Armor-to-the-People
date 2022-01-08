@@ -600,6 +600,19 @@
                         "form": "Power Armor to the People.esp|A61",
                         "function": "UpdateLegendaryModRules"
                     }
+                },
+                {
+                    "text": "Effect Options",
+                    "type": "section"
+                },
+                {
+                    "text": "Reflecting Sound Effect",
+                    "type": "switcher",
+                    "help": "Whether the Reflecting effect plays a sound when it damages ranged attackers",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People.esp|B35"
+                    }
                 }
             ]
         },
