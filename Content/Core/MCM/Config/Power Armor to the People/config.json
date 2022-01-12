@@ -904,6 +904,21 @@
             "pageDisplayName": "Unique Power Armor",
             "content": [
                 {
+                    "text": "Place all unique items, regardless of installed mods",
+                    "type": "switcher",
+                    "help": "If a unique effect is for power armor that isn't installed, an installed one will be used instead",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|B3B",
+                        "propertyName": "PlaceFallbackItems"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|B3B",
+                        "function": "SpawnItems"
+                    }
+                },
+                {
                     "text": "Heavy Metal",
                     "type": "section"
                 },

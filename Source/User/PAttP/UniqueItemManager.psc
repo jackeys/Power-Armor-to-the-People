@@ -3,7 +3,7 @@ Scriptname PAttP:UniqueItemManager Extends Quest
 Struct CustomItemRule
 
     String ID
-    {Indentifier - used to help identify items in array. Not otherwise used.}
+    {Identifier - used to help identify items in array. Not otherwise used.}
     
     Quest TriggerQuest
     {If populated, look for this quest to place the item}
@@ -33,10 +33,15 @@ Struct CustomItemRule
     
     ReferenceAlias AliasToForceItemInto
     {if set, item will be forced into this alias}
+
+    bool IsFallback = true
+    {Whether this entry is a fallback or not - fallbacks are only placed if the setting is configured}
     
+    Form PlacedItem
 EndStruct
 
 CustomItemRule[] Property CustomItemRules Const Auto Mandatory
+bool Property PlaceFallbackItems = false Auto
 
 Event OnInit()
     SpawnItems()
@@ -45,9 +50,40 @@ EndEvent
 Function SpawnItems()
     int i = 0
     while i < CustomItemRules.Length
-        SpawnUniqueItem(CustomItemRules[i])
+        SpawnItemIfConditionsMet(CustomItemRules[i])
         i += 1
     EndWhile
+EndFunction
+
+Function OverrideUniqueItem(String asID, ObjectMod akMiscMod = None, ObjectMod akCosmeticMod = None, LeveledItem akLeveledListToSpawnFrom = None)
+    int ruleIndex = CustomItemRules.FindStruct("ID", asID)
+
+    if ruleIndex < 0
+        debug.trace(self + " cannot override rule with ID " + asID + " because it could not be found")
+        return
+    EndIf
+
+    If CustomItemRules[ruleIndex].IsFallback == false
+        debug.trace(self + " has already registered an override for rule with ID " + asID)
+    EndIf
+
+    CustomItemRules[ruleIndex].IsFallback = false
+    CustomItemRules[ruleIndex].MiscMod = akMiscMod
+    CustomItemRules[ruleIndex].CosmeticMod = akCosmeticMod
+
+    ; We have to have an item to spawn, so if one was not included, we should assume that we can keep using the original form
+    if akLeveledListToSpawnFrom
+        CustomItemRules[ruleIndex].LeveledListToSpawnFrom = akLeveledListToSpawnFrom
+    EndIf
+
+    SpawnItemIfConditionsMet(CustomItemRules[ruleIndex])
+EndFunction
+
+Function SpawnItemIfConditionsMet(CustomItemRule rule)
+    ; We don't want to place the item again if we already placed it, and unless configured, we don't want to place fallbacks
+    if (!rule.IsFallback || PlaceFallbackItems) && !rule.PlacedItem
+        rule.PlacedItem = SpawnUniqueItem(rule)
+    EndIf
 EndFunction
 
 form Function SpawnUniqueItem(CustomItemRule rule) global
