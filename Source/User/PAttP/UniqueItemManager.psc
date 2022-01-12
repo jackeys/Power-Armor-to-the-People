@@ -34,6 +34,9 @@ Struct CustomItemRule
     ReferenceAlias AliasToForceItemInto
     {if set, item will be forced into this alias}
 
+    Faction OwningFaction
+    {Set if the item should belong to a particular faction}
+
     bool IsFallback = true
     {Whether this entry is a fallback or not - fallbacks are only placed if the setting is configured}
 
@@ -81,7 +84,7 @@ Function OverrideUniqueItem(String asID, ObjectMod akMiscMod = None, ObjectMod a
     debug.trace(self + " overriding custom item rule for ID " + asID)
 
     if ruleIndex < 0
-        debug.trace(self + " creating new state for ID " + asID + " because it could not be found")
+        debug.trace(self + " creating new state for ID " + asID + " to record override because it could not be found")
         CustomItemRuleState ruleUpdate = new CustomItemRuleState
         ruleUpdate.ID = asID
         ruleUpdate.IsFallback = false
@@ -104,13 +107,18 @@ Function OverrideUniqueItem(String asID, ObjectMod akMiscMod = None, ObjectMod a
 EndFunction
 
 Function SpawnItemIfConditionsMet(CustomItemRule rule)
+    if !rule
+        debug.trace(self + " No rule provided to check spawn conditions")
+        return
+    EndIf
+
     ; We don't want to place the item again if we already placed it, and unless configured, we don't want to place fallbacks
     if (!rule.IsFallback || PlaceFallbackItems) && !rule.PlacedItem
         if !rule.TriggerQuest || rule.TriggerQuest.IsStageDone(rule.TriggerStage)
             Form placedItem = SpawnUniqueItem(rule)
             UpdateRulePlacement(rule, placedItem)
         else
-            debug.trace(self + " waiting for quest " + rule.TriggerQuest + " to reach stage " + rule.TriggerStage)
+            debug.trace(self + " Rule " + rule.ID + " waiting for quest " + rule.TriggerQuest + " to reach stage " + rule.TriggerStage)
             RegisterForRemoteEvent(rule.TriggerQuest, "OnStageSet")
         endIf
     EndIf
@@ -136,6 +144,11 @@ form Function SpawnUniqueItem(CustomItemRule rule) global
     PossiblyAttachMod(item, rule.IncreasedCostMod)
     PossiblyAttachMod(item, rule.CosmeticMod)
     PossiblyAttachMod(item, rule.MiscMod)
+
+    if rule.OwningFaction
+        debug.trace("Setting faction owner for item " + rule.ID + " to " + rule.OwningFaction)
+        item.SetFactionOwner(rule.OwningFaction)
+    EndIf
     
     item.enable()
     
@@ -245,7 +258,7 @@ Function UpdateRulePlacement(CustomItemRule akRule, Form akPlacedItem)
     int ruleIndex = RuleStates.FindStruct("ID", akRule.ID)
 
     if ruleIndex < 0
-        debug.trace(self + " creating new state for ID " + akRule.ID + " because it could not be found")
+        debug.trace(self + " creating new state for ID " + akRule.ID + " to record successful placement because it could not be found")
         CustomItemRuleState ruleUpdate = new CustomItemRuleState
         ruleUpdate.ID = akRule.ID
         ruleUpdate.PlacedItem = akPlacedItem
