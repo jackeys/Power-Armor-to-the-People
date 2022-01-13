@@ -30,6 +30,19 @@ Struct CustomItemRule
     
     bool PlaceAtMeInstead = false
     {Place AT instead of IN ReferenceToSpawnIn}
+
+    float PlaceAtMePosX
+    {Only valid if using PlaceAtMeInstead and a custom position is desired}
+    float PlaceAtMePosY
+    {Only valid if using PlaceAtMeInstead and a custom position is desired}
+    float PlaceAtMePosZ
+    {Only valid if using PlaceAtMeInstead and a custom position is desired}
+    float PlaceAtMeRotX
+    {Only valid if using PlaceAtMeInstead and a custom rotation is desired}
+    float PlaceAtMeRotY
+    {Only valid if using PlaceAtMeInstead and a custom rotation is desired}
+    float PlaceAtMeRotZ
+    {Only valid if using PlaceAtMeInstead and a custom rotation is desired}
     
     ReferenceAlias AliasToForceItemInto
     {if set, item will be forced into this alias}
@@ -158,6 +171,16 @@ form Function SpawnUniqueItem(CustomItemRule rule) global
     
     if rule.PlaceAtMeInstead
         debug.trace("Placing unique item " + rule.ID + ": " + item + " at " + spawnInRef)
+
+        if rule.PlaceAtMePosX != 0 || rule.PlaceAtMePosY != 0 || rule.PlaceAtMePosZ != 0
+            debug.trace("Setting custom position of " + rule.PlaceAtMePosX + "," + rule.PlaceAtMePosY + "," + rule.PlaceAtMePosZ + " for item " + rule.ID)
+            item.SetPosition(rule.PlaceAtMePosX, rule.PlaceAtMePosY, rule.PlaceAtMePosZ)
+        EndIf
+
+        if rule.PlaceAtMeRotX != 0 || rule.PlaceAtMeRotY != 0 || rule.PlaceAtMeRotZ != 0
+            debug.trace("Setting custom rotation of " + rule.PlaceAtMeRotX + "," + rule.PlaceAtMeRotY + "," + rule.PlaceAtMeRotZ + " for item " + rule.ID)
+            item.SetAngle(rule.PlaceAtMeRotX, rule.PlaceAtMeRotY, rule.PlaceAtMeRotZ)
+        EndIf
     else
         debug.trace("Adding unique item " + rule.ID + ": " + item + " to " + spawnInRef)
         spawnInRef.additem(item)
