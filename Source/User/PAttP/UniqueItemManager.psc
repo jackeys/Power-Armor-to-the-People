@@ -27,6 +27,9 @@ Struct CustomItemRule
     
     ReferenceAlias AliasToSpawnIn
     {Where to spawn in, overrides ReferenceToSpawnIn}
+
+    Container PlaceContainerInstead
+    {Place this container AT the ReferenceToSpawnIn, and spawn the item inside of it - all PlaceAtMe position and rotation variables apply to this}
     
     bool PlaceAtMeInstead = false
     {Place AT instead of IN ReferenceToSpawnIn}
@@ -53,7 +56,7 @@ Struct CustomItemRule
     bool IsFallback = true
     {Whether this entry is a fallback or not - fallbacks are only placed if the setting is configured}
 
-    Form PlacedItem
+    bool PlacedItem = false
     {Should be left alone}
 EndStruct
 
@@ -69,7 +72,7 @@ Struct CustomItemRuleState
     
     bool IsFallback
 
-    Form PlacedItem
+    bool PlacedItem
 EndStruct
 
 CustomItemRuleState[] RuleStates
@@ -128,8 +131,8 @@ Function SpawnItemIfConditionsMet(CustomItemRule rule)
     ; We don't want to place the item again if we already placed it, and unless configured, we don't want to place fallbacks
     if (!rule.IsFallback || PlaceFallbackItems) && !rule.PlacedItem
         if !rule.TriggerQuest || rule.TriggerQuest.IsStageDone(rule.TriggerStage)
-            Form placedItem = SpawnUniqueItem(rule)
-            UpdateRulePlacement(rule, placedItem)
+            UpdateRulePlacement(rule, true)
+            SpawnUniqueItem(rule)
         else
             debug.trace(self + " Rule " + rule.ID + " waiting for quest " + rule.TriggerQuest + " to reach stage " + rule.TriggerStage)
             RegisterForRemoteEvent(rule.TriggerQuest, "OnStageSet")
@@ -169,24 +172,32 @@ form Function SpawnUniqueItem(CustomItemRule rule) global
         rule.AliasToForceItemInto.ForceRefTo(item)
     endif
     
-    if rule.PlaceAtMeInstead
+    if rule.PlaceContainerInstead
+        debug.trace("Placing container for unique item " + rule.ID + ": " + item + " at " + spawnInRef)
+        ObjectReference newContainer = spawnInRef.PlaceAtMe(rule.PlaceContainerInstead, aiCount = 1, abForcePersist = false, abInitiallyDisabled = false, abDeleteWhenAble = false)
+        RepositionPlacedObject(newContainer, rule)
+        newContainer.addItem(item)
+    elseif rule.PlaceAtMeInstead
         debug.trace("Placing unique item " + rule.ID + ": " + item + " at " + spawnInRef)
-
-        if rule.PlaceAtMePosX != 0 || rule.PlaceAtMePosY != 0 || rule.PlaceAtMePosZ != 0
-            debug.trace("Setting custom position of " + rule.PlaceAtMePosX + "," + rule.PlaceAtMePosY + "," + rule.PlaceAtMePosZ + " for item " + rule.ID)
-            item.SetPosition(rule.PlaceAtMePosX, rule.PlaceAtMePosY, rule.PlaceAtMePosZ)
-        EndIf
-
-        if rule.PlaceAtMeRotX != 0 || rule.PlaceAtMeRotY != 0 || rule.PlaceAtMeRotZ != 0
-            debug.trace("Setting custom rotation of " + rule.PlaceAtMeRotX + "," + rule.PlaceAtMeRotY + "," + rule.PlaceAtMeRotZ + " for item " + rule.ID)
-            item.SetAngle(rule.PlaceAtMeRotX, rule.PlaceAtMeRotY, rule.PlaceAtMeRotZ)
-        EndIf
+        RepositionPlacedObject(item, rule)
     else
         debug.trace("Adding unique item " + rule.ID + ": " + item + " to " + spawnInRef)
         spawnInRef.additem(item)
     endif
     
     RETURN item
+EndFunction
+
+Function RepositionPlacedObject(ObjectReference akObject, CustomItemRule akRule) global
+    if akRule.PlaceAtMePosX != 0 || akRule.PlaceAtMePosY != 0 || akRule.PlaceAtMePosZ != 0
+        debug.trace("Setting custom position of " + akRule.PlaceAtMePosX + "," + akRule.PlaceAtMePosY + "," + akRule.PlaceAtMePosZ + " for item " + akRule.ID)
+        akObject.SetPosition(akRule.PlaceAtMePosX, akRule.PlaceAtMePosY, akRule.PlaceAtMePosZ)
+    EndIf
+
+    if akRule.PlaceAtMeRotX != 0 || akRule.PlaceAtMeRotY != 0 || akRule.PlaceAtMeRotZ != 0
+        debug.trace("Setting custom rotation of " + akRule.PlaceAtMeRotX + "," + akRule.PlaceAtMeRotY + "," + akRule.PlaceAtMeRotZ + " for item " + akRule.ID)
+        akObject.SetAngle(akRule.PlaceAtMeRotX, akRule.PlaceAtMeRotY, akRule.PlaceAtMeRotZ)
+    EndIf
 EndFunction
 
 bool Function PossiblyAttachMod(ObjectReference akItem, ObjectMod akMod) global
@@ -203,6 +214,14 @@ bool Function PossiblyAttachMod(ObjectReference akItem, ObjectMod akMod) global
     EndIf
     
     return success
+EndFunction
+
+; Ignores all conditions and just spawns the item now, even if it was already spawned - meant for debugging
+Function ForceSpawn(string asID)
+    CustomItemRule rule = GetItemRuleWithState(asID)
+    if rule
+        SpawnUniqueItem(rule)
+    EndIf
 EndFunction
 
 Event Quest.OnStageSet(Quest akSender, int auiStageID, int auiItemID)
@@ -235,6 +254,7 @@ CustomItemRule Function GetItemRuleWithState(string asID)
 
     if rule && ruleState
         rule.IsFallback = ruleState.IsFallback
+        rule.PlacedItem = ruleState.PlacedItem
         
         ; We only overlay state if it has a real value
         if ruleState.CosmeticMod
@@ -243,10 +263,6 @@ CustomItemRule Function GetItemRuleWithState(string asID)
 
         if ruleState.MiscMod
             rule.MiscMod = ruleState.MiscMod
-        EndIf
-
-        if ruleState.PlacedItem
-            rule.PlacedItem = ruleState.PlacedItem
         EndIf
         
         if ruleState.LeveledListToSpawnFrom
@@ -277,16 +293,16 @@ CustomItemRuleState Function GetItemRuleState(string asID)
     endIf
 EndFunction
     
-Function UpdateRulePlacement(CustomItemRule akRule, Form akPlacedItem)
+Function UpdateRulePlacement(CustomItemRule akRule, bool abPlacedItem)
     int ruleIndex = RuleStates.FindStruct("ID", akRule.ID)
 
     if ruleIndex < 0
         debug.trace(self + " creating new state for ID " + akRule.ID + " to record successful placement because it could not be found")
         CustomItemRuleState ruleUpdate = new CustomItemRuleState
         ruleUpdate.ID = akRule.ID
-        ruleUpdate.PlacedItem = akPlacedItem
+        ruleUpdate.PlacedItem = abPlacedItem
         RuleStates.Add(ruleUpdate)
     else
-        RuleStates[ruleIndex].PlacedItem = akPlacedItem
+        RuleStates[ruleIndex].PlacedItem = abPlacedItem
     EndIf
 EndFunction
