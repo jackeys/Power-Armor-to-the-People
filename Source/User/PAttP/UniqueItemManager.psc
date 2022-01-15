@@ -30,6 +30,9 @@ Struct CustomItemRule
 
     Form PlaceContainerInstead
     {Place this container AT the ReferenceToSpawnIn, and spawn the item inside of it - all PlaceAtMe position and rotation variables apply to this}
+
+    int ContainerLockLevel
+    {Used only if PlaceContainerInstead is used. 25=Novice, 50=Advanced, 75=Expert, 100=Master}
     
     bool PlaceAtMeInstead = false
     {Place AT instead of IN ReferenceToSpawnIn}
@@ -183,6 +186,11 @@ ObjectReference Function SpawnUniqueItem(CustomItemRule rule)
         ObjectReference newContainer = spawnInRef.PlaceAtMe(rule.PlaceContainerInstead, aiCount = 1, abForcePersist = false, abInitiallyDisabled = false, abDeleteWhenAble = false)
         RepositionPlacedObject(newContainer, rule)
         newContainer.addItem(item)
+        if rule.ContainerLockLevel > 0
+            debug.trace(self + " Locking container for item " + rule.ID + " with lock level " + rule.ContainerLockLevel)
+            newContainer.SetLockLevel(rule.ContainerLockLevel)
+            newContainer.Lock()
+        EndIf
         return newContainer
     elseif rule.PlaceAtMeInstead
         debug.trace("Placing unique item " + rule.ID + ": " + item + " at " + spawnInRef)
