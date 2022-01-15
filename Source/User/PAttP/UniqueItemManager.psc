@@ -57,7 +57,10 @@ Struct CustomItemRule
     {Whether this entry is a fallback or not - fallbacks are only placed if the setting is configured}
 
     bool PlacedItem = false
-    {Should be left alone}
+    {Should be left alone - whether the item was placed already}
+
+    ObjectReference PlacedReference
+    {Should be left alone - populated with the new reference sitting in the world, if any (item if PlaceAtMeInstead, container if PlaceContainerInstead)}
 EndStruct
 
 Struct CustomItemRuleState
@@ -73,6 +76,8 @@ Struct CustomItemRuleState
     bool IsFallback
 
     bool PlacedItem
+
+    ObjectReference PlacedReference
 EndStruct
 
 CustomItemRuleState[] RuleStates
@@ -131,8 +136,9 @@ Function SpawnItemIfConditionsMet(CustomItemRule rule)
     ; We don't want to place the item again if we already placed it, and unless configured, we don't want to place fallbacks
     if (!rule.IsFallback || PlaceFallbackItems) && !rule.PlacedItem
         if !rule.TriggerQuest || rule.TriggerQuest.IsStageDone(rule.TriggerStage)
-            UpdateRulePlacement(rule, true)
-            SpawnUniqueItem(rule)
+            ; Indicate upfront that we are placing this item to prevent duplicate items, then update again to keep the actual item reference
+            UpdateRulePlacement(rule)
+            UpdateRulePlacement(rule, true, SpawnUniqueItem(rule))
         else
             debug.trace(self + " Rule " + rule.ID + " waiting for quest " + rule.TriggerQuest + " to reach stage " + rule.TriggerStage)
             RegisterForRemoteEvent(rule.TriggerQuest, "OnStageSet")
@@ -140,7 +146,7 @@ Function SpawnItemIfConditionsMet(CustomItemRule rule)
     EndIf
 EndFunction
 
-form Function SpawnUniqueItem(CustomItemRule rule) global
+ObjectReference Function SpawnUniqueItem(CustomItemRule rule)
     ObjectReference spawnInRef
 
     if rule.AliasToSpawnIn
@@ -177,18 +183,19 @@ form Function SpawnUniqueItem(CustomItemRule rule) global
         ObjectReference newContainer = spawnInRef.PlaceAtMe(rule.PlaceContainerInstead, aiCount = 1, abForcePersist = false, abInitiallyDisabled = false, abDeleteWhenAble = false)
         RepositionPlacedObject(newContainer, rule)
         newContainer.addItem(item)
+        return newContainer
     elseif rule.PlaceAtMeInstead
         debug.trace("Placing unique item " + rule.ID + ": " + item + " at " + spawnInRef)
         RepositionPlacedObject(item, rule)
+        return Item
     else
         debug.trace("Adding unique item " + rule.ID + ": " + item + " to " + spawnInRef)
         spawnInRef.additem(item)
+        return None
     endif
-    
-    RETURN item
 EndFunction
 
-Function RepositionPlacedObject(ObjectReference akObject, CustomItemRule akRule) global
+Function RepositionPlacedObject(ObjectReference akObject, CustomItemRule akRule)
     if akRule.PlaceAtMePosX != 0 || akRule.PlaceAtMePosY != 0 || akRule.PlaceAtMePosZ != 0
         debug.trace("Setting custom position of " + akRule.PlaceAtMePosX + "," + akRule.PlaceAtMePosY + "," + akRule.PlaceAtMePosZ + " for item " + akRule.ID)
         akObject.SetPosition(akRule.PlaceAtMePosX, akRule.PlaceAtMePosY, akRule.PlaceAtMePosZ)
@@ -197,8 +204,26 @@ Function RepositionPlacedObject(ObjectReference akObject, CustomItemRule akRule)
     if akRule.PlaceAtMeRotX != 0 || akRule.PlaceAtMeRotY != 0 || akRule.PlaceAtMeRotZ != 0
         debug.trace("Setting custom rotation of " + akRule.PlaceAtMeRotX + "," + akRule.PlaceAtMeRotY + "," + akRule.PlaceAtMeRotZ + " for item " + akRule.ID)
         akObject.SetAngle(akRule.PlaceAtMeRotX, akRule.PlaceAtMeRotY, akRule.PlaceAtMeRotZ)
+
+        ; Rotation doesn't seem to work when the cell hasn't loaded yet, so we will do it again the next time the player enters the cell just to make sure
+        RegisterForRemoteEvent(akObject, "OnCellLoad")
     EndIf
 EndFunction
+
+Event ObjectReference.OnCellLoad(ObjectReference akSender)
+    debug.trace(self + " received OnCellLoad event for " + akSender)
+    int ruleIndex = RuleStates.FindStruct("PlacedReference", akSender)
+
+    if ruleIndex >= 0
+        CustomItemRule rule = GetItemRuleWithState(RuleStates[ruleIndex].ID)
+        debug.trace("Setting rotation on cell load of " + rule.PlaceAtMeRotX + "," + rule.PlaceAtMeRotY + "," + rule.PlaceAtMeRotZ + " for item " + rule.ID + ": " + rule.PlacedReference)
+        akSender.SetAngle(rule.PlaceAtMeRotX, rule.PlaceAtMeRotY, rule.PlaceAtMeRotZ)
+    Else
+        debug.trace(self + " Could not find rule to change rotation on cell load for " + akSender)
+    EndIf
+    
+    UnregisterForRemoteEvent(akSender, "OnCellLoad")
+EndEvent
 
 bool Function PossiblyAttachMod(ObjectReference akItem, ObjectMod akMod) global
     bool success = false
@@ -255,6 +280,7 @@ CustomItemRule Function GetItemRuleWithState(string asID)
     if rule && ruleState
         rule.IsFallback = ruleState.IsFallback
         rule.PlacedItem = ruleState.PlacedItem
+        rule.PlacedReference = ruleState.PlacedReference
         
         ; We only overlay state if it has a real value
         if ruleState.CosmeticMod
@@ -293,7 +319,7 @@ CustomItemRuleState Function GetItemRuleState(string asID)
     endIf
 EndFunction
     
-Function UpdateRulePlacement(CustomItemRule akRule, bool abPlacedItem)
+Function UpdateRulePlacement(CustomItemRule akRule, bool abPlacedItem = true, ObjectReference akPlacedReference = None)
     int ruleIndex = RuleStates.FindStruct("ID", akRule.ID)
 
     if ruleIndex < 0
@@ -301,8 +327,10 @@ Function UpdateRulePlacement(CustomItemRule akRule, bool abPlacedItem)
         CustomItemRuleState ruleUpdate = new CustomItemRuleState
         ruleUpdate.ID = akRule.ID
         ruleUpdate.PlacedItem = abPlacedItem
+        ruleUpdate.PlacedReference = akPlacedReference
         RuleStates.Add(ruleUpdate)
     else
         RuleStates[ruleIndex].PlacedItem = abPlacedItem
+        RuleStates[ruleIndex].PlacedReference = akPlacedReference
     EndIf
 EndFunction
