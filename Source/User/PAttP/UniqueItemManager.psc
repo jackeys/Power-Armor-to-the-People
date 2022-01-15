@@ -28,7 +28,7 @@ Struct CustomItemRule
     ReferenceAlias AliasToSpawnIn
     {Where to spawn in, overrides ReferenceToSpawnIn}
 
-    Container PlaceContainerInstead
+    Form PlaceContainerInstead
     {Place this container AT the ReferenceToSpawnIn, and spawn the item inside of it - all PlaceAtMe position and rotation variables apply to this}
     
     bool PlaceAtMeInstead = false
