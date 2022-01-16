@@ -13,7 +13,7 @@ ActorValue Property SpellChanceAV Auto Const
 float Property AutomaticWeaponChanceModifier = 1.0 Auto Const
 {Multiplier for spell chance if the weapon is an automatic weapon}
 
-Keyword Property WeaponTypeAutomatic Auto Const Mandatory
+FormList Property AutomaticWeaponKeywords Auto Const Mandatory
 {AUTOFILL}
 
 FormList Property IncludedWeaponKeywords Auto Const
@@ -79,7 +79,7 @@ float Function GetSpellChance(ObjectReference akTarget, Weapon akSourceWeapon)
 		adjustedSpellChance = SpellChance
 	EndIf
 
-	if akSourceWeapon.HasKeyword(WeaponTypeAutomatic)
+	if akSourceWeapon.HasKeywordInFormList(AutomaticWeaponKeywords)
 		adjustedSpellChance *= AutomaticWeaponChanceModifier
 	EndIf
 
@@ -87,43 +87,5 @@ float Function GetSpellChance(ObjectReference akTarget, Weapon akSourceWeapon)
 EndFunction
 
 bool Function WeaponShouldBeIncluded(Weapon akWeapon)
-	return WeaponIsOnInclusionList(akWeapon) && !WeaponIsOnExclusionList(akWeapon)
-EndFunction
-
-bool Function WeaponIsOnInclusionList(Weapon akWeapon)
-	if !IncludedWeaponKeywords
-		return true
-	endif
-
-	int i = 0
-	while i < IncludedWeaponKeywords.GetSize()
-		Keyword InclusionKeyword = IncludedWeaponKeywords.GetAt(i) as Keyword
-		if akWeapon.HasKeyword(InclusionKeyword)
-			return true
-		endIf
-		
-		i += 1
-		endWhile
-		
-	debug.trace(self + ": Weapon " + akWeapon + " does not have a keyword from " + IncludedWeaponKeywords + " and cannot be used to apply a spell")
-	return false
-EndFunction
-
-bool Function WeaponIsOnExclusionList(Weapon akWeapon)
-	if !ExcludedWeaponKeywords
-		return false
-	endif
-
-	int i = 0
-	while i < ExcludedWeaponKeywords.GetSize()
-		Keyword ExclusionKeyword = ExcludedWeaponKeywords.GetAt(i) as Keyword
-		if akWeapon.HasKeyword(ExclusionKeyword)
-			debug.trace(self + ": Weapon " + akWeapon + " does has keyword " + ExclusionKeyword + " from " + ExcludedWeaponKeywords + " and cannot be used to apply a spell")
-			return true
-		endIf
-		
-		i += 1
-		endWhile
-		
-	return false
+	return (!IncludedWeaponKeywords || akWeapon.HasKeywordInFormList(IncludedWeaponKeywords)) && (!ExcludedWeaponKeywords || !akWeapon.HasKeywordInFormList(ExcludedWeaponKeywords))
 EndFunction
