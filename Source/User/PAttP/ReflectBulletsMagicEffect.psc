@@ -31,8 +31,6 @@ ImpactMapping[] Property ImpactMappings Auto Const
 ImpactDataSet Property DefaultImpact Auto Const
 string Property ImpactNode = "" Auto Const
 
-bool Property IgnoreMeleeAttacks = true Auto Const
-
 Event OnEffectStart(Actor akTarget, Actor akCaster)
 	RegisterForHitEvent(akTarget)
 EndEvent
@@ -40,7 +38,7 @@ EndEvent
 Event OnHit(ObjectReference akTarget, ObjectReference akAggressor, Form akSource, Projectile akProjectile, bool abPowerAttack, bool abSneakAttack, bool abBashAttack, bool abHitBlocked, string apMaterial)
 	Weapon sourceWeapon = akSource as Weapon
 	Actor targetActor = akTarget as Actor
-	if (!IgnoreMeleeAttacks || akProjectile) && sourceWeapon && targetActor && WeaponShouldBeIncluded(sourceWeapon) && Utility.RandomFloat(0, 100) <= GetSpellChance(akTarget, sourceWeapon)
+	if akProjectile && sourceWeapon && targetActor && WeaponShouldBeIncluded(sourceWeapon) && Utility.RandomFloat(0, 100) <= GetSpellChance(akTarget, sourceWeapon)
 		ObjectReference spellTarget = akAggressor
 		
 		debug.trace(targetActor + " was hit, adding spell " + SpellToApply + " to " + spellTarget)
@@ -49,6 +47,10 @@ Event OnHit(ObjectReference akTarget, ObjectReference akAggressor, Form akSource
 	endIf
 	
 	RegisterForHitEvent(akTarget)
+EndEvent
+
+Event OnEffectFinish(Actor akTarget, Actor akCaster)
+	UnregisterForHitEvent(akTarget)
 EndEvent
 
 Function PlayImpactByKeywords(Form akSource, ObjectReference akTarget)
