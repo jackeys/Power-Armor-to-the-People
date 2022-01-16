@@ -69,6 +69,12 @@ EndStruct
 Struct CustomItemRuleState
     String ID
     {Identifier to match items when registering and storing state - should be unique}
+
+    ObjectReference ReferenceToSpawnIn
+
+    Quest TriggerQuest
+
+    int TriggerStage = -1
     
     LeveledItem LeveledListToSpawnFrom
     
@@ -130,6 +136,29 @@ Function OverrideUniqueItem(String asID, ObjectMod akMiscMod = None, ObjectMod a
     SpawnItemIfConditionsMet(GetItemRuleWithState(asID))
 EndFunction
 
+; "None" means no change
+Function OverrideUniqueItemTrigger(String asID, ObjectReference akReferenceToSpawnIn = None, Quest akTriggerQuest = None, int aiTriggerStage = -1)
+    int ruleIndex = RuleStates.FindStruct("ID", asID)
+
+    debug.trace(self + " overriding custom item trigger for ID " + asID)
+
+    if ruleIndex < 0
+        debug.trace(self + " creating new state for ID " + asID + " to record trigger override because it could not be found")
+        CustomItemRuleState ruleUpdate = new CustomItemRuleState
+        ruleUpdate.ID = asID
+        ruleUpdate.ReferenceToSpawnIn = akReferenceToSpawnIn
+        ruleUpdate.TriggerQuest = akTriggerQuest
+        ruleUpdate.TriggerStage = aiTriggerStage
+        RuleStates.Add(ruleUpdate)
+    else
+        RuleStates[ruleIndex].ReferenceToSpawnIn = akReferenceToSpawnIn
+        RuleStates[ruleIndex].TriggerQuest = akTriggerQuest
+        RuleStates[ruleIndex].TriggerStage = aiTriggerStage
+    EndIf
+    
+    SpawnItemIfConditionsMet(GetItemRuleWithState(asID))
+EndFunction
+
 Function SpawnItemIfConditionsMet(CustomItemRule rule)
     if !rule
         debug.trace(self + " No rule provided to check spawn conditions")
@@ -139,9 +168,7 @@ Function SpawnItemIfConditionsMet(CustomItemRule rule)
     ; We don't want to place the item again if we already placed it, and unless configured, we don't want to place fallbacks
     if (!rule.IsFallback || PlaceFallbackItems) && !rule.PlacedItem
         if !rule.TriggerQuest || rule.TriggerQuest.IsStageDone(rule.TriggerStage)
-            ; Indicate upfront that we are placing this item to prevent duplicate items, then update again to keep the actual item reference
-            UpdateRulePlacement(rule)
-            UpdateRulePlacement(rule, true, SpawnUniqueItem(rule))
+            SpawnUniqueItem(rule)
         else
             debug.trace(self + " Rule " + rule.ID + " waiting for quest " + rule.TriggerQuest + " to reach stage " + rule.TriggerStage)
             RegisterForRemoteEvent(rule.TriggerQuest, "OnStageSet")
@@ -157,9 +184,12 @@ ObjectReference Function SpawnUniqueItem(CustomItemRule rule)
     elseif rule.ReferenceToSpawnIn
         spawnInRef = rule.ReferenceToSpawnIn
     else
-        debug.trace("Didn't find spawnInRef for unique item " + rule.ID + ", using Game.GetPlayer() instead.")
-        spawnInRef = Game.GetPlayer()
+        debug.trace("Didn't find spawnInRef for unique item " + rule.ID + ", not placing")
+        return None
     endif
+
+    ; Indicate upfront that we are placing this item to prevent duplicate items, then update again to keep the actual item reference
+    UpdateRulePlacement(rule)
     
     ObjectReference item = spawnInRef.PlaceAtMe(rule.LeveledListToSpawnFrom, aiCount = 1, abForcePersist = false, abInitiallyDisabled = true, abDeleteWhenAble = false)
 
@@ -181,6 +211,7 @@ ObjectReference Function SpawnUniqueItem(CustomItemRule rule)
         rule.AliasToForceItemInto.ForceRefTo(item)
     endif
     
+    ObjectReference worldItem = None
     if rule.PlaceContainerInstead
         debug.trace("Placing container for unique item " + rule.ID + ": " + item + " at " + spawnInRef)
         ObjectReference newContainer = spawnInRef.PlaceAtMe(rule.PlaceContainerInstead, aiCount = 1, abForcePersist = false, abInitiallyDisabled = false, abDeleteWhenAble = false)
@@ -191,16 +222,18 @@ ObjectReference Function SpawnUniqueItem(CustomItemRule rule)
             newContainer.SetLockLevel(rule.ContainerLockLevel)
             newContainer.Lock()
         EndIf
-        return newContainer
+        worldItem = newContainer
     elseif rule.PlaceAtMeInstead
         debug.trace("Placing unique item " + rule.ID + ": " + item + " at " + spawnInRef)
         RepositionPlacedObject(item, rule)
-        return Item
+        worldItem = Item
     else
         debug.trace("Adding unique item " + rule.ID + ": " + item + " to " + spawnInRef)
         spawnInRef.additem(item)
-        return None
     endif
+
+    UpdateRulePlacement(rule, true, worldItem)
+    return worldItem
 EndFunction
 
 Function RepositionPlacedObject(ObjectReference akObject, CustomItemRule akRule)
@@ -301,6 +334,15 @@ CustomItemRule Function GetItemRuleWithState(string asID)
         
         if ruleState.LeveledListToSpawnFrom
             rule.LeveledListToSpawnFrom = ruleState.LeveledListToSpawnFrom
+        EndIf
+
+        if ruleState.ReferenceToSpawnIn
+            rule.ReferenceToSpawnIn = ruleState.ReferenceToSpawnIn
+        EndIf
+
+        if ruleState.TriggerQuest
+            rule.TriggerQuest = ruleState.TriggerQuest
+            rule.TriggerStage = ruleState.TriggerStage
         EndIf
     EndIf
 

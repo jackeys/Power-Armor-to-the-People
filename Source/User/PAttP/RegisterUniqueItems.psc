@@ -13,15 +13,31 @@ Struct UniqueItemReplacement
     ObjectMod MiscMod
 EndStruct
 
-UniqueItemReplacement[] Property UniqueItems Const Auto Mandatory
+Struct UniqueItemTrigger
+    String ID
+
+    Quest TriggerQuest
+
+    int TriggerStage = -1
+
+    ObjectReference ReferenceToSpawnIn
+EndStruct
+
+UniqueItemReplacement[] Property UniqueItems Const Auto
+UniqueItemTrigger[] Property Triggers Const Auto
 PAttP:UniqueItemManager Property PATTP_UniqueItemManager Const Auto Mandatory
 {AUTOFILL}
 
 Event OnInit()
     RegisterUniques()
+    RegisterTriggers()
 EndEvent
 
 Function RegisterUniques()
+    if !UniqueItems
+        return
+    EndIf
+
     int i = 0
     while i < UniqueItems.Length
         UniqueItemReplacement uniqueItem = UniqueItems[i]
@@ -31,3 +47,16 @@ Function RegisterUniques()
     EndWhile
 EndFunction
 
+Function RegisterTriggers()
+    if !Triggers
+        return
+    EndIf
+
+    int i = 0
+    while i < Triggers.Length
+        UniqueItemTrigger uniqueItemTrigger = Triggers[i]
+        debug.trace(self + " is overriding unique item " + uniqueItemTrigger.ID)
+        PATTP_UniqueItemManager.OverrideUniqueItemTrigger(uniqueItemTrigger.ID, uniqueItemTrigger.ReferenceToSpawnIn, uniqueItemTrigger.TriggerQuest, uniqueItemTrigger.TriggerStage)
+        i += 1
+    EndWhile
+EndFunction
