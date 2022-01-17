@@ -48,6 +48,57 @@ Keyword Property PowerArmorChestKeyword Const Auto Mandatory
 FormList Property LegendaryModRule_AllowedKeywords_ArmorBodyPartChest Const Auto Mandatory
 {AUTOFILL}
 
+; Unique power armor effects - off by default
+
+bool Property UniqueEffectsEnabled = false Auto
+
+bool Property OverseersEnabled = false Auto
+LegendaryItemQuestScript:LegendaryModRule Property OverseersModRule Const Auto Mandatory
+
+bool Property PeoplesEnabled = false Auto
+LegendaryItemQuestScript:LegendaryModRule Property PeoplesModRule Const Auto Mandatory
+
+bool Property TerrifyingEnabled = false Auto
+LegendaryItemQuestScript:LegendaryModRule Property TerrifyingModRule Const Auto Mandatory
+
+bool Property PiezonucleicEnabled = false Auto
+LegendaryItemQuestScript:LegendaryModRule Property PiezonucleicModRule Const Auto Mandatory
+
+bool Property RocketeerEnabled = false Auto
+LegendaryItemQuestScript:LegendaryModRule Property RocketeerModRule Const Auto Mandatory
+
+bool Property DirectorsEnabled = false Auto
+LegendaryItemQuestScript:LegendaryModRule Property DirectorsModRule Const Auto Mandatory
+
+bool Property RecyclingEnabled = false Auto
+LegendaryItemQuestScript:LegendaryModRule Property RecyclingModRule Const Auto Mandatory
+
+bool Property CondensingEnabled = false Auto
+LegendaryItemQuestScript:LegendaryModRule Property CondensingModRule Const Auto Mandatory
+
+bool Property DeflectingEnabled = false Auto
+LegendaryItemQuestScript:LegendaryModRule Property DeflectingModRule Const Auto Mandatory
+
+bool Property RammingEnabled = false Auto
+LegendaryItemQuestScript:LegendaryModRule Property RammingModRule Const Auto Mandatory
+
+bool Property PenetratingEnabled = false Auto
+LegendaryItemQuestScript:LegendaryModRule Property PenetratingModRule Const Auto Mandatory
+
+bool Property AdaptingEnabled = false Auto
+LegendaryItemQuestScript:LegendaryModRule Property AdaptingModRule Const Auto Mandatory
+
+bool Property ChargingEnabled = false Auto
+LegendaryItemQuestScript:LegendaryModRule Property ChargingModRule Const Auto Mandatory
+
+bool Property HeavyLiftingEnabled = false Auto
+LegendaryItemQuestScript:LegendaryModRule Property HeavyLiftingModRule Const Auto Mandatory
+
+bool Property RadAbsorbingEnabled = false Auto
+LegendaryItemQuestScript:LegendaryModRule Property RadAbsorbingModRule Const Auto Mandatory
+
+bool Property FleetingEnabled = false Auto
+LegendaryItemQuestScript:LegendaryModRule Property FleetingModRule Const Auto Mandatory
 
 Event OnQuestInit()
 	UpdateLegendaryModRules()
@@ -70,9 +121,31 @@ Function UpdateLegendaryModRules()
 	
 	int i = 0
 	while i < HardeningModRules.Length
-		UpdateModRule("Hardening " + i, HardeningEnabled, HardeningModRules[i])
-		i += 1
+	UpdateModRule("Hardening " + i, HardeningEnabled, HardeningModRules[i])
+	i += 1
 	EndWhile
+
+	; Unique effects
+	UpdateUniqueModRule("Overseer's", OverseersEnabled, OverseersModRule)
+	UpdateUniqueModRule("People's", PeoplesEnabled, PeoplesModRule)
+	UpdateUniqueModRule("Director's", DirectorsEnabled, DirectorsModRule)
+	UpdateUniqueModRule("Terrifying", TerrifyingEnabled, TerrifyingModRule)
+	UpdateUniqueModRule("Piezonucleic", PiezonucleicEnabled, PiezonucleicModRule)
+	UpdateUniqueModRule("Rocketeer", RocketeerEnabled, RocketeerModRule)
+	UpdateUniqueModRule("Recycling", RecyclingEnabled, RecyclingModRule)
+	UpdateUniqueModRule("Condensing", CondensingEnabled, CondensingModRule)
+	UpdateUniqueModRule("Deflecting", DeflectingEnabled, DeflectingModRule)
+	UpdateUniqueModRule("Ramming", RammingEnabled, RammingModRule)
+	UpdateUniqueModRule("Penetrating", PenetratingEnabled, PenetratingModRule)
+	UpdateUniqueModRule("Adapting", AdaptingEnabled, AdaptingModRule)
+	UpdateUniqueModRule("Charging", ChargingEnabled, ChargingModRule)
+	UpdateUniqueModRule("Heavy Lifting", HeavyLiftingEnabled, HeavyLiftingModRule)
+	UpdateUniqueModRule("Rad-Absorbing", RadAbsorbingEnabled, RadAbsorbingModRule)
+	UpdateUniqueModRule("Fleeting", FleetingEnabled, FleetingModRule)
+EndFunction
+
+Function UpdateUniqueModRule(string asName, bool abEnabled, LegendaryItemQuestScript:LegendaryModRule akRule)
+	UpdateModRule(asName, abEnabled && UniqueEffectsEnabled, akRule)
 EndFunction
 
 Function UpdateModRule(string asName, bool abEnabled, LegendaryItemQuestScript:LegendaryModRule akRule)
