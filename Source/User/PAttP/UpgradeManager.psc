@@ -8,8 +8,14 @@ Quest Property MQ101 Auto Const Mandatory
 {AUTOFILL
 Initial quest, used to determine if the mod has been installed mid-game or not}
 
+PAttP:CustomLegendaryRulesQuest Property PATTP_LegendaryRulesManager const auto mandatory
+{Autofill}
+
 Actor[] Property ActorsToResetWhenInstalledMidgame_1 Auto Const
 {Actors that need to be reset due to template changes that make them appear naked and/or without names - this only applies to actors that will never respawn by passing time in an interior cell (the Forged)}
+
+LegendaryItemQuestScript:LegendaryModRule[] Property LegendaryModsRulesToRemove_2 auto const
+{Legendary rules that will be removed from the legendary item quest when upgrading to version 2 - must be an exact match}
 
 GlobalVariable Property PATTP_Setting_T60ForGunners_OBSOLETE Auto Const
 {AUTOFILL}
@@ -85,6 +91,9 @@ Function UpgradeToVersion2()
     PAttP_Setting_LevelScalePowerArmorEnemyChance.value = 100 - PAttP_Setting_LevelScalePowerArmorEnemyChance.value
     PAttP_Setting_LevelScalePowerArmorBossEnemyChance.value = 100 - PAttP_Setting_LevelScalePowerArmorBossEnemyChance.value
     PAttP_Setting_LevelScalePowerArmorLegendaryEnemyChance.value = 100 - PAttP_Setting_LevelScalePowerArmorLegendaryEnemyChance.value
+
+    debug.trace(self + " is removing old legendary rules")
+    RemoveLegendaryRules(LegendaryModsRulesToRemove_2)
 EndFunction
 
 bool Function IsGameInProgress()
@@ -145,3 +154,11 @@ Event Actor.OnLocationChange(Actor akSender, Location akOldLoc, Location akNewLo
         UnregisterForRemoteEvent(Game.GetPlayer(), "OnLocationChange")
     EndIf
 EndEvent
+
+Function RemoveLegendaryRules(LegendaryItemQuestScript:LegendaryModRule[] aaRules)
+    int i = 0
+    while i < aaRules.Length
+        PATTP_LegendaryRulesManager.UpdateModRule("Rule Removed By Upgrade", false, aaRules[i])
+        i += 1
+    EndWhile
+EndFunction

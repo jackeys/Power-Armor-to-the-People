@@ -98,7 +98,7 @@ int Function FindLegendaryRule(LegendaryItemQuestScript:LegendaryModRule akRule)
 	; Look for the rule using the object mod, then double-check the other fields to make sure it actually matches
 	int index = LegendaryItemQuest.LegendaryModRules.RFindStruct("LegendaryObjectMod", akRule.LegendaryObjectMod)
 	
-	while index > -1 && LegendaryItemQuest.LegendaryModRules[index] != akRule
+	while index > -1 && (LegendaryItemQuest.LegendaryModRules[index].AllowedKeywords != akRule.AllowedKeywords || LegendaryItemQuest.LegendaryModRules[index].DisallowedKeywords != akRule.DisallowedKeywords)
 		if index > 0
 			index = LegendaryItemQuest.LegendaryModRules.RFindStruct("LegendaryObjectMod", akRule.LegendaryObjectMod, index - 1)
 		else
