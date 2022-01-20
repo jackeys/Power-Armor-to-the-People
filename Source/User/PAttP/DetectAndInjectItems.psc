@@ -46,6 +46,18 @@ int Property UltraciteLaserSemiAutoLevel Auto Mandatory Const
 LeveledItem[] Property UltraciteGatlingInjectionPoints Auto Mandatory Const
 int Property UltraciteGatlingLevel Auto Mandatory Const
 
+Bool  Property TeslaHeavyAutocannonEnabled = false Auto
+LeveledItem[] Property TeslaHeavyAutocannonInjectionPoints Auto Mandatory Const
+int Property TeslaHeavyAutocannonLevel Auto Mandatory Const
+
+Bool  Property MinigunsRebirthEnabled = false Auto
+LeveledItem[] Property MinigunsRebirthInjectionPoints Auto Mandatory Const
+int Property MinigunsRebirthLevel Auto Mandatory Const
+
+Bool  Property MachinegunsRebirthEnabled = false Auto
+LeveledItem[] Property MachinegunsRebirthInjectionPoints Auto Mandatory Const
+int Property MachinegunsRebirthLevel Auto Mandatory Const
+
 Function Inject()
 	; Insert all of the enabled weapons for plugins that have been detected
 	if TeslaCannonEnabled
@@ -81,6 +93,18 @@ Function Inject()
 		InjectIfPluginPresent(0x0000081F, "Power Armor to the People - Ultracite Power Armor.esp", UltraciteLaserSemiAutoInjectionPoints, UltraciteLaserSemiAutoLevel)
 		InjectIfPluginPresent(0x00000820, "Power Armor to the People - Ultracite Power Armor.esp", UltraciteGatlingInjectionPoints, UltraciteGatlingLevel)
 	endif
+	
+	if TeslaHeavyAutocannonEnabled
+		InjectIfPluginPresent(0x00000FBB, "TeslaHeavyGun.esl", TeslaHeavyAutocannonInjectionPoints, TeslaHeavyAutocannonLevel)
+	EndIf
+	
+	if MinigunsRebirthEnabled
+		InjectIfPluginPresent(0x0000006A, "Skb-MinigunsRebirth.esl", MinigunsRebirthInjectionPoints, MinigunsRebirthLevel)
+	EndIf
+	
+	if MachinegunsRebirthEnabled
+		InjectIfPluginPresent(0x00000196, "Skb-MachinegunsRebirth.esl", MachinegunsRebirthInjectionPoints, MachinegunsRebirthLevel)
+	EndIf
 EndFunction
 
 Function InjectIfPluginPresent(int aiFormIdToInject, string asPlugin, LeveledItem[] akInjectInto, int aiLevel)

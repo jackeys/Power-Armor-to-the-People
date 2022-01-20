@@ -762,6 +762,54 @@
                         "function": "RefreshListInjections",
                         "params": [false]
                     }
+                },
+                {
+                    "text": "Tesla Heavy Autocannon",
+                    "type": "switcher",
+                    "help": "Provide Tesla Heavy Autocannons to the Brotherhood of Steel and power armored Gunners",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|998",
+                        "propertyName": "TeslaHeavyAutocannonEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
+                    "text": "Miniguns Rebirth",
+                    "type": "switcher",
+                    "help": "Provide the miniguns to power armored Raiders, Gunners, and the Brotherhood of Steel",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|998",
+                        "propertyName": "MinigunsRebirthEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
+                    "text": "Machineguns Rebirth",
+                    "type": "switcher",
+                    "help": "Provide the machine guns to power armored Raiders, Gunners, and the Brotherhood of Steel",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|998",
+                        "propertyName": "MachinegunsRebirthEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
                 }
             ]
         },
