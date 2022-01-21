@@ -10,6 +10,9 @@ GlobalVariable Property ShouldInject Auto Const
 Bool Property InvertShouldInject = false Auto Const
 {If true, and ShouldInject is provided, consider a 0 in ShouldInject to be true and a non-zero to be false (logical NOT)}
 
+GlobalVariable Property Enabled Auto
+{For use with MCM - if provided, this must be greater than 0 for the injection to take place. If ShouldInject is also provided, both must be true (logical AND)}
+
 Event OnQuestInit()
     RegisterCustomEvents()
     InjectIfEnabled()
@@ -25,7 +28,7 @@ EndFunction
 
 Function InjectIfEnabled()
     ; If ShouldInject was omitted, we always inject
-	if (!ShouldInject || (!InvertShouldInject && ShouldInject.GetValueInt() > 0) || (InvertShouldInject && ShouldInject.GetValueInt() == 0))
+	if (Enabled == None || Enabled.GetValueInt() > 0) && (ShouldInject == None || (!InvertShouldInject && ShouldInject.GetValueInt() > 0) || (InvertShouldInject && ShouldInject.GetValueInt() == 0))
 		debug.trace("Beginning injection " + Self)
         Inject()
 	else

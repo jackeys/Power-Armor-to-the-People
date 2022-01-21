@@ -304,6 +304,79 @@
             ]
         },
         {
+            "pageDisplayName": "Faction Distribution",
+            "content": [
+                {
+                    "text": "These settings affect what power armor sets each faction can get. This affects both enemies and vendors.",
+                    "type": "text"
+                },
+                {
+                    "text": "Mod Dependencies",
+                    "type": "section"
+                },
+                {
+                    "text": "Some of these settings are only available if certain mods are being used. If you are using a mod, it should be toggled on so that the appropriate settings can be shown.",
+                    "type": "text"
+                },
+                {
+                    "text": "X02 Raider Power Armor",
+                    "type": "switcher",
+                    "help": "Select if you use the X02 Raider Power Armor mod, which converts the Creation Club X-02 into a Raider set",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - X-02 CC.esp|80A"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    },
+                    "groupControl": 1
+                },
+                {
+                    "text": "Raiders",
+                    "type": "section"
+                },
+                {
+                    "text": "X-02 (Creation Club)",
+                    "type": "switcher",
+                    "help": "Requires X02 Raider Power Armor",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - X-02 CC.esp|811"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    },
+                    "groupCondition": 1
+                },
+                {
+                    "text": "Gunner Commanders / Legendary Gunners",
+                    "type": "section"
+                },
+                {
+                    "text": "X-02 (Creation Club)",
+                    "type": "switcher",
+                    "help": "Requires that you don't use X02 Raider Power Armor",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - X-02 CC.esp|812"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    },
+                    "groupCondition": {"ONLY": []}
+                }
+            ]
+        },
+        {
             "pageDisplayName": "Legendary Power Armor",
             "content": [
                 {
@@ -901,25 +974,6 @@
                 {
                     "text": "These settings are dependent on other mods that cannot be auto-detected. They should be toggled ON if you have the mod active, and OFF otherwise.",
                     "type": "text"
-                },
-                {
-                    "text": "X02 Raider Power Armor",
-                    "type": "section"
-                },
-                {
-                    "text": "Make X-02 (Creation Club) available to raiders",
-                    "type": "switcher",
-                    "help": "This mod replaces the standard X-02 set with a raider set, so this removes it from the Gunners and adds it to Raiders",
-                    "valueOptions": {
-                        "sourceType": "GlobalValue",
-                        "sourceForm": "Power Armor to the People - X-02 CC.esp|80A"
-                    },
-                    "action": {
-                        "type": "CallFunction",
-                        "form": "Power Armor to the People.esp|873",
-                        "function": "RefreshListInjections",
-                        "params": [false]
-                    }
                 }
             ]
         },
