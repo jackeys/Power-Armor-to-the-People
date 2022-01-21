@@ -927,6 +927,40 @@
             "pageDisplayName": "Abandoned Power Armor",
             "content": [
                 {
+                    "text": "Allow X-02 (Creation Club) for abandoned Enclave power armor",
+                    "type": "switcher",
+                    "help": "Allows X-02 (Creation Club) to be a possible set for abandoned leveled Enclave sets",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - X-02 CC.esp|810"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
+                    "text": "Allow Hellfire (Creation Club) for abandoned Enclave power armor",
+                    "type": "switcher",
+                    "help": "Allows Hellfire (Creation Club) to be a possible set for abandoned leveled Enclave sets",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - Hellfire CC.esp|80D"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
+                    "text": "",
+                    "type": "section"
+                },
+                {
                     "text": "Power Armor to the People replaces or removes the full set added by most power armor mods for the sake of progression and to make finding the sets more interesting. If you would prefer to keep these full sets intact, you can permanently enable them for current and future modded sets using the button below.",
                     "type": "text"
                 },
