@@ -398,6 +398,10 @@
                     "type": "text"
                 },
                 {
+                    "text": "If installed, Excavator and Horse Power Armor are always on",
+                    "type": "text"
+                },
+                {
                     "text": "Rusty T-51 (Individual pieces)",
                     "type": "switcher",
                     "help": "Whether mixed sets for raiders and scavengers can include rusty T-51",
@@ -510,6 +514,10 @@
                 },
                 {
                     "text": "T-45 and T-51 - Always On",
+                    "type": "text"
+                },
+                {
+                    "text": "If installed, T-51c and Hellcat Power Armor are always on",
                     "type": "text"
                 },
                 {
