@@ -1,4 +1,4 @@
-Scriptname PAttP:InjectItemsIntoPAttPLeveledLists extends PAttP:InjectionQuest
+Scriptname PAttP:InjectItemsIntoPAttPLeveledLists extends PAttP:InjectionQuest const
 {Injects items into leveled lists in Power Armor to the People with the specified count and level. This should ONLY be used for Power Armor to the People lists, as it registers the list it injects into for automatic reversion and re-injection.}
 
 Struct InjectionInfo
