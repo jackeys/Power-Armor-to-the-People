@@ -339,6 +339,21 @@
                     "type": "section"
                 },
                 {
+                    "text": "T-65 (Rare)",
+                    "type": "switcher",
+                    "help": "Whether mixed sets for raiders and scavengers can include rusty T-65",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - T-65.esp|81E"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
                     "text": "X-02 (Creation Club)",
                     "type": "switcher",
                     "help": "Requires X02 Raider Power Armor",
@@ -373,6 +388,59 @@
                         "params": [false]
                     },
                     "groupCondition": {"ONLY": []}
+                },
+                {
+                    "text": "T-65",
+                    "type": "switcher",
+                    "help": "",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - T-65.esp|81F"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
+                    "text": "Brotherhood of Steel",
+                    "type": "section"
+                },
+                {
+                    "text": "T-65",
+                    "type": "switcher",
+                    "help": "",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - T-65.esp|820"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
+                    "text": "Minutemen",
+                    "type": "section"
+                },
+                {
+                    "text": "T-65 (Rare)",
+                    "type": "switcher",
+                    "help": "",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - T-65.esp|821"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
                 }
             ]
         },
