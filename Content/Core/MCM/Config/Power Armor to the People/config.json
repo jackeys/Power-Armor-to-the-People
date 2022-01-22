@@ -357,7 +357,7 @@
                     "help": "Faction paint jobs for Enclave X-02 (Unoctium) are available",
                     "valueOptions": {
                         "sourceType": "GlobalValue",
-                        "sourceForm": "Power Armor to the People.esp|B57"
+                        "sourceForm": "Power Armor to the People - Enclave X-02.esp|83E"
                     },
                     "action": {
                         "type": "CallFunction",
@@ -367,6 +367,23 @@
                     },
                     "groupCondition": 99,
                     "groupControl": 5
+                },
+                {
+                    "text": "Hellfire X-03 Paint Jobs",
+                    "type": "switcher",
+                    "help": "Faction paint jobs for Hellfire X-03 (Unoctium) are available",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - Hellfire X-03.esp|82B"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    },
+                    "groupCondition": 99,
+                    "groupControl": 6
                 },
                 {
                     "text": "Raiders",
@@ -458,6 +475,21 @@
                     "groupCondition": 1
                 },
                 {
+                    "text": "Hellfire X-03 (Rare, individual pieces)",
+                    "type": "switcher",
+                    "help": "Whether mixed sets for raiders and scavengers can include rusty Unoctium's Hellfire X-03",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - Hellfire X-03.esp|82C"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
                     "text": "T-65 (Rare, individual pieces)",
                     "type": "switcher",
                     "help": "Whether mixed sets for raiders and scavengers can include rusty T-65",
@@ -541,6 +573,21 @@
                     }
                 },
                 {
+                    "text": "Hellfire X-03 (Legendary/Commanders Only)",
+                    "type": "switcher",
+                    "help": "Unoctium's Hellfire X-03",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - Hellfire X-03.esp|829"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
                     "text": "T-65 (Legendary/Commanders Only)",
                     "type": "switcher",
                     "help": "",
@@ -610,6 +657,22 @@
                         "params": [false]
                     },
                     "groupCondition": 5
+                },
+                {
+                    "text": "Hellfire X-03",
+                    "type": "switcher",
+                    "help": "Unoctium's Hellfire X-03. Requires X-03 All Factions Paintjob",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - Hellfire X-03.esp|82A"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    },
+                    "groupCondition": 6
                 },
                 {
                     "text": "T-65",
