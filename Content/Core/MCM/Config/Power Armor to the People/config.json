@@ -468,8 +468,19 @@
                     }
                 },
                 {
-                    "text": "X-01 (Legendary/Commanders Only) - Always On",
-                    "type": "text"
+                    "text": "X-01 (Legendary/Commanders Only)",
+                    "type": "switcher",
+                    "help": "",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People.esp|B5C"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
                 },
                 {
                     "text": "X-02 (Creation Club) (Legendary/Commanders Only)",
