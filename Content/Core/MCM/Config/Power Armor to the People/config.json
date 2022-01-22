@@ -307,16 +307,12 @@
             "pageDisplayName": "Faction Distribution",
             "content": [
                 {
-                    "text": "These settings affect what power armor sets each faction can get. This affects both enemies and vendors.",
+                    "text": "These settings affect what power armor sets each faction can get. This affects both NPCs and vendors.",
                     "type": "text"
                 },
                 {
                     "text": "Mod Dependencies",
                     "type": "section"
-                },
-                {
-                    "text": "Some of these settings are only available if certain mods are being used. If you are using a mod, it should be toggled on so that the appropriate settings can be shown.",
-                    "type": "text"
                 },
                 {
                     "text": "X02 Raider Power Armor",
@@ -390,6 +386,18 @@
                     "type": "section"
                 },
                 {
+                    "text": "Raider Power Armor - Always On",
+                    "type": "text"
+                },
+                {
+                    "text": "T-45 and Raw Metal T-51 (Individual pieces) - Always On",
+                    "type": "text"
+                },
+                {
+                    "text": "X-01 (Rare, individual pieces) - Always On",
+                    "type": "text"
+                },
+                {
                     "text": "Rusty T-51 (Individual pieces)",
                     "type": "switcher",
                     "help": "Whether mixed sets for raiders and scavengers can include rusty T-51",
@@ -441,6 +449,14 @@
                     "type": "section"
                 },
                 {
+                    "text": "T-45 and T-51 - Always On",
+                    "type": "text"
+                },
+                {
+                    "text": "X-01 (Legendary/Commanders Only) - Always On",
+                    "type": "text"
+                },
+                {
                     "text": "X-02 (Creation Club) (Legendary/Commanders Only)",
                     "type": "switcher",
                     "help": "Requires that you don't use X02 Raider Power Armor",
@@ -473,6 +489,10 @@
                 {
                     "text": "Brotherhood of Steel",
                     "type": "section"
+                },
+                {
+                    "text": "T-60 (plus T-45 and T-51 if using BPAO) - Always On",
+                    "type": "text"
                 },
                 {
                     "text": "T-45 and T-51",
@@ -524,6 +544,10 @@
                 {
                     "text": "Minutemen",
                     "type": "section"
+                },
+                {
+                    "text": "T-45 - Always On",
+                    "type": "text"
                 },
                 {
                     "text": "T-51",
