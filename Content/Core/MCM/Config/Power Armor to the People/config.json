@@ -369,6 +369,23 @@
                     "groupControl": 3
                 },
                 {
+                    "text": "Minutemen Paint Jobs",
+                    "type": "switcher",
+                    "help": "Minutemen paint jobs for T-51, T-60, and X-01 are available",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People.esp|B57"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    },
+                    "groupCondition": 99,
+                    "groupControl": 4
+                },
+                {
                     "text": "Raiders",
                     "type": "section"
                 },
@@ -507,6 +524,54 @@
                 {
                     "text": "Minutemen",
                     "type": "section"
+                },
+                {
+                    "text": "T-51",
+                    "type": "switcher",
+                    "help": "Requires a Minutemen paint job from Gunners vs Minutemen or Minutemen Paint Jobs",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People.esp|B59"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    },
+                    "groupCondition": 4
+                },
+                {
+                    "text": "T-60",
+                    "type": "switcher",
+                    "help": "Requires a Minutemen paint job from Gunners vs Minutemen or Minutemen Paint Jobs",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People.esp|B5A"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    },
+                    "groupCondition": 4
+                },
+                {
+                    "text": "X-01 (Rare)",
+                    "type": "switcher",
+                    "help": "Requires a Minutemen paint job from Gunners vs Minutemen or Minutemen Paint Jobs",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People.esp|B58"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    },
+                    "groupCondition": 4
                 },
                 {
                     "text": "T-65 (Rare)",
