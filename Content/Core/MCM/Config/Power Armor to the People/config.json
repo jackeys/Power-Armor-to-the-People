@@ -459,7 +459,7 @@
                     }
                 },
                 {
-                    "text": "X-02 [Creation Club] (Rare)",
+                    "text": "Creation Club X-02 (Rare)",
                     "type": "switcher",
                     "help": "Requires X02 Raider Power Armor",
                     "valueOptions": {
@@ -558,7 +558,22 @@
                     }
                 },
                 {
-                    "text": "X-02 [Creation Club] (Legendary/Commanders Only)",
+                    "text": "Enclave X-02 Black Devil (Legendary/Commanders Only)",
+                    "type": "switcher",
+                    "help": "C1PH3RR's Enclave X-02 Black Devil",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - Enclave X-02 (Black Devil).esp|811"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
+                    "text": "Creation Club X-02 (Legendary/Commanders Only)",
                     "type": "switcher",
                     "help": "Requires that you don't use X02 Raider Power Armor",
                     "valueOptions": {
@@ -657,6 +672,21 @@
                         "params": [false]
                     },
                     "groupCondition": 5
+                },
+                {
+                    "text": "Enclave X-02 Black Devil",
+                    "type": "switcher",
+                    "help": "C1PH3RR's Enclave X-02 Black Devil",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - Enclave X-02 (Black Devil).esp|812"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
                 },
                 {
                     "text": "Hellfire X-03",
