@@ -364,10 +364,6 @@
                     "type": "text"
                 },
                 {
-                    "text": "X-01 (Rare, individual pieces) - Always On",
-                    "type": "text"
-                },
-                {
                     "text": "Rusty T-51 (Individual pieces)",
                     "type": "switcher",
                     "help": "Whether mixed sets for raiders and scavengers can include rusty T-51",
@@ -405,6 +401,21 @@
                     "valueOptions": {
                         "sourceType": "GlobalValue",
                         "sourceForm": "Power Armor to the People - Nuka-World.esp|802"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
+                    "text": "X-01 (Rare, individual pieces)",
+                    "type": "switcher",
+                    "help": "Whether mixed sets for raiders and scavengers can include X-01",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People.esp|B5E"
                     },
                     "action": {
                         "type": "CallFunction",
