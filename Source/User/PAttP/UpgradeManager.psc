@@ -94,6 +94,13 @@ Function UpgradeToVersion2()
 
     debug.trace(self + " is removing old legendary rules")
     RemoveLegendaryRules(LegendaryModsRulesToRemove_2)
+
+    ; We changed back to individual settings for each faction, so if the default is not being used, change it to preserve the user's setting
+    if PATTP_Setting_T60ExclusiveToBoS.value == 1
+        debug.trace(self + " is making T-60 unavailable to Gunners and Raiders based on previous settings")
+        PATTP_Setting_T60ForGunners_OBSOLETE.value = 0
+        PATTP_Setting_T60ForRaiders_OBSOLETE.value = 0
+    endif
 EndFunction
 
 bool Function IsGameInProgress()

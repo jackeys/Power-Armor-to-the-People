@@ -42,21 +42,6 @@
             }
         },
         {
-            "text": "Make T-60 exclusive to the Brotherhood of Steel",
-            "type": "switcher",
-            "help": "Some Assembly Required removes T-60 from everywhere but the Brotherhood of Steel, if you want that consistency",
-            "valueOptions": {
-                "sourceType": "GlobalValue",
-                "sourceForm": "Power Armor to the People.esp|A1D"
-            },
-            "action": {
-                "type": "CallFunction",
-                "form": "Power Armor to the People.esp|873",
-                "function": "RefreshListInjections",
-                "params": [false]
-            }
-        },
-        {
             "text": "Raiders",
             "type": "section"
         },
@@ -399,6 +384,21 @@
                     "groupCondition": 3
                 },
                 {
+                    "text": "T-60 (Individual pieces)",
+                    "type": "switcher",
+                    "help": "Whether mixed sets for raiders and scavengers can include T-60",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People.esp|87B"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
                     "text": "Overboss (Rare)",
                     "type": "switcher",
                     "help": "Give Nuka-World's Overboss power armor to other raiders besides Overboss Colter",
@@ -451,6 +451,21 @@
                 {
                     "text": "T-45 and T-51 - Always On",
                     "type": "text"
+                },
+                {
+                    "text": "T-60",
+                    "type": "switcher",
+                    "help": "",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People.esp|87A"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
                 },
                 {
                     "text": "X-01 (Legendary/Commanders Only) - Always On",
