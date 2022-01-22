@@ -352,6 +352,23 @@
                     "groupControl": 4
                 },
                 {
+                    "text": "Enclave X-02 Paint Jobs",
+                    "type": "switcher",
+                    "help": "Faction paint jobs for Enclave X-02 (Unoctium) are available",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People.esp|B57"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    },
+                    "groupCondition": 99,
+                    "groupControl": 5
+                },
+                {
                     "text": "Raiders",
                     "type": "section"
                 },
@@ -425,22 +442,7 @@
                     }
                 },
                 {
-                    "text": "T-65 (Rare, individual pieces)",
-                    "type": "switcher",
-                    "help": "Whether mixed sets for raiders and scavengers can include rusty T-65",
-                    "valueOptions": {
-                        "sourceType": "GlobalValue",
-                        "sourceForm": "Power Armor to the People - T-65.esp|81E"
-                    },
-                    "action": {
-                        "type": "CallFunction",
-                        "form": "Power Armor to the People.esp|873",
-                        "function": "RefreshListInjections",
-                        "params": [false]
-                    }
-                },
-                {
-                    "text": "X-02 (Creation Club) (Rare)",
+                    "text": "X-02 [Creation Club] (Rare)",
                     "type": "switcher",
                     "help": "Requires X02 Raider Power Armor",
                     "valueOptions": {
@@ -454,6 +456,21 @@
                         "params": [false]
                     },
                     "groupCondition": 1
+                },
+                {
+                    "text": "T-65 (Rare, individual pieces)",
+                    "type": "switcher",
+                    "help": "Whether mixed sets for raiders and scavengers can include rusty T-65",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - T-65.esp|81E"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
                 },
                 {
                     "text": "Gunners",
@@ -494,7 +511,22 @@
                     }
                 },
                 {
-                    "text": "X-02 (Creation Club) (Legendary/Commanders Only)",
+                    "text": "Enclave X-02 (Legendary/Commanders Only)",
+                    "type": "switcher",
+                    "help": "Unoctium's Enclave X-02",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - Enclave X-02.esp|83C"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
+                    "text": "X-02 [Creation Club] (Legendary/Commanders Only)",
                     "type": "switcher",
                     "help": "Requires that you don't use X02 Raider Power Armor",
                     "valueOptions": {
@@ -562,6 +594,22 @@
                         "params": [false]
                     },
                     "groupCondition": 2
+                },
+                {
+                    "text": "Enclave X-02",
+                    "type": "switcher",
+                    "help": "Unoctium's Enclave X-02. Requires X-02 All Factions Paintjob",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - Enclave X-02.esp|83D"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    },
+                    "groupCondition": 5
                 },
                 {
                     "text": "T-65",
