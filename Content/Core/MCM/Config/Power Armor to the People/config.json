@@ -618,11 +618,30 @@
                     }
                 },
                 {
+                    "text": "Classic Advanced Power Armor (Legendary/Commanders Only)",
+                    "type": "switcher",
+                    "help": "",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - Classic Advanced Power Armor.esp|81E"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
                     "text": "Brotherhood of Steel",
                     "type": "section"
                 },
                 {
                     "text": "T-60 (plus T-45 and T-51 if using BPAO) - Always On",
+                    "type": "text"
+                },
+                {
+                    "text": "If installed, Midwest and Ultracite Power Armor are always on",
                     "type": "text"
                 },
                 {
