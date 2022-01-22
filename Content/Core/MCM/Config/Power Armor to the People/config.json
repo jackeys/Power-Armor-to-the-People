@@ -611,6 +611,22 @@
                     }
                 },
                 {
+                    "text": "Creation Club Hellfire (Legendary/Commanders Only)",
+                    "type": "switcher",
+                    "help": "",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - Hellfire CC.esp|811"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    },
+                    "groupCondition": 6
+                },
+                {
                     "text": "T-65 (Legendary/Commanders Only)",
                     "type": "switcher",
                     "help": "",
@@ -722,6 +738,22 @@
                     "valueOptions": {
                         "sourceType": "GlobalValue",
                         "sourceForm": "Power Armor to the People - Hellfire X-03.esp|82A"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    },
+                    "groupCondition": 6
+                },
+                {
+                    "text": "Creation Club Hellfire",
+                    "type": "switcher",
+                    "help": "",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - Hellfire CC.esp|812"
                     },
                     "action": {
                         "type": "CallFunction",
