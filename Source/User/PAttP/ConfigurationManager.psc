@@ -325,8 +325,6 @@ Event OnQuestInit()
     RegisteredForDifficultyChanges = true
     RegisterCustomEvents()
     
-    ; Always auto-detect settings when the mod is first installed to give the player sensible defaults
-    AutodetectSettings()
     ChangeSettingsBasedOnDifficulty(Game.GetDifficulty())
     
     SetMCMPropertiesForDisplay()
@@ -334,10 +332,6 @@ EndEvent
 
 Event Actor.OnPlayerLoadGame(Actor akSender)
     RegisterCustomEvents()
-    
-    if !MCM_ManuallyManageModDependentSettings
-        AutodetectSettings()
-    EndIf
     
     ; If we updated, we may not have ever registered for difficulty changes
     if !RegisteredForDifficultyChanges
@@ -352,20 +346,6 @@ EndEvent
 Function RegisterCustomEvents()
     debug.trace(self + " registering for MCM events")
     RegisterForExternalEvent("OnMCMClose", "OnMCMClose")
-EndFunction
-
-Function AutodetectSettings()
-    debug.trace(self + " auto-detecting settings")
-    bool injectionRefreshNeeded = false
-    
-    ; Check to see if any plugins with automatic settings are installed
-    injectionRefreshNeeded = ChangeValueBool(PATTP_Setting_T51ForRaiders, Game.IsPluginInstalled("consistent power armor overhaul.esp")) || injectionRefreshNeeded
-    injectionRefreshNeeded = ChangeValueBool(PATTP_Setting_X01ForBoS, Game.IsPluginInstalled("consistent power armor overhaul.esp") || Game.IsPluginInstalled("armorkeywords.esm")) || injectionRefreshNeeded
-    injectionRefreshNeeded = ChangeValueBool(PATTP_Setting_T45T51ForBoS, !Game.IsPluginInstalled("brotherhood power armor overhaul.esp") && (Game.IsPluginInstalled("consistent power armor overhaul.esp") || Game.IsPluginInstalled("armorkeywords.esm"))) || injectionRefreshNeeded
-    
-    if injectionRefreshNeeded
-        InjectionManager.RefreshListInjections(true)
-    EndIf
 EndFunction
 
 Event Actor.OnDifficultyChanged(Actor akSender, int aOldDifficulty, int aNewDifficulty)
@@ -438,4 +418,12 @@ Function ApplyMCMProperties()
     LegendarySynthPowerArmorChance = MCM_LegendarySynthPowerArmorChance
     MinutemenPowerArmorChance = MCM_MinutemenPowerArmorChance
     LevelScalePowerArmoredEnemies = MCM_LevelScalePowerArmoredEnemies
+EndFunction
+
+bool Property MCM_X02RaiderPowerArmorDisabled = True Auto
+Function SetX02RaiderPowerArmorEnabled(bool abEnabled)
+    debug.trace("X02 Raider Power Armor set to " + abEnabled)
+    MCM_X02RaiderPowerArmorDisabled = !abEnabled
+    MCM.RefreshMenu()
+    InjectionManager.RefreshListInjections(false)
 EndFunction

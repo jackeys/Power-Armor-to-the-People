@@ -1,4 +1,4 @@
-Scriptname PAttP:InjectItemsIntoPAttPLeveledLists extends PAttP:InjectionQuest
+Scriptname PAttP:InjectItemsIntoPAttPLeveledLists extends PAttP:InjectionQuest const
 {Injects items into leveled lists in Power Armor to the People with the specified count and level. This should ONLY be used for Power Armor to the People lists, as it registers the list it injects into for automatic reversion and re-injection.}
 
 Struct InjectionInfo
@@ -15,6 +15,9 @@ Struct InjectionInfo
 	Form ItemToInject
 	{The item that should be injected into the other lists with the specified count and level. This should usually be a LeveledItem so that you can add filter keywords or change it without needing to re-inject, but in some cases it is appropriate to inject an armor piece directly.}
 	
+	GlobalVariable Enabled
+	{If provided, this individual injection will not occur unless this global variable is greater than 0}
+
 EndStruct
 
 Int Property DefaultLevel = 1 Auto Const
@@ -26,15 +29,20 @@ Function Inject()
 	int iter = 0
 	while(iter < Injections.length)
 		InjectionInfo currentInjection = Injections[iter]
-		
-		; If the level is not specified for this injection, use the default
-		int level = currentInjection.Level
 
-		if level < 0
-			level = DefaultLevel
-		endif
+		if currentInjection.Enabled == None || currentInjection.Enabled.GetValueInt() > 0
+			; If the level is not specified for this injection, use the default
+			int level = currentInjection.Level
+			
+			if level < 0
+				level = DefaultLevel
+			endif
+			
+			InjectIntoList(currentInjection.InjectInto, currentInjection.ItemToInject, level, currentInjection.Count)
+		Else
+			debug.trace(self + " Skipping individual injection " + currentInjection)
+		EndIf
 
-		InjectIntoList(currentInjection.InjectInto, currentInjection.ItemToInject, level, currentInjection.Count)
 		iter += 1
 	endwhile
 EndFunction

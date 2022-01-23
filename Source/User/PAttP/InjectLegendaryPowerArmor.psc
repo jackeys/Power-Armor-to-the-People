@@ -1,4 +1,4 @@
-Scriptname PAttP:InjectLegendaryPowerArmor extends PAttP:InjectionQuest
+Scriptname PAttP:InjectLegendaryPowerArmor extends PAttP:InjectionQuest const
 {Injects an item into the list of potential legendary power armor sets. The correct leveled list to inject into is determined automatically based on the level the power armor should be available. This should only be used for Power Armor to the People, as it registers the list it injects into for automatic reversion and re-injection.}
 
 Int Property level Auto Const Mandatory

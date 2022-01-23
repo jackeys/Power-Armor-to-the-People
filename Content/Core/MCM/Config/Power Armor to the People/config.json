@@ -42,21 +42,6 @@
             }
         },
         {
-            "text": "Make T-60 exclusive to the Brotherhood of Steel",
-            "type": "switcher",
-            "help": "Some Assembly Required removes T-60 from everywhere but the Brotherhood of Steel, if you want that consistency",
-            "valueOptions": {
-                "sourceType": "GlobalValue",
-                "sourceForm": "Power Armor to the People.esp|A1D"
-            },
-            "action": {
-                "type": "CallFunction",
-                "form": "Power Armor to the People.esp|873",
-                "function": "RefreshListInjections",
-                "params": [false]
-            }
-        },
-        {
             "text": "Raiders",
             "type": "section"
         },
@@ -84,21 +69,6 @@
                 "sourceType": "PropertyValueFloat",
                 "sourceForm": "Power Armor to the People.esp|8AA",
                 "propertyName": "MCM_RaiderRareMixedPieceChance"
-            }
-        },
-        {
-            "text": "Make Overboss power armor rarely available to raiders",
-            "type": "switcher",
-            "help": "Give Nuka-World's Overboss power armor to other raiders besides Overboss Colter",
-            "valueOptions": {
-                "sourceType": "GlobalValue",
-                "sourceForm": "Power Armor to the People - Nuka-World.esp|802"
-            },
-            "action": {
-                "type": "CallFunction",
-                "form": "Power Armor to the People.esp|873",
-                "function": "RefreshListInjections",
-                "params": [false]
             }
         },
         {
@@ -299,6 +269,643 @@
                         "sourceType": "PropertyValueFloat",
                         "sourceForm": "Power Armor to the People.esp|8AA",
                         "propertyName": "MCM_ScavengerPowerArmorChance"
+                    }
+                }
+            ]
+        },
+        {
+            "pageDisplayName": "Faction Distribution",
+            "content": [
+                {
+                    "text": "These settings affect what power armor sets each faction has access to.",
+                    "type": "text"
+                },
+                {
+                    "text": "Mod Dependencies",
+                    "type": "section"
+                },
+                {
+                    "text": "X02 Raider Power Armor",
+                    "type": "switcher",
+                    "help": "Select if you use the X02 Raider Power Armor mod, which converts the Creation Club X-02 into a Raider set",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - X-02 CC.esp|80A"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|8AA",
+                        "function": "SetX02RaiderPowerArmorEnabled",
+                        "params": ["{b}{value}"]
+                    },
+                    "groupControl": 1
+                },
+                {
+                    "text": "BoS Paint Jobs for Base Power Armor",
+                    "type": "switcher",
+                    "help": "CPAO and AWKCR add paint jobs for the other power armor sets in the base game",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People.esp|A56"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    },
+                    "groupCondition": 99,
+                    "groupControl": 2
+                },
+                {
+                    "text": "Rusty T-51 Texture",
+                    "type": "switcher",
+                    "help": "T-51 doesn't have a rusty texture by default, but CPAO adds one which makes it fit in with the Raiders' equipment",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People.esp|875"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    },
+                    "groupCondition": 99,
+                    "groupControl": 3
+                },
+                {
+                    "text": "Minutemen Paint Jobs",
+                    "type": "switcher",
+                    "help": "Minutemen paint jobs for T-51, T-60, and X-01 are available",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People.esp|B57"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    },
+                    "groupCondition": 99,
+                    "groupControl": 4
+                },
+                {
+                    "text": "Enclave X-02 Paint Jobs",
+                    "type": "switcher",
+                    "help": "Faction paint jobs for Enclave X-02 (Unoctium) are available",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - Enclave X-02.esp|83E"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    },
+                    "groupCondition": 99,
+                    "groupControl": 5
+                },
+                {
+                    "text": "Hellfire X-03 Paint Jobs",
+                    "type": "switcher",
+                    "help": "Faction paint jobs for Hellfire X-03 (Unoctium) are available",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - Hellfire X-03.esp|82B"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    },
+                    "groupCondition": 99,
+                    "groupControl": 6
+                },
+                {
+                    "text": "X02 Raider Power Armor Inverse",
+                    "type": "switcher",
+                    "help": "The opposite of X02 Raider Power Armor for changing what is visible on this page",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|8AA",
+                        "propertyName": "MCM_X02RaiderPowerArmorDisabled"
+                    },
+                    "groupCondition": 99,
+                    "groupControl": 7
+                },
+                {
+                    "text": "Raiders",
+                    "type": "section"
+                },
+                {
+                    "text": "The following power armor sets are always included when available:<br><ol><li>Raider Power Armor</li><li>T-45 (Individual pieces)</li><li>Excavator Power Armor</li><li>Horse Power Armor (Very rare, individual pieces)</li></ol>",
+                    "type": "text",
+                    "html": "true"
+                },
+                {
+                    "text": "T-51 (Individual pieces)",
+                    "type": "switcher",
+                    "help": "Whether mixed sets for raiders and scavengers can include T-51",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People.esp|B54"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    },
+                    "groupCondition": 3
+                },
+                {
+                    "text": "T-60 (Individual pieces)",
+                    "type": "switcher",
+                    "help": "Whether mixed sets for raiders and scavengers can include T-60",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People.esp|87B"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
+                    "text": "Overboss (Rare)",
+                    "type": "switcher",
+                    "help": "Give Nuka-World's Overboss power armor to other raiders besides Overboss Colter",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - Nuka-World.esp|802"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
+                    "text": "X-01 (Rare, individual pieces)",
+                    "type": "switcher",
+                    "help": "Whether mixed sets for raiders and scavengers can include X-01",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People.esp|B5E"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
+                    "text": "Creation Club X-02 (Rare)",
+                    "type": "switcher",
+                    "help": "Requires X02 Raider Power Armor",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - X-02 CC.esp|811"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    },
+                    "groupCondition": 1
+                },
+                {
+                    "text": "Hellfire X-03 (Rare, individual pieces)",
+                    "type": "switcher",
+                    "help": "Whether mixed sets for raiders and scavengers can include rusty Unoctium's Hellfire X-03",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - Hellfire X-03.esp|82C"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
+                    "text": "T-65 (Rare, individual pieces)",
+                    "type": "switcher",
+                    "help": "Whether mixed sets for raiders and scavengers can include rusty T-65",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - T-65.esp|81E"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
+                    "text": "Gunners",
+                    "type": "section"
+                },
+                {
+                    "text": "The following power armor sets are always included when available:",
+                    "type": "text"
+                },
+                {
+                    "text": "<li>T-45</li>",
+                    "type": "text",
+                    "html": "true"
+                },
+                {
+                    "text": "<li>T-51</li>",
+                    "type": "text",
+                    "html": "true"
+                },
+                {
+                    "text": "T-51c",
+                    "type": "switcher",
+                    "help": "",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - T-51c.esp|817"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
+                    "text": "T-60",
+                    "type": "switcher",
+                    "help": "",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People.esp|87A"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
+                    "text": "Hellcat Power Armor",
+                    "type": "switcher",
+                    "help": "",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - Hellcat Power Armor.esp|813"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
+                    "text": "X-01 (Legendary/Commanders Only)",
+                    "type": "switcher",
+                    "help": "",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People.esp|B5C"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
+                    "text": "Enclave X-02 (Legendary/Commanders Only)",
+                    "type": "switcher",
+                    "help": "Unoctium's Enclave X-02",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - Enclave X-02.esp|83C"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
+                    "text": "Enclave X-02 Black Devil (Legendary/Commanders Only)",
+                    "type": "switcher",
+                    "help": "C1PH3RR's Enclave X-02 Black Devil",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - Enclave X-02 (Black Devil).esp|811"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
+                    "text": "Creation Club X-02 (Legendary/Commanders Only)",
+                    "type": "switcher",
+                    "help": "Requires that you don't use X02 Raider Power Armor",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - X-02 CC.esp|812"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    },
+                    "groupCondition": 7
+                },
+                {
+                    "text": "Hellfire X-03 (Legendary/Commanders Only)",
+                    "type": "switcher",
+                    "help": "Unoctium's Hellfire X-03",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - Hellfire X-03.esp|829"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
+                    "text": "Creation Club Hellfire (Legendary/Commanders Only)",
+                    "type": "switcher",
+                    "help": "",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - Hellfire CC.esp|811"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    },
+                    "groupCondition": 6
+                },
+                {
+                    "text": "T-65 (Legendary/Commanders Only)",
+                    "type": "switcher",
+                    "help": "",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - T-65.esp|81F"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
+                    "text": "Classic Advanced Power Armor (Legendary/Commanders Only)",
+                    "type": "switcher",
+                    "help": "",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - Classic Advanced Power Armor.esp|81E"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
+                    "text": "Brotherhood of Steel",
+                    "type": "section"
+                },
+                {
+                    "text": "The following power armor sets are always included when available:",
+                    "type": "text"
+                },
+                {
+                    "text": "<li>T-60</li>",
+                    "type": "text",
+                    "html": "true"
+                },
+                {
+                    "text": "<li>Midwest Power Armor</li>",
+                    "type": "text",
+                    "html": "true"
+                },
+                {
+                    "text": "<li>Ultracite Power Armor</li>",
+                    "type": "text",
+                    "html": "true"
+                },
+                {
+                    "text": "<li>If using Brotherhood Power Armor Overhaul, T-45 and T-51</li>",
+                    "type": "text",
+                    "html": "true"
+                },
+                {
+                    "text": "T-45 and T-51",
+                    "type": "switcher",
+                    "help": "Not needed if using Brotherhood Power Armor Overhaul. Requires a BoS paint job from Consistent Power Armor Overhaul or AWKCR",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People.esp|B55"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    },
+                    "groupCondition": 2
+                },
+                {
+                    "text": "X-01",
+                    "type": "switcher",
+                    "help": "Requires a BoS paint job from Consistent Power Armor Overhaul or AWKCR",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People.esp|878"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    },
+                    "groupCondition": 2
+                },
+                {
+                    "text": "Enclave X-02",
+                    "type": "switcher",
+                    "help": "Unoctium's Enclave X-02. Requires X-02 All Factions Paintjob",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - Enclave X-02.esp|83D"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    },
+                    "groupCondition": 5
+                },
+                {
+                    "text": "Enclave X-02 Black Devil",
+                    "type": "switcher",
+                    "help": "C1PH3RR's Enclave X-02 Black Devil",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - Enclave X-02 (Black Devil).esp|812"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
+                    "text": "Hellfire X-03",
+                    "type": "switcher",
+                    "help": "Unoctium's Hellfire X-03. Requires X-03 All Factions Paintjob",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - Hellfire X-03.esp|82A"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    },
+                    "groupCondition": 6
+                },
+                {
+                    "text": "Creation Club Hellfire",
+                    "type": "switcher",
+                    "help": "",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - Hellfire CC.esp|812"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    },
+                    "groupCondition": 6
+                },
+                {
+                    "text": "T-65",
+                    "type": "switcher",
+                    "help": "",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - T-65.esp|820"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
+                    "text": "Minutemen",
+                    "type": "section"
+                },
+                {
+                    "text": "The following power armor sets are always included when available:<br><ol><li>T-45</li></ol>",
+                    "type": "text",
+                    "html": "true"
+                },
+                {
+                    "text": "T-51",
+                    "type": "switcher",
+                    "help": "Requires a Minutemen paint job from Gunners vs Minutemen or Minutemen Paint Jobs",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People.esp|B59"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    },
+                    "groupCondition": 4
+                },
+                {
+                    "text": "T-60",
+                    "type": "switcher",
+                    "help": "Requires a Minutemen paint job from Gunners vs Minutemen or Minutemen Paint Jobs",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People.esp|B5A"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    },
+                    "groupCondition": 4
+                },
+                {
+                    "text": "X-01 (Rare)",
+                    "type": "switcher",
+                    "help": "Requires a Minutemen paint job from Gunners vs Minutemen or Minutemen Paint Jobs",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People.esp|B58"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    },
+                    "groupCondition": 4
+                },
+                {
+                    "text": "T-65 (Rare)",
+                    "type": "switcher",
+                    "help": "",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - T-65.esp|821"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
                     }
                 }
             ]
@@ -803,116 +1410,6 @@
                         "sourceType": "PropertyValueBool",
                         "sourceForm": "Power Armor to the People.esp|998",
                         "propertyName": "MachinegunsRebirthEnabled"
-                    },
-                    "action": {
-                        "type": "CallFunction",
-                        "form": "Power Armor to the People.esp|873",
-                        "function": "RefreshListInjections",
-                        "params": [false]
-                    }
-                }
-            ]
-        },
-        {
-            "pageDisplayName": "Mod-Dependent Settings",
-            "content": [
-                {
-                    "text": "These settings are intended to be ON if a specific mod is present, and OFF otherwise. They can be auto-detected and applied automatically.",
-                    "type": "text"
-                },
-                {
-                    "text": "Manually manage mod-dependent settings",
-                    "type": "switcher",
-                    "help": "Disable automatic management of these settings based on what mods are detected",
-                    "valueOptions": {
-                        "sourceType": "PropertyValueBool",
-                        "sourceForm": "Power Armor to the People.esp|8AA",
-                        "propertyName": "MCM_ManuallyManageModDependentSettings"
-                    },
-                    "groupControl": 1
-                },
-                {
-                    "text": "Consistent Power Armor Overhaul OR AWKCR, but NOT Brotherhood Power Armor Overhaul",
-                    "type": "section",
-                    "groupCondition": 1
-                },
-                {
-                    "text": "Make T-45 and T-51 available to Brotherhood of Steel Paladins",
-                    "type": "switcher",
-                    "help": "These mods provide a Knight paint job for T-45 and T-51, so it can be given to the Brotherhood of Steel. BPAO already does this.",
-                    "valueOptions": {
-                        "sourceType": "GlobalValue",
-                        "sourceForm": "Power Armor to the People.esp|A56"
-                    },
-                    "action": {
-                        "type": "CallFunction",
-                        "form": "Power Armor to the People.esp|873",
-                        "function": "RefreshListInjections",
-                        "params": [false]
-                    },
-                    "groupCondition": 1
-                },
-                {
-                    "text": "Consistent Power Armor Overhaul OR AWKCR",
-                    "type": "section",
-                    "groupCondition": 1
-                },
-                {
-                    "text": "Make X-01 available to Brotherhood of Steel Paladins",
-                    "type": "switcher",
-                    "help": "These mods provide a Paladin paint job for X-01, so it can be given to the Brotherhood of Steel",
-                    "valueOptions": {
-                        "sourceType": "GlobalValue",
-                        "sourceForm": "Power Armor to the People.esp|878"
-                    },
-                    "action": {
-                        "type": "CallFunction",
-                        "form": "Power Armor to the People.esp|873",
-                        "function": "RefreshListInjections",
-                        "params": [false]
-                    },
-                    "groupCondition": 1
-                },
-                {
-                    "text": "Consistent Power Armor Overhaul",
-                    "type": "section",
-                    "groupCondition": 1
-                },
-                {
-                    "text": "Make T-51 available to raiders",
-                    "type": "switcher",
-                    "help": "T-51 doesn't have a rusty texture by default, but CPAO adds one which makes it fit in with the Raiders' equipment",
-                    "valueOptions": {
-                        "sourceType": "GlobalValue",
-                        "sourceForm": "Power Armor to the People.esp|875"
-                    },
-                    "action": {
-                        "type": "CallFunction",
-                        "form": "Power Armor to the People.esp|873",
-                        "function": "RefreshListInjections",
-                        "params": [false]
-                    },
-                    "groupCondition": 1
-                },
-                {
-                    "text": "",
-                    "type": "section"
-                },
-                {
-                    "text": "These settings are dependent on other mods that cannot be auto-detected. They should be toggled ON if you have the mod active, and OFF otherwise.",
-                    "type": "text"
-                },
-                {
-                    "text": "X02 Raider Power Armor",
-                    "type": "section"
-                },
-                {
-                    "text": "Make X-02 (Creation Club) available to raiders",
-                    "type": "switcher",
-                    "help": "This mod replaces the standard X-02 set with a raider set, so this removes it from the Gunners and adds it to Raiders",
-                    "valueOptions": {
-                        "sourceType": "GlobalValue",
-                        "sourceForm": "Power Armor to the People - X-02 CC.esp|80A"
                     },
                     "action": {
                         "type": "CallFunction",
