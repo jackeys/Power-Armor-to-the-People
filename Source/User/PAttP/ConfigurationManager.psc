@@ -419,3 +419,11 @@ Function ApplyMCMProperties()
     MinutemenPowerArmorChance = MCM_MinutemenPowerArmorChance
     LevelScalePowerArmoredEnemies = MCM_LevelScalePowerArmoredEnemies
 EndFunction
+
+bool Property MCM_X02RaiderPowerArmorDisabled = True Auto
+Function SetX02RaiderPowerArmorEnabled(bool abEnabled)
+    debug.trace("X02 Raider Power Armor set to " + abEnabled)
+    MCM_X02RaiderPowerArmorDisabled = !abEnabled
+    MCM.RefreshMenu()
+    InjectionManager.RefreshListInjections(false)
+EndFunction

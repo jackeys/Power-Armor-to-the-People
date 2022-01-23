@@ -277,7 +277,7 @@
             "pageDisplayName": "Faction Distribution",
             "content": [
                 {
-                    "text": "These settings affect what power armor sets each faction has access to.'",
+                    "text": "These settings affect what power armor sets each faction has access to.",
                     "type": "text"
                 },
                 {
@@ -294,9 +294,9 @@
                     },
                     "action": {
                         "type": "CallFunction",
-                        "form": "Power Armor to the People.esp|873",
-                        "function": "RefreshListInjections",
-                        "params": [false]
+                        "form": "Power Armor to the People.esp|8AA",
+                        "function": "SetX02RaiderPowerArmorEnabled",
+                        "params": ["{b}{value}"]
                     },
                     "groupControl": 1
                 },
@@ -384,6 +384,18 @@
                     },
                     "groupCondition": 99,
                     "groupControl": 6
+                },
+                {
+                    "text": "X02 Raider Power Armor Inverse",
+                    "type": "switcher",
+                    "help": "The opposite of X02 Raider Power Armor for changing what is visible on this page",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|8AA",
+                        "propertyName": "MCM_X02RaiderPowerArmorDisabled"
+                    },
+                    "groupCondition": 99,
+                    "groupControl": 7
                 },
                 {
                     "text": "Raiders",
@@ -622,7 +634,8 @@
                         "form": "Power Armor to the People.esp|873",
                         "function": "RefreshListInjections",
                         "params": [false]
-                    }
+                    },
+                    "groupCondition": 7
                 },
                 {
                     "text": "Hellfire X-03 (Legendary/Commanders Only)",
