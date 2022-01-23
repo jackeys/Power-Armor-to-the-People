@@ -390,16 +390,9 @@
                     "type": "section"
                 },
                 {
-                    "text": "Raider Power Armor - Always On",
-                    "type": "text"
-                },
-                {
-                    "text": "T-45 and Raw Metal T-51 (Individual pieces) - Always On",
-                    "type": "text"
-                },
-                {
-                    "text": "If installed, Excavator and Horse Power Armor are always on",
-                    "type": "text"
+                    "text": "The following power armor sets are always included when available:<br><ol><li>Raider Power Armor</li><li>T-45 (Individual pieces)</li><li>Raw Metal T-51 (Individual pieces)</li><li>Excavator Power Armor</li><li>Horse Power Armor (Very rare, individual pieces)</li></ol>",
+                    "type": "text",
+                    "html": "true"
                 },
                 {
                     "text": "Rusty T-51 (Individual pieces)",
@@ -513,12 +506,28 @@
                     "type": "section"
                 },
                 {
-                    "text": "T-45 and T-51 - Always On",
+                    "text": "The following power armor sets are always included when available:",
                     "type": "text"
                 },
                 {
-                    "text": "If installed, T-51c and Hellcat Power Armor are always on",
-                    "type": "text"
+                    "text": "<li>T-45</li>",
+                    "type": "text",
+                    "html": "true"
+                },
+                {
+                    "text": "<li>T-51</li>",
+                    "type": "text",
+                    "html": "true"
+                },
+                {
+                    "text": "<li>T-51c</li>",
+                    "type": "text",
+                    "html": "true"
+                },
+                {
+                    "text": "<li>Hellcat Power Armor</li>",
+                    "type": "text",
+                    "html": "true"
                 },
                 {
                     "text": "T-60",
@@ -661,12 +670,28 @@
                     "type": "section"
                 },
                 {
-                    "text": "T-60 (plus T-45 and T-51 if using BPAO) - Always On",
+                    "text": "The following power armor sets are always included when available:",
                     "type": "text"
                 },
                 {
-                    "text": "If installed, Midwest and Ultracite Power Armor are always on",
-                    "type": "text"
+                    "text": "<li>T-60</li>",
+                    "type": "text",
+                    "html": "true"
+                },
+                {
+                    "text": "<li>Midwest Power Armor</li>",
+                    "type": "text",
+                    "html": "true"
+                },
+                {
+                    "text": "<li>Ultracite Power Armor</li>",
+                    "type": "text",
+                    "html": "true"
+                },
+                {
+                    "text": "<li>If using Brotherhood Power Armor Overhaul, T-45 and T-51</li>",
+                    "type": "text",
+                    "html": "true"
                 },
                 {
                     "text": "T-45 and T-51",
@@ -783,8 +808,9 @@
                     "type": "section"
                 },
                 {
-                    "text": "T-45 - Always On",
-                    "type": "text"
+                    "text": "The following power armor sets are always included when available:<br><ol><li>T-45</li></ol>",
+                    "type": "text",
+                    "html": "true"
                 },
                 {
                     "text": "T-51",
