@@ -277,7 +277,7 @@
             "pageDisplayName": "Faction Distribution",
             "content": [
                 {
-                    "text": "These settings affect what power armor sets each faction can get. This affects both NPCs and vendors.",
+                    "text": "These settings affect what power armor sets each faction has access to.'",
                     "type": "text"
                 },
                 {
@@ -390,14 +390,14 @@
                     "type": "section"
                 },
                 {
-                    "text": "The following power armor sets are always included when available:<br><ol><li>Raider Power Armor</li><li>T-45 (Individual pieces)</li><li>Raw Metal T-51 (Individual pieces)</li><li>Excavator Power Armor</li><li>Horse Power Armor (Very rare, individual pieces)</li></ol>",
+                    "text": "The following power armor sets are always included when available:<br><ol><li>Raider Power Armor</li><li>T-45 (Individual pieces)</li><li>Excavator Power Armor</li><li>Horse Power Armor (Very rare, individual pieces)</li></ol>",
                     "type": "text",
                     "html": "true"
                 },
                 {
-                    "text": "Rusty T-51 (Individual pieces)",
+                    "text": "T-51 (Individual pieces)",
                     "type": "switcher",
-                    "help": "Whether mixed sets for raiders and scavengers can include rusty T-51",
+                    "help": "Whether mixed sets for raiders and scavengers can include T-51",
                     "valueOptions": {
                         "sourceType": "GlobalValue",
                         "sourceForm": "Power Armor to the People.esp|B54"
@@ -520,14 +520,19 @@
                     "html": "true"
                 },
                 {
-                    "text": "<li>T-51c</li>",
-                    "type": "text",
-                    "html": "true"
-                },
-                {
-                    "text": "<li>Hellcat Power Armor</li>",
-                    "type": "text",
-                    "html": "true"
+                    "text": "T-51c",
+                    "type": "switcher",
+                    "help": "",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - T-51c.esp|817"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
                 },
                 {
                     "text": "T-60",
@@ -536,6 +541,21 @@
                     "valueOptions": {
                         "sourceType": "GlobalValue",
                         "sourceForm": "Power Armor to the People.esp|87A"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
+                    "text": "Hellcat Power Armor",
+                    "type": "switcher",
+                    "help": "",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - Hellcat Power Armor.esp|813"
                     },
                     "action": {
                         "type": "CallFunction",
