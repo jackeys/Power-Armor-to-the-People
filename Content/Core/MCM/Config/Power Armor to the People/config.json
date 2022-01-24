@@ -1224,310 +1224,6 @@
             ]
         },
         {
-            "pageDisplayName": "Weapons",
-            "content": [
-                {
-                    "text": "Most weapon mods that are distributed via leveled list will be available to power armored enemies as well. However, some weapons are not available this way and may be desirable only for power armored enemies. If the mod containing a weapon below is available and the setting is enabled, it will be made available.",
-                    "type": "text"
-                },
-                {
-                    "text": "Creation Club",
-                    "type": "section"
-                },
-                {
-                    "text": "Tesla Cannon",
-                    "type": "switcher",
-                    "help": "Provide tesla cannons to power armored Gunners and Brotherhood of Steel at high levels",
-                    "valueOptions": {
-                        "sourceType": "PropertyValueBool",
-                        "sourceForm": "Power Armor to the People.esp|998",
-                        "propertyName": "TeslaCannonEnabled"
-                    },
-                    "action": {
-                        "type": "CallFunction",
-                        "form": "Power Armor to the People.esp|873",
-                        "function": "RefreshListInjections",
-                        "params": [false]
-                    }
-                },
-                {
-                    "text": "Heavy Incinerator",
-                    "type": "switcher",
-                    "help": "Provide heavy incinerators to power armored Gunners and Forged",
-                    "valueOptions": {
-                        "sourceType": "PropertyValueBool",
-                        "sourceForm": "Power Armor to the People.esp|998",
-                        "propertyName": "HeavyIncineratorEnabled"
-                    },
-                    "action": {
-                        "type": "CallFunction",
-                        "form": "Power Armor to the People.esp|873",
-                        "function": "RefreshListInjections",
-                        "params": [false]
-                    }
-                },
-                {
-                    "text": "Solar Cannon",
-                    "type": "switcher",
-                    "help": "Provide solar cannons to power armored Gunners",
-                    "valueOptions": {
-                        "sourceType": "PropertyValueBool",
-                        "sourceForm": "Power Armor to the People.esp|998",
-                        "propertyName": "SolarCannonEnabled"
-                    },
-                    "action": {
-                        "type": "CallFunction",
-                        "form": "Power Armor to the People.esp|873",
-                        "function": "RefreshListInjections",
-                        "params": [false]
-                    }
-                },
-                {
-                    "text": "Cosmic Cannon",
-                    "type": "switcher",
-                    "help": "Provide cosmic cannons to power armored Gunners",
-                    "valueOptions": {
-                        "sourceType": "PropertyValueBool",
-                        "sourceForm": "Power Armor to the People.esp|998",
-                        "propertyName": "CosmicCannonEnabled"
-                    },
-                    "action": {
-                        "type": "CallFunction",
-                        "form": "Power Armor to the People.esp|873",
-                        "function": "RefreshListInjections",
-                        "params": [false]
-                    }
-                },
-                {
-                    "text": "Thunderbolt",
-                    "type": "switcher",
-                    "help": "Provide Thunderbolts to power armored Gunners",
-                    "valueOptions": {
-                        "sourceType": "PropertyValueBool",
-                        "sourceForm": "Power Armor to the People.esp|998",
-                        "propertyName": "ThunderboltEnabled"
-                    },
-                    "action": {
-                        "type": "CallFunction",
-                        "form": "Power Armor to the People.esp|873",
-                        "function": "RefreshListInjections",
-                        "params": [false]
-                    }
-                },
-                {
-                    "text": "Unique Weapons",
-                    "type": "section"
-                },
-                {
-                    "text": "Broadsider",
-                    "type": "switcher",
-                    "help": "Provide Broadsiders to power armored Raiders",
-                    "valueOptions": {
-                        "sourceType": "PropertyValueBool",
-                        "sourceForm": "Power Armor to the People.esp|998",
-                        "propertyName": "BroadsiderEnabled"
-                    },
-                    "action": {
-                        "type": "CallFunction",
-                        "form": "Power Armor to the People.esp|873",
-                        "function": "RefreshListInjections",
-                        "params": [false]
-                    }
-                },
-                {
-                    "text": "Cryolator",
-                    "type": "switcher",
-                    "help": "Provide Cryolators to power armored Gunners",
-                    "valueOptions": {
-                        "sourceType": "PropertyValueBool",
-                        "sourceForm": "Power Armor to the People.esp|998",
-                        "propertyName": "CryolatorEnabled"
-                    },
-                    "action": {
-                        "type": "CallFunction",
-                        "form": "Power Armor to the People.esp|873",
-                        "function": "RefreshListInjections",
-                        "params": [false]
-                    }
-                },
-                {
-                    "text": "Mods",
-                    "type": "section"
-                },
-                {
-                    "text": "Ultracite Weapons",
-                    "type": "switcher",
-                    "help": "Provide Ultracite laser rifles and gatling lasers to power armored Brotherhood of Steel",
-                    "valueOptions": {
-                        "sourceType": "PropertyValueBool",
-                        "sourceForm": "Power Armor to the People.esp|998",
-                        "propertyName": "UltraciteEnabled"
-                    },
-                    "action": {
-                        "type": "CallFunction",
-                        "form": "Power Armor to the People.esp|873",
-                        "function": "RefreshListInjections",
-                        "params": [false]
-                    }
-                },
-                {
-                    "text": "Tesla Heavy Autocannon",
-                    "type": "switcher",
-                    "help": "Provide Tesla Heavy Autocannons to the Brotherhood of Steel and power armored Gunners",
-                    "valueOptions": {
-                        "sourceType": "PropertyValueBool",
-                        "sourceForm": "Power Armor to the People.esp|998",
-                        "propertyName": "TeslaHeavyAutocannonEnabled"
-                    },
-                    "action": {
-                        "type": "CallFunction",
-                        "form": "Power Armor to the People.esp|873",
-                        "function": "RefreshListInjections",
-                        "params": [false]
-                    }
-                },
-                {
-                    "text": "Miniguns Rebirth",
-                    "type": "switcher",
-                    "help": "Provide the miniguns to power armored Raiders, Gunners, and the Brotherhood of Steel",
-                    "valueOptions": {
-                        "sourceType": "PropertyValueBool",
-                        "sourceForm": "Power Armor to the People.esp|998",
-                        "propertyName": "MinigunsRebirthEnabled"
-                    },
-                    "action": {
-                        "type": "CallFunction",
-                        "form": "Power Armor to the People.esp|873",
-                        "function": "RefreshListInjections",
-                        "params": [false]
-                    }
-                },
-                {
-                    "text": "Machineguns Rebirth",
-                    "type": "switcher",
-                    "help": "Provide the machine guns to power armored Raiders, Gunners, and the Brotherhood of Steel",
-                    "valueOptions": {
-                        "sourceType": "PropertyValueBool",
-                        "sourceForm": "Power Armor to the People.esp|998",
-                        "propertyName": "MachinegunsRebirthEnabled"
-                    },
-                    "action": {
-                        "type": "CallFunction",
-                        "form": "Power Armor to the People.esp|873",
-                        "function": "RefreshListInjections",
-                        "params": [false]
-                    }
-                },
-                {
-                    "text": "Heavy Select Shotgun",
-                    "type": "switcher",
-                    "help": "Provide the heavy select shotgun to power armored Raiders",
-                    "valueOptions": {
-                        "sourceType": "PropertyValueBool",
-                        "sourceForm": "Power Armor to the People.esp|998",
-                        "propertyName": "HeavySelectShotgunEnabled"
-                    },
-                    "action": {
-                        "type": "CallFunction",
-                        "form": "Power Armor to the People.esp|873",
-                        "function": "RefreshListInjections",
-                        "params": [false]
-                    }
-                },
-                {
-                    "text": "Arc Welder",
-                    "type": "switcher",
-                    "help": "Provide the arc welder to power armored Raiders",
-                    "valueOptions": {
-                        "sourceType": "PropertyValueBool",
-                        "sourceForm": "Power Armor to the People.esp|998",
-                        "propertyName": "ArcWelderEnabled"
-                    },
-                    "action": {
-                        "type": "CallFunction",
-                        "form": "Power Armor to the People.esp|873",
-                        "function": "RefreshListInjections",
-                        "params": [false]
-                    }
-                },
-                {
-                    "text": "Enclave Plasma",
-                    "type": "switcher",
-                    "help": "Provide the Enclave Plasma to Gunners in Tesla power armor",
-                    "valueOptions": {
-                        "sourceType": "PropertyValueBool",
-                        "sourceForm": "Power Armor to the People.esp|998",
-                        "propertyName": "EnclavePlasmaEnabled"
-                    },
-                    "action": {
-                        "type": "CallFunction",
-                        "form": "Power Armor to the People.esp|873",
-                        "function": "RefreshListInjections",
-                        "params": [false]
-                    }
-                }
-            ]
-        },
-        {
-            "pageDisplayName": "Abandoned Power Armor",
-            "content": [
-                {
-                    "text": "Allow X-02 (Creation Club) for abandoned Enclave power armor",
-                    "type": "switcher",
-                    "help": "Allows X-02 (Creation Club) to be a possible set for abandoned leveled Enclave sets",
-                    "valueOptions": {
-                        "sourceType": "GlobalValue",
-                        "sourceForm": "Power Armor to the People - X-02 CC.esp|810"
-                    },
-                    "action": {
-                        "type": "CallFunction",
-                        "form": "Power Armor to the People.esp|873",
-                        "function": "RefreshListInjections",
-                        "params": [false]
-                    }
-                },
-                {
-                    "text": "Allow Hellfire (Creation Club) for abandoned Enclave power armor",
-                    "type": "switcher",
-                    "help": "Allows Hellfire (Creation Club) to be a possible set for abandoned leveled Enclave sets",
-                    "valueOptions": {
-                        "sourceType": "GlobalValue",
-                        "sourceForm": "Power Armor to the People - Hellfire CC.esp|80D"
-                    },
-                    "action": {
-                        "type": "CallFunction",
-                        "form": "Power Armor to the People.esp|873",
-                        "function": "RefreshListInjections",
-                        "params": [false]
-                    }
-                },
-                {
-                    "text": "",
-                    "type": "section"
-                },
-                {
-                    "text": "Power Armor to the People replaces or removes the full set added by most power armor mods for the sake of progression and to make finding the sets more interesting. If you would prefer to keep these full sets intact, you can permanently enable them for current and future modded sets using the button below.",
-                    "type": "text"
-                },
-                {
-                    "text": "<b>This action cannot be undone, so please make sure to back up your save before proceeding.</b>",
-                    "type": "text",
-                    "html": true
-                },
-                {
-                    "text": "Add Full Abandoned Sets Back to the World",
-                    "type": "button",
-                    "help": "You will see a confirmation notification after closing MCM",
-                    "action": {
-                        "type": "CallFunction",
-                        "form": "Power Armor to the People.esp|8AA",
-                        "function": "RestoreOriginalAbandonedPowerArmorSets",
-                        "params": []
-                    }
-                }
-            ]
-        },
-        {
             "pageDisplayName": "Unique Power Armor",
             "content": [
                 {
@@ -1858,6 +1554,310 @@
                         "step": 10,
                         "sourceType": "GlobalValue",
                         "sourceForm": "Power Armor to the People.esp|AC1"
+                    }
+                }
+            ]
+        },
+        {
+            "pageDisplayName": "Abandoned Power Armor",
+            "content": [
+                {
+                    "text": "Allow X-02 (Creation Club) for abandoned Enclave power armor",
+                    "type": "switcher",
+                    "help": "Allows X-02 (Creation Club) to be a possible set for abandoned leveled Enclave sets",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - X-02 CC.esp|810"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
+                    "text": "Allow Hellfire (Creation Club) for abandoned Enclave power armor",
+                    "type": "switcher",
+                    "help": "Allows Hellfire (Creation Club) to be a possible set for abandoned leveled Enclave sets",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - Hellfire CC.esp|80D"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
+                    "text": "",
+                    "type": "section"
+                },
+                {
+                    "text": "Power Armor to the People replaces or removes the full set added by most power armor mods for the sake of progression and to make finding the sets more interesting. If you would prefer to keep these full sets intact, you can permanently enable them for current and future modded sets using the button below.",
+                    "type": "text"
+                },
+                {
+                    "text": "<b>This action cannot be undone, so please make sure to back up your save before proceeding.</b>",
+                    "type": "text",
+                    "html": true
+                },
+                {
+                    "text": "Add Full Abandoned Sets Back to the World",
+                    "type": "button",
+                    "help": "You will see a confirmation notification after closing MCM",
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|8AA",
+                        "function": "RestoreOriginalAbandonedPowerArmorSets",
+                        "params": []
+                    }
+                }
+            ]
+        },
+        {
+            "pageDisplayName": "Weapons",
+            "content": [
+                {
+                    "text": "Most weapon mods that are distributed via leveled list will be available to power armored enemies as well. However, some weapons are not available this way and may be desirable only for power armored enemies. If the mod containing a weapon below is available and the setting is enabled, it will be made available.",
+                    "type": "text"
+                },
+                {
+                    "text": "Creation Club",
+                    "type": "section"
+                },
+                {
+                    "text": "Tesla Cannon",
+                    "type": "switcher",
+                    "help": "Provide tesla cannons to power armored Gunners and Brotherhood of Steel at high levels",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|998",
+                        "propertyName": "TeslaCannonEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
+                    "text": "Heavy Incinerator",
+                    "type": "switcher",
+                    "help": "Provide heavy incinerators to power armored Gunners and Forged",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|998",
+                        "propertyName": "HeavyIncineratorEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
+                    "text": "Solar Cannon",
+                    "type": "switcher",
+                    "help": "Provide solar cannons to power armored Gunners",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|998",
+                        "propertyName": "SolarCannonEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
+                    "text": "Cosmic Cannon",
+                    "type": "switcher",
+                    "help": "Provide cosmic cannons to power armored Gunners",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|998",
+                        "propertyName": "CosmicCannonEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
+                    "text": "Thunderbolt",
+                    "type": "switcher",
+                    "help": "Provide Thunderbolts to power armored Gunners",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|998",
+                        "propertyName": "ThunderboltEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
+                    "text": "Unique Weapons",
+                    "type": "section"
+                },
+                {
+                    "text": "Broadsider",
+                    "type": "switcher",
+                    "help": "Provide Broadsiders to power armored Raiders",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|998",
+                        "propertyName": "BroadsiderEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
+                    "text": "Cryolator",
+                    "type": "switcher",
+                    "help": "Provide Cryolators to power armored Gunners",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|998",
+                        "propertyName": "CryolatorEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
+                    "text": "Mods",
+                    "type": "section"
+                },
+                {
+                    "text": "Arc Welder",
+                    "type": "switcher",
+                    "help": "Provide the arc welder to power armored Raiders",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|998",
+                        "propertyName": "ArcWelderEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
+                    "text": "Enclave Plasma",
+                    "type": "switcher",
+                    "help": "Provide the Enclave Plasma to Gunners in Tesla power armor",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|998",
+                        "propertyName": "EnclavePlasmaEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
+                    "text": "Heavy Select Shotgun",
+                    "type": "switcher",
+                    "help": "Provide the heavy select shotgun to power armored Raiders",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|998",
+                        "propertyName": "HeavySelectShotgunEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
+                    "text": "Machineguns Rebirth",
+                    "type": "switcher",
+                    "help": "Provide the machine guns to power armored Raiders, Gunners, and the Brotherhood of Steel",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|998",
+                        "propertyName": "MachinegunsRebirthEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
+                    "text": "Miniguns Rebirth",
+                    "type": "switcher",
+                    "help": "Provide the miniguns to power armored Raiders, Gunners, and the Brotherhood of Steel",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|998",
+                        "propertyName": "MinigunsRebirthEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
+                    "text": "Tesla Heavy Autocannon",
+                    "type": "switcher",
+                    "help": "Provide Tesla Heavy Autocannons to the Brotherhood of Steel and power armored Gunners",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|998",
+                        "propertyName": "TeslaHeavyAutocannonEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
+                    "text": "Ultracite Weapons",
+                    "type": "switcher",
+                    "help": "Provide Ultracite laser rifles and gatling lasers to power armored Brotherhood of Steel",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|998",
+                        "propertyName": "UltraciteEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
                     }
                 }
             ]
