@@ -1417,6 +1417,38 @@
                         "function": "RefreshListInjections",
                         "params": [false]
                     }
+                },
+                {
+                    "text": "Heavy Select Shotgun",
+                    "type": "switcher",
+                    "help": "Provide the heavy select shotgun to power armored Raiders",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|998",
+                        "propertyName": "HeavySelectShotgunEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
+                    "text": "Arc Welder",
+                    "type": "switcher",
+                    "help": "Provide the arc welder to power armored Raiders",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|998",
+                        "propertyName": "ArcWelderEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
                 }
             ]
         },

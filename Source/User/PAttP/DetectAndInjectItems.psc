@@ -58,6 +58,17 @@ Bool  Property MachinegunsRebirthEnabled = false Auto
 LeveledItem[] Property MachinegunsRebirthInjectionPoints Auto Mandatory Const
 int Property MachinegunsRebirthLevel Auto Mandatory Const
 
+Bool  Property HeavySelectShotgunEnabled = false Auto
+LeveledItem[] Property HeavySelectShotgunInjectionPoints Auto Mandatory Const
+int Property HeavySelectShotgunLevel Auto Mandatory Const
+
+Bool  Property ArcWelderEnabled = false Auto
+LeveledItem[] Property ArcWelderInjectionPoints Auto Mandatory Const
+int Property ArcWelderLevel Auto Mandatory Const
+
+; Tesla enemy injections
+LeveledItem[] Property EnergyWeaponInjectionPoints Auto Mandatory Const
+
 Function Inject()
 	; Insert all of the enabled weapons for plugins that have been detected
 	if TeslaCannonEnabled
@@ -105,6 +116,22 @@ Function Inject()
 	if MachinegunsRebirthEnabled
 		InjectIfPluginPresent(0x00000196, "Skb-MachinegunsRebirth.esl", MachinegunsRebirthInjectionPoints, MachinegunsRebirthLevel)
 	EndIf
+	
+	if HeavySelectShotgunEnabled
+		InjectIfPluginPresent(0x0000002C, "HeavySelectShotgun.esl", HeavySelectShotgunInjectionPoints, HeavySelectShotgunLevel)
+	EndIf
+	
+	if ArcWelderEnabled
+		InjectIfPluginPresent(0x00003D5C, "ArcWelder.esp", ArcWelderInjectionPoints, ArcWelderLevel)
+	EndIf
+	
+	; Tesla - Energy weapons that are injected for everyone by their own mod, but will be missing because Tesla enemies have their own weapon list
+	; Plasma Caster
+	InjectIfPluginPresent(0x00001EF6, "WinchesterP94Balanced2.esp", EnergyWeaponInjectionPoints, 36)
+	InjectIfPluginPresent(0x00000F99, "Moddable Plasma Caster.esp", EnergyWeaponInjectionPoints, 60)
+	InjectIfPluginPresent(0x00000F99, "WattzLaserGun.esp", EnergyWeaponInjectionPoints, 18)
+	InjectIfPluginPresent(0x00004C7B, "P94PlasmaRifle.esp", EnergyWeaponInjectionPoints, 21)
+
 EndFunction
 
 Function InjectIfPluginPresent(int aiFormIdToInject, string asPlugin, LeveledItem[] akInjectInto, int aiLevel)
