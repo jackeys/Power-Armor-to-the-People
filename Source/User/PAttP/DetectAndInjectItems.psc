@@ -66,8 +66,13 @@ Bool  Property ArcWelderEnabled = false Auto
 LeveledItem[] Property ArcWelderInjectionPoints Auto Mandatory Const
 int Property ArcWelderLevel Auto Mandatory Const
 
+Bool  Property EnclavePlasmaEnabled = false Auto
+LeveledItem[] Property EnclavePlasmaInjectionPoints Auto Mandatory Const
+int Property EnclavePlasmaLevel Auto Mandatory Const
+
 ; Tesla enemy injections
-LeveledItem[] Property EnergyWeaponInjectionPoints Auto Mandatory Const
+LeveledItem[] Property EnergyHeavyWeaponInjectionPoints Auto Mandatory Const
+LeveledItem[] Property EnergyRifleInjectionPoints Auto Mandatory Const
 
 Function Inject()
 	; Insert all of the enabled weapons for plugins that have been detected
@@ -125,12 +130,23 @@ Function Inject()
 		InjectIfPluginPresent(0x00003D5C, "ArcWelder.esp", ArcWelderInjectionPoints, ArcWelderLevel)
 	EndIf
 	
+	if EnclavePlasmaEnabled
+		; Auto Rifle
+		InjectIfPluginPresent(0x0000084A, "EnclavePlasma.esp", EnclavePlasmaInjectionPoints, EnclavePlasmaLevel)
+		; Flamer Rifle
+		InjectIfPluginPresent(0x0000084B, "EnclavePlasma.esp", EnclavePlasmaInjectionPoints, EnclavePlasmaLevel)
+		; Shotgun
+		InjectIfPluginPresent(0x0000084F, "EnclavePlasma.esp", EnclavePlasmaInjectionPoints, EnclavePlasmaLevel)
+		; Sniper Rifle
+		InjectIfPluginPresent(0x00000850, "EnclavePlasma.esp", EnclavePlasmaInjectionPoints, EnclavePlasmaLevel)
+	EndIf
+	
 	; Tesla - Energy weapons that are injected for everyone by their own mod, but will be missing because Tesla enemies have their own weapon list
 	; Plasma Caster
-	InjectIfPluginPresent(0x00001EF6, "WinchesterP94Balanced2.esp", EnergyWeaponInjectionPoints, 36)
-	InjectIfPluginPresent(0x00000F99, "Moddable Plasma Caster.esp", EnergyWeaponInjectionPoints, 60)
-	InjectIfPluginPresent(0x00000F99, "WattzLaserGun.esp", EnergyWeaponInjectionPoints, 18)
-	InjectIfPluginPresent(0x00004C7B, "P94PlasmaRifle.esp", EnergyWeaponInjectionPoints, 21)
+	InjectIfPluginPresent(0x00001EF6, "WinchesterP94Balanced2.esp", EnergyHeavyWeaponInjectionPoints, 36)
+	InjectIfPluginPresent(0x00000F99, "Moddable Plasma Caster.esp", EnergyHeavyWeaponInjectionPoints, 60)
+	InjectIfPluginPresent(0x00000F99, "WattzLaserGun.esp", EnergyRifleInjectionPoints, 18)
+	InjectIfPluginPresent(0x00004C7B, "P94PlasmaRifle.esp", EnergyRifleInjectionPoints, 21)
 
 EndFunction
 

@@ -1449,6 +1449,22 @@
                         "function": "RefreshListInjections",
                         "params": [false]
                     }
+                },
+                {
+                    "text": "Enclave Plasma",
+                    "type": "switcher",
+                    "help": "Provide the Enclave Plasma to Gunners in Tesla power armor",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|998",
+                        "propertyName": "EnclavePlasmaEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
                 }
             ]
         },
