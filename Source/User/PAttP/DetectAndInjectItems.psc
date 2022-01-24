@@ -70,6 +70,10 @@ Bool  Property EnclavePlasmaEnabled = false Auto
 LeveledItem[] Property EnclavePlasmaInjectionPoints Auto Mandatory Const
 int Property EnclavePlasmaLevel Auto Mandatory Const
 
+Bool  Property Mk41GyrojetEnabled = false Auto
+LeveledItem[] Property Mk41GyrojetInjectionPoints Auto Mandatory Const
+int Property Mk41GyrojetLevel Auto Mandatory Const
+
 ; Tesla enemy injections
 LeveledItem[] Property EnergyHeavyWeaponInjectionPoints Auto Mandatory Const
 LeveledItem[] Property EnergyRifleInjectionPoints Auto Mandatory Const
@@ -139,6 +143,10 @@ Function Inject()
 		InjectIfPluginPresent(0x0000084F, "EnclavePlasma.esp", EnclavePlasmaInjectionPoints, EnclavePlasmaLevel)
 		; Sniper Rifle
 		InjectIfPluginPresent(0x00000850, "EnclavePlasma.esp", EnclavePlasmaInjectionPoints, EnclavePlasmaLevel)
+	EndIf
+	
+	if Mk41GyrojetEnabled
+		InjectIfPluginPresent(0x00000F99, "Mk41GyrojetHMG.esp", Mk41GyrojetInjectionPoints, Mk41GyrojetLevel)
 	EndIf
 	
 	; Tesla - Energy weapons that are injected for everyone by their own mod, but will be missing because Tesla enemies have their own weapon list

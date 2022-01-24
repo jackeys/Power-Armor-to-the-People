@@ -1629,13 +1629,13 @@
                     "type": "section"
                 },
                 {
-                    "text": "Tesla Cannon",
+                    "text": "Cosmic Cannon",
                     "type": "switcher",
-                    "help": "Provide tesla cannons to power armored Gunners and Brotherhood of Steel at high levels",
+                    "help": "Provide cosmic cannons to power armored Gunners",
                     "valueOptions": {
                         "sourceType": "PropertyValueBool",
                         "sourceForm": "Power Armor to the People.esp|998",
-                        "propertyName": "TeslaCannonEnabled"
+                        "propertyName": "CosmicCannonEnabled"
                     },
                     "action": {
                         "type": "CallFunction",
@@ -1677,13 +1677,13 @@
                     }
                 },
                 {
-                    "text": "Cosmic Cannon",
+                    "text": "Tesla Cannon",
                     "type": "switcher",
-                    "help": "Provide cosmic cannons to power armored Gunners",
+                    "help": "Provide tesla cannons to power armored Gunners and Brotherhood of Steel at high levels",
                     "valueOptions": {
                         "sourceType": "PropertyValueBool",
                         "sourceForm": "Power Armor to the People.esp|998",
-                        "propertyName": "CosmicCannonEnabled"
+                        "propertyName": "TeslaCannonEnabled"
                     },
                     "action": {
                         "type": "CallFunction",
@@ -1820,6 +1820,22 @@
                         "sourceType": "PropertyValueBool",
                         "sourceForm": "Power Armor to the People.esp|998",
                         "propertyName": "MinigunsRebirthEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
+                    "text": "Mk 41 Gyrojet Heavy Machine Gun",
+                    "type": "switcher",
+                    "help": "Provide the Mk 41 to power armored Gunners and the Brotherhood of Steel",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|998",
+                        "propertyName": "Mk41GyrojetEnabled"
                     },
                     "action": {
                         "type": "CallFunction",
