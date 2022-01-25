@@ -562,6 +562,21 @@
                     }
                 },
                 {
+                    "text": "Tesla T-60 (Legendary/Commanders Only)",
+                    "type": "switcher",
+                    "help": "Requires Automatron",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - Automatron.esp|818"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
                     "text": "Hellcat Power Armor",
                     "type": "switcher",
                     "help": "",
@@ -741,6 +756,21 @@
                         "params": [false]
                     },
                     "groupCondition": 2
+                },
+                {
+                    "text": "Tesla T-60",
+                    "type": "switcher",
+                    "help": "Requires Automatron",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - Automatron.esp|817"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
                 },
                 {
                     "text": "X-01",
