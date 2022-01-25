@@ -398,6 +398,28 @@
                     "groupControl": 7
                 },
                 {
+                    "text": "Nuka-World",
+                    "type": "switcher",
+                    "help": "Whether the Nuka-World patch is installed",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - Nuka-World.esp|842"
+                    },
+                    "groupCondition": 99,
+                    "groupControl": 8
+                },
+                {
+                    "text": "Automatron",
+                    "type": "switcher",
+                    "help": "Whether the Automatron patch is installed",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - Automatron.esp|81A"
+                    },
+                    "groupCondition": 99,
+                    "groupControl": 9
+                },
+                {
                     "text": "Raiders",
                     "type": "section"
                 },
@@ -450,7 +472,8 @@
                         "form": "Power Armor to the People.esp|873",
                         "function": "RefreshListInjections",
                         "params": [false]
-                    }
+                    },
+                    "groupCondition": 8
                 },
                 {
                     "text": "X-01 (Rare, individual pieces)",
@@ -574,7 +597,8 @@
                         "form": "Power Armor to the People.esp|873",
                         "function": "RefreshListInjections",
                         "params": [false]
-                    }
+                    },
+                    "groupCondition": 9
                 },
                 {
                     "text": "Hellcat Power Armor",
@@ -770,7 +794,8 @@
                         "form": "Power Armor to the People.esp|873",
                         "function": "RefreshListInjections",
                         "params": [false]
-                    }
+                    },
+                    "groupCondition": 9
                 },
                 {
                     "text": "X-01",
