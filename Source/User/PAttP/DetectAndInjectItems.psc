@@ -77,6 +77,8 @@ int Property Mk41GyrojetLevel Auto Mandatory Const
 ; Tesla enemy injections
 LeveledItem[] Property EnergyHeavyWeaponInjectionPoints Auto Mandatory Const
 LeveledItem[] Property EnergyRifleInjectionPoints Auto Mandatory Const
+; For use when only a raw weapon is available to provide instantiation filters
+LeveledItem[] Property EnergyRifleWrappers Auto Mandatory Const
 
 Function Inject()
 	; Insert all of the enabled weapons for plugins that have been detected
@@ -153,15 +155,20 @@ Function Inject()
 	; Plasma Caster
 	InjectIfPluginPresent(0x00001EF6, "WinchesterP94Balanced2.esp", EnergyHeavyWeaponInjectionPoints, 36)
 	InjectIfPluginPresent(0x00000F99, "Moddable Plasma Caster.esp", EnergyHeavyWeaponInjectionPoints, 60)
-	InjectIfPluginPresent(0x00000F99, "WattzLaserGun.esp", EnergyRifleInjectionPoints, 18)
 	InjectIfPluginPresent(0x00004C7B, "P94PlasmaRifle.esp", EnergyRifleInjectionPoints, 21)
-
+	
+	; This is a raw weapon, so we want to inject it into the rifle wrappers to make sure we only get rifles
+	if InjectIfPluginPresent(0x00000F99, "WattzLaserGun.esp", EnergyRifleWrappers, 18)
+		debug.trace(self + " detected Wattz Laser Gun, injecting energy rifle wrappers into energy rifle lists")
+		InjectLeveledItems(EnergyRifleWrappers, EnergyRifleInjectionPoints, 18)
+	EndIf
 EndFunction
 
-Function InjectIfPluginPresent(int aiFormIdToInject, string asPlugin, LeveledItem[] akInjectInto, int aiLevel)
+bool Function InjectIfPluginPresent(int aiFormIdToInject, string asPlugin, LeveledItem[] akInjectInto, int aiLevel)
 	Form itemToInject = Game.GetFormFromFile(aiFormIdToInject, asPlugin)
 
-    if (itemToInject)
+	bool itemAvailable = itemToInject != None
+    if itemAvailable
 		int i = 0
 		while i < akInjectInto.length
 			LeveledItem injectInto = akInjectInto[i]
@@ -172,4 +179,20 @@ Function InjectIfPluginPresent(int aiFormIdToInject, string asPlugin, LeveledIte
 	else
 		debug.trace(self + " unable to find form ID " + aiFormIdToInject + " in plugin " + asPlugin)
 	endif
+
+	return itemAvailable
+EndFunction
+
+Function InjectLeveledItems(LeveledItem[] akToInject, LeveledItem[] akInjectInto, int aiLevel)
+	int i = 0
+	while i < akToInject.length
+		Form itemToInject = akToInject[i]
+		int j = 0
+		while j < akInjectInto.length
+			LeveledItem injectInto = akInjectInto[j]
+			InjectIntoList(injectInto, itemToInject, aiLevel)
+			j += 1
+		EndWhile
+		i += 1
+	EndWhile
 EndFunction
