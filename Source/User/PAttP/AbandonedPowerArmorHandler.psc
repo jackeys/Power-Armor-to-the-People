@@ -1,10 +1,15 @@
 Scriptname PAttP:AbandonedPowerArmorHandler extends Quest
+{Script to handle the one-way transition if the abandoned power armor feature is turned off. All records in the mod should reflect having the feature turned on.}
 
 PAttP:ConfigurationManager Property ConfigManager Auto Const Mandatory
 {AUTOFILL Configuration manager responsible for telling us what we should enable and disable}
 
 ObjectReference[] Property ToEnableIfFeatureIsOff Auto Const
-{Object references that should be enabled if the feature is on and disabled otherwise}
+{Object references that should be enabled if the feature is off - these should be initially disabled}
+
+
+ObjectReference[] Property ToDisableIfFeatureIsOff Auto Const
+{Object references that should be disabled if the feature is off - these should not be anything the player can take with them, like power armor furniture or items, as these will still disappear if they have been moved}
 
 Struct InjectionInfo
     Form ItemToInjectIfEnabled
@@ -31,14 +36,15 @@ Event OnQuestInit()
 EndEvent
 
 Function HandleFeatureEnabled(bool abEnabled)
-    EnableReferencesIfFeatureIsOff(abEnabled)
+    UpdateReferencesEnabled(abEnabled)
     UpdateInjections(abEnabled)
     StartQuests(abEnabled)
 EndFunction
 
-Function EnableReferencesIfFeatureIsOff(bool abEnabled)
-    if(!abEnabled)
+Function UpdateReferencesEnabled(bool abFeatureEnabled)
+    if(!abFeatureEnabled)
         EnableReferences(ToEnableIfFeatureIsOff)
+        DisableReferences(ToDisableIfFeatureIsOff)
     EndIf
 EndFunction
 
@@ -52,6 +58,20 @@ Function EnableReferences(ObjectReference[] akReferences)
     int i = 0
     while i < akReferences.length
         akReferences[i].Enable()
+        i += 1
+    EndWhile
+EndFunction
+
+Function DisableReferences(ObjectReference[] akReferences)
+    if !akReferences
+        return
+    EndIf
+
+    debug.trace(Self + " is disabling these references: " + akReferences)
+    
+    int i = 0
+    while i < akReferences.length
+        akReferences[i].Disable()
         i += 1
     EndWhile
 EndFunction
