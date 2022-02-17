@@ -4,6 +4,8 @@ Scriptname PAttP:CustomLegendaryRulesQuest extends Quest
 LegendaryItemQuestScript Property LegendaryItemQuest const auto mandatory
 {Autofill}
 
+Message Property RemoveNukaWorldRulesMessage Auto Const Mandatory
+
 bool Property AlmostUnbreakableEnabled = true Auto
 LegendaryItemQuestScript:LegendaryModRule Property AlmostUnbreakableModRule Const Auto Mandatory
 
@@ -154,6 +156,7 @@ Function UpdateModRule(string asName, bool abEnabled, LegendaryItemQuestScript:L
 		if index >= 0
 			debug.trace(self + " No action needed - found enabled rule " + asName + " at index " + index)
 		else
+			MakeRoomInLegendaryArrayIfNecessary()
 			debug.trace(self + " Adding enabled legendary " + asName + " | Rule: " + akRule)
 			LegendaryItemQuest.LegendaryModRules.add(akRule)
 		endIf
@@ -200,4 +203,91 @@ Function UpdateFormList(bool abEnabled, FormList akList, Form akKeyword)
 			akList.RemoveAddedForm(akKeyword)
 		endIf
 	EndIf
+EndFunction
+
+int BUTTON_REMOVE_NUKAWORLD_LEGENDARIES = 0 const
+int BUTTON_LEAVE_NUKAWORLD_LEGENDARIES = 1 const
+
+bool NukaWorldRemovalMessageShown = false
+
+Function MakeRoomInLegendaryArrayIfNecessary()
+	if IsLegendaryArrayFull()
+		; We can make room by deleting Nuka-World's unused legendary rules, if they are present
+		if NukaWorldLegendaryRulesPresent() && !NukaWorldRemovalMessageShown
+			NukaWorldRemovalMessageShown = true
+			if RemoveNukaWorldRulesMessage.Show() == BUTTON_REMOVE_NUKAWORLD_LEGENDARIES
+				debug.trace(self + " removing Nuka-World legendary rules")
+				RemoveNukaWorldLegendaryRulesByFormID()
+			endIf
+		endIf
+	endIf
+EndFunction
+
+bool Function IsLegendaryArrayFull()
+	; This is the default maximum size for arrays - F4SE plugins are necessary to make the size bigger
+	return LegendaryItemQuest.LegendaryModRules.length == 128
+EndFunction
+
+bool Function NukaWorldLegendaryRulesPresent()
+	; Arbitrary rule from the list - if one is present, all of them should be
+	FormList allowedKeywords = Game.GetFormFromFile(0x06048FC4, "DLCNukaWorld.esm") as FormList
+    ObjectMod legendaryMod = Game.GetFormFromFile(0x060346FB, "DLCNukaWorld.esm") as ObjectMod
+
+	if legendaryMod
+        LegendaryItemQuestScript:LegendaryModRule legendaryRule = new LegendaryItemQuestScript:LegendaryModRule
+        legendaryRule.AllowedKeywords = allowedKeywords
+        legendaryRule.AllowGrenades = true
+        legendaryRule.LegendaryObjectMod = legendaryMod
+
+        return (FindLegendaryRule(legendaryRule) > -1)
+    endIf
+
+	return false
+EndFunction
+
+Function RemoveNukaWorldLegendaryRulesByFormID()
+    RemoveNukaWorldRuleByFormIDs(0x06048FC4, 0x060346FB)
+    RemoveNukaWorldRuleByFormIDs(0x06048FC4, 0x06048FBB)
+    RemoveNukaWorldRuleByFormIDs(0x06048FC4, 0x06048FBC)
+    RemoveNukaWorldRuleByFormIDs(0x06048FC4, 0x06048FBD)
+    RemoveNukaWorldRuleByFormIDs(0x06048FC4, 0x06048FBE)
+    RemoveNukaWorldRuleByFormIDs(0x06048FC4, 0x06048FBF)
+    RemoveNukaWorldRuleByFormIDs(0x06048FC4, 0x06048FC0)
+    RemoveNukaWorldRuleByFormIDs(0x06048FC4, 0x06048FC1)
+    RemoveNukaWorldRuleByFormIDs(0x06048FC4, 0x06048FC2)
+    RemoveNukaWorldRuleByFormIDs(0x06048FC4, 0x06048FC3)
+    RemoveNukaWorldRuleByFormIDs(0x06048FC7, 0x06033906)
+    RemoveNukaWorldRuleByFormIDs(0x06048FC7, 0x06048FCB)
+    RemoveNukaWorldRuleByFormIDs(0x06048FC7, 0x06048FCC)
+    RemoveNukaWorldRuleByFormIDs(0x06048FC7, 0x06048FCD)
+    RemoveNukaWorldRuleByFormIDs(0x06048FC7, 0x06048FCE)
+    RemoveNukaWorldRuleByFormIDs(0x06048FC7, 0x06048FCF)
+    RemoveNukaWorldRuleByFormIDs(0x06048FC7, 0x06048FD0)
+    RemoveNukaWorldRuleByFormIDs(0x06048FC7, 0x06048FD1)
+    RemoveNukaWorldRuleByFormIDs(0x06048FC7, 0x06048FD2)
+    RemoveNukaWorldRuleByFormIDs(0x06048FC7, 0x06048FD3)
+    RemoveNukaWorldRuleByFormIDs(0x06048FC8, 0x06048FC9)
+    RemoveNukaWorldRuleByFormIDs(0x06048FC8, 0x06048FD4)
+    RemoveNukaWorldRuleByFormIDs(0x06048FC8, 0x06048FD5)
+    RemoveNukaWorldRuleByFormIDs(0x06048FC8, 0x06048FD6)
+    RemoveNukaWorldRuleByFormIDs(0x06048FC8, 0x06048FD7)
+    RemoveNukaWorldRuleByFormIDs(0x06048FC8, 0x06048FD8)
+    RemoveNukaWorldRuleByFormIDs(0x06048FC8, 0x06048FD9)
+    RemoveNukaWorldRuleByFormIDs(0x06048FC8, 0x06048FDA)
+    RemoveNukaWorldRuleByFormIDs(0x06048FC8, 0x06048FDB)
+    RemoveNukaWorldRuleByFormIDs(0x06048FC8, 0x06048FDC)
+EndFunction
+
+Function RemoveNukaWorldRuleByFormIDs(int aiAllowedKeywords, int aiLegendaryMod)
+    FormList allowedKeywords = Game.GetFormFromFile(aiAllowedKeywords, "DLCNukaWorld.esm") as FormList
+    ObjectMod legendaryMod = Game.GetFormFromFile(aiLegendaryMod, "DLCNukaWorld.esm") as ObjectMod
+
+    if legendaryMod
+        LegendaryItemQuestScript:LegendaryModRule legendaryRule = new LegendaryItemQuestScript:LegendaryModRule
+        legendaryRule.AllowedKeywords = allowedKeywords
+        legendaryRule.AllowGrenades = true
+        legendaryRule.LegendaryObjectMod = legendaryMod
+
+        UpdateModRule("Nuka-World Rule", false, legendaryRule)
+    endIf
 EndFunction
