@@ -4,6 +4,12 @@ Scriptname PAttP:LegendaryPowerArmorManager extends Quest
 LegendaryItemQuestScript Property LegendaryItemQuest Auto Const Mandatory
 {AUTOFILL}
 
+InstanceNamingRules Property DefaultPowerArmorNamingRules Auto Const Mandatory
+{Autofill
+The instance naming rules for new legendary effects}
+
+CustomEvent MergeNamingRules
+
 ; Track mods that have been spawned to cycle through them
 ObjectMod[] PreviouslySpawnedMods
 
@@ -40,3 +46,8 @@ ObjectMod[] Function GetAllowedMods(ObjectReference item, FormList ListOfSpecifi
 	return PreferredMods
 EndFunction
 
+Function SendMergeRulesEvent(InstanceNamingRules akRulesToMerge)
+	Var[] args = new Var[1]
+	args[0] = akRulesToMerge
+    SendCustomEvent("MergeNamingRules", args)
+EndFunction
