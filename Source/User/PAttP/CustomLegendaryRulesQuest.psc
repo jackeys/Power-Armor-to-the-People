@@ -160,9 +160,14 @@ Function UpdateModRule(string asName, bool abEnabled, LegendaryItemQuestScript:L
 		if index >= 0
 			debug.trace(self + " No action needed - found enabled rule " + asName + " at index " + index)
 		else
-			MakeRoomInLegendaryArrayIfNecessary()
 			debug.trace(self + " Adding enabled legendary " + asName + " | Rule: " + akRule)
 			LegendaryItemQuest.LegendaryModRules.add(akRule)
+			
+			; If the array is full, our insertion may not have worked
+			while FindLegendaryRule(akRule) < 0 && MakeRoomInLegendaryArray()
+				debug.trace(self + " Could not find enabled legendary " + asName + " after insertion - trying again | Rule: " + akRule)
+				LegendaryItemQuest.LegendaryModRules.add(akRule)
+			endWhile
 		endIf
 	else
 		if index < 0
@@ -218,38 +223,39 @@ bool ArrayExpansionMessageShown = false
 int MaxArraySize = 128
 int ARRAY_SIZE_LIMIT = 256 const
 
-Function MakeRoomInLegendaryArrayIfNecessary()
-	if IsLegendaryArrayFull()
-		; We can make room by deleting Nuka-World's unused legendary rules, if they are present
-		if NukaWorldLegendaryRulesPresent() && !NukaWorldRemovalMessageShown
-			NukaWorldRemovalMessageShown = true
-			if RemoveNukaWorldRulesMessage.Show() == BUTTON_ALLOW_ACTION
-				debug.trace(self + " removing Nuka-World legendary rules")
-				RemoveNukaWorldLegendaryRulesByFormID()
-			endIf
-		elseif ArrayExpansionAvailable()
-			if !ArrayExpansionMessageShown
-				ArrayExpansionMessageShown = true
-				AllowArrayExpansion = ArrayExpansionMessage.Show() == BUTTON_ALLOW_ACTION
-			endIf
+bool Function MakeRoomInLegendaryArray()
+	bool madeRoom = false
 
-			if AllowArrayExpansion && MaxArraySize < ARRAY_SIZE_LIMIT
-				MaxArraySize += 8
-				debug.trace(self + " increasing the maximum array size to " + MaxArraySize)
-				LL_FourPlay.SetMinimalMaxArraySize(MaxArraySize)
-			endIf
+	; We can make room by deleting Nuka-World's unused legendary rules, if they are present
+	if NukaWorldLegendaryRulesPresent() && !NukaWorldRemovalMessageShown
+		NukaWorldRemovalMessageShown = true
+		if RemoveNukaWorldRulesMessage.Show() == BUTTON_ALLOW_ACTION
+			debug.trace(self + " removing Nuka-World legendary rules")
+			RemoveNukaWorldLegendaryRulesByFormID()
+			madeRoom = true
 		endIf
 	endIf
+	
+	if !madeRoom && ArrayExpansionAvailable()
+		if !ArrayExpansionMessageShown
+			ArrayExpansionMessageShown = true
+			AllowArrayExpansion = ArrayExpansionMessage.Show() == BUTTON_ALLOW_ACTION
+		endIf
+
+		if AllowArrayExpansion && MaxArraySize < ARRAY_SIZE_LIMIT
+			MaxArraySize += 8
+			debug.trace(self + " increasing the maximum array size to " + MaxArraySize)
+			LL_FourPlay.SetMinimalMaxArraySize(MaxArraySize)
+			madeRoom = true
+		endIf
+	endIf
+
+	return madeRoom
 EndFunction
 
 bool Function ArrayExpansionAvailable()
 	; This will be None (treated as a 0 with an error in the logs) if LL_FourPlay is not installed
 	return (LL_FourPlay.GetLLFPPluginVersion() >= 34.0)
-EndFunction
-
-bool Function IsLegendaryArrayFull()
-	; This is the default maximum size for arrays - F4SE plugins are necessary to make the size bigger
-	return LegendaryItemQuest.LegendaryModRules.length == MaxArraySize
 EndFunction
 
 bool Function NukaWorldLegendaryRulesPresent()
