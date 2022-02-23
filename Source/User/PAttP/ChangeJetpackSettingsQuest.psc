@@ -31,8 +31,6 @@ string JetpackInitialDrainSettingName = "fJetpackDrainInital" const
 string JetpackSustainedDrainSettingName = "fJetpackDrainSustained" const
 string JetpackInitialThrustSettingName = "fJetpackThrustInitial" const
 
-string HasModifiedJetpackSettingName = "bPATTP_HasModifiedJetpackSettings" const
-
 int JETPACK_SETTING_UNMODIFIED = 0 const
 int JETPACK_SETTING_MODIFIED = 1 const
 
@@ -99,13 +97,11 @@ EndFunction
 
 Event Actor.OnPlayerLoadGame(Actor akSender)
     ; When the game is loaded for the very first time, the game settings will match what is in the files, but if another saved game was loaded before this that changed the game settings, it will also be reflected here
-    ; Since we can't trust that the game settings actually reflect what is in the files unless this is our first loaded game, we use a canary game setting to check
-    ; If this is set, it means that Power Armor to the People in a different saved game already changed the game setting for the jetpack, so we cannot trust the current values
-    if Game.GetGameSettingInt(HasModifiedJetpackSettingName) == JETPACK_SETTING_UNMODIFIED
+    ; We can't know which one it is, but we can filter loading a save with the exact same set of values, and if we're wrong, we can at least fix it next time the game is started
+    ; Note that this has no effect if a player is allowing Power Armor to the People to manage the settings, since a separate configuration is used as an anchor point instead
+    if Game.GetGameSettingFloat(JetpackSustainedDrainSettingName) != AdjustedDrainValue(Game.GetPlayer().GetValue(PATTP_AV_JetpackDrainReductionPercent)) || Game.GetGameSettingFloat(JetpackInitialThrustSettingName) != AdjustedThrustValue(Game.GetPlayer().GetValue(PATTP_AV_JetpackThrustIncreasePercent))
         StoreCurrentGameSettings()
     endIf
-
-    DetectJetpackMods()
 
     UpdateJetpackSettings()
 EndEvent
@@ -115,18 +111,8 @@ Event Actor.OnSit(Actor akSender, ObjectReference akFurniture)
 EndEvent
 
 Function ChangeJetpackSettings(float afThrustIncreasePercent, float afAPDrainReductionPercent)
-    ; Set the modified flag before we make changes, just in case another game is loaded while the changes are in progress
-    if afThrustIncreasePercent != 0 || afAPDrainReductionPercent != 0
-        Game.SetGameSettingInt(HasModifiedJetpackSettingName, JETPACK_SETTING_MODIFIED)
-    endIf
-    
     ChangeJetpackThrustSettings(afThrustIncreasePercent)
     ChangeJetpackDrainSettings(afAPDrainReductionPercent)
-    
-    ; Set the unmodified flag after we make changes, just in case another game is loaded while the changes are in progress
-    if afThrustIncreasePercent == 0 && afAPDrainReductionPercent == 0
-        Game.SetGameSettingInt(HasModifiedJetpackSettingName, JETPACK_SETTING_UNMODIFIED)
-    endIf
 EndFunction
 
 Function ChangeJetpackThrustSettings(float afPercentIncrease)
