@@ -1932,6 +1932,118 @@
                     }
                 }
             ]
+        },
+        {
+            "pageDisplayName": "Jet Pack",
+            "content": [
+                {
+                    "text": "The legendary and unique effects that change the jet pack's AP drain and thrust require a base value to center their changes around. This can be the default in the game files, or it can be managed here. If you have mods that add jet packs you can wear without power armor, these settings also allow you to have different settings for those jet packs compared to power armor jet packs.",
+                    "type": "text"
+                },
+                {
+                    "text": "Allow Power Armor to the People to Manage Jet Pack Game Settings",
+                    "type": "switcher",
+                    "help": "Use the configuration values from this screen instead of the default game settings",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|B6E",
+                        "propertyName": "UseCustomConfiguration"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|B6E",
+                        "function": "UpdateJetpackSettings"
+                    },
+                    "groupControl": 1
+                },
+                {
+                    "text": "Power Armor Jet Packs",
+                    "type": "section",
+                    "groupCondition": 1
+                },
+                {
+                    "text": "Action Point Drain",
+                    "type": "slider",
+                    "help": "How quickly AP drains while using the jet pack",
+                    "valueOptions": {
+                        "min": 20,
+                        "max": 64,
+                        "step": 1,
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People.esp|A71"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|B6E",
+                        "function": "UpdateJetpackSettings"
+                    },
+                    "groupCondition": 1
+                },
+                {
+                    "text": "Thrust",
+                    "type": "slider",
+                    "help": "How high the jet pack will propel you",
+                    "valueOptions": {
+                        "min": 768,
+                        "max": 1500,
+                        "step": 1,
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People.esp|A72"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|B6E",
+                        "function": "UpdateJetpackSettings"
+                    },
+                    "groupCondition": 1
+                },
+                {
+                    "text": "Standalone Jet Packs",
+                    "type": "section",
+                    "groupCondition": 1
+                },
+                {
+                    "text": "There are no standalone jet packs in the base game. You will need a mod like CROSS Jetpack, Secret Service Armor, etc, for these settings to do anything.",
+                    "type": "text",
+                    "groupCondition": 1
+                },
+                {
+                    "text": "Action Point Drain",
+                    "type": "slider",
+                    "help": "How quickly AP drains while using the jet pack",
+                    "valueOptions": {
+                        "min": 6,
+                        "max": 64,
+                        "step": 1,
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People.esp|B6C"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|B6E",
+                        "function": "UpdateJetpackSettings"
+                    },
+                    "groupCondition": 1
+                },
+                {
+                    "text": "Thrust",
+                    "type": "slider",
+                    "help": "How high the jet pack will propel you",
+                    "valueOptions": {
+                        "min": 768,
+                        "max": 1500,
+                        "step": 1,
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People.esp|B6D"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|B6E",
+                        "function": "UpdateJetpackSettings"
+                    },
+                    "groupCondition": 1
+                }
+            ]
         }
     ]
 }
