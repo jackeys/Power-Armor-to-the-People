@@ -1275,6 +1275,20 @@
                         "sourceType": "GlobalValue",
                         "sourceForm": "Power Armor to the People.esp|B35"
                     }
+                },
+                {
+                    "text": "Advanced Settings",
+                    "type": "section"
+                },
+                {
+                    "text": "Expand Arrays If Needed to Fit All Legendary Effects",
+                    "type": "switcher",
+                    "help": "Requires LL_FourPlay from the installer - you would have been prompted if you need this",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|A61",
+                        "propertyName": "AllowArrayExpansion"
+                    }
                 }
             ]
         },
