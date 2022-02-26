@@ -1114,21 +1114,6 @@
                     }
                 },
                 {
-                    "text": "Almost Unbreakable",
-                    "type": "switcher",
-                    "help": "Quadruples durability",
-                    "valueOptions": {
-                        "sourceType": "PropertyValueBool",
-                        "sourceForm": "Power Armor to the People.esp|A61",
-                        "propertyName": "AlmostUnbreakableEnabled"
-                    },
-                    "action": {
-                        "type": "CallFunction",
-                        "form": "Power Armor to the People.esp|A61",
-                        "function": "UpdateLegendaryModRules"
-                    }
-                },
-                {
                     "text": "Amphibious",
                     "type": "switcher",
                     "help": "Increases underwater movement speed by 30%",
@@ -1166,6 +1151,21 @@
                         "sourceType": "PropertyValueBool",
                         "sourceForm": "Power Armor to the People.esp|A61",
                         "propertyName": "DropTrooperEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|A61",
+                        "function": "UpdateLegendaryModRules"
+                    }
+                },
+                {
+                    "text": "Durable",
+                    "type": "switcher",
+                    "help": "Quadruples durability",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|A61",
+                        "propertyName": "AlmostUnbreakableEnabled"
                     },
                     "action": {
                         "type": "CallFunction",
@@ -1916,7 +1916,7 @@
                 {
                     "text": "Tesla Heavy Autocannon",
                     "type": "switcher",
-                    "help": "Provide Tesla Heavy Autocannons to the Brotherhood of Steel and power armored Gunners",
+                    "help": "Provide Tesla Heavy Autocannons to power armored Gunners and the Brotherhood of Steel",
                     "valueOptions": {
                         "sourceType": "PropertyValueBool",
                         "sourceForm": "Power Armor to the People.esp|998",
