@@ -11,7 +11,7 @@ IF EXIST "Edit Scripts\PATTP_RepairPatcher.pas" set hasRepairPatcherScript=1
 IF EXIST "Edit Scripts\lib\mxpf.pas" set hasMXPF=1
 IF EXIST "Edit Scripts\lib\mteFunctions.pas" set hasMTEFunctions=1
 
-echo::: "Power Armor to the People Repair Requirements Patcher"
+echo::: "Power Armor Repair Takes Skill (PARTS)"
 echo :
 echo :
 echo ::: Checking for required files :::
