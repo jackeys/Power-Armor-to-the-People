@@ -1602,7 +1602,8 @@
                 },
                 {
                     "text": "Cryogenerator",
-                    "type": "section"
+                    "type": "section",
+                    "groupCondition": 99
                 },
                 {
                     "text": "Require a Cryolator in Inventory",
@@ -1611,7 +1612,8 @@
                     "valueOptions": {
                         "sourceType": "GlobalValue",
                         "sourceForm": "Power Armor to the People.esp|AC0"
-                    }
+                    },
+                    "groupCondition": 99
                 },
                 {
                     "text": "Maximum Cryo Cells in Inventory",
@@ -1623,7 +1625,8 @@
                         "step": 10,
                         "sourceType": "GlobalValue",
                         "sourceForm": "Power Armor to the People.esp|AC1"
-                    }
+                    },
+                    "groupCondition": 99
                 }
             ]
         },
