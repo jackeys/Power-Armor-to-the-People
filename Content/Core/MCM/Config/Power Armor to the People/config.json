@@ -441,8 +441,7 @@
                         "form": "Power Armor to the People.esp|873",
                         "function": "RefreshListInjections",
                         "params": [false]
-                    },
-                    "groupCondition": 3
+                    }
                 },
                 {
                     "text": "T-60 (Individual pieces)",
@@ -704,8 +703,7 @@
                         "form": "Power Armor to the People.esp|873",
                         "function": "RefreshListInjections",
                         "params": [false]
-                    },
-                    "groupCondition": 6
+                    }
                 },
                 {
                     "text": "T-65 (Legendary/Commanders Only)",
@@ -873,8 +871,7 @@
                         "form": "Power Armor to the People.esp|873",
                         "function": "RefreshListInjections",
                         "params": [false]
-                    },
-                    "groupCondition": 6
+                    }
                 },
                 {
                     "text": "T-65",
