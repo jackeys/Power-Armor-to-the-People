@@ -55,8 +55,13 @@ Event OnQuestInit()
     UpdateJetpackSettings()
 EndEvent
 
+bool Function f4seSupportsWritingGameSettings()
+    ; F4SE 0.3.2 added the function required for getting inventory weight
+    return F4SE.GetVersion() >= 1 || F4SE.GetVersionMinor() > 3 || (F4SE.GetVersionMinor() == 3 && F4SE.GetVersionBeta() >= 2)
+EndFunction
+
 Function DetectJetpackMods()
-    if F4SE.GetVersionMinor() >= 3 && (CurrentGameSetting_APDrain != LastGameSetting_APDrain || CurrentGameSetting_Thrust != LastGameSetting_Thrust)
+    if f4seSupportsWritingGameSettings() && (CurrentGameSetting_APDrain != LastGameSetting_APDrain || CurrentGameSetting_Thrust != LastGameSetting_Thrust)
         LastGameSetting_APDrain = CurrentGameSetting_APDrain
         LastGameSetting_Thrust = CurrentGameSetting_Thrust
         HandleJetpackModDetected()
