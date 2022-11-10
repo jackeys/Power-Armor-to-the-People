@@ -7,7 +7,7 @@
             "label": "Compile Papyrus Script (development)",
             "type": "shell",
             "windows": {
-                "command": "..\\..\\compilePapyrusScript.bat '${file}' 'C:\\Program Files (x86)\\Steam\\steamapps\\common\\Fallout 4\\Papyrus Compiler\\PapyrusCompiler.exe' 'C:\\Program Files (x86)\\Steam\\steamapps\\common\\Fallout 4'"
+                "command": "..\\..\\compilePapyrusScript.bat '${file}' 'E:\\SteamLibrary\\steamapps\\common\\Fallout 4\\Papyrus Compiler\\PapyrusCompiler.exe' 'E:\\SteamLibrary\\steamapps\\common\\Fallout 4'"
             },
             "options": {
                 "cwd": "${workspaceFolder}\\Source\\User"
@@ -25,7 +25,7 @@
             "label": "Install All",
             "type": "shell",
             "windows": {
-                "command": ".\\install_all.ps1 'C:\\Program Files (x86)\\Steam\\steamapps\\common\\Fallout 4'"
+                "command": ".\\install_all.ps1 'E:\\SteamLibrary\\steamapps\\common\\Fallout 4'"
             },
             "presentation": {
                 "reveal": "always"
