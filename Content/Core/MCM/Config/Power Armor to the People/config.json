@@ -1628,6 +1628,22 @@
                     }
                 },
                 {
+                    "text": "True American",
+                    "type": "switcher",
+                    "help": "Deal 10% more damage to and receive 10% less damage from Super Mutants and Ghouls (Arms only)",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|A61",
+                        "propertyName": "BonusVsAbominationEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|A61",
+                        "function": "UpdateLegendaryModRules"
+                    },
+                    "groupCondition": 2
+                },
+                {
                     "text": "Cryogenerator",
                     "type": "section",
                     "groupCondition": 99

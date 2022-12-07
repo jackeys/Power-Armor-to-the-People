@@ -106,6 +106,9 @@ LegendaryItemQuestScript:LegendaryModRule Property RadAbsorbingModRule Const Aut
 bool Property FleetingEnabled = false Auto
 LegendaryItemQuestScript:LegendaryModRule Property FleetingModRule Const Auto Mandatory
 
+bool Property BonusVsAbominationEnabled = false Auto
+LegendaryItemQuestScript:LegendaryModRule Property BonusVsAbominationModRule Const Auto Mandatory
+
 Event OnQuestInit()
 	UpdateLegendaryModRules()
 EndEvent
@@ -114,7 +117,7 @@ Function UpdateLegendaryModRules()
 	UpdateFormList(VanillaArmorEnabled, LegendaryModRule_AllowedKeywords_ObjectTypeArmor, ArmorTypePower)
 	UpdateFormList(VanillaChestOnlyEnabled, LegendaryModRule_AllowedKeywords_ArmorBodyPartChest, PowerArmorChestKeyword)
 
-	UpdateModRule("Almost Unbreakable", AlmostUnbreakableEnabled, AlmostUnbreakableModRule)
+	UpdateModRule("Durable", AlmostUnbreakableEnabled, AlmostUnbreakableModRule)
 	UpdateModRule("Efficient", EfficientEnabled, EfficientModRule)
 	UpdateModRule("Aerodynamic", AerodynamicEnabled, AerodynamicModRule)
 	UpdateModRule("Custom", CustomEnabled, CustomModRule)
@@ -148,6 +151,7 @@ Function UpdateLegendaryModRules()
 	UpdateUniqueModRule("Heavy Lifting", HeavyLiftingEnabled, HeavyLiftingModRule)
 	UpdateUniqueModRule("Rad-Absorbing", RadAbsorbingEnabled, RadAbsorbingModRule)
 	UpdateUniqueModRule("Fleeting", FleetingEnabled, FleetingModRule)
+	UpdateUniqueModRule("True American", BonusVsAbominationEnabled, BonusVsAbominationModRule)
 EndFunction
 
 Function UpdateUniqueModRule(string asName, bool abEnabled, LegendaryItemQuestScript:LegendaryModRule akRule)
