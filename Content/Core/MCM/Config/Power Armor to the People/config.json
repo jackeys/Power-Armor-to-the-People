@@ -1644,6 +1644,22 @@
                     "groupCondition": 2
                 },
                 {
+                    "text": "Ashur's",
+                    "type": "switcher",
+                    "help": "+1 Luck, +1 Charisma, +15 AP (Arms only)",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|A61",
+                        "propertyName": "AshursEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|A61",
+                        "function": "UpdateLegendaryModRules"
+                    },
+                    "groupCondition": 2
+                },
+                {
                     "text": "Cryogenerator",
                     "type": "section",
                     "groupCondition": 99
