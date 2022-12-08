@@ -109,6 +109,9 @@ LegendaryItemQuestScript:LegendaryModRule Property FleetingModRule Const Auto Ma
 bool Property BonusVsAbominationEnabled = false Auto
 LegendaryItemQuestScript:LegendaryModRule Property BonusVsAbominationModRule Const Auto Mandatory
 
+bool Property AshursEnabled = false Auto
+LegendaryItemQuestScript:LegendaryModRule Property AshursModRule Const Auto Mandatory
+
 Event OnQuestInit()
 	UpdateLegendaryModRules()
 EndEvent
@@ -138,6 +141,7 @@ Function UpdateLegendaryModRules()
 	UpdateUniqueModRule("Overseer's", OverseersEnabled, OverseersModRule)
 	UpdateUniqueModRule("People's", PeoplesEnabled, PeoplesModRule)
 	UpdateUniqueModRule("Director's", DirectorsEnabled, DirectorsModRule)
+	UpdateUniqueModRule("Ashur's", AshursEnabled, AshursModRule)
 	UpdateUniqueModRule("Terrifying", TerrifyingEnabled, TerrifyingModRule)
 	UpdateUniqueModRule("Piezonucleic", PiezonucleicEnabled, PiezonucleicModRule)
 	UpdateUniqueModRule("Rocketeer", RocketeerEnabled, RocketeerModRule)

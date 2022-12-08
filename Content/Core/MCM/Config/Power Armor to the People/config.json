@@ -429,6 +429,21 @@
                     "html": "true"
                 },
                 {
+                    "text": "Tribal Power Armor (Rare)",
+                    "type": "switcher",
+                    "help": "Give EdibleGrenade12's Tribal power armor to raiders besides the Pitt Raiders added by the mod",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - Tribal Power Armor.esp|801"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
                     "text": "T-51 (Individual pieces)",
                     "type": "switcher",
                     "help": "Whether mixed sets for raiders and scavengers can include T-51",
@@ -1049,6 +1064,10 @@
                     }
                 },
                 {
+                    "text": "Patch-Specific Settings",
+                    "type": "section"
+                },
+                {
                     "text": "Allow Overboss power armor as a legendary drop",
                     "type": "switcher",
                     "help": "Make Nuka-World's Overboss power armor eligible as a drop from legendary enemies",
@@ -1064,8 +1083,19 @@
                     }
                 },
                 {
-                    "text": "Mod-Specific Settings",
-                    "type": "section"
+                    "text": "Allow Tribal power armor as a legendary drop",
+                    "type": "switcher",
+                    "help": "Make EdibleGrenade12's Tribal power armor eligible as a drop from legendary enemies",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - Tribal Power Armor.esp|80A"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
                 },
                 {
                     "text": "Captain Cosmos Redemption Machine Legendary Chance",
@@ -1635,6 +1665,22 @@
                         "sourceType": "PropertyValueBool",
                         "sourceForm": "Power Armor to the People.esp|A61",
                         "propertyName": "BonusVsAbominationEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|A61",
+                        "function": "UpdateLegendaryModRules"
+                    },
+                    "groupCondition": 2
+                },
+                {
+                    "text": "Ashur's",
+                    "type": "switcher",
+                    "help": "+1 Luck, +1 Charisma, +15 AP (Arms only)",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|A61",
+                        "propertyName": "AshursEnabled"
                     },
                     "action": {
                         "type": "CallFunction",
