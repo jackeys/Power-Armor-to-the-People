@@ -615,6 +615,21 @@
                     "groupCondition": 9
                 },
                 {
+                    "text": "SE-01",
+                    "type": "switcher",
+                    "help": "neeher's SE-01 Power Armor",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - Select Power Armor.esp|007"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
                     "text": "Hellcat Power Armor",
                     "type": "switcher",
                     "help": "",
@@ -824,6 +839,21 @@
                         "params": [false]
                     },
                     "groupCondition": 9
+                },
+                {
+                    "text": "SE-01",
+                    "type": "switcher",
+                    "help": "neeher's SE-01 Power Armor",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - Select Power Armor.esp|008"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
                 },
                 {
                     "text": "X-01",
