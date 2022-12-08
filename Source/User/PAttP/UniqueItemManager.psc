@@ -240,6 +240,10 @@ ObjectReference Function SpawnUniqueItem(CustomItemRule rule)
     else
         debug.trace("Adding unique item " + rule.ID + ": " + item + " to " + spawnInRef)
         spawnInRef.additem(item)
+        Actor spawnInActor = spawnInRef as Actor
+        if spawnInActor
+            spawnInActor.EquipItem(item.GetBaseObject())
+        EndIf
     endif
 
     UpdateRulePlacement(rule, true, worldItem)
