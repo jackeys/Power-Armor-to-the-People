@@ -27,6 +27,9 @@ bool Property ApplySpellToAggressor = false Auto Const
 
 bool Property IgnoreMeleeAttacks = true Auto Const
 
+float Property MinimumDelayBetweenHits = 0.0 Auto Const
+{How many seconds to wait before the spell can be applied again}
+
 Event OnEffectStart(Actor akTarget, Actor akCaster)
 	RegisterForHitEvent(akTarget)
 EndEvent
@@ -42,9 +45,18 @@ Event OnHit(ObjectReference akTarget, ObjectReference akAggressor, Form akSource
 
 		debug.trace(targetActor + " was hit, adding spell " + SpellToApply + " to " + spellTarget)
 		SpellToApply.Cast(akTarget, spellTarget)
+		
+		if MinimumDelayBetweenHits > 0.0
+			StartTimer(MinimumDelayBetweenHits)
+			return
+		EndIf
 	endIf
-	
+
 	RegisterForHitEvent(akTarget)
+EndEvent
+
+Event OnTimer(int aiTimerID)
+	RegisterForHitEvent(GetTargetActor())
 EndEvent
 
 Event OnEffectFinish(Actor akTarget, Actor akCaster)
