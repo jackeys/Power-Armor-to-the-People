@@ -136,7 +136,7 @@ begin
     perks[0] := FormID_Armorer02Perk;
     perks[1] := FormID_Science01Perk;
   end;
-  if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_T60') or IsPowerArmorSubtype(armoRec, 'zzzM150IPAdn_PowerArmor_I01') or IsPowerArmorSubtype(armoRec, 'tumba_dn_PowerArmor_CPA') or IsPowerArmorSubtype(armoRec, 'ccSWKFO4001_dn_PowerArmor_CC1') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmorSELPA') then begin
+  if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_T60') or IsPowerArmorSubtype(armoRec, 'zzzM150IPAdn_PowerArmor_I01') or IsPowerArmorSubtype(armoRec, 'tumba_dn_PowerArmor_CPA') or IsPowerArmorSubtype(armoRec, 'ccSWKFO4001_dn_PowerArmor_CC1') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_SELPA') then begin
     perks[0] := FormID_Armorer02Perk;
     perks[1] := FormID_Science02Perk;
   end;
@@ -164,7 +164,7 @@ begin
     perks[2] := FormID_NuclearPhysicist01Perk;
   end;
   // Creation Club X-02, both Hellfire power armors, Enclave power armor
-  if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_X01') or IsPowerArmorSubtype(armoRec, 'ccBGSFO4115_dn_PowerArmor_X02') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_Hellfire') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_X03') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmorEnclave') then begin
+  if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_X01') or IsPowerArmorSubtype(armoRec, 'ccBGSFO4115_dn_PowerArmor_X02') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_Hellfire') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_X03') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_Enclave') then begin
     perks[0] := FormID_Armorer03Perk;
     perks[1] := FormID_Science02Perk;
     perks[2] := FormID_NuclearPhysicist02Perk;
@@ -196,8 +196,8 @@ begin
   if Assigned(workbench) and bRemoveConstruction then begin
     AddMessage(Format('%s is a recipe for constructing power armor - disabling', [Name(rec)]));
 
-    // Liberty Power Armor uses the same constructible object for repairs and construction, so we have to remove the workbench and let patching continue
-    if ContainsText(Name(rec), 'co_Armor_Power_Liberty') then begin
+    // Liberty Power Armor and SE-01 use the same constructible object for repairs and construction, so we have to remove the workbench and let patching continue
+    if ContainsText(Name(rec), 'co_Armor_Power_Liberty') or ContainsText(Name(rec), 'co_Armor_Power_SELPA') then begin
       Remove(workbench);
       // We explicitly do not want to exit here - we still need to add perks, since this gets used for repair
     end
