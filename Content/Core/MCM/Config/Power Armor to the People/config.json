@@ -1675,19 +1675,6 @@
                     "groupCondition": 2
                 },
                 {
-                    "text": "Heavy Metal",
-                    "type": "section"
-                },
-                {
-                    "text": "Add Carry Capacity for Mini-Nukes and Missiles",
-                    "type": "switcher",
-                    "help": "Recommended for Survival Mode if you don't disable ammo weight",
-                    "valueOptions": {
-                        "sourceType": "GlobalValue",
-                        "sourceForm": "Power Armor to the People.esp|AAB"
-                    }
-                },
-                {
                     "text": "True American",
                     "type": "switcher",
                     "help": "Deal 10% more damage to and receive 10% less damage from Super Mutants and Ghouls (Arms only)",
@@ -1718,6 +1705,35 @@
                         "function": "UpdateLegendaryModRules"
                     },
                     "groupCondition": 2
+                },
+                {
+                    "text": "Leaky",
+                    "type": "switcher",
+                    "help": "There is a 5% chance to deal radiation damage to nearby enemies when hit, once every 60 seconds",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|A61",
+                        "propertyName": "LeakyEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|A61",
+                        "function": "UpdateLegendaryModRules"
+                    },
+                    "groupCondition": 2
+                },
+                {
+                    "text": "Heavy Metal",
+                    "type": "section"
+                },
+                {
+                    "text": "Add Carry Capacity for Mini-Nukes and Missiles",
+                    "type": "switcher",
+                    "help": "Recommended for Survival Mode if you don't disable ammo weight",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People.esp|AAB"
+                    }
                 },
                 {
                     "text": "Cryogenerator",
