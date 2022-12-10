@@ -34,6 +34,9 @@ ActiveLegendary[] ActiveLegendaries
 
 Event OnInit()
     ActiveLegendaries = new ActiveLegendary[0]
+EndEvent
+
+Event OnQuestInit()
     RefreshLegendaries()
     StartTimerGameTime(RefreshHours)
 EndEvent

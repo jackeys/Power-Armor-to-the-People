@@ -2227,6 +2227,40 @@
                         "sourceType": "GlobalValue",
                         "sourceForm": "Power Armor to the People.esp|B99"
                     }
+                },
+                {
+                    "text": "Eligible Legendary Power Armor",
+                    "type": "section"
+                },
+                {
+                    "text": "Red Shift Power Armor",
+                    "type": "switcher",
+                    "help": "Whether The Collector can sell legendary Red Shift Power Armor",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - Red Shift Power Armor.esp|818"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
+                    "text": "Horse Power Armor",
+                    "type": "switcher",
+                    "help": "Whether The Collector can sell legendary Horse Power Armor",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - Horse Power Armor.esp|818"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
                 }
             ]
         }
