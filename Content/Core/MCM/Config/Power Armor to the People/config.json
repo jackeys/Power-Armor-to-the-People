@@ -2196,6 +2196,39 @@
                     "groupCondition": 1
                 }
             ]
+        },
+        {
+            "pageDisplayName": "Traveling Vendor",
+            "content": [
+                {
+                    "text": "The Collector is a traveling vendor who carries exotic and rare power armor. He always has one exotic legendary power armor piece for sale.",
+                    "type": "text"
+                },
+                {
+                    "text": "Chance of having more legendary power armor",
+                    "type": "slider",
+                    "help": "One is always guaranteed. This is the chance that another will be added.",
+                    "valueOptions": {
+                        "min": 0,
+                        "max": 100,
+                        "step": 1,
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People.esp|B98"
+                    }
+                },
+                {
+                    "text": "Maximum extra legendary power armor pieces",
+                    "type": "slider",
+                    "help": "One is always guaranteed. This is how many extras can be added using the above chance.",
+                    "valueOptions": {
+                        "min": 0,
+                        "max": 10,
+                        "step": 1,
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People.esp|B99"
+                    }
+                }
+            ]
         }
     ]
 }

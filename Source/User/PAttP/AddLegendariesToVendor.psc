@@ -8,10 +8,12 @@ Struct LegendaryPlacement
     {The item that should be made legendary (typically a leveled item)}
     GlobalVariable LegendaryChance
     {The percent chance from 0-100 that a legendary item should be produced and placed in the vendor's inventory each time the refresh interval expires}
-    int Level
+    int Level = 1
     {The player level at which this legendary item can begin showing up at the specified vendor}
     ObjectMod AspirationMod
     {Aspiration mods increase the cost of a special item, and can be found in the base game with editor IDs like Mod_Aspiration_Armor_IncreasedCost_<multiplier>}
+    GlobalVariable MaxCount
+    {The LegendaryChance will be evaluated this many times to attempt to add items. If not provided, it will default to 1.}
 EndStruct
 
 LegendaryPlacement[] Property Legendaries Auto Const Mandatory
@@ -62,15 +64,31 @@ Function AddLegendaries()
     int i = 0
     While i < Legendaries.length
         LegendaryPlacement currentLegendary = Legendaries[i]
-        If Game.GetPlayer().GetLevel() >= currentLegendary.Level && Utility.RandomInt(1, 100) <= currentLegendary.LegendaryChance.GetValueInt()
-            debug.trace(self + " is adding a new legendary " + currentLegendary.Item + " to " + currentLegendary.VendorContainer + " (minimum level of " + currentLegendary.Level + " was required)")
-            ActiveLegendary newLegendary = new ActiveLegendary
-            newLegendary.item = GenerateLegendaryItem(currentLegendary.VendorContainer, currentLegendary.Item, currentLegendary.AspirationMod)
-            newLegendary.vendorContainer = currentLegendary.VendorContainer
-            ActiveLegendaries.Add(newLegendary)
+        If Game.GetPlayer().GetLevel() >= currentLegendary.Level
+            int numLegendaries = NumberOfLegendariesToAdd(currentLegendary)
+            int j = 0
+            while j < numLegendaries
+                if Utility.RandomInt(1, 100) <= currentLegendary.LegendaryChance.GetValueInt()
+                    debug.trace(self + " is adding a new legendary " + currentLegendary.Item + " to " + currentLegendary.VendorContainer + " (minimum level of " + currentLegendary.Level + " was required)")
+                    ActiveLegendary newLegendary = new ActiveLegendary
+                    newLegendary.item = GenerateLegendaryItem(currentLegendary.VendorContainer, currentLegendary.Item, currentLegendary.AspirationMod)
+                    newLegendary.vendorContainer = currentLegendary.VendorContainer
+                    ActiveLegendaries.Add(newLegendary)
+                endIf
+                j += 1
+            EndWhile
         EndIf
         i += 1
     EndWhile
+EndFunction
+
+int Function NumberOfLegendariesToAdd(LegendaryPlacement akLegendary)
+    ; If a max count wasn't provided, we will always add an item
+    if !akLegendary.MaxCount
+        return 1
+    else
+        return akLegendary.MaxCount.GetValueInt()
+    endIf
 EndFunction
 
 ObjectReference Function GenerateLegendaryItem(ObjectReference ObjectToSpawnIn, Form akItem, ObjectMod akAspiration, FormList ListOfSpecificModsToChooseFrom = None, FormList ListOfSpecificModsToDisallow = None)
