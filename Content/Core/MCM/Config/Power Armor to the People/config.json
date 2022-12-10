@@ -2205,7 +2205,11 @@
                     "type": "text"
                 },
                 {
-                    "text": "Chance of having more legendary power armor",
+                    "text": "Legendary Item Chances",
+                    "type": "section"
+                },
+                {
+                    "text": "Chance of having more rare legendary power armor",
                     "type": "slider",
                     "help": "One is always guaranteed. This is the chance that another will be added.",
                     "valueOptions": {
@@ -2217,19 +2221,67 @@
                     }
                 },
                 {
-                    "text": "Maximum extra legendary power armor pieces",
+                    "text": "Maximum extra rare legendary power armor pieces",
                     "type": "slider",
                     "help": "One is always guaranteed. This is how many extras can be added using the above chance.",
                     "valueOptions": {
                         "min": 0,
-                        "max": 10,
+                        "max": 5,
                         "step": 1,
                         "sourceType": "GlobalValue",
                         "sourceForm": "Power Armor to the People.esp|B99"
                     }
                 },
                 {
-                    "text": "Eligible Legendary Power Armor",
+                    "text": "Chance of having legendary weapons",
+                    "type": "slider",
+                    "help": "The chance that a legendary weapon from the standard drop lists will be for sale",
+                    "valueOptions": {
+                        "min": 0,
+                        "max": 100,
+                        "step": 1,
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People.esp|B9B"
+                    }
+                },
+                {
+                    "text": "Maximum legendary weapons",
+                    "type": "slider",
+                    "help": "How many legendary weapons can be added using the above chance",
+                    "valueOptions": {
+                        "min": 0,
+                        "max": 5,
+                        "step": 1,
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People.esp|B9C"
+                    }
+                },
+                {
+                    "text": "Chance of having legendary armor",
+                    "type": "slider",
+                    "help": "The chance that a legendary armor from the standard drop lists will be for sale. Can include normal power armor.",
+                    "valueOptions": {
+                        "min": 0,
+                        "max": 100,
+                        "step": 1,
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People.esp|B9D"
+                    }
+                },
+                {
+                    "text": "Maximum legendary armor",
+                    "type": "slider",
+                    "help": "How many legendary armor pieces can be added using the above chance",
+                    "valueOptions": {
+                        "min": 0,
+                        "max": 5,
+                        "step": 1,
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People.esp|B9E"
+                    }
+                },
+                {
+                    "text": "Eligible Rare Legendary Power Armor",
                     "type": "section"
                 },
                 {
