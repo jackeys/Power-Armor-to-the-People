@@ -2,6 +2,16 @@ Scriptname PAttP:InjectionManager Extends Quest
 
 PAttP:UpgradeManager Property UpgradeManager Auto Const Mandatory
 
+Struct LevelMapping
+    GlobalVariable ShouldIgnore
+    {Global variable containing 0 to use the normal level or non-zero to always inject items at level 1}
+
+    FormList AffectedLists
+    {The lists whose injections will be affected}
+EndStruct
+
+LevelMapping[] Property IgnoreLevels Auto Const
+
 LeveledItem[] modifiedListsRegistrar
 
 CustomEvent RefreshInjection
@@ -54,6 +64,19 @@ Function RevertAllLists()
         injectionSite.Revert()
         i += 1
     EndWhile
+EndFunction
+
+bool Function ShouldIgnoreLevelFor(LeveledItem akInjectInto)
+    int i = 0
+    while i < IgnoreLevels.length
+        LevelMapping current = IgnoreLevels[i]
+        if current.ShouldIgnore.GetValueInt() != 0 && current.AffectedLists.HasForm(akInjectInto)
+            return true
+        EndIf
+        i += 1
+    EndWhile
+
+    return false
 EndFunction
 
 Event OnTimer(int aiTimerId)

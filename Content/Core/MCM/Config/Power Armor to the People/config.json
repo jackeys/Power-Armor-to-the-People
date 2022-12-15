@@ -42,6 +42,21 @@
             }
         },
         {
+            "text": "Use available power armor sets regardless of level",
+            "type": "switcher",
+            "help": "If enabled, available power armor sets won't be gated by player / area level for the Brotherhood of Steel",
+            "valueOptions": {
+                "sourceType": "GlobalValue",
+                "sourceForm": "Power Armor to the People.esp|BBE"
+            },
+            "action": {
+                "type": "CallFunction",
+                "form": "Power Armor to the People.esp|873",
+                "function": "RefreshListInjections",
+                "params": [false]
+            }
+        },
+        {
             "text": "Raiders",
             "type": "section"
         },
