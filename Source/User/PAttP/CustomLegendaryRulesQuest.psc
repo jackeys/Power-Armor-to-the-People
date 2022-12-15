@@ -115,6 +115,9 @@ LegendaryItemQuestScript:LegendaryModRule Property AshursModRule Const Auto Mand
 bool Property LeakyEnabled = false Auto
 LegendaryItemQuestScript:LegendaryModRule Property LeakyModRule Const Auto Mandatory
 
+bool Property PersistentEnabled = false Auto
+LegendaryItemQuestScript:LegendaryModRule Property PersistentModRule Const Auto Mandatory
+
 Event OnQuestInit()
 	UpdateLegendaryModRules()
 EndEvent
@@ -159,6 +162,7 @@ Function UpdateLegendaryModRules()
 	UpdateUniqueModRule("Rad-Absorbing", RadAbsorbingEnabled, RadAbsorbingModRule)
 	UpdateUniqueModRule("Fleeting", FleetingEnabled, FleetingModRule)
 	UpdateUniqueModRule("Leaky", LeakyEnabled, LeakyModRule)
+	UpdateUniqueModRule("Persistent", PersistentEnabled, PersistentModRule)
 	UpdateUniqueModRule("True American", BonusVsAbominationEnabled, BonusVsAbominationModRule)
 EndFunction
 

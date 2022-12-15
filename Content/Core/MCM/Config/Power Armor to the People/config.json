@@ -1709,11 +1709,27 @@
                 {
                     "text": "Leaky",
                     "type": "switcher",
-                    "help": "There is a 5% chance to deal radiation damage to nearby enemies when hit, once every 60 seconds",
+                    "help": "There is a 5% chance to deal radiation damage to nearby enemies when hit, once every 60 seconds (Torso only)",
                     "valueOptions": {
                         "sourceType": "PropertyValueBool",
                         "sourceForm": "Power Armor to the People.esp|A61",
                         "propertyName": "LeakyEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|A61",
+                        "function": "UpdateLegendaryModRules"
+                    },
+                    "groupCondition": 2
+                },
+                {
+                    "text": "Persistent",
+                    "type": "switcher",
+                    "help": "Increases damage dealt by up to 5% for each piece of equipped power armor, the closer each is to breaking (Torso only)",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|A61",
+                        "propertyName": "PersistentEnabled"
                     },
                     "action": {
                         "type": "CallFunction",
@@ -2194,6 +2210,140 @@
                         "function": "UpdateJetpackSettings"
                     },
                     "groupCondition": 1
+                }
+            ]
+        },
+        {
+            "pageDisplayName": "Traveling Vendor",
+            "content": [
+                {
+                    "text": "The Collector is a traveling vendor who carries exotic and rare power armor. He always has one exotic legendary power armor piece for sale.",
+                    "type": "text"
+                },
+                {
+                    "text": "Legendary Item Chances",
+                    "type": "section"
+                },
+                {
+                    "text": "Chance of having more rare legendary power armor",
+                    "type": "slider",
+                    "help": "One is always guaranteed. This is the chance that another will be added.",
+                    "valueOptions": {
+                        "min": 0,
+                        "max": 100,
+                        "step": 1,
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People.esp|B98"
+                    }
+                },
+                {
+                    "text": "Maximum extra rare legendary power armor pieces",
+                    "type": "slider",
+                    "help": "One is always guaranteed. This is how many extras can be added using the above chance.",
+                    "valueOptions": {
+                        "min": 0,
+                        "max": 5,
+                        "step": 1,
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People.esp|B99"
+                    }
+                },
+                {
+                    "text": "Chance of having legendary weapons",
+                    "type": "slider",
+                    "help": "The chance that a legendary weapon from the standard drop lists will be for sale",
+                    "valueOptions": {
+                        "min": 0,
+                        "max": 100,
+                        "step": 1,
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People.esp|B9B"
+                    }
+                },
+                {
+                    "text": "Maximum legendary weapons",
+                    "type": "slider",
+                    "help": "How many legendary weapons can be added using the above chance",
+                    "valueOptions": {
+                        "min": 0,
+                        "max": 5,
+                        "step": 1,
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People.esp|B9C"
+                    }
+                },
+                {
+                    "text": "Chance of having legendary armor",
+                    "type": "slider",
+                    "help": "The chance that a legendary armor from the standard drop lists will be for sale. Can include normal power armor.",
+                    "valueOptions": {
+                        "min": 0,
+                        "max": 100,
+                        "step": 1,
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People.esp|B9D"
+                    }
+                },
+                {
+                    "text": "Maximum legendary armor",
+                    "type": "slider",
+                    "help": "How many legendary armor pieces can be added using the above chance",
+                    "valueOptions": {
+                        "min": 0,
+                        "max": 5,
+                        "step": 1,
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People.esp|B9E"
+                    }
+                },
+                {
+                    "text": "Eligible Rare Legendary Power Armor",
+                    "type": "section"
+                },
+                {
+                    "text": "Red Shift Power Armor",
+                    "type": "switcher",
+                    "help": "Whether The Collector can sell legendary Red Shift Power Armor",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - Red Shift Power Armor.esp|818"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
+                    "text": "Liberty Power Armor",
+                    "type": "switcher",
+                    "help": "Whether The Collector can sell legendary Liberty Power Armor",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - Liberty Power Armor.esp|817"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
+                    "text": "Horse Power Armor",
+                    "type": "switcher",
+                    "help": "Whether The Collector can sell legendary Horse Power Armor",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - Horse Power Armor.esp|818"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
                 }
             ]
         }

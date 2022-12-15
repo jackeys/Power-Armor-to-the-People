@@ -62,6 +62,9 @@ Struct CustomItemRule
     bool PlacedItem = false
     {Should be left alone - whether the item was placed already}
 
+    bool IsOnlyFallbackVendor = false
+    {If the fallback is a vendor but the override is not expected to be, this will force all of the settings necessary to put it into a vendor container}
+
     ObjectReference PlacedReference
     {Should be left alone - populated with the new reference sitting in the world, if any (item if PlaceAtMeInstead, container if PlaceContainerInstead)}
 EndStruct
@@ -206,9 +209,11 @@ ObjectReference Function SpawnUniqueItem(CustomItemRule rule)
     debug.trace("Creating item " + rule.ID + item)
 
     PossiblyAttachMod(item, rule.LegendaryMod)
-    PossiblyAttachMod(item, rule.IncreasedCostMod)
     PossiblyAttachMod(item, rule.CosmeticMod)
     PossiblyAttachMod(item, rule.MiscMod)
+    if !rule.IsOnlyFallbackVendor || rule.IsFallback
+        PossiblyAttachMod(item, rule.IncreasedCostMod)
+    EndIf
 
     if rule.OwningFaction
         debug.trace("Setting faction owner for item " + rule.ID + " to " + rule.OwningFaction)
@@ -222,7 +227,7 @@ ObjectReference Function SpawnUniqueItem(CustomItemRule rule)
     endif
     
     ObjectReference worldItem = None
-    if rule.PlaceContainerInstead
+    if rule.PlaceContainerInstead && (!rule.IsOnlyFallbackVendor || !rule.IsFallback)
         debug.trace("Placing container for unique item " + rule.ID + ": " + item + " at " + spawnInRef)
         ObjectReference newContainer = spawnInRef.PlaceAtMe(rule.PlaceContainerInstead, aiCount = 1, abForcePersist = false, abInitiallyDisabled = false, abDeleteWhenAble = false)
         RepositionPlacedObject(newContainer, rule)
@@ -233,7 +238,7 @@ ObjectReference Function SpawnUniqueItem(CustomItemRule rule)
             newContainer.Lock()
         EndIf
         worldItem = newContainer
-    elseif rule.PlaceAtMeInstead
+    elseif rule.PlaceAtMeInstead && (!rule.IsOnlyFallbackVendor || !rule.IsFallback)
         debug.trace("Placing unique item " + rule.ID + ": " + item + " at " + spawnInRef)
         RepositionPlacedObject(item, rule)
         worldItem = Item
