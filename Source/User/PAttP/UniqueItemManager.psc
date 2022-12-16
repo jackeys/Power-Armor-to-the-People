@@ -98,15 +98,12 @@ CustomItemRule[] Property CustomItemRules Const Auto Mandatory
 bool Property PlaceFallbackItems = false Auto
 
 Event OnInit()
-    InitRuleStatesIfNeeded()
-    SpawnItems()
+    RuleStates = new CustomItemRuleState[0]
 EndEvent
 
-Function InitRuleStatesIfNeeded()
-    if RuleStates == None
-        RuleStates = new CustomItemRuleState[0]
-    endIf
-EndFunction
+Event OnQuestInit()
+    SpawnItems()
+EndEvent
 
 Function SpawnItems()
     int i = 0
@@ -118,8 +115,6 @@ EndFunction
 
 ; "None" means no change
 Function OverrideUniqueItem(String asID, ObjectMod akMiscMod = None, ObjectMod akCosmeticMod = None, LeveledItem akLeveledListToSpawnFrom = None)
-    ; This can get called from the OnInit of other quests, so our OnInit may not have run yet
-    InitRuleStatesIfNeeded()
     int ruleIndex = RuleStates.FindStruct("ID", asID)
 
     debug.trace(self + " overriding custom item rule for ID " + asID)
@@ -149,8 +144,6 @@ EndFunction
 
 ; "None" means no change
 Function OverrideUniqueItemTrigger(String asID, ObjectReference akReferenceToSpawnIn = None, Quest akTriggerQuest = None, int aiTriggerStage = -1)
-    ; This can get called from the OnInit of other quests, so our OnInit may not have run yet
-    InitRuleStatesIfNeeded()
     int ruleIndex = RuleStates.FindStruct("ID", asID)
 
     debug.trace(self + " overriding custom item trigger for ID " + asID)

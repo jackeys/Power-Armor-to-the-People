@@ -28,7 +28,7 @@ UniqueItemTrigger[] Property Triggers Const Auto
 PAttP:UniqueItemManager Property PATTP_UniqueItemManager Const Auto Mandatory
 {AUTOFILL}
 
-Event OnInit()
+Event OnQuestInit()
     RegisterUniques()
     RegisterTriggers()
 EndEvent
