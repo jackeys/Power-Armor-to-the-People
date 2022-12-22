@@ -1,8 +1,5 @@
-Scriptname PAttP:VigilanteHelperQuest extends Quest
+Scriptname PAttP:VigilanteHelperQuest extends Quest const
 {Script for sending settler vigilantes to help the player}
-
-RefCollectionAlias Property Vigilantes Auto Const mandatory
-{A refcollection that can be used to register against the random encounter - will be filled dynamically }
 
 ActorBase Property VigilanteActor Auto Const Mandatory
 {The type of actor to spawn when a vigilante is helping}
@@ -16,6 +13,7 @@ EndStruct
 REQuestInfo[] Property QuestsToHelpDuring Auto Const Mandatory
 
 Event OnQuestInit()
+    debug.trace(self + " is starting up")
     RegisterForRandomEncounterQuests()
 EndEvent
 
@@ -28,8 +26,17 @@ Function RegisterForRandomEncounterQuests()
     EndWhile
 EndFunction
 
+Function UnregisterForRandomEncounterQuests()
+    int i = 0
+    while i < QuestsToHelpDuring.length
+        debug.trace(self + " registering for quest " + QuestsToHelpDuring[i])
+        UnregisterForRemoteEvent(QuestsToHelpDuring[i].EncounterQuest, "OnStageSet")
+        i += 1
+    EndWhile
+EndFunction
+
 Event Quest.OnStageSet(Quest akSender, int auiStageID, int auiItemID)
-    debug.trace(self + " heard that quest " + akSender + " reached stage " + auiStageID)
+    debug.trace(self + " heard that quest " + akSender + " reached stage " + auiStageID + " - item " + auiItemID)
 
     int questIndex = QuestsToHelpDuring.FindStruct("EncounterQuest", akSender as REScript)
 
@@ -39,10 +46,9 @@ Event Quest.OnStageSet(Quest akSender, int auiStageID, int auiItemID)
 
     REQuestInfo questInfo = QuestsToHelpDuring[questIndex]
 
-    if questInfo.StageToStartHelping == auiStageID
+    ; Only look at item 0 so that we don't spawn multiple vigilantes if a quest sets a stage multiple times
+    if questInfo.StageToStartHelping == auiStageID && auiItemID == 0
         debug.trace(self + " spawning a vigilante to help during " + questInfo)
-        ; Register our vigilantes to make sure they get cleaned up
-        questInfo.EncounterQuest.RegisterCollectionAlias(Vigilantes)
-        Vigilantes.AddRef(questInfo.VigilanteSpawnLocation.GetRef().PlaceAtMe(VigilanteActor))
+        questInfo.VigilanteSpawnLocation.GetRef().PlaceAtMe(VigilanteActor)
     endIf
 EndEvent
