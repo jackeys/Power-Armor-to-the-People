@@ -2035,6 +2035,22 @@
                     }
                 },
                 {
+                    "text": "Institute Heavy Assault Laser",
+                    "type": "switcher",
+                    "help": "Provide Institute Heavy Assault Lasers to power armored synths",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|998",
+                        "propertyName": "InstituteHeavyAssaultLaserEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
                     "text": "Machineguns Rebirth",
                     "type": "switcher",
                     "help": "Provide the machine guns to power armored Raiders, Gunners, and the Brotherhood of Steel",

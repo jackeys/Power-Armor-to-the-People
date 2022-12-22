@@ -74,6 +74,10 @@ Bool  Property Mk41GyrojetEnabled = false Auto
 LeveledItem[] Property Mk41GyrojetInjectionPoints Auto Mandatory Const
 int Property Mk41GyrojetLevel Auto Mandatory Const
 
+Bool  Property InstituteHeavyAssaultLaserEnabled = false Auto
+LeveledItem[] Property InstituteHeavyAssaultLaserInjectionPoints Auto Mandatory Const
+int Property InstituteHeavyAssaultLaserLevel Auto Mandatory Const
+
 ; Tesla enemy injections
 LeveledItem[] Property EnergyHeavyWeaponInjectionPoints Auto Mandatory Const
 LeveledItem[] Property EnergyRifleInjectionPoints Auto Mandatory Const
@@ -149,6 +153,11 @@ Function Inject()
 	
 	if Mk41GyrojetEnabled
 		InjectIfPluginPresent(0x00000F99, "Mk41GyrojetHMG.esp", Mk41GyrojetInjectionPoints, Mk41GyrojetLevel)
+	EndIf
+
+	if InstituteHeavyAssaultLaserEnabled
+		InjectIfPluginPresent(0x00000F9A, "InstituteHeavyAssaultLaser.esp", InstituteHeavyAssaultLaserInjectionPoints, InstituteHeavyAssaultLaserLevel)
+		InjectIfPluginPresent(0x00000F9A, "InstituteHeavyAssaultLaserMu.esp", InstituteHeavyAssaultLaserInjectionPoints, InstituteHeavyAssaultLaserLevel)
 	EndIf
 	
 	; Tesla - Energy weapons that are injected for everyone by their own mod, but will be missing because Tesla enemies have their own weapon list
