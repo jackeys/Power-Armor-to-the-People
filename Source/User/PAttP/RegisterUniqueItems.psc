@@ -28,9 +28,16 @@ UniqueItemTrigger[] Property Triggers Const Auto
 PAttP:UniqueItemManager Property PATTP_UniqueItemManager Const Auto Mandatory
 {AUTOFILL}
 
+bool Property StopAfterRegistration = false Const Auto
+{Use this only if the quest does not need to keep running for other reasons}
+
 Event OnQuestInit()
     RegisterUniques()
     RegisterTriggers()
+
+    if StopAfterRegistration
+        Stop()
+    endIf
 EndEvent
 
 Function RegisterUniques()
