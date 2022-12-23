@@ -1089,16 +1089,28 @@
                     }
                 },
                 {
+                    "text": "Stuff of Legend Missing",
+                    "type": "switcher",
+                    "help": "If we're not using Stuff of Legend, we will provide our own options for managing legendary equipment chance",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People.esp|BCC"
+                    },
+                    "groupControl": 1,
+                    "groupCondition": 99
+                },
+                {
                     "text": "Power Armored Enemy Legendary Equipment Chance",
                     "type": "slider",
                     "help": "The chance that normal power armored enemies will have a single piece of legendary power armor equipped",
                     "valueOptions": {
                         "min": 0,
                         "max": 100,
-                        "step": 5,
+                        "step": 1,
                         "sourceType": "GlobalValue",
                         "sourceForm": "Power Armor to the People.esp|898"
-                    }
+                    },
+                    "groupCondition": 1
                 },
                 {
                     "text": "Legendary Power Armored Enemy Legendary Equipment Chance",
@@ -1107,10 +1119,11 @@
                     "valueOptions": {
                         "min": 0,
                         "max": 100,
-                        "step": 5,
+                        "step": 1,
                         "sourceType": "GlobalValue",
                         "sourceForm": "Power Armor to the People.esp|899"
-                    }
+                    },
+                    "groupCondition": 1
                 },
                 {
                     "text": "Legendary Vendor Chance",
@@ -1119,7 +1132,7 @@
                     "valueOptions": {
                         "min": 0,
                         "max": 100,
-                        "step": 5,
+                        "step": 1,
                         "sourceType": "GlobalValue",
                         "sourceForm": "Power Armor to the People.esp|90b"
                     }
