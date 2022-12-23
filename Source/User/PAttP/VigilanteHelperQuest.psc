@@ -6,8 +6,10 @@ ActorBase Property VigilanteActor Auto Const Mandatory
 
 GlobalVariable Property SuccessfulPlayerDefenses Auto Const Mandatory
 GlobalVariable Property VigilanteChance Auto Const Mandatory
+Keyword Property IncreaseChanceIfPlayerWearingKeyword Auto Const Mandatory
 
 int Property MinSuccessfulDefensesBeforeVigilantesHelp = 5 Auto Const Mandatory
+int Property SuccessfulDefensesForUniqueItem = 10 Auto Const Mandatory
 
 Struct WorkshopAttackQuestInfo
     WorkshopAttackScript EncounterQuest
@@ -52,7 +54,7 @@ Event Quest.OnStageSet(Quest akSender, int auiStageID, int auiItemID)
 
     ; Only look at item 0 so that we don't spawn multiple vigilantes if a quest sets a stage multiple times
     if questInfo.EncounterQuest.attackStartStage == auiStageID && auiItemID == 0
-        if SuccessfulPlayerDefenses.GetValueInt() >= MinSuccessfulDefensesBeforeVigilantesHelp && Utility.RandomInt(1, 100) <= VigilanteChance.GetValueInt()
+        if SuccessfulPlayerDefenses.GetValueInt() >= MinSuccessfulDefensesBeforeVigilantesHelp && Utility.RandomInt(1, 100) <= GetChance()
             debug.trace(self + " spawning a vigilante to help during " + questInfo)
             questInfo.VigilanteSpawnLocation.GetRef().PlaceAtMe(VigilanteActor)
         else
@@ -63,3 +65,13 @@ Event Quest.OnStageSet(Quest akSender, int auiStageID, int auiItemID)
         debug.trace(self + " incrementing successful defense count to " + SuccessfulPlayerDefenses.GetValueInt())
     endIf
 EndEvent
+
+int Function GetChance()
+    int chance = VigilanteChance.GetValueInt()
+
+    if Game.GetPlayer().WornHasKeyword(IncreaseChanceIfPlayerWearingKeyword)
+        chance *= 2
+    endIf
+
+    return chance
+EndFunction
