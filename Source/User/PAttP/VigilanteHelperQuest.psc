@@ -10,6 +10,7 @@ Keyword Property IncreaseChanceIfPlayerWearingKeyword Auto Const Mandatory
 
 int Property MinSuccessfulDefensesBeforeVigilantesHelp = 5 Auto Const Mandatory
 int Property SuccessfulDefensesForUniqueItem = 10 Auto Const Mandatory
+int Property UniqueItemGivenStage = 20 Auto Const Mandatory
 
 Struct WorkshopAttackQuestInfo
     WorkshopAttackScript EncounterQuest
@@ -63,6 +64,11 @@ Event Quest.OnStageSet(Quest akSender, int auiStageID, int auiItemID)
     elseif questInfo.EncounterQuest.attackDoneStage == auiStageID && auiItemID == 0
         SuccessfulPlayerDefenses.Mod(1)
         debug.trace(self + " incrementing successful defense count to " + SuccessfulPlayerDefenses.GetValueInt())
+
+        if GetStage() < UniqueItemGivenStage && SuccessfulPlayerDefenses.GetValueInt() >= SuccessfulDefensesForUniqueItem
+            debug.trace(self + " enough settlements have been defended - awarding unique item!")
+            SetStage(UniqueItemGivenStage) 
+        endIf
     endIf
 EndEvent
 

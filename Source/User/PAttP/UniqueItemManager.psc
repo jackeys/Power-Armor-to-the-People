@@ -239,7 +239,7 @@ ObjectReference Function SpawnUniqueItem(CustomItemRule rule)
         debug.trace("Adding unique item " + rule.ID + ": " + item + " to " + spawnInRef)
         spawnInRef.additem(item)
         Actor spawnInActor = spawnInRef as Actor
-        if spawnInActor
+        if spawnInActor && spawnInActor != Game.GetPlayer()
             spawnInActor.EquipItem(item.GetBaseObject())
         EndIf
     endif
