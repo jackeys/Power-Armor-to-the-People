@@ -4,13 +4,17 @@ Scriptname PAttP:VigilanteHelperQuest extends Quest const
 ActorBase Property VigilanteActor Auto Const Mandatory
 {The type of actor to spawn when a vigilante is helping}
 
-Struct REQuestInfo
-    REScript EncounterQuest
-    int StageToStartHelping = 20 ; For workshop attack quests, this is when the enemies are loaded
+GlobalVariable Property SuccessfulPlayerDefenses Auto Const Mandatory
+GlobalVariable Property VigilanteChance Auto Const Mandatory
+
+int Property MinSuccessfulDefensesBeforeVigilantesHelp = 5 Auto Const Mandatory
+
+Struct WorkshopAttackQuestInfo
+    WorkshopAttackScript EncounterQuest
     ReferenceAlias VigilanteSpawnLocation
 EndStruct
 
-REQuestInfo[] Property QuestsToHelpDuring Auto Const Mandatory
+WorkshopAttackQuestInfo[] Property WorkshopAttacksToHelpDuring Auto Const Mandatory
 
 Event OnQuestInit()
     debug.trace(self + " is starting up")
@@ -19,18 +23,18 @@ EndEvent
 
 Function RegisterForRandomEncounterQuests()
     int i = 0
-    while i < QuestsToHelpDuring.length
-        debug.trace(self + " registering for quest " + QuestsToHelpDuring[i])
-        RegisterForRemoteEvent(QuestsToHelpDuring[i].EncounterQuest, "OnStageSet")
+    while i < WorkshopAttacksToHelpDuring.length
+        debug.trace(self + " registering for quest " + WorkshopAttacksToHelpDuring[i])
+        RegisterForRemoteEvent(WorkshopAttacksToHelpDuring[i].EncounterQuest, "OnStageSet")
         i += 1
     EndWhile
 EndFunction
 
 Function UnregisterForRandomEncounterQuests()
     int i = 0
-    while i < QuestsToHelpDuring.length
-        debug.trace(self + " registering for quest " + QuestsToHelpDuring[i])
-        UnregisterForRemoteEvent(QuestsToHelpDuring[i].EncounterQuest, "OnStageSet")
+    while i < WorkshopAttacksToHelpDuring.length
+        debug.trace(self + " registering for quest " + WorkshopAttacksToHelpDuring[i])
+        UnregisterForRemoteEvent(WorkshopAttacksToHelpDuring[i].EncounterQuest, "OnStageSet")
         i += 1
     EndWhile
 EndFunction
@@ -38,17 +42,24 @@ EndFunction
 Event Quest.OnStageSet(Quest akSender, int auiStageID, int auiItemID)
     debug.trace(self + " heard that quest " + akSender + " reached stage " + auiStageID + " - item " + auiItemID)
 
-    int questIndex = QuestsToHelpDuring.FindStruct("EncounterQuest", akSender as REScript)
+    int questIndex = WorkshopAttacksToHelpDuring.FindStruct("EncounterQuest", akSender as WorkshopAttackScript)
 
     if questIndex < 0
         return
     endIf
 
-    REQuestInfo questInfo = QuestsToHelpDuring[questIndex]
+    WorkshopAttackQuestInfo questInfo = WorkshopAttacksToHelpDuring[questIndex]
 
     ; Only look at item 0 so that we don't spawn multiple vigilantes if a quest sets a stage multiple times
-    if questInfo.StageToStartHelping == auiStageID && auiItemID == 0
-        debug.trace(self + " spawning a vigilante to help during " + questInfo)
-        questInfo.VigilanteSpawnLocation.GetRef().PlaceAtMe(VigilanteActor)
+    if questInfo.EncounterQuest.attackStartStage == auiStageID && auiItemID == 0
+        if SuccessfulPlayerDefenses.GetValueInt() >= MinSuccessfulDefensesBeforeVigilantesHelp && Utility.RandomInt(1, 100) <= VigilanteChance.GetValueInt()
+            debug.trace(self + " spawning a vigilante to help during " + questInfo)
+            questInfo.VigilanteSpawnLocation.GetRef().PlaceAtMe(VigilanteActor)
+        else
+            debug.trace(self + " not enough player defenses or vigilante chance was not chosen - no vigilante is coming to help")
+        endIf
+    elseif questInfo.EncounterQuest.attackDoneStage == auiStageID && auiItemID == 0
+        SuccessfulPlayerDefenses.Mod(1)
+        debug.trace(self + " incrementing successful defense count to " + SuccessfulPlayerDefenses.GetValueInt())
     endIf
 EndEvent
