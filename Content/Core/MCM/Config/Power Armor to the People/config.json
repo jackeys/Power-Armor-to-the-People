@@ -1770,6 +1770,22 @@
                     "groupCondition": 2
                 },
                 {
+                    "text": "Heroic",
+                    "type": "switcher",
+                    "help": "Increases Charisma based on how many settlements you have defended from attackers (up to +3). Increased chance for Settler Vigilantes to help defend settlements. (Helm only)",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|A61",
+                        "propertyName": "HeroicEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|A61",
+                        "function": "UpdateLegendaryModRules"
+                    },
+                    "groupCondition": 2
+                },
+                {
                     "text": "Heavy Metal",
                     "type": "section"
                 },
