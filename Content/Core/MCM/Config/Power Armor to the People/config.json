@@ -102,6 +102,22 @@
                 "sourceForm": "Power Armor to the People.esp|8AA",
                 "propertyName": "MCM_ScavengerFullSetChance"
             }
+        },
+        {
+            "text": "Settler Vigilantes",
+            "type": "section"
+        },
+        {
+            "text": "Chance to help when a settlement is being attacked",
+            "type": "slider",
+            "help": "The chance that a settler vigilante will help fight off attackers. Only possible after defending 5 settlements on your own.",
+            "valueOptions": {
+                "min": 0,
+                "max": 25,
+                "step": 1,
+                "sourceType": "GlobalValue",
+                "sourceForm": "Power Armor to the People.esp|BC6"
+            }
         }
     ],
     "pages": [
