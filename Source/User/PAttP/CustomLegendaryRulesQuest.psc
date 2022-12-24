@@ -12,36 +12,46 @@ bool Property AllowArrayExpansion = false Auto
 
 bool Property AlmostUnbreakableEnabled = true Auto
 LegendaryItemQuestScript:LegendaryModRule Property AlmostUnbreakableModRule Const Auto Mandatory
+MiscObject Property AlmostUnbreakableModItem = None Const Auto Mandatory
 
 bool Property EfficientEnabled = true Auto
 LegendaryItemQuestScript:LegendaryModRule Property EfficientModRule Const Auto Mandatory
+MiscObject Property EfficientModItem = None Const Auto Mandatory
 
 bool Property AerodynamicEnabled = true Auto
 LegendaryItemQuestScript:LegendaryModRule Property AerodynamicModRule Const Auto Mandatory
+MiscObject Property AerodynamicModItem = None Const Auto Mandatory
 
 bool Property CustomEnabled = true Auto
 LegendaryItemQuestScript:LegendaryModRule Property CustomModRule Const Auto Mandatory
+MiscObject Property CustomModItem = None Const Auto Mandatory
 
 bool Property HeavyGunnersEnabled = true Auto
 LegendaryItemQuestScript:LegendaryModRule Property HeavyGunnersModRule Const Auto Mandatory
+MiscObject Property HeavyGunnersModItem = None Const Auto Mandatory
 
 bool Property AmphibiousEnabled = true Auto
 LegendaryItemQuestScript:LegendaryModRule Property AmphibiousModRule Const Auto Mandatory
+MiscObject Property AmphibiousModItem = None Const Auto Mandatory
 
 bool Property DropTrooperEnabled = true Auto
 LegendaryItemQuestScript:LegendaryModRule Property DropTrooperModRule Const Auto Mandatory
+MiscObject Property DropTrooperModItem = None Const Auto Mandatory
 
 bool Property SprintersEnabled = true Auto
 LegendaryItemQuestScript:LegendaryModRule Property SprintersModRule Const Auto Mandatory
 
 bool Property OverpoweringEnabled = true Auto
 LegendaryItemQuestScript:LegendaryModRule Property OverpoweringModRule Const Auto Mandatory
+MiscObject Property OverpoweringModItem = None Const Auto Mandatory
 
 bool Property ReflectingEnabled = true Auto
 LegendaryItemQuestScript:LegendaryModRule Property ReflectingModRule Const Auto Mandatory
+MiscObject Property ReflectingModItem = None Const Auto Mandatory
 
 bool Property HardeningEnabled = true Auto
 LegendaryItemQuestScript:LegendaryModRule[] Property HardeningModRules Const Auto Mandatory
+MiscObject Property HardeningModItem = None Const Auto Mandatory
 
 bool Property VanillaArmorEnabled = true Auto
 Keyword Property ArmorTypePower Const Auto Mandatory
@@ -60,66 +70,87 @@ bool Property UniqueEffectsEnabled = false Auto
 
 bool Property OverseersEnabled = false Auto
 LegendaryItemQuestScript:LegendaryModRule Property OverseersModRule Const Auto Mandatory
+MiscObject Property OverseersModItem = None Const Auto Mandatory
 
 bool Property PeoplesEnabled = false Auto
 LegendaryItemQuestScript:LegendaryModRule Property PeoplesModRule Const Auto Mandatory
+MiscObject Property PeoplesModItem = None Const Auto Mandatory
 
 bool Property TerrifyingEnabled = false Auto
 LegendaryItemQuestScript:LegendaryModRule Property TerrifyingModRule Const Auto Mandatory
+MiscObject Property TerrifyingModItem = None Const Auto Mandatory
 
 bool Property PiezonucleicEnabled = false Auto
 LegendaryItemQuestScript:LegendaryModRule Property PiezonucleicModRule Const Auto Mandatory
+MiscObject Property PiezonucleicModItem = None Const Auto Mandatory
 
 bool Property RocketeerEnabled = false Auto
 LegendaryItemQuestScript:LegendaryModRule Property RocketeerModRule Const Auto Mandatory
+MiscObject Property RocketeerModItem = None Const Auto Mandatory
 
 bool Property DirectorsEnabled = false Auto
 LegendaryItemQuestScript:LegendaryModRule Property DirectorsModRule Const Auto Mandatory
+MiscObject Property DirectorsModItem = None Const Auto Mandatory
 
 bool Property RecyclingEnabled = false Auto
 LegendaryItemQuestScript:LegendaryModRule Property RecyclingModRule Const Auto Mandatory
+MiscObject Property RecyclingModItem = None Const Auto Mandatory
 
 bool Property CondensingEnabled = false Auto
 LegendaryItemQuestScript:LegendaryModRule Property CondensingModRule Const Auto Mandatory
+MiscObject Property CondensingModItem = None Const Auto Mandatory
 
 bool Property DeflectingEnabled = false Auto
 LegendaryItemQuestScript:LegendaryModRule Property DeflectingModRule Const Auto Mandatory
+MiscObject Property DeflectingModItem = None Const Auto Mandatory
 
 bool Property RammingEnabled = false Auto
 LegendaryItemQuestScript:LegendaryModRule Property RammingModRule Const Auto Mandatory
+MiscObject Property RammingModItem = None Const Auto Mandatory
 
 bool Property PenetratingEnabled = false Auto
 LegendaryItemQuestScript:LegendaryModRule Property PenetratingModRule Const Auto Mandatory
+MiscObject Property PenetratingModItem = None Const Auto Mandatory
 
 bool Property AdaptingEnabled = false Auto
 LegendaryItemQuestScript:LegendaryModRule Property AdaptingModRule Const Auto Mandatory
+MiscObject Property AdaptingModItem = None Const Auto Mandatory
 
 bool Property ChargingEnabled = false Auto
 LegendaryItemQuestScript:LegendaryModRule Property ChargingModRule Const Auto Mandatory
+MiscObject Property ChargingModItem = None Const Auto Mandatory
 
 bool Property HeavyLiftingEnabled = false Auto
 LegendaryItemQuestScript:LegendaryModRule Property HeavyLiftingModRule Const Auto Mandatory
+MiscObject Property HeavyLiftingModItem = None Const Auto Mandatory
 
 bool Property RadAbsorbingEnabled = false Auto
 LegendaryItemQuestScript:LegendaryModRule Property RadAbsorbingModRule Const Auto Mandatory
+MiscObject Property RadAbsorbingModItem = None Const Auto Mandatory
 
 bool Property FleetingEnabled = false Auto
 LegendaryItemQuestScript:LegendaryModRule Property FleetingModRule Const Auto Mandatory
+MiscObject Property FleetingModItem = None Const Auto Mandatory
 
 bool Property BonusVsAbominationEnabled = false Auto
 LegendaryItemQuestScript:LegendaryModRule Property BonusVsAbominationModRule Const Auto Mandatory
+MiscObject Property BonusVsAbominationModItem = None Const Auto Mandatory
 
 bool Property AshursEnabled = false Auto
 LegendaryItemQuestScript:LegendaryModRule Property AshursModRule Const Auto Mandatory
+MiscObject Property AshursModItem = None Const Auto Mandatory
 
 bool Property LeakyEnabled = false Auto
 LegendaryItemQuestScript:LegendaryModRule Property LeakyModRule Const Auto Mandatory
+MiscObject Property LeakyModItem = None Const Auto Mandatory
 
 bool Property PersistentEnabled = false Auto
 LegendaryItemQuestScript:LegendaryModRule Property PersistentModRule Const Auto Mandatory
+MiscObject Property PersistentModItem = None Const Auto Mandatory
 
 bool Property HeroicEnabled = false Auto
 LegendaryItemQuestScript:LegendaryModRule Property HeroicModRule Const Auto Mandatory
+MiscObject Property HeroicModItem = None Const Auto Mandatory
 
 Event OnQuestInit()
 	UpdateLegendaryModRules()
@@ -129,49 +160,59 @@ Function UpdateLegendaryModRules()
 	UpdateFormList(VanillaArmorEnabled, LegendaryModRule_AllowedKeywords_ObjectTypeArmor, ArmorTypePower)
 	UpdateFormList(VanillaChestOnlyEnabled, LegendaryModRule_AllowedKeywords_ArmorBodyPartChest, PowerArmorChestKeyword)
 
-	UpdateModRule("Durable", AlmostUnbreakableEnabled, AlmostUnbreakableModRule)
-	UpdateModRule("Efficient", EfficientEnabled, EfficientModRule)
-	UpdateModRule("Aerodynamic", AerodynamicEnabled, AerodynamicModRule)
-	UpdateModRule("Custom", CustomEnabled, CustomModRule)
-	UpdateModRule("Heavy Gunner's", HeavyGunnersEnabled, HeavyGunnersModRule)
-	UpdateModRule("Amphibious", AmphibiousEnabled, AmphibiousModRule)
-	UpdateModRule("Drop Trooper", DropTrooperEnabled, DropTrooperModRule)
-	UpdateModRule("Sprinter's", SprintersEnabled, SprintersModRule)
-	UpdateModRule("Overpowering", OverpoweringEnabled, OverpoweringModRule)
-	UpdateModRule("Reflecting", ReflectingEnabled, ReflectingModRule)
+	UpdateArmorModEnabled("Durable", AlmostUnbreakableEnabled, AlmostUnbreakableModRule, AlmostUnbreakableModItem)
+	UpdateArmorModEnabled("Efficient", EfficientEnabled, EfficientModRule, EfficientModItem)
+	UpdateArmorModEnabled("Aerodynamic", AerodynamicEnabled, AerodynamicModRule, AerodynamicModItem)
+	UpdateArmorModEnabled("Custom", CustomEnabled, CustomModRule, CustomModItem)
+	UpdateArmorModEnabled("Heavy Gunner's", HeavyGunnersEnabled, HeavyGunnersModRule, HeavyGunnersModItem)
+	UpdateArmorModEnabled("Amphibious", AmphibiousEnabled, AmphibiousModRule, AmphibiousModItem)
+	UpdateArmorModEnabled("Drop Trooper", DropTrooperEnabled, DropTrooperModRule, DropTrooperModItem)
+	UpdateArmorModEnabled("Sprinter's", SprintersEnabled, SprintersModRule, None) ; Sprinter's Mod Item would come from the base game / Stuff of Legend since it's the same mod
+	UpdateArmorModEnabled("Overpowering", OverpoweringEnabled, OverpoweringModRule, OverpoweringModItem)
+	UpdateArmorModEnabled("Reflecting", ReflectingEnabled, ReflectingModRule, ReflectingModItem)
 	
 	int i = 0
 	while i < HardeningModRules.Length
-	UpdateModRule("Hardening " + i, HardeningEnabled, HardeningModRules[i])
+	UpdateArmorModEnabled("Hardening " + i, HardeningEnabled, HardeningModRules[i], HardeningModItem)
 	i += 1
 	EndWhile
 
 	; Unique effects
-	UpdateUniqueModRule("Overseer's", OverseersEnabled, OverseersModRule)
-	UpdateUniqueModRule("People's", PeoplesEnabled, PeoplesModRule)
-	UpdateUniqueModRule("Director's", DirectorsEnabled, DirectorsModRule)
-	UpdateUniqueModRule("Ashur's", AshursEnabled, AshursModRule)
-	UpdateUniqueModRule("Terrifying", TerrifyingEnabled, TerrifyingModRule)
-	UpdateUniqueModRule("Piezonucleic", PiezonucleicEnabled, PiezonucleicModRule)
-	UpdateUniqueModRule("Rocketeer", RocketeerEnabled, RocketeerModRule)
-	UpdateUniqueModRule("Recycling", RecyclingEnabled, RecyclingModRule)
-	UpdateUniqueModRule("Condensing", CondensingEnabled, CondensingModRule)
-	UpdateUniqueModRule("Deflecting", DeflectingEnabled, DeflectingModRule)
-	UpdateUniqueModRule("Ramming", RammingEnabled, RammingModRule)
-	UpdateUniqueModRule("Penetrating", PenetratingEnabled, PenetratingModRule)
-	UpdateUniqueModRule("Adapting", AdaptingEnabled, AdaptingModRule)
-	UpdateUniqueModRule("Charging", ChargingEnabled, ChargingModRule)
-	UpdateUniqueModRule("Heavy Lifting", HeavyLiftingEnabled, HeavyLiftingModRule)
-	UpdateUniqueModRule("Rad-Absorbing", RadAbsorbingEnabled, RadAbsorbingModRule)
-	UpdateUniqueModRule("Fleeting", FleetingEnabled, FleetingModRule)
-	UpdateUniqueModRule("Leaky", LeakyEnabled, LeakyModRule)
-	UpdateUniqueModRule("Persistent", PersistentEnabled, PersistentModRule)
-	UpdateUniqueModRule("Heroic", HeroicEnabled, HeroicModRule)
-	UpdateUniqueModRule("True American", BonusVsAbominationEnabled, BonusVsAbominationModRule)
+	UpdateUniqueArmorModEnabled("Overseer's", OverseersEnabled, OverseersModRule, OverseersModItem)
+	UpdateUniqueArmorModEnabled("People's", PeoplesEnabled, PeoplesModRule, PeoplesModItem)
+	UpdateUniqueArmorModEnabled("Director's", DirectorsEnabled, DirectorsModRule, DirectorsModItem)
+	UpdateUniqueArmorModEnabled("Ashur's", AshursEnabled, AshursModRule, AshursModItem)
+	UpdateUniqueArmorModEnabled("Terrifying", TerrifyingEnabled, TerrifyingModRule, TerrifyingModItem)
+	UpdateUniqueArmorModEnabled("Piezonucleic", PiezonucleicEnabled, PiezonucleicModRule, PiezonucleicModItem)
+	UpdateUniqueArmorModEnabled("Rocketeer", RocketeerEnabled, RocketeerModRule, RocketeerModItem)
+	UpdateUniqueArmorModEnabled("Recycling", RecyclingEnabled, RecyclingModRule, RecyclingModItem)
+	UpdateUniqueArmorModEnabled("Condensing", CondensingEnabled, CondensingModRule, CondensingModItem)
+	UpdateUniqueArmorModEnabled("Deflecting", DeflectingEnabled, DeflectingModRule, DeflectingModItem)
+	UpdateUniqueArmorModEnabled("Ramming", RammingEnabled, RammingModRule, RammingModItem)
+	UpdateUniqueArmorModEnabled("Penetrating", PenetratingEnabled, PenetratingModRule, PenetratingModItem)
+	UpdateUniqueArmorModEnabled("Adapting", AdaptingEnabled, AdaptingModRule, AdaptingModItem)
+	UpdateUniqueArmorModEnabled("Charging", ChargingEnabled, ChargingModRule, ChargingModItem)
+	UpdateUniqueArmorModEnabled("Heavy Lifting", HeavyLiftingEnabled, HeavyLiftingModRule, HeavyLiftingModItem)
+	UpdateUniqueArmorModEnabled("Rad-Absorbing", RadAbsorbingEnabled, RadAbsorbingModRule, RadAbsorbingModItem)
+	UpdateUniqueArmorModEnabled("Fleeting", FleetingEnabled, FleetingModRule, FleetingModItem)
+	UpdateUniqueArmorModEnabled("Leaky", LeakyEnabled, LeakyModRule, LeakyModItem)
+	UpdateUniqueArmorModEnabled("Persistent", PersistentEnabled, PersistentModRule, PersistentModItem)
+	UpdateUniqueArmorModEnabled("Heroic", HeroicEnabled, HeroicModRule, HeroicModItem)
+	UpdateUniqueArmorModEnabled("True American", BonusVsAbominationEnabled, BonusVsAbominationModRule, BonusVsAbominationModItem)
 EndFunction
 
-Function UpdateUniqueModRule(string asName, bool abEnabled, LegendaryItemQuestScript:LegendaryModRule akRule)
-	UpdateModRule(asName, abEnabled && UniqueEffectsEnabled, akRule)
+Function UpdateArmorModEnabled(string asName, bool abEnabled, LegendaryItemQuestScript:LegendaryModRule akRule, MiscObject akItem)
+	UpdateModRule(asName, abEnabled, akRule)
+
+	FormList StuffOfLegendArmorModFormList = Game.GetFormFromFile(0x00000158, "Stuff of Legend.esp") as FormList
+	if akItem && StuffOfLegendArmorModFormList
+		; Set it up within Stuff of Legend if it's installed
+		UpdateModItem(asName, abEnabled, akItem, StuffOfLegendArmorModFormList)
+	EndIf
+EndFunction
+
+Function UpdateUniqueArmorModEnabled(string asName, bool abEnabled, LegendaryItemQuestScript:LegendaryModRule akRule, MiscObject akItem)
+	UpdateArmorModEnabled(asName, abEnabled && UniqueEffectsEnabled, akRule, akItem)
 EndFunction
 
 Function UpdateModRule(string asName, bool abEnabled, LegendaryItemQuestScript:LegendaryModRule akRule)
@@ -195,6 +236,24 @@ Function UpdateModRule(string asName, bool abEnabled, LegendaryItemQuestScript:L
 		else
 			debug.trace(self + " Removing disabled rule " + asName + " from index " + index + " | Rule: " + akRule)
 			LegendaryItemQuest.LegendaryModRules.remove(index)
+		endIf
+	EndIf
+EndFunction
+
+Function UpdateModItem(string asName, bool abEnabled, MiscObject akItem, FormList akItemList)
+	if abEnabled
+		if akItemList.HasForm(akItem)
+			debug.trace(self + " No action needed - found enabled item " + asName + " in " + akItemList)
+		else
+			debug.trace(self + " Adding enabled legendary " + asName + " | Item: " + akItem)
+			akItemList.AddForm(akItem)
+		endIf
+	else
+		if !akItemList.HasForm(akItem)
+			debug.trace(self + " No action needed - disabled item " + asName + " not found")
+		else
+			debug.trace(self + " Removing disabled legendary " + asName + " from " + akItemList + " | Item: " + akItem)
+			akItemList.RemoveAddedForm(akItem)
 		endIf
 	EndIf
 EndFunction
