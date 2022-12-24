@@ -288,6 +288,11 @@ PAttP:InjectionManager Property InjectionManager Auto Const Mandatory
 bool Property MCM_ManuallyManageModDependentSettings = False Auto
 {Whether the configuration manager should adjust settings that are dependent on other mods or let the user set them manually}
 
+float Property MCM_NPCDurabilityModifier = -1.0 Auto
+{How much the power armor of enemies should degrade when taking damage. This is backed by a game setting. When set to -1, the game setting will be loaded.}
+
+string Property NPCDurabilityGameSettingName = "fPowerArmorNPCArmorDamageMultiplier" autoReadOnly
+
 CustomEvent AbandonedPowerArmorEnabledChanged
 
 ; We set both a Chance and ChanceNone to give integrators flexibility
@@ -341,6 +346,9 @@ Event Actor.OnPlayerLoadGame(Actor akSender)
     endIf
 
     SetMCMPropertiesForDisplay()
+
+    ; Game settings go back to the editor values after restarting the game, so make sure it's right
+    UpdateNPCArmorDurability()
 EndEvent
 
 Function RegisterCustomEvents()
@@ -397,6 +405,12 @@ Function SetMCMPropertiesForDisplay()
     MCM_LegendarySynthPowerArmorChance = LegendarySynthPowerArmorChance
     MCM_MinutemenPowerArmorChance = MinutemenPowerArmorChance
     MCM_LevelScalePowerArmoredEnemies = LevelScalePowerArmoredEnemies
+
+    ; If we have never loaded the power armor durability game setting, load it now
+    if MCM_NPCDurabilityModifier < 0
+        MCM_NPCDurabilityModifier = Game.GetGameSettingFloat(NPCDurabilityGameSettingName)
+        debug.trace(self + " loading NPC power armor durability damage multiplier of " + MCM_NPCDurabilityModifier)
+    EndIf
 EndFunction
 
 ; MCM properties are for display only, so this properly applies them to the game
@@ -418,6 +432,15 @@ Function ApplyMCMProperties()
     LegendarySynthPowerArmorChance = MCM_LegendarySynthPowerArmorChance
     MinutemenPowerArmorChance = MCM_MinutemenPowerArmorChance
     LevelScalePowerArmoredEnemies = MCM_LevelScalePowerArmoredEnemies
+
+    UpdateNPCArmorDurability()
+EndFunction
+
+Function UpdateNPCArmorDurability()
+    if MCM_NPCDurabilityModifier >= 0 && MCM_NPCDurabilityModifier != Game.GetGameSettingFloat(NPCDurabilityGameSettingName)
+        debug.trace(self + " setting NPC power armor durability damage multiplier to " + MCM_NPCDurabilityModifier)
+        Game.SetGameSettingFloat(NPCDurabilityGameSettingName, MCM_NPCDurabilityModifier)
+    endIf
 EndFunction
 
 bool Property MCM_X02RaiderPowerArmorDisabled = True Auto
