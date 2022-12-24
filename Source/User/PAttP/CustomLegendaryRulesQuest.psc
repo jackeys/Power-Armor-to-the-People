@@ -152,8 +152,16 @@ bool Property HeroicEnabled = false Auto
 LegendaryItemQuestScript:LegendaryModRule Property HeroicModRule Const Auto Mandatory
 MiscObject Property HeroicModItem = None Const Auto Mandatory
 
+bool Property HasRunBefore = true auto
+{Whether the rules updates have been run before. Start at true because the first release didn't have this, so we'll set it to false when we init the quest.}
+
+Event OnInit()
+	HasRunBefore = false
+EndEvent
+
 Event OnQuestInit()
 	UpdateLegendaryModRules()
+	HasRunBefore = true
 EndEvent
 
 Function UpdateLegendaryModRules()
