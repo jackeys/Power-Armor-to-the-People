@@ -1812,6 +1812,22 @@
                     "groupCondition": 2
                 },
                 {
+                    "text": "Cryogenerator",
+                    "type": "switcher",
+                    "help": "Regenerates cryo cells if you have a Cryolator in your inventory, up to a limit of 100. (Torso only)",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|A61",
+                        "propertyName": "CryogeneratorEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|A61",
+                        "function": "UpdateLegendaryModRules"
+                    },
+                    "groupCondition": 2
+                },
+                {
                     "text": "Heavy Metal",
                     "type": "section"
                 },
