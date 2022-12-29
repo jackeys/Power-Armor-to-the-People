@@ -4,10 +4,12 @@ ReferenceAlias Property SpawnLocation Auto Const
 ReferenceAlias Property WinterSoldier Auto Const
 ActorBase Property Enemy Auto Const
 GlobalVariable Property NoteChanceNone Auto Const
+PAttP:UniqueItemManager Property UniqueItemManager Auto Const
 int Property EnemySpawnedStage = 10 Auto Const
 int Property EnemyKilledStage = 20 Auto Const
 int Property FindEnemyObjective = 10 Auto Const
 int Property RequiredPlayerLevel = 32 Auto Const
+string Property CryogeneratorUniqueItemID = "Cryogenerator" Auto Const
 
 struct Point
     float x
@@ -21,8 +23,8 @@ Point Property SpawnOffset Auto Const
 
 Event OnQuestInit()
     ; Check for when the player is high enough level
-    if !EnableTriggerNoteDropIfHighEnoughLevel()
-        debug.trace(self + " Player is not high enough level - waiting to see when they are")
+    if !EnableTriggerNoteDropIfConditionsMet()
+        debug.trace(self + " Player does not meet requirements - waiting to see when they do")
         RegisterForRemoteEvent(Game.GetPlayer(), "OnLocationChange")
     endIf
 EndEvent
@@ -34,15 +36,15 @@ Event OnStageSet(int auiStageID, int auiItemID)
 EndEvent
 
 Event Actor.OnLocationChange(Actor akSender, Location akOldLoc, Location akNewLoc)
-    If EnableTriggerNoteDropIfHighEnoughLevel()
+    If EnableTriggerNoteDropIfConditionsMet()
         debug.trace(self + " No need to listen to future location changes")
         UnregisterForRemoteEvent(Game.GetPlayer(), "OnLocationChange")
     EndIf
 EndEvent
 
-bool Function EnableTriggerNoteDropIfHighEnoughLevel()
-    if Game.GetPlayer().GetLevel() >= RequiredPlayerLevel
-        debug.trace(self + " Player is high enough level - enabling note drop")
+bool Function EnableTriggerNoteDropIfConditionsMet()
+    if Game.GetPlayer().GetLevel() >= RequiredPlayerLevel && UniqueItemManager.CanItemBeSpawned(CryogeneratorUniqueItemID)
+        debug.trace(self + " Player is high enough level and unique item can be placed - enabling note drop")
         NoteChanceNone.SetValue(70)
         return true
     endIf

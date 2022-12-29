@@ -113,6 +113,11 @@ Function SpawnItems()
     EndWhile
 EndFunction
 
+bool Function CanItemBeSpawned(String asID)
+    CustomItemRule rule = GetItemRuleWithState(asID)
+    return rule && (!rule.IsFallback || PlaceFallbackItems)
+EndFunction
+
 ; "None" means no change
 Function OverrideUniqueItem(String asID, ObjectMod akMiscMod = None, ObjectMod akCosmeticMod = None, LeveledItem akLeveledListToSpawnFrom = None)
     int ruleIndex = RuleStates.FindStruct("ID", asID)
