@@ -1378,6 +1378,21 @@
                     }
                 },
                 {
+                    "text": "Recharging",
+                    "type": "switcher",
+                    "help": "Fusion core energy slowly recharges while standing still",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|A61",
+                        "propertyName": "RechargingEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|A61",
+                        "function": "UpdateLegendaryModRules"
+                    }
+                },
+                {
                     "text": "Reflecting",
                     "type": "switcher",
                     "help": "5% chance to deal 100 damage to ranged attackers",

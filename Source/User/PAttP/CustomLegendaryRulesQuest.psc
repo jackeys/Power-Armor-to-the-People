@@ -49,6 +49,10 @@ bool Property ReflectingEnabled = true Auto
 LegendaryItemQuestScript:LegendaryModRule Property ReflectingModRule Const Auto Mandatory
 MiscObject Property ReflectingModItem = None Const Auto Mandatory
 
+bool Property RechargingEnabled = true Auto
+LegendaryItemQuestScript:LegendaryModRule Property RechargingModRule Const Auto Mandatory
+MiscObject Property RechargingModItem = None Const Auto Mandatory
+
 bool Property HardeningEnabled = true Auto
 LegendaryItemQuestScript:LegendaryModRule[] Property HardeningModRules Const Auto Mandatory
 MiscObject Property HardeningModItem = None Const Auto Mandatory
@@ -182,6 +186,7 @@ Function UpdateLegendaryModRules()
 	UpdateArmorModEnabled("Sprinter's", SprintersEnabled, SprintersModRule, None) ; Sprinter's Mod Item would come from the base game / Stuff of Legend since it's the same mod
 	UpdateArmorModEnabled("Overpowering", OverpoweringEnabled, OverpoweringModRule, OverpoweringModItem)
 	UpdateArmorModEnabled("Reflecting", ReflectingEnabled, ReflectingModRule, ReflectingModItem)
+	UpdateArmorModEnabled("Recharging", RechargingEnabled, RechargingModRule, RechargingModItem)
 	
 	int i = 0
 	while i < HardeningModRules.Length
