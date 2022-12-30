@@ -1814,7 +1814,7 @@
                 {
                     "text": "Cryogenerator",
                     "type": "switcher",
-                    "help": "Regenerates cryo cells if you have a Cryolator in your inventory, up to a limit of 100. (Torso only)",
+                    "help": "Regenerates cryo cells if you have a cryo weapon equipped, up to a limit of 100. (Torso only)",
                     "valueOptions": {
                         "sourceType": "PropertyValueBool",
                         "sourceForm": "Power Armor to the People.esp|A61",
@@ -1845,9 +1845,9 @@
                     "type": "section"
                 },
                 {
-                    "text": "Require a Cryolator in Inventory",
+                    "text": "Require an equipped cryo weapon",
                     "type": "switcher",
-                    "help": "Whether you need to have a Cryolator in their inventory for Cryogenerator to produce cryo cells",
+                    "help": "Whether you need to have a cryo weapon equipped for Cryogenerator to produce cryo cells",
                     "valueOptions": {
                         "sourceType": "GlobalValue",
                         "sourceForm": "Power Armor to the People.esp|AC0"
