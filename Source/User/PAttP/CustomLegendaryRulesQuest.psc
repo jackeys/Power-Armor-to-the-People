@@ -152,6 +152,10 @@ bool Property HeroicEnabled = false Auto
 LegendaryItemQuestScript:LegendaryModRule Property HeroicModRule Const Auto Mandatory
 MiscObject Property HeroicModItem = None Const Auto Mandatory
 
+bool Property CryogeneratorEnabled = false Auto
+LegendaryItemQuestScript:LegendaryModRule Property CryogeneratorModRule Const Auto Mandatory
+MiscObject Property CryogeneratorModItem = None Const Auto Mandatory
+
 bool Property HasRunBefore = true auto
 {Whether the rules updates have been run before. Start at true because the first release didn't have this, so we'll set it to false when we init the quest.}
 
@@ -206,6 +210,7 @@ Function UpdateLegendaryModRules()
 	UpdateUniqueArmorModEnabled("Leaky", LeakyEnabled, LeakyModRule, LeakyModItem)
 	UpdateUniqueArmorModEnabled("Persistent", PersistentEnabled, PersistentModRule, PersistentModItem)
 	UpdateUniqueArmorModEnabled("Heroic", HeroicEnabled, HeroicModRule, HeroicModItem)
+	UpdateUniqueArmorModEnabled("Cryogenerator", CryogeneratorEnabled, CryogeneratorModRule, CryogeneratorModItem)
 	UpdateUniqueArmorModEnabled("True American", BonusVsAbominationEnabled, BonusVsAbominationModRule, BonusVsAbominationModItem)
 EndFunction
 

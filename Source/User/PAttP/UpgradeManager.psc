@@ -84,7 +84,7 @@ Function UpgradeToVersion1()
 EndFunction
 
 Function UpgradeToVersion2()
-    debug.trace(self + " is upgrading to version 1")
+    debug.trace(self + " is upgrading to version 2")
     
     ; This used to be a ChanceNone, so to preserve the settings, invert (e.g. 0 becomes 100, 100 becomes 0)
     debug.trace(self + " is inverting level scaling ChanceNones to Chances")
@@ -101,6 +101,17 @@ Function UpgradeToVersion2()
         PATTP_Setting_T60ForGunners_OBSOLETE.value = 0
         PATTP_Setting_T60ForRaiders_OBSOLETE.value = 0
     endif
+EndFunction
+
+Function UpgradeToVersion4()
+    debug.trace(self + " is upgrading to version 4")
+    
+    PAttP:RegisterUniqueItems registrationQuest = Game.GetFormFromFile(0x0000083B, "Power Armor to the People - Enclave X-02.esp") as PAttP:RegisterUniqueItems
+    
+    if registrationQuest
+        debug.trace(self + " is registering new X-02 unique item")
+        registrationQuest.RegisterUniques()
+    endIf
 EndFunction
 
 bool Function IsGameInProgress()

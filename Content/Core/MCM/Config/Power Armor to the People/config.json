@@ -1812,6 +1812,22 @@
                     "groupCondition": 2
                 },
                 {
+                    "text": "Cryogenerator",
+                    "type": "switcher",
+                    "help": "Regenerates cryo cells if you have a cryo weapon equipped, up to a limit of 100. (Torso only)",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|A61",
+                        "propertyName": "CryogeneratorEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|A61",
+                        "function": "UpdateLegendaryModRules"
+                    },
+                    "groupCondition": 2
+                },
+                {
                     "text": "Heavy Metal",
                     "type": "section"
                 },
@@ -1826,18 +1842,16 @@
                 },
                 {
                     "text": "Cryogenerator",
-                    "type": "section",
-                    "groupCondition": 99
+                    "type": "section"
                 },
                 {
-                    "text": "Require a Cryolator in Inventory",
+                    "text": "Require an equipped cryo weapon",
                     "type": "switcher",
-                    "help": "Whether you need to have a Cryolator in their inventory for Cryogenerator to produce cryo cells",
+                    "help": "Whether you need to have a cryo weapon equipped for Cryogenerator to produce cryo cells",
                     "valueOptions": {
                         "sourceType": "GlobalValue",
                         "sourceForm": "Power Armor to the People.esp|AC0"
-                    },
-                    "groupCondition": 99
+                    }
                 },
                 {
                     "text": "Maximum Cryo Cells in Inventory",
@@ -1849,8 +1863,7 @@
                         "step": 10,
                         "sourceType": "GlobalValue",
                         "sourceForm": "Power Armor to the People.esp|AC1"
-                    },
-                    "groupCondition": 99
+                    }
                 }
             ]
         },
