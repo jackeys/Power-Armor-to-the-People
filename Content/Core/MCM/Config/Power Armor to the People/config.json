@@ -1273,6 +1273,21 @@
                     }
                 },
                 {
+                    "text": "Conserving",
+                    "type": "switcher",
+                    "help": "Reduces damage taken and fusion core drain by 10% when fusion core charge is below 25%",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|A61",
+                        "propertyName": "ConservingEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|A61",
+                        "function": "UpdateLegendaryModRules"
+                    }
+                },
+                {
                     "text": "Custom",
                     "type": "switcher",
                     "help": "Can be upgraded with an additional miscellaneous mod",
@@ -1363,6 +1378,21 @@
                     }
                 },
                 {
+                    "text": "Overclocked",
+                    "type": "switcher",
+                    "help": "Increases agility the higher your fusion core charge (up to +3)",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|A61",
+                        "propertyName": "OverclockedEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|A61",
+                        "function": "UpdateLegendaryModRules"
+                    }
+                },
+                {
                     "text": "Overpowering",
                     "type": "switcher",
                     "help": "Power attacks and gun bashing do 25% more damage (Arms only)",
@@ -1370,6 +1400,21 @@
                         "sourceType": "PropertyValueBool",
                         "sourceForm": "Power Armor to the People.esp|A61",
                         "propertyName": "OverpoweringEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|A61",
+                        "function": "UpdateLegendaryModRules"
+                    }
+                },
+                {
+                    "text": "Preserving",
+                    "type": "switcher",
+                    "help": "Power armor cannot be broken when fusion core charge is below 25% (Torso only)",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|A61",
+                        "propertyName": "PreservingEnabled"
                     },
                     "action": {
                         "type": "CallFunction",

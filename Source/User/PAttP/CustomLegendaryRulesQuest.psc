@@ -53,6 +53,18 @@ bool Property RechargingEnabled = true Auto
 LegendaryItemQuestScript:LegendaryModRule Property RechargingModRule Const Auto Mandatory
 MiscObject Property RechargingModItem = None Const Auto Mandatory
 
+bool Property PreservingEnabled = true Auto
+LegendaryItemQuestScript:LegendaryModRule Property PreservingModRule Const Auto Mandatory
+MiscObject Property PreservingModItem = None Const Auto Mandatory
+
+bool Property ConservingEnabled = true Auto
+LegendaryItemQuestScript:LegendaryModRule Property ConservingModRule Const Auto Mandatory
+MiscObject Property ConservingModItem = None Const Auto Mandatory
+
+bool Property OverclockedEnabled = true Auto
+LegendaryItemQuestScript:LegendaryModRule Property OverclockedModRule Const Auto Mandatory
+MiscObject Property OverclockedModItem = None Const Auto Mandatory
+
 bool Property HardeningEnabled = true Auto
 LegendaryItemQuestScript:LegendaryModRule[] Property HardeningModRules Const Auto Mandatory
 MiscObject Property HardeningModItem = None Const Auto Mandatory
@@ -187,6 +199,9 @@ Function UpdateLegendaryModRules()
 	UpdateArmorModEnabled("Overpowering", OverpoweringEnabled, OverpoweringModRule, OverpoweringModItem)
 	UpdateArmorModEnabled("Reflecting", ReflectingEnabled, ReflectingModRule, ReflectingModItem)
 	UpdateArmorModEnabled("Recharging", RechargingEnabled, RechargingModRule, RechargingModItem)
+	UpdateArmorModEnabled("Preserving", PreservingEnabled, PreservingModRule, PreservingModItem)
+	UpdateArmorModEnabled("Conserving", ConservingEnabled, ConservingModRule, ConservingModItem)
+	UpdateArmorModEnabled("Overclocked", OverclockedEnabled, OverclockedModRule, OverclockedModItem)
 	
 	int i = 0
 	while i < HardeningModRules.Length
