@@ -1260,7 +1260,7 @@
                 {
                     "text": "Amphibious",
                     "type": "switcher",
-                    "help": "Increases underwater movement speed by 30%",
+                    "help": "Increases underwater movement speed by 30% (Legs only)",
                     "valueOptions": {
                         "sourceType": "PropertyValueBool",
                         "sourceForm": "Power Armor to the People.esp|A61",
@@ -1290,7 +1290,7 @@
                 {
                     "text": "Drop Trooper",
                     "type": "switcher",
-                    "help": "Impact landing does double damage",
+                    "help": "Impact landing does double damage (Legs only)",
                     "valueOptions": {
                         "sourceType": "PropertyValueBool",
                         "sourceForm": "Power Armor to the People.esp|A61",
@@ -1350,7 +1350,7 @@
                 {
                     "text": "Heavy Gunner's",
                     "type": "switcher",
-                    "help": "Reload heavy guns 20% faster",
+                    "help": "Reload heavy guns 20% faster (Arms only)",
                     "valueOptions": {
                         "sourceType": "PropertyValueBool",
                         "sourceForm": "Power Armor to the People.esp|A61",
@@ -1365,7 +1365,7 @@
                 {
                     "text": "Overpowering",
                     "type": "switcher",
-                    "help": "Power attacks and gun bashing do 25% more damage",
+                    "help": "Power attacks and gun bashing do 25% more damage (Arms only)",
                     "valueOptions": {
                         "sourceType": "PropertyValueBool",
                         "sourceForm": "Power Armor to the People.esp|A61",
@@ -1380,7 +1380,7 @@
                 {
                     "text": "Recharging",
                     "type": "switcher",
-                    "help": "Fusion core energy slowly recharges while standing still",
+                    "help": "Fusion core energy slowly recharges while standing still (Torso only)",
                     "valueOptions": {
                         "sourceType": "PropertyValueBool",
                         "sourceForm": "Power Armor to the People.esp|A61",
@@ -1410,7 +1410,7 @@
                 {
                     "text": "Sprinter's",
                     "type": "switcher",
-                    "help": "Increases wearer's movement speed by 10%",
+                    "help": "Increases wearer's movement speed by 10% (Legs only)",
                     "valueOptions": {
                         "sourceType": "PropertyValueBool",
                         "sourceForm": "Power Armor to the People.esp|A61",
