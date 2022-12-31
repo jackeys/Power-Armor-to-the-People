@@ -61,6 +61,9 @@ Function PerformUpgrade()
     If Version >= 2 && lastVersion < 2
         UpgradeToVersion2()
     EndIf
+    If Version >= 4 && lastVersion < 4
+        UpgradeToVersion4()
+    EndIf
     
     Var[] args = new Var[2]
     args[0] = lastVersion
