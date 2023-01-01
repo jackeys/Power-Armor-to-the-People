@@ -31,6 +31,17 @@
                 "reveal": "always"
             },
             "problemMatcher": []
+        },
+        {
+            "label": "Encode Audio",
+            "type": "shell",
+            "windows": {
+                "command": ".\\compress_audio.ps1 '${workspaceFolder}' 'E:\\SteamLibrary\\steamapps\\common\\Fallout 4'"
+            },
+            "presentation": {
+                "reveal": "always"
+            },
+            "problemMatcher": []
         }
     ]
 }
