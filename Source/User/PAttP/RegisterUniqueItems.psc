@@ -32,8 +32,10 @@ bool Property StopAfterRegistration = false Const Auto
 {Use this only if the quest does not need to keep running for other reasons}
 
 Event OnQuestInit()
-    RegisterUniques()
+    ; Triggers don't set the IsFallback flag to false, so they won't cause the item to be placed
+    ; Triggers need to happen first to make sure the item doesn't get placed in the wrong spot
     RegisterTriggers()
+    RegisterUniques()
 
     if StopAfterRegistration
         Stop()
