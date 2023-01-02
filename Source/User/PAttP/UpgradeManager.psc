@@ -122,6 +122,8 @@ Function UpgradeToVersion4()
         debug.trace(self + " is registering new Far Harbor triggers")
         farHarborRegistrationQuest.RegisterTriggers()
     endIf
+
+    PATTP_LegendaryRulesManager.UpdateLegendaryModRules()
 EndFunction
 
 bool Function IsGameInProgress()
