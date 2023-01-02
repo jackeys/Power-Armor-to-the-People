@@ -1228,6 +1228,21 @@
                     }
                 },
                 {
+                    "text": "Allow Submersible power armor as a legendary drop",
+                    "type": "switcher",
+                    "help": "Make EdibleGrenade12's Submersible power armor redux eligible as a drop from legendary enemies",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - Submersible Power Armor Redux.esp|011"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
                     "text": "Captain Cosmos Redemption Machine Legendary Chance",
                     "type": "slider",
                     "help": "The chance that power armor or cosmic cannons from a Captain Cosmos Redemption Machine will be legendary",
