@@ -314,6 +314,49 @@
                         "sourceForm": "Power Armor to the People.esp|8AA",
                         "propertyName": "MCM_ScavengerPowerArmorChance"
                     }
+                },
+                {
+                    "text": "Trappers",
+                    "type": "section"
+                },
+                {
+                    "text": "Trapper Power Armor Chance",
+                    "type": "slider",
+                    "help": "The chance that normal Trappers will spawn with power armor",
+                    "valueOptions": {
+                        "min": 0,
+                        "max": 100,
+                        "step": 1,
+                        "sourceType": "PropertyValueFloat",
+                        "sourceForm": "Power Armor to the People.esp|8AA",
+                        "propertyName": "MCM_TrapperPowerArmorChance"
+                    }
+                },
+                {
+                    "text": "Trapper Leader Power Armor Chance",
+                    "type": "slider",
+                    "help": "The chance that Trapper Leaders will spawn with power armor",
+                    "valueOptions": {
+                        "min": 0,
+                        "max": 100,
+                        "step": 1,
+                        "sourceType": "PropertyValueFloat",
+                        "sourceForm": "Power Armor to the People.esp|8AA",
+                        "propertyName": "MCM_TrapperBossPowerArmorChance"
+                    }
+                },
+                {
+                    "text": "Legendary Trapper Power Armor Chance",
+                    "type": "slider",
+                    "help": "The chance that legendary Trappers will spawn with power armor",
+                    "valueOptions": {
+                        "min": 0,
+                        "max": 100,
+                        "step": 1,
+                        "sourceType": "PropertyValueFloat",
+                        "sourceForm": "Power Armor to the People.esp|8AA",
+                        "propertyName": "MCM_LegendaryTrapperPowerArmorChance"
+                    }
                 }
             ]
         },

@@ -199,6 +199,49 @@ float Property LegendarySynthPowerArmorChance
     EndFunction
 EndProperty
 
+GlobalVariable Property PAttP_Setting_TrapperPowerArmorChanceNone Auto Const Mandatory
+{AUTOFILL}
+
+; Convert our ChanceNone into a Chance so it makes more sense
+float Property MCM_TrapperPowerArmorChance Auto
+float Property TrapperPowerArmorChance
+    float Function get()
+        return 100.0 - PAttP_Setting_TrapperPowerArmorChanceNone.GetValue()
+    EndFunction
+    Function set(float value)
+        PAttP_Setting_TrapperPowerArmorChanceNone.SetValue(100.0 - value)
+    EndFunction
+EndProperty
+
+GlobalVariable Property PAttP_Setting_TrapperBossPowerArmorChanceNone Auto Const Mandatory
+{AUTOFILL}
+
+; Convert our ChanceNone into a Chance so it makes more sense
+float Property MCM_TrapperBossPowerArmorChance Auto
+float Property TrapperBossPowerArmorChance
+    float Function get()
+        return 100.0 - PAttP_Setting_TrapperBossPowerArmorChanceNone.GetValue()
+    EndFunction
+    Function set(float value)
+        PAttP_Setting_TrapperBossPowerArmorChanceNone.SetValue(100.0 - value)
+    EndFunction
+EndProperty
+
+GlobalVariable Property PAttP_Setting_LegendaryTrapperPowerArmorChanceNone Auto Const Mandatory
+{AUTOFILL}
+
+; Convert our ChanceNone into a Chance so it makes more sense
+float Property MCM_LegendaryTrapperPowerArmorChance Auto
+float Property LegendaryTrapperPowerArmorChance
+    float Function get()
+        return 100.0 - PAttP_Setting_LegendaryTrapperPowerArmorChanceNone.GetValue()
+    EndFunction
+    Function set(float value)
+        PAttP_Setting_LegendaryTrapperPowerArmorChanceNone.SetValue(100.0 - value)
+    EndFunction
+EndProperty
+
+
 GlobalVariable Property PAttP_Setting_MinutemenPowerArmorChanceNone Auto Const Mandatory
 {AUTOFILL}
 
@@ -403,6 +446,9 @@ Function SetMCMPropertiesForDisplay()
     MCM_SynthPowerArmorChance = SynthPowerArmorChance
     MCM_SynthBossPowerArmorChance = SynthBossPowerArmorChance
     MCM_LegendarySynthPowerArmorChance = LegendarySynthPowerArmorChance
+    MCM_TrapperPowerArmorChance = TrapperPowerArmorChance
+    MCM_TrapperBossPowerArmorChance = TrapperBossPowerArmorChance
+    MCM_LegendaryTrapperPowerArmorChance = LegendaryTrapperPowerArmorChance
     MCM_MinutemenPowerArmorChance = MinutemenPowerArmorChance
     MCM_LevelScalePowerArmoredEnemies = LevelScalePowerArmoredEnemies
 
@@ -430,6 +476,9 @@ Function ApplyMCMProperties()
     SynthPowerArmorChance = MCM_SynthPowerArmorChance
     SynthBossPowerArmorChance = MCM_SynthBossPowerArmorChance
     LegendarySynthPowerArmorChance = MCM_LegendarySynthPowerArmorChance
+    TrapperPowerArmorChance = MCM_TrapperPowerArmorChance
+    TrapperBossPowerArmorChance = MCM_TrapperBossPowerArmorChance
+    LegendaryTrapperPowerArmorChance = MCM_LegendaryTrapperPowerArmorChance
     MinutemenPowerArmorChance = MCM_MinutemenPowerArmorChance
     LevelScalePowerArmoredEnemies = MCM_LevelScalePowerArmoredEnemies
 
