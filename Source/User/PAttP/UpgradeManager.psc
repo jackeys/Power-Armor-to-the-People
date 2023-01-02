@@ -109,11 +109,18 @@ EndFunction
 Function UpgradeToVersion4()
     debug.trace(self + " is upgrading to version 4")
     
-    PAttP:RegisterUniqueItems registrationQuest = Game.GetFormFromFile(0x0000083B, "Power Armor to the People - Enclave X-02.esp") as PAttP:RegisterUniqueItems
+    PAttP:RegisterUniqueItems x02RegistrationQuest = Game.GetFormFromFile(0x0000083B, "Power Armor to the People - Enclave X-02.esp") as PAttP:RegisterUniqueItems
     
-    if registrationQuest
+    if x02RegistrationQuest
         debug.trace(self + " is registering new X-02 unique item")
-        registrationQuest.RegisterUniques()
+        x02RegistrationQuest.RegisterUniques()
+    endIf
+
+    PAttP:RegisterUniqueItems farHarborRegistrationQuest = Game.GetFormFromFile(0x00000800, "Power Armor to the People - Far Harbor.esp") as PAttP:RegisterUniqueItems
+    
+    if farHarborRegistrationQuest
+        debug.trace(self + " is registering new Far Harbor triggers")
+        farHarborRegistrationQuest.RegisterTriggers()
     endIf
 EndFunction
 

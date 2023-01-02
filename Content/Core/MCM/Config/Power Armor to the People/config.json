@@ -314,6 +314,49 @@
                         "sourceForm": "Power Armor to the People.esp|8AA",
                         "propertyName": "MCM_ScavengerPowerArmorChance"
                     }
+                },
+                {
+                    "text": "Trappers",
+                    "type": "section"
+                },
+                {
+                    "text": "Trapper Power Armor Chance",
+                    "type": "slider",
+                    "help": "The chance that normal Trappers will spawn with power armor",
+                    "valueOptions": {
+                        "min": 0,
+                        "max": 100,
+                        "step": 1,
+                        "sourceType": "PropertyValueFloat",
+                        "sourceForm": "Power Armor to the People.esp|8AA",
+                        "propertyName": "MCM_TrapperPowerArmorChance"
+                    }
+                },
+                {
+                    "text": "Trapper Leader Power Armor Chance",
+                    "type": "slider",
+                    "help": "The chance that Trapper Leaders will spawn with power armor",
+                    "valueOptions": {
+                        "min": 0,
+                        "max": 100,
+                        "step": 1,
+                        "sourceType": "PropertyValueFloat",
+                        "sourceForm": "Power Armor to the People.esp|8AA",
+                        "propertyName": "MCM_TrapperBossPowerArmorChance"
+                    }
+                },
+                {
+                    "text": "Legendary Trapper Power Armor Chance",
+                    "type": "slider",
+                    "help": "The chance that legendary Trappers will spawn with power armor",
+                    "valueOptions": {
+                        "min": 0,
+                        "max": 100,
+                        "step": 1,
+                        "sourceType": "PropertyValueFloat",
+                        "sourceForm": "Power Armor to the People.esp|8AA",
+                        "propertyName": "MCM_LegendaryTrapperPowerArmorChance"
+                    }
                 }
             ]
         },
@@ -1185,6 +1228,21 @@
                     }
                 },
                 {
+                    "text": "Allow Submersible power armor as a legendary drop",
+                    "type": "switcher",
+                    "help": "Make EdibleGrenade12's Submersible power armor redux eligible as a drop from legendary enemies",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - Submersible Power Armor Redux.esp|011"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
                     "text": "Captain Cosmos Redemption Machine Legendary Chance",
                     "type": "slider",
                     "help": "The chance that power armor or cosmic cannons from a Captain Cosmos Redemption Machine will be legendary",
@@ -1879,6 +1937,22 @@
                         "sourceType": "PropertyValueBool",
                         "sourceForm": "Power Armor to the People.esp|A61",
                         "propertyName": "CryogeneratorEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|A61",
+                        "function": "UpdateLegendaryModRules"
+                    },
+                    "groupCondition": 2
+                },
+                {
+                    "text": "Hydro-Powered",
+                    "type": "switcher",
+                    "help": "Fusion core energy recharges while in water (Torso only)",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|A61",
+                        "propertyName": "HydropoweredEnabled"
                     },
                     "action": {
                         "type": "CallFunction",
