@@ -42,6 +42,17 @@
                 "reveal": "always"
             },
             "problemMatcher": []
+        },
+        {
+            "label": "Copy ESPs from game",
+            "type": "shell",
+            "windows": {
+                "command": ".\\copy_esps_from_game.ps1 '${workspaceFolder}' 'E:\\SteamLibrary\\steamapps\\common\\Fallout 4'"
+            },
+            "presentation": {
+                "reveal": "always"
+            },
+            "problemMatcher": []
         }
     ]
 }
