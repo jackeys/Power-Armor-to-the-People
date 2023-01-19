@@ -7,9 +7,6 @@ Spell Property SpellToApply Auto Const Mandatory
 float Property SpellChance = 100.0 Auto Const
 {The chance that the spell will be added when the target is hit}
 
-float Property MinimumDelayBetweenHits = 0.0 Auto Const
-{How many seconds to wait before the spell can be applied again}
-
 Event OnEffectStart(Actor akTarget, Actor akCaster)
 	RegisterHitEvent()
 EndEvent
@@ -26,16 +23,7 @@ Event OnHit(ObjectReference akTarget, ObjectReference akAggressor, Form akSource
 	if abPowerAttack && targetActor && Utility.RandomFloat(0, 100) <= SpellChance
 		debug.trace(targetActor + " was hit by a power attack, casting spell " + SpellToApply + " from " + akAggressor)
 		SpellToApply.Cast(akAggressor, targetActor)
-		
-		if MinimumDelayBetweenHits > 0.0
-			StartTimer(MinimumDelayBetweenHits)
-			return
-		EndIf
 	endIf
 
-	RegisterHitEvent()
-EndEvent
-
-Event OnTimer(int aiTimerID)
 	RegisterHitEvent()
 EndEvent
