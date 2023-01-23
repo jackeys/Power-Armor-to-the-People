@@ -2537,6 +2537,21 @@
                     "type": "section"
                 },
                 {
+                    "text": "T-49 Power Armor",
+                    "type": "switcher",
+                    "help": "Whether The Collector can sell legendary T-49 Power Armor",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - T-49.esp|00A"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
                     "text": "Red Shift Power Armor",
                     "type": "switcher",
                     "help": "Whether The Collector can sell legendary Red Shift Power Armor",
