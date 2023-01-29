@@ -25,7 +25,7 @@ foreach ($f in $content_files) {
             if (Compare-Object -ReferenceObject $(Get-Content $($mod_file -replace "1.1", "1.2")) -DifferenceObject $(Get-Content $game_file)) {
                 Write-Output "Create an alternate version of $mod_file"
             }
-        } else {
+        } elseif (-not $mod_file.Contains("MogomraPAMs\1.4")) {
             Copy-Item -Path "$game_file" -Destination "$mod_file"
         }
     }
