@@ -144,7 +144,7 @@ begin
     perks[0] := FormID_Armorer03Perk;
     perks[1] := FormID_Science02Perk;
   end;
-  if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_T65') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_Liberty') then begin
+  if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_T65') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_Liberty') or IsPowerArmorSubtype(armoRec, 'tumba_dn_PowerArmor_Synth') then begin
     perks[0] := FormID_Armorer03Perk;
     perks[1] := FormID_Science03Perk;
   end;
