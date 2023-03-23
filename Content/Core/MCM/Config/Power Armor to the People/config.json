@@ -1962,6 +1962,22 @@
                     "groupCondition": 2
                 },
                 {
+                    "text": "Chemhead",
+                    "type": "switcher",
+                    "help": "Reduces damage taken by 25% while under the effects of chems (Helm only)",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|A61",
+                        "propertyName": "ChemheadEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|A61",
+                        "function": "UpdateLegendaryModRules"
+                    },
+                    "groupCondition": 2
+                },
+                {
                     "text": "Heavy Metal",
                     "type": "section"
                 },

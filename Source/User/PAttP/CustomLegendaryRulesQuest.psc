@@ -176,6 +176,10 @@ bool Property HydropoweredEnabled = false Auto
 LegendaryItemQuestScript:LegendaryModRule Property HydropoweredModRule Const Auto Mandatory
 MiscObject Property HydropoweredModItem = None Const Auto Mandatory
 
+bool Property ChemheadEnabled = false Auto
+LegendaryItemQuestScript:LegendaryModRule Property ChemheadModRule Const Auto Mandatory
+MiscObject Property ChemheadModItem = None Const Auto Mandatory
+
 bool Property HasRunBefore = true auto
 {Whether the rules updates have been run before. Start at true because the first release didn't have this, so we'll set it to false when we init the quest.}
 
@@ -236,6 +240,7 @@ Function UpdateLegendaryModRules()
 	UpdateUniqueArmorModEnabled("Heroic", HeroicEnabled, HeroicModRule, HeroicModItem)
 	UpdateUniqueArmorModEnabled("Cryogenerator", CryogeneratorEnabled, CryogeneratorModRule, CryogeneratorModItem)
 	UpdateUniqueArmorModEnabled("Hydropowered", HydropoweredEnabled, HydropoweredModRule, HydropoweredModItem)
+	UpdateUniqueArmorModEnabled("Chemhead", ChemheadEnabled, ChemheadModRule, ChemheadModItem)
 	UpdateUniqueArmorModEnabled("True American", BonusVsAbominationEnabled, BonusVsAbominationModRule, BonusVsAbominationModItem)
 EndFunction
 
