@@ -2583,6 +2583,21 @@
                     }
                 },
                 {
+                    "text": "Soviet Power Armor",
+                    "type": "switcher",
+                    "help": "Whether The Collector can sell legendary Soviet Power Armor",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - Soviet Power Armor.esp|007"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
                     "text": "Liberty Power Armor",
                     "type": "switcher",
                     "help": "Whether The Collector can sell legendary Liberty Power Armor",
