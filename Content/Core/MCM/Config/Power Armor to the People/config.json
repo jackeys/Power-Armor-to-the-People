@@ -1978,6 +1978,22 @@
                     "groupCondition": 2
                 },
                 {
+                    "text": "Comrade's",
+                    "type": "switcher",
+                    "help": "If your companion is in power armor, both of you deal 5% more damage and receive 5% less damage (Legs only)",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|A61",
+                        "propertyName": "ComradesEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|A61",
+                        "function": "UpdateLegendaryModRules"
+                    },
+                    "groupCondition": 2
+                },
+                {
                     "text": "Heavy Metal",
                     "type": "section"
                 },
