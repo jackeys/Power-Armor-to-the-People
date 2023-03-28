@@ -120,7 +120,7 @@ begin
     if ContainsText(Name(armoRec), 'Overboss') then perks[0] := FormID_Armorer03Perk
     else perks[0] := FormID_Armorer01Perk;
   end;
-  if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_Horse') then begin
+  if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_Horse') or IsPowerArmorSubtype(armoRec, 'tumba_INNRs_PowerArmor_Cagebreaker') then begin
     perks[0] := FormID_Armorer02Perk;
   end;
   
@@ -136,11 +136,11 @@ begin
     perks[0] := FormID_Armorer02Perk;
     perks[1] := FormID_Science01Perk;
   end;
-  if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_T60') or IsPowerArmorSubtype(armoRec, 'zzzM150IPAdn_PowerArmor_I01') or IsPowerArmorSubtype(armoRec, 'tumba_dn_PowerArmor_CPA') or IsPowerArmorSubtype(armoRec, 'ccSWKFO4001_dn_PowerArmor_CC1') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_SELPA') then begin
+  if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_T60') or IsPowerArmorSubtype(armoRec, 'zzzM150IPAdn_PowerArmor_I01') or IsPowerArmorSubtype(armoRec, 'tumba_dn_PowerArmor_CPA') or IsPowerArmorSubtype(armoRec, 'ccSWKFO4001_dn_PowerArmor_CC1') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_SELPA') or IsPowerArmorSubtype(armoRec, 'dn_T53_PowerArmor_CPA') then begin
     perks[0] := FormID_Armorer02Perk;
     perks[1] := FormID_Science02Perk;
   end;
-  if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_VaultTec') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_MidWest') or IsPowerArmorSubtype(armoRec, 'tumba_ma_PA_Tank') or IsPowerArmorSubtype(armoRec, 'ma_PA_TES51') then begin
+  if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_VaultTec') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_MidWest') or IsPowerArmorSubtype(armoRec, 'tumba_ma_PA_Tank') or IsPowerArmorSubtype(armoRec, 'ma_PA_TES51') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_Soviet') then begin
     perks[0] := FormID_Armorer03Perk;
     perks[1] := FormID_Science02Perk;
   end;
