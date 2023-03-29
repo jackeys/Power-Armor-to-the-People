@@ -357,6 +357,36 @@
                         "sourceForm": "Power Armor to the People.esp|8AA",
                         "propertyName": "MCM_LegendaryTrapperPowerArmorChance"
                     }
+                },
+                {
+                    "text": "Rust Devils",
+                    "type": "section"
+                },
+                {
+                    "text": "Rust Devil Power Armor Chance",
+                    "type": "slider",
+                    "help": "The chance that normal Rust Devils will spawn with power armor",
+                    "valueOptions": {
+                        "min": 0,
+                        "max": 100,
+                        "step": 1,
+                        "sourceType": "PropertyValueFloat",
+                        "sourceForm": "Power Armor to the People.esp|8AA",
+                        "propertyName": "MCM_RustDevilPowerArmorChance"
+                    }
+                },
+                {
+                    "text": "Legendary Rust Devil Power Armor Chance",
+                    "type": "slider",
+                    "help": "The chance that legendary Rust Devils will spawn with power armor",
+                    "valueOptions": {
+                        "min": 0,
+                        "max": 100,
+                        "step": 1,
+                        "sourceType": "PropertyValueFloat",
+                        "sourceForm": "Power Armor to the People.esp|8AA",
+                        "propertyName": "MCM_LegendaryRustDevilPowerArmorChance"
+                    }
                 }
             ]
         },

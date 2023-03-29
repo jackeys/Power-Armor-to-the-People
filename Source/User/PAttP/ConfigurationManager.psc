@@ -241,6 +241,34 @@ float Property LegendaryTrapperPowerArmorChance
     EndFunction
 EndProperty
 
+GlobalVariable Property PAttP_Setting_RustDevilPowerArmorChanceNone Auto Const Mandatory
+{AUTOFILL}
+
+; Convert our ChanceNone into a Chance so it makes more sense
+float Property MCM_RustDevilPowerArmorChance Auto
+float Property RustDevilPowerArmorChance
+    float Function get()
+        return 100.0 - PAttP_Setting_RustDevilPowerArmorChanceNone.GetValue()
+    EndFunction
+    Function set(float value)
+        PAttP_Setting_RustDevilPowerArmorChanceNone.SetValue(100.0 - value)
+    EndFunction
+EndProperty
+
+GlobalVariable Property PAttP_Setting_LegendaryRustDevilPowerArmorChanceNone Auto Const Mandatory
+{AUTOFILL}
+
+; Convert our ChanceNone into a Chance so it makes more sense
+float Property MCM_LegendaryRustDevilPowerArmorChance Auto
+float Property LegendaryRustDevilPowerArmorChance
+    float Function get()
+        return 100.0 - PAttP_Setting_LegendaryRustDevilPowerArmorChanceNone.GetValue()
+    EndFunction
+    Function set(float value)
+        PAttP_Setting_LegendaryRustDevilPowerArmorChanceNone.SetValue(100.0 - value)
+    EndFunction
+EndProperty
+
 
 GlobalVariable Property PAttP_Setting_MinutemenPowerArmorChanceNone Auto Const Mandatory
 {AUTOFILL}
@@ -449,6 +477,8 @@ Function SetMCMPropertiesForDisplay()
     MCM_TrapperPowerArmorChance = TrapperPowerArmorChance
     MCM_TrapperBossPowerArmorChance = TrapperBossPowerArmorChance
     MCM_LegendaryTrapperPowerArmorChance = LegendaryTrapperPowerArmorChance
+    MCM_RustDevilPowerArmorChance = RustDevilPowerArmorChance
+    MCM_LegendaryRustDevilPowerArmorChance = LegendaryRustDevilPowerArmorChance
     MCM_MinutemenPowerArmorChance = MinutemenPowerArmorChance
     MCM_LevelScalePowerArmoredEnemies = LevelScalePowerArmoredEnemies
 
@@ -479,6 +509,8 @@ Function ApplyMCMProperties()
     TrapperPowerArmorChance = MCM_TrapperPowerArmorChance
     TrapperBossPowerArmorChance = MCM_TrapperBossPowerArmorChance
     LegendaryTrapperPowerArmorChance = MCM_LegendaryTrapperPowerArmorChance
+    RustDevilPowerArmorChance = MCM_RustDevilPowerArmorChance
+    LegendaryRustDevilPowerArmorChance = MCM_LegendaryRustDevilPowerArmorChance
     MinutemenPowerArmorChance = MCM_MinutemenPowerArmorChance
     LevelScalePowerArmoredEnemies = MCM_LevelScalePowerArmoredEnemies
 
