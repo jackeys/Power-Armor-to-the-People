@@ -2024,6 +2024,22 @@
                     "groupCondition": 2
                 },
                 {
+                    "text": "Bomber's",
+                    "type": "switcher",
+                    "help": "Increases Explosives damage by 10%. Reduces damage from explosions by 25%. (Torso only)",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|A61",
+                        "propertyName": "BombersEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|A61",
+                        "function": "UpdateLegendaryModRules"
+                    },
+                    "groupCondition": 2
+                },
+                {
                     "text": "Heavy Metal",
                     "type": "section"
                 },

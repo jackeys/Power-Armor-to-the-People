@@ -184,6 +184,10 @@ bool Property ComradesEnabled = false Auto
 LegendaryItemQuestScript:LegendaryModRule Property ComradesModRule Const Auto Mandatory
 MiscObject Property ComradesModItem = None Const Auto Mandatory
 
+bool Property BombersEnabled = false Auto
+LegendaryItemQuestScript:LegendaryModRule Property BombersModRule Const Auto Mandatory
+MiscObject Property BombersModItem = None Const Auto Mandatory
+
 bool Property HasRunBefore = true auto
 {Whether the rules updates have been run before. Start at true because the first release didn't have this, so we'll set it to false when we init the quest.}
 
@@ -246,6 +250,7 @@ Function UpdateLegendaryModRules()
 	UpdateUniqueArmorModEnabled("Hydropowered", HydropoweredEnabled, HydropoweredModRule, HydropoweredModItem)
 	UpdateUniqueArmorModEnabled("Chemhead", ChemheadEnabled, ChemheadModRule, ChemheadModItem)
 	UpdateUniqueArmorModEnabled("Comrade's", ComradesEnabled, ComradesModRule, ComradesModItem)
+	UpdateUniqueArmorModEnabled("Bomber's", BombersEnabled, BombersModRule, BombersModItem)
 	UpdateUniqueArmorModEnabled("True American", BonusVsAbominationEnabled, BonusVsAbominationModRule, BonusVsAbominationModItem)
 EndFunction
 
