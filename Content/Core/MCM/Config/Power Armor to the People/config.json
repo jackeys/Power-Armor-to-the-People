@@ -942,6 +942,21 @@
                     "groupCondition": 2
                 },
                 {
+                    "text": "T-47R",
+                    "type": "switcher",
+                    "help": "",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - T-47R.esp|010"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
                     "text": "Tesla T-60",
                     "type": "switcher",
                     "help": "Requires Automatron",
