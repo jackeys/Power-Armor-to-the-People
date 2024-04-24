@@ -1121,6 +1121,21 @@
                     "groupCondition": 4
                 },
                 {
+                    "text": "T-47R (Rare)",
+                    "type": "switcher",
+                    "help": "",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - T-47R.esp|011"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
                     "text": "T-60",
                     "type": "switcher",
                     "help": "Requires a Minutemen paint job from Gunners vs Minutemen or Minutemen Paint Jobs",
