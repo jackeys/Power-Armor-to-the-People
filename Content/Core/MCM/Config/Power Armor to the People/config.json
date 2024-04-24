@@ -686,6 +686,21 @@
                     "html": "true"
                 },
                 {
+                    "text": "T-47R",
+                    "type": "switcher",
+                    "help": "",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - T-47R.esp|00F"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
                     "text": "T-51c",
                     "type": "switcher",
                     "help": "",
