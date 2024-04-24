@@ -561,6 +561,21 @@
                     }
                 },
                 {
+                    "text": "T-47R (Rare)",
+                    "type": "switcher",
+                    "help": "",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - T-47R.esp|00E"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
                     "text": "T-51 (Individual pieces)",
                     "type": "switcher",
                     "help": "Whether mixed sets for raiders and scavengers can include T-51",
