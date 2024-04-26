@@ -2100,6 +2100,22 @@
                     "groupCondition": 2
                 },
                 {
+                    "text": "Anti-Contamination",
+                    "type": "switcher",
+                    "help": "Grants increasing radiation resistance the lower your health (up to +100)",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|A61",
+                        "propertyName": "AnticontaminationEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|A61",
+                        "function": "UpdateLegendaryModRules"
+                    },
+                    "groupCondition": 2
+                },
+                {
                     "text": "Heavy Metal",
                     "type": "section"
                 },
