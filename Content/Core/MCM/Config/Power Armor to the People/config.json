@@ -2102,7 +2102,7 @@
                 {
                     "text": "Anti-Contamination",
                     "type": "switcher",
-                    "help": "Grants increasing radiation resistance the lower your health (up to +100)",
+                    "help": "Grants increasing radiation resistance the lower your health (up to +150)",
                     "valueOptions": {
                         "sourceType": "PropertyValueBool",
                         "sourceForm": "Power Armor to the People.esp|A61",
