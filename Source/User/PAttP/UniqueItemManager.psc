@@ -119,7 +119,7 @@ bool Function CanItemBeSpawned(String asID)
 EndFunction
 
 ; "None" means no change
-Function OverrideUniqueItem(String asID, ObjectMod akMiscMod = None, ObjectMod akCosmeticMod = None, LeveledItem akLeveledListToSpawnFrom = None)
+Function OverrideUniqueItem(String asID, ObjectMod akMiscMod = None, ObjectMod akCosmeticMod = None, LeveledItem akLeveledListToSpawnFrom = None, bool itemAlreadyPlaced = false)
     int ruleIndex = RuleStates.FindStruct("ID", asID)
 
     debug.trace(self + " overriding custom item rule for ID " + asID)
@@ -129,6 +129,7 @@ Function OverrideUniqueItem(String asID, ObjectMod akMiscMod = None, ObjectMod a
         CustomItemRuleState ruleUpdate = new CustomItemRuleState
         ruleUpdate.ID = asID
         ruleUpdate.IsFallback = false
+        ruleUpdate.PlacedItem = itemAlreadyPlaced
         ruleUpdate.MiscMod = akMiscMod
         ruleUpdate.CosmeticMod = akCosmeticMod
         ruleUpdate.LeveledListToSpawnFrom = akLeveledListToSpawnFrom
@@ -139,6 +140,7 @@ Function OverrideUniqueItem(String asID, ObjectMod akMiscMod = None, ObjectMod a
         EndIf
         
         RuleStates[ruleIndex].IsFallback = false
+        RuleStates[ruleIndex].PlacedItem = RuleStates[ruleIndex].PlacedItem || itemAlreadyPlaced
         RuleStates[ruleIndex].MiscMod = akMiscMod
         RuleStates[ruleIndex].CosmeticMod = akCosmeticMod
         RuleStates[ruleIndex].LeveledListToSpawnFrom = akLeveledListToSpawnFrom

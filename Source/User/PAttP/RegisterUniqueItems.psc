@@ -11,6 +11,9 @@ Struct UniqueItemReplacement
     ObjectMod CosmeticMod
 
     ObjectMod MiscMod
+
+    bool ItemAlreadyPlaced = false
+    {If the item is being manually placed outside of the unique item handler, set this to true}
 EndStruct
 
 Struct UniqueItemTrigger
@@ -51,7 +54,7 @@ Function RegisterUniques()
     while i < UniqueItems.Length
         UniqueItemReplacement uniqueItem = UniqueItems[i]
         debug.trace(self + " is overriding unique item " + uniqueItem.ID)
-        PATTP_UniqueItemManager.OverrideUniqueItem(uniqueItem.ID, uniqueItem.MiscMod, uniqueItem.CosmeticMod, uniqueItem.LeveledListToSpawnFrom)
+        PATTP_UniqueItemManager.OverrideUniqueItem(uniqueItem.ID, uniqueItem.MiscMod, uniqueItem.CosmeticMod, uniqueItem.LeveledListToSpawnFrom, uniqueItem.ItemAlreadyPlaced)
         i += 1
     EndWhile
 EndFunction

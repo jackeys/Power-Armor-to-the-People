@@ -561,6 +561,21 @@
                     }
                 },
                 {
+                    "text": "T-47R (Rare)",
+                    "type": "switcher",
+                    "help": "",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - T-47R.esp|00E"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
                     "text": "T-51 (Individual pieces)",
                     "type": "switcher",
                     "help": "Whether mixed sets for raiders and scavengers can include T-51",
@@ -684,6 +699,21 @@
                     "text": "<li>T-51</li>",
                     "type": "text",
                     "html": "true"
+                },
+                {
+                    "text": "T-47R",
+                    "type": "switcher",
+                    "help": "",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - T-47R.esp|00F"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
                 },
                 {
                     "text": "T-51c",
@@ -942,6 +972,21 @@
                     "groupCondition": 2
                 },
                 {
+                    "text": "T-47R",
+                    "type": "switcher",
+                    "help": "",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - T-47R.esp|010"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
                     "text": "Tesla T-60",
                     "type": "switcher",
                     "help": "Requires Automatron",
@@ -1104,6 +1149,21 @@
                         "params": [false]
                     },
                     "groupCondition": 4
+                },
+                {
+                    "text": "T-47R (Rare)",
+                    "type": "switcher",
+                    "help": "",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - T-47R.esp|011"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
                 },
                 {
                     "text": "T-60",
@@ -2040,6 +2100,22 @@
                     "groupCondition": 2
                 },
                 {
+                    "text": "Anti-Contamination",
+                    "type": "switcher",
+                    "help": "Grants increasing radiation resistance the lower your health (up to +150)",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|A61",
+                        "propertyName": "AnticontaminationEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|A61",
+                        "function": "UpdateLegendaryModRules"
+                    },
+                    "groupCondition": 2
+                },
+                {
                     "text": "Heavy Metal",
                     "type": "section"
                 },
@@ -2621,6 +2697,21 @@
                     "valueOptions": {
                         "sourceType": "GlobalValue",
                         "sourceForm": "Power Armor to the People - T-49.esp|00A"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
+                    "text": "T-47R Quantum Steel Power Armor",
+                    "type": "switcher",
+                    "help": "Whether The Collector can sell legendary T-47R Quantum Steel power armor",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - T-47R.esp|02E"
                     },
                     "action": {
                         "type": "CallFunction",
