@@ -2706,6 +2706,21 @@
                     }
                 },
                 {
+                    "text": "T-47R Quantum Steel Power Armor",
+                    "type": "switcher",
+                    "help": "Whether The Collector can sell legendary T-47R Quantum Steel power armor",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - T-47R.esp|02E"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
                     "text": "Red Shift Power Armor",
                     "type": "switcher",
                     "help": "Whether The Collector can sell legendary Red Shift Power Armor",
