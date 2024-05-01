@@ -537,6 +537,39 @@
                     "groupControl": 9
                 },
                 {
+                    "text": "Tesla Coils - T-45 and T-51",
+                    "type": "switcher",
+                    "help": "Whether a patch is installed that makes tesla coils available for T-45 and T-51",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People.esp|C98"
+                    },
+                    "groupCondition": 99,
+                    "groupControl": 10
+                },
+                {
+                    "text": "Tesla Coils - T-60 Alt",
+                    "type": "switcher",
+                    "help": "Whether a patch is installed that has a different style of tesla coils than the Automatron T-60",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People.esp|CA3"
+                    },
+                    "groupCondition": 99,
+                    "groupControl": 11
+                },
+                {
+                    "text": "Tesla Coils - X-01",
+                    "type": "switcher",
+                    "help": "Whether a patch is installed that makes tesla coils available for X-01",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People.esp|C9D"
+                    },
+                    "groupCondition": 99,
+                    "groupControl": 12
+                },
+                {
                     "text": "Raiders",
                     "type": "section"
                 },
@@ -1211,6 +1244,95 @@
                         "function": "RefreshListInjections",
                         "params": [false]
                     }
+                },
+                {
+                    "text": "Rust Devils",
+                    "type": "section"
+                },
+                {
+                    "text": "The following power armor sets are always included when available:<br><ol><li>Spartan Battle Suit</li></ol>",
+                    "type": "text",
+                    "html": "true"
+                },
+                {
+                    "text": "Tesla T-45",
+                    "type": "switcher",
+                    "help": "Requires a mod that adds tesla coils for T-45",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People.esp|C99"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    },
+                    "groupCondition": 10
+                },
+                {
+                    "text": "Tesla T-51",
+                    "type": "switcher",
+                    "help": "Requires a mod that adds tesla coils for T-51",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People.esp|C9A"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    },
+                    "groupCondition": 10
+                },
+                {
+                    "text": "Tesla T-60 (Automatron)",
+                    "type": "switcher",
+                    "help": "The Automatron Tesla T-60 normally given as a unique set",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - Automatron.esp|825"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    },
+                    "groupCondition": 9
+                },
+                {
+                    "text": "Tesla T-60 (Alternative)",
+                    "type": "switcher",
+                    "help": "Requires a mod that adds a different style of tesla coils for T-60",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People.esp|C9B"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    },
+                    "groupCondition": 11
+                },
+                {
+                    "text": "Tesla X-01",
+                    "type": "switcher",
+                    "help": "Requires a mod that adds tesla coils for X-01",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People.esp|C9C"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    },
+                    "groupCondition": 12
                 }
             ]
         },
