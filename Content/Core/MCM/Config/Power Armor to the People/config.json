@@ -680,9 +680,6 @@
                     }
                 },
                 {
-                    "type": "spacer"
-                },
-                {
                     "text": "Gunners",
                     "type": "section"
                 },
@@ -931,9 +928,6 @@
                     }
                 },
                 {
-                    "type": "spacer"
-                },
-                {
                     "text": "Brotherhood of Steel",
                     "type": "section"
                 },
@@ -1177,9 +1171,6 @@
                     }
                 },
                 {
-                    "type": "spacer"
-                },
-                {
                     "text": "Minutemen",
                     "type": "section"
                 },
@@ -1268,9 +1259,6 @@
                         "function": "RefreshListInjections",
                         "params": [false]
                     }
-                },
-                {
-                    "type": "spacer"
                 },
                 {
                     "text": "Rust Devils",
