@@ -4,133 +4,49 @@
     "minMcmVersion": 2,
     "content": [
         {
-            "text": "Indestructible Power Armor",
-            "type": "dropdown",
-            "help": "Whether enemies added by this mod have unbreakable power armor, making them harder to defeat",
-            "valueOptions": {
-              "options": ["Disabled", "All Enemies", "Unique Enemies", "Legendary and Unique"],
-              "sourceType": "GlobalValue",
-              "sourceForm": "Power Armor to the People.esp|99A"
-            }
+            "text": "<b>Spawn Rates</b> - how often each faction wears power armor",
+            "type": "text",
+            "html": true
         },
         {
-            "text": "NPC Power Armor Durability Damage Multiplier",
-            "type": "slider",
-            "help": "How quickly power armor breaks for all NPCs, higher numbers break faster (default is 3.0)",
-            "valueOptions": {
-                "min": 0,
-                "max": 3.0,
-                "step": 0.05,
-                "sourceType": "PropertyValueFloat",
-                "sourceForm": "Power Armor to the People.esp|8AA",
-                "propertyName": "MCM_NPCDurabilityModifier"
-            }
+            "text": "<b>Faction Distribution</b> - what power armor sets each faction has access to",
+            "type": "text",
+            "html": true
         },
         {
-            "text": "Brotherhood of Steel",
-            "type": "section"
+            "text": "<b>Legendary Power Armor</b> - legendary chance and effects",
+            "type": "text",
+            "html": true
         },
         {
-            "text": "Chance that power armored Knights will wear T-60 (or T-45/T-51 with BPAO)",
-            "type": "slider",
-            "help": "The lower the value, the more likely Knights will wear other power armor sets, such as X-02, if available",
-            "valueOptions": {
-                "min": 0,
-                "max": 100,
-                "step": 5,
-                "sourceType": "GlobalValue",
-                "sourceForm": "Power Armor to the People.esp|82c"
-            }
+            "text": "<b>Unique Power Armor</b> - availability and effect tweaks",
+            "type": "text",
+            "html": true
         },
         {
-            "text": "Chance that power armored Paladins will wear T-60",
-            "type": "slider",
-            "help": "The lower the value, the more likely Paladins will wear other power armor sets, such as T-65, if available",
-            "valueOptions": {
-                "min": 0,
-                "max": 100,
-                "step": 5,
-                "sourceType": "GlobalValue",
-                "sourceForm": "Power Armor to the People.esp|82d"
-            }
+            "text": "<b>Abandoned Power Armor</b> - restore original placement of power armor",
+            "type": "text",
+            "html": true
         },
         {
-            "text": "Use available power armor sets regardless of level",
-            "type": "switcher",
-            "help": "If enabled, available power armor sets won't be gated by player / area level for the Brotherhood of Steel",
-            "valueOptions": {
-                "sourceType": "GlobalValue",
-                "sourceForm": "Power Armor to the People.esp|BBE"
-            },
-            "action": {
-                "type": "CallFunction",
-                "form": "Power Armor to the People.esp|873",
-                "function": "RefreshListInjections",
-                "params": [false]
-            }
+            "text": "<b>Weapons</b> - availability for power armored enemies",
+            "type": "text",
+            "html": true
         },
         {
-            "text": "Raiders",
-            "type": "section"
+            "text": "<b>Jet Pack</b> - the thrust and AP drain of the jet pack",
+            "type": "text",
+            "html": true
         },
         {
-            "text": "Chance to get rare power armor sets",
-            "type": "slider",
-            "help": "The chance that raiders will get rare power armor sets, like full painted Excavator sets",
-            "valueOptions": {
-                "min": 0,
-                "max": 50,
-                "step": 1,
-                "sourceType": "PropertyValueFloat",
-                "sourceForm": "Power Armor to the People.esp|8AA",
-                "propertyName": "MCM_RaiderRareSetChance"
-            }
+            "text": "<b>Traveling Vendor</b> - what items can be in The Collector's inventory",
+            "type": "text",
+            "html": true
         },
         {
-            "text": "Chance to get rare power armor pieces",
-            "type": "slider",
-            "help": "The chance that mixed sets will contain rare power armor pieces like X-01",
-            "valueOptions": {
-                "min": 0,
-                "max": 50,
-                "step": 1,
-                "sourceType": "PropertyValueFloat",
-                "sourceForm": "Power Armor to the People.esp|8AA",
-                "propertyName": "MCM_RaiderRareMixedPieceChance"
-            }
-        },
-        {
-            "text": "Scavengers",
-            "type": "section"
-        },
-        {
-            "text": "Chance to get full power armor sets",
-            "type": "slider",
-            "help": "The chance that a scavenger in power armor will have a full rusty set instead of a mixed set",
-            "valueOptions": {
-                "min": 0,
-                "max": 50,
-                "step": 1,
-                "sourceType": "PropertyValueFloat",
-                "sourceForm": "Power Armor to the People.esp|8AA",
-                "propertyName": "MCM_ScavengerFullSetChance"
-            }
-        },
-        {
-            "text": "Settler Vigilantes",
-            "type": "section"
-        },
-        {
-            "text": "Chance to help when a settlement is being attacked",
-            "type": "slider",
-            "help": "The chance that a settler vigilante will help fight off attackers. Only possible after defending 5 settlements on your own.",
-            "valueOptions": {
-                "min": 0,
-                "max": 25,
-                "step": 1,
-                "sourceType": "GlobalValue",
-                "sourceForm": "Power Armor to the People.esp|BC6"
-            }
+            "text": "<b>Power Armor Durability</b> - how hard it is to break NPC power armor",
+            "type": "text",
+            "html": true
         }
     ],
     "pages": [
@@ -387,6 +303,22 @@
                         "sourceForm": "Power Armor to the People.esp|8AA",
                         "propertyName": "MCM_LegendaryRustDevilPowerArmorChance"
                     }
+                },
+                {
+                    "text": "Settler Vigilantes",
+                    "type": "section"
+                },
+                {
+                    "text": "Chance to help when a settlement is being attacked",
+                    "type": "slider",
+                    "help": "The chance that a settler vigilante will help fight off attackers. Only possible after defending 5 settlements on your own.",
+                    "valueOptions": {
+                        "min": 0,
+                        "max": 25,
+                        "step": 1,
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People.esp|BC6"
+                    }
                 }
             ]
         },
@@ -579,6 +511,38 @@
                     "html": "true"
                 },
                 {
+                    "type": "spacer"
+                },
+                {
+                    "text": "Chance to get rare power armor sets",
+                    "type": "slider",
+                    "help": "The chance that raiders will get rare power armor sets, like full painted Excavator sets",
+                    "valueOptions": {
+                        "min": 0,
+                        "max": 50,
+                        "step": 1,
+                        "sourceType": "PropertyValueFloat",
+                        "sourceForm": "Power Armor to the People.esp|8AA",
+                        "propertyName": "MCM_RaiderRareSetChance"
+                    }
+                },
+                {
+                    "text": "Chance to get rare power armor pieces",
+                    "type": "slider",
+                    "help": "The chance that mixed sets will contain rare power armor pieces like X-01",
+                    "valueOptions": {
+                        "min": 0,
+                        "max": 50,
+                        "step": 1,
+                        "sourceType": "PropertyValueFloat",
+                        "sourceForm": "Power Armor to the People.esp|8AA",
+                        "propertyName": "MCM_RaiderRareMixedPieceChance"
+                    }
+                },
+                {
+                    "type": "spacer"
+                },
+                {
                     "text": "Tribal Power Armor (Rare)",
                     "type": "switcher",
                     "help": "Give EdibleGrenade12's Tribal power armor to raiders besides the Pitt Raiders added by the mod",
@@ -716,6 +680,9 @@
                     }
                 },
                 {
+                    "type": "spacer"
+                },
+                {
                     "text": "Gunners",
                     "type": "section"
                 },
@@ -732,6 +699,9 @@
                     "text": "<li>T-51</li>",
                     "type": "text",
                     "html": "true"
+                },
+                {
+                    "type": "spacer"
                 },
                 {
                     "text": "T-47R",
@@ -961,6 +931,9 @@
                     }
                 },
                 {
+                    "type": "spacer"
+                },
+                {
                     "text": "Brotherhood of Steel",
                     "type": "section"
                 },
@@ -989,9 +962,54 @@
                     "html": "true"
                 },
                 {
+                    "type": "spacer"
+                },
+                {
+                    "text": "Chance that power armored Knights will wear T-60",
+                    "type": "slider",
+                    "help": "The lower the value, the more likely Knights will wear other power armor sets, if available",
+                    "valueOptions": {
+                        "min": 0,
+                        "max": 100,
+                        "step": 5,
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People.esp|82c"
+                    }
+                },
+                {
+                    "text": "Chance that power armored Paladins will wear T-60",
+                    "type": "slider",
+                    "help": "The lower the value, the more likely Paladins will wear other power armor sets, if available",
+                    "valueOptions": {
+                        "min": 0,
+                        "max": 100,
+                        "step": 5,
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People.esp|82d"
+                    }
+                },
+                {
+                    "text": "Use available power armor sets regardless of level",
+                    "type": "switcher",
+                    "help": "If enabled, available power armor sets won't be gated by player / area level for the Brotherhood of Steel",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People.esp|BBE"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
+                    "type": "spacer"
+                },
+                {
                     "text": "T-45 and T-51",
                     "type": "switcher",
-                    "help": "Not needed if using Brotherhood Power Armor Overhaul. Requires a BoS paint job from Consistent Power Armor Overhaul or AWKCR",
+                    "help": "Not needed if using Brotherhood Power Armor Overhaul. Requires a mod with a BoS paint job",
                     "valueOptions": {
                         "sourceType": "GlobalValue",
                         "sourceForm": "Power Armor to the People.esp|B55"
@@ -1159,6 +1177,9 @@
                     }
                 },
                 {
+                    "type": "spacer"
+                },
+                {
                     "text": "Minutemen",
                     "type": "section"
                 },
@@ -1166,6 +1187,9 @@
                     "text": "The following power armor sets are always included when available:<br><ol><li>T-45</li></ol>",
                     "type": "text",
                     "html": "true"
+                },
+                {
+                    "type": "spacer"
                 },
                 {
                     "text": "T-51",
@@ -1246,6 +1270,9 @@
                     }
                 },
                 {
+                    "type": "spacer"
+                },
+                {
                     "text": "Rust Devils",
                     "type": "section"
                 },
@@ -1253,6 +1280,9 @@
                     "text": "The following power armor sets are always included when available:<br><ol><li>Spartan Battle Suit</li></ol>",
                     "type": "text",
                     "html": "true"
+                },
+                {
+                    "type": "spacer"
                 },
                 {
                     "text": "Tesla T-45",
@@ -1770,9 +1800,12 @@
             "pageDisplayName": "Unique Power Armor",
             "content": [
                 {
+                    "text": "These settings contain options for making unique effects available to other power armor pieces, as well as tweaks for a few of the unique effects."
+                },
+                {
                     "text": "Place all unique items, regardless of installed mods",
                     "type": "switcher",
-                    "help": "If a unique effect is for power armor that isn't installed, an installed one will be used instead",
+                    "help": "If a unique effect is for power armor that isn't installed in your game, a replacement from the base game will be used",
                     "valueOptions": {
                         "sourceType": "PropertyValueBool",
                         "sourceForm": "Power Armor to the People.esp|B3B",
@@ -2238,7 +2271,18 @@
                     "groupCondition": 2
                 },
                 {
-                    "text": "Heavy Metal",
+                    "text": "",
+                    "type": "section"
+                },
+                {
+                    "text": "These settings apply to specific unique effects and only have an impact if the unique item is being used.",
+                    "type": "text"
+                },
+                {
+                    "type": "spacer"
+                },
+                {
+                    "text": "Heavy Metal Unique Effect",
                     "type": "section"
                 },
                 {
@@ -2251,7 +2295,7 @@
                     }
                 },
                 {
-                    "text": "Cryogenerator",
+                    "text": "Cryogenerator Unique Effect",
                     "type": "section"
                 },
                 {
@@ -2900,6 +2944,41 @@
                         "form": "Power Armor to the People.esp|873",
                         "function": "RefreshListInjections",
                         "params": [false]
+                    }
+                }
+            ]
+        },
+        {
+            "pageDisplayName": "Power Armor Durability",
+            "content": [
+                {
+                    "text": "These settings allow you to change how easy it is to break the power armor worn by NPCs. These settings should be used sparingly if you use any mods that prevent damage until power armor is broken.",
+                    "type": "text"
+                },
+                {
+                    "type": "spacer"
+                },
+                {
+                    "text": "Indestructible Power Armor",
+                    "type": "dropdown",
+                    "help": "Whether enemies added by this mod have unbreakable power armor, making them harder to defeat",
+                    "valueOptions": {
+                    "options": ["Disabled", "All Enemies", "Unique Enemies", "Legendary and Unique"],
+                    "sourceType": "GlobalValue",
+                    "sourceForm": "Power Armor to the People.esp|99A"
+                    }
+                },
+                {
+                    "text": "NPC Power Armor Durability Damage Multiplier",
+                    "type": "slider",
+                    "help": "How quickly power armor breaks for all NPCs, higher numbers break faster (default is 3.0)",
+                    "valueOptions": {
+                        "min": 0,
+                        "max": 3.0,
+                        "step": 0.05,
+                        "sourceType": "PropertyValueFloat",
+                        "sourceForm": "Power Armor to the People.esp|8AA",
+                        "propertyName": "MCM_NPCDurabilityModifier"
                     }
                 }
             ]
