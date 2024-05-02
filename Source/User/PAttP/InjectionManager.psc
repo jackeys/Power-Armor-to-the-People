@@ -12,6 +12,22 @@ EndStruct
 
 LevelMapping[] Property IgnoreLevels Auto Const
 
+Struct LeveledActorMapping
+    LeveledItem InjectionTrigger
+    {When this item is injected, the corresponding leveled actor will be injected at the same level}
+
+    LeveledActor ActorToInject
+    {The leveled actor to inject into the Destination. This should be a leveled actor containing level-scaled Actors since the levels can be dynamic. 
+    The lowest level an actor is available in this leveled actor will be the minimum level.
+    It is expected that Actors in this list use the leveled item InjectionTrigger in some way.}
+
+    LeveledActor Destination
+    {The injection site. This should be used in the ConstantChance and LeveledChance lists used for templating power armored enemies}
+EndStruct
+
+LeveledActorMapping[] Property LeveledActorMappings Auto Const
+{If the injected item is intended to be used by a leveled actor, which otherwise shouldn't spawn, add a mapping to indicate what actor should be inserted}
+
 LeveledItem[] modifiedListsRegistrar
 
 CustomEvent RefreshInjection
@@ -26,17 +42,32 @@ Function RegisterCustomEvents()
     RegisterForCustomEvent(UpgradeManager, "VersionChanged")
 EndFunction
 
-Function RegisterInjection(LeveledItem modifiedItemList)
+Function RegisterInjection(LeveledItem modifiedItemList, int aiLevel = -1)
     if(modifiedItemList && modifiedListsRegistrar.Find(modifiedItemList) < 0)
         debug.trace("Registering " + modifiedItemList + " as script-modified")
         modifiedListsRegistrar.Add(modifiedItemList)
     EndIf
+
+    ; If this injection should be accompanied by an actor update, we need to do that
+    if(aiLevel >= 0)
+        int injectionLevel = aiLevel
+        if ShouldIgnoreLevelFor(modifiedItemList)
+            injectionLevel = 1
+        EndIf
+        
+        int actorIndex = LeveledActorMappings.FindStruct("InjectionTrigger", modifiedItemList)
+        if(actorIndex >= 0)
+            LeveledActorMapping mapping = LeveledActorMappings[actorIndex]
+            debug.trace("Injecting actor mapping " + mapping + " at level " + injectionLevel)
+            mapping.Destination.AddForm(mapping.ActorToInject, injectionLevel)
+        EndIf
+    EndIf
 EndFunction
 
-Function RegisterInjections(LeveledItem[] modifiedItemLists)
+Function RegisterInjections(LeveledItem[] modifiedItemLists, int aiLevel = -1)
     int i = 0
     While(i < modifiedItemLists.length)
-        RegisterInjection(modifiedItemLists[i])
+        RegisterInjection(modifiedItemLists[i], aiLevel)
         i += 1
     EndWhile
 EndFunction
@@ -56,6 +87,22 @@ Function RefreshListInjections(bool delay = false)
 EndFunction
 
 Function RevertAllLists()
+    RevertLeveledActors()
+    RevertLeveledItems()
+EndFunction
+
+Function RevertLeveledActors()
+    int numModifiedForms = LeveledActorMappings.length
+    int i = 0
+    while(i < numModifiedForms)
+        LeveledActor injectionSite = LeveledActorMappings[i].Destination
+        debug.trace("Reverting " + injectionSite)
+        injectionSite.Revert()
+        i += 1
+    EndWhile
+EndFunction
+
+Function RevertLeveledItems()
     int numModifiedForms = modifiedListsRegistrar.length
     int i = 0
     while(i < numModifiedForms)
@@ -64,6 +111,7 @@ Function RevertAllLists()
         injectionSite.Revert()
         i += 1
     EndWhile
+    modifiedListsRegistrar.clear()
 EndFunction
 
 bool Function ShouldIgnoreLevelFor(LeveledItem akInjectInto)

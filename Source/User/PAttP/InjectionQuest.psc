@@ -20,7 +20,7 @@ EndEvent
 
 Function InjectIntoList(LeveledItem akInjectInto, Form akItemToInject, int aiLevel, int aiCount = 1)
     ; Register here so that if we inject into new lists in an update they are captured
-    injectionManager.RegisterInjection(akInjectInto)
+    injectionManager.RegisterInjection(akInjectInto, aiLevel)
 
     if injectionManager.ShouldIgnoreLevelFor(akInjectInto)
         debug.trace(self + " injecting " + akItemToInject + " into " + akInjectInto + " at level 1 (ignoring level of " + aiLevel + ")")
