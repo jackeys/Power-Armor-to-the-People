@@ -1,5 +1,5 @@
 Scriptname PAttP:LegendaryNamingRuleListener extends Quest const
-{Base script for Power Armor to the People injections. Extend this script, overriding Inject() with a function that calls InjectIntoList() for each injection it needs to perform.}
+{Use to update your naming rules dynamically when an external mod adds new names to Power Armor to the People.}
 
 PAttP:LegendaryPowerArmorManager Property LegendaryManager Auto Const Mandatory
 {Autofill}
