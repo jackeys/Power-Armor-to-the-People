@@ -27,7 +27,10 @@ foreach ($f in $content_files) {
                 if (Compare-Object -ReferenceObject $(Get-Content $($mod_file -replace "1.1", "1.2")) -DifferenceObject $(Get-Content $game_file)) {
                     Write-Output "Create an alternate version of $mod_file"
                 }
-            } elseif (-not $mod_file.Contains("MogomraPAMs\1.4")) {
+            } elseif ($mod_file.Contains("Classic Advanced Power Armor\Overhaul")) {
+                $game_file = $game_file -replace '.esp', ' [Overhaul].esp'
+                Copy-Item -Path $game_file -Destination "$mod_file"
+            }elseif (-not $mod_file.Contains("MogomraPAMs\1.4")) {
                 Copy-Item -Path "$game_file" -Destination "$mod_file"
             }
         } else {
