@@ -29,10 +29,10 @@ foreach ($f in $content_files) {
                 }
             } elseif ($mod_file.Contains("Classic Advanced Power Armor\Overhaul")) {
                 $game_file = $game_file -replace '.esp', ' [Overhaul].esp'
-                Copy-Item -Path $game_file -Destination "$mod_file"
+                Copy-Item -LiteralPath "$game_file" -Destination "$mod_file"
             } elseif ($mod_file.Contains("Combat Power Armor\Original")) {
                 $game_file = $game_file -replace '.esp', ' [Original].esp'
-                Copy-Item -Path $game_file -Destination "$mod_file"
+                Copy-Item -LiteralPath "$game_file" -Destination "$mod_file"
             }  elseif (-not $mod_file.Contains("MogomraPAMs\1.4")) {
                 Copy-Item -Path "$game_file" -Destination "$mod_file"
             }
