@@ -2594,6 +2594,22 @@
                     "groupCondition": 2
                 },
                 {
+                    "text": "Auto-Loading",
+                    "type": "switcher",
+                    "help": "Reload all guns 20% faster",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|A61",
+                        "propertyName": "AutoloadingEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|A61",
+                        "function": "UpdateLegendaryModRules"
+                    },
+                    "groupCondition": 2
+                },
+                {
                     "text": "",
                     "type": "section"
                 },
