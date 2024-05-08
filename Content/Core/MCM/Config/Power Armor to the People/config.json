@@ -721,6 +721,11 @@
                     "html": "true"
                 },
                 {
+                    "text": "<li>Nighthawk / Combat Power Armor</li>",
+                    "type": "text",
+                    "html": "true"
+                },
+                {
                     "type": "spacer"
                 },
                 {
