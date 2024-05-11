@@ -16,17 +16,28 @@ foreach ($f in $content_files) {
         $mod_file = $f.FullName
         $game_file = $mod_file -replace '.*\\', "$data_folder"
 
-        # Filter out the alternate versions that we don't directly develop against
-        if ( $mod_file.Contains("ESP Version") ) {
-            if (Compare-Object -ReferenceObject $(Get-Content $($mod_file -replace "ESP Version", "ESL Version")) -DifferenceObject $(Get-Content $game_file)) {
-                Write-Output "Create an alternate version of $mod_file"
+        if ( Test-Path -Path $game_file ) {
+
+            # Filter out the alternate versions that we don't directly develop against
+            if ( $mod_file.Contains("ESP Version") ) {
+                if (Compare-Object -ReferenceObject $(Get-Content $($mod_file -replace "ESP Version", "ESL Version")) -DifferenceObject $(Get-Content $game_file)) {
+                    Write-Output "Create an alternate version of $mod_file"
+                }
+            } elseif ($mod_file.Contains("Hellcat Power Armor\1.1")) {
+                if (Compare-Object -ReferenceObject $(Get-Content $($mod_file -replace "1.1", "1.2")) -DifferenceObject $(Get-Content $game_file)) {
+                    Write-Output "Create an alternate version of $mod_file"
+                }
+            } elseif ($mod_file.Contains("Classic Advanced Power Armor\Overhaul")) {
+                $game_file = $game_file -replace '.esp', ' [Overhaul].esp'
+                Copy-Item -LiteralPath "$game_file" -Destination "$mod_file"
+            } elseif ($mod_file.Contains("Combat Power Armor\Original")) {
+                $game_file = $game_file -replace '.esp', ' [Original].esp'
+                Copy-Item -LiteralPath "$game_file" -Destination "$mod_file"
+            }  elseif (-not $mod_file.Contains("MogomraPAMs\1.4")) {
+                Copy-Item -Path "$game_file" -Destination "$mod_file"
             }
-        } elseif ($mod_file.Contains("Hellcat Power Armor\1.1")) {
-            if (Compare-Object -ReferenceObject $(Get-Content $($mod_file -replace "1.1", "1.2")) -DifferenceObject $(Get-Content $game_file)) {
-                Write-Output "Create an alternate version of $mod_file"
-            }
-        } elseif (-not $mod_file.Contains("MogomraPAMs\1.4")) {
-            Copy-Item -Path "$game_file" -Destination "$mod_file"
+        } else {
+            Write-Output "$mod_file does not exist in the game folder"
         }
     }
 }
