@@ -116,12 +116,17 @@ begin
   //////////////////////////////
 
   if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_Raider') then begin
-    // Overboss doesn't have its own keyword, so we have to look at the name
+    // Overboss and Trapper power armor don't have their own keywords, so we have to look at the name
     if ContainsText(Name(armoRec), 'Overboss') then perks[0] := FormID_Armorer03Perk
+    else if ContainsText(Name(armoRec), 'Trapper') then perks[0] := FormID_Armorer02Perk
     else perks[0] := FormID_Armorer01Perk;
   end;
   if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_Horse') or IsPowerArmorSubtype(armoRec, 'tumba_INNRs_PowerArmor_Cagebreaker') then begin
     perks[0] := FormID_Armorer02Perk;
+  end;
+  // Hermit doesn't have a unique keyword, so we have to check the name, too
+  if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_X01') and ContainsText(Name(armoRec), 'Hermit') then begin
+    perks[0] := FormID_Armorer03Perk;
   end;
   
   //////////////////////////////
@@ -132,7 +137,7 @@ begin
     perks[0] := FormID_Armorer01Perk;
     perks[1] := FormID_Science01Perk;
   end;
-  if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_T51') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_T52') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_Hellcat') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_CHS') then begin
+  if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_T51') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_T52') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_Hellcat') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_CHS') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_T47R') then begin
     perks[0] := FormID_Armorer02Perk;
     perks[1] := FormID_Science01Perk;
   end;
@@ -140,7 +145,7 @@ begin
     perks[0] := FormID_Armorer02Perk;
     perks[1] := FormID_Science02Perk;
   end;
-  if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_VaultTec') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_MidWest') or IsPowerArmorSubtype(armoRec, 'tumba_ma_PA_Tank') or IsPowerArmorSubtype(armoRec, 'ma_PA_TES51') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_Soviet') then begin
+  if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_VaultTec') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_MidWest') or IsPowerArmorSubtype(armoRec, 'tumba_ma_PA_Tank') or IsPowerArmorSubtype(armoRec, 'ma_PA_TES51') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_Soviet') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_MWR') then begin
     perks[0] := FormID_Armorer03Perk;
     perks[1] := FormID_Science02Perk;
   end;
