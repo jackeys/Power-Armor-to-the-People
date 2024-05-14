@@ -141,7 +141,7 @@ begin
     perks[0] := FormID_Armorer02Perk;
     perks[1] := FormID_Science01Perk;
   end;
-  if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_T60') or IsPowerArmorSubtype(armoRec, 'zzzM150IPAdn_PowerArmor_I01') or IsPowerArmorSubtype(armoRec, 'tumba_dn_PowerArmor_CPA') or IsPowerArmorSubtype(armoRec, 'ccSWKFO4001_dn_PowerArmor_CC1') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_SELPA') or IsPowerArmorSubtype(armoRec, 'dn_T53_PowerArmor_CPA') then begin
+  if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_T60') or IsPowerArmorSubtype(armoRec, 'zzzM150IPAdn_PowerArmor_I01') or IsPowerArmorSubtype(armoRec, 'tumba_dn_PowerArmor_CPA') or IsPowerArmorSubtype(armoRec, 'ccSWKFO4001_dn_PowerArmor_CC1') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_SELPA') or IsPowerArmorSubtype(armoRec, 'dn_T53_PowerArmor_CPA') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_T47R_QS') then begin
     perks[0] := FormID_Armorer02Perk;
     perks[1] := FormID_Science02Perk;
   end;
