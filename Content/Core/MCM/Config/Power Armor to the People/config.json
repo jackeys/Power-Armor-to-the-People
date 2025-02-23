@@ -2631,6 +2631,22 @@
                     "groupCondition": 2
                 },
                 {
+                    "text": "Repulsing",
+                    "type": "switcher",
+                    "help": "30% chance to knock back melee attackers",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|A61",
+                        "propertyName": "RepulsingEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|A61",
+                        "function": "UpdateLegendaryModRules"
+                    },
+                    "groupCondition": 2
+                },
+                {
                     "text": "",
                     "type": "section"
                 },
