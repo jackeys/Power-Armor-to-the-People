@@ -2615,6 +2615,22 @@
                     "groupCondition": 2
                 },
                 {
+                    "text": "Hammering",
+                    "type": "switcher",
+                    "help": "Unarmed power attacks cause knockback",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|A61",
+                        "propertyName": "HammeringEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|A61",
+                        "function": "UpdateLegendaryModRules"
+                    },
+                    "groupCondition": 2
+                },
+                {
                     "text": "",
                     "type": "section"
                 },

@@ -196,6 +196,10 @@ bool Property AutoloadingEnabled = false Auto
 LegendaryItemQuestScript:LegendaryModRule Property AutoloadingModRule Const Auto Mandatory
 MiscObject Property AutoloadingModItem = None Const Auto Mandatory
 
+bool Property HammeringEnabled = false Auto
+LegendaryItemQuestScript:LegendaryModRule Property HammeringModRule Const Auto Mandatory
+MiscObject Property HammeringModItem = None Const Auto Mandatory
+
 bool Property HasRunBefore = true auto
 {Whether the rules updates have been run before. Start at true because the first release didn't have this, so we'll set it to false when we init the quest.}
 
@@ -258,6 +262,7 @@ Function UpdateLegendaryModRules()
 	UpdateUniqueArmorModEnabled("Anti-Contamination", AnticontaminationEnabled, AnticontaminationModRule, AnticontaminationModItem)
 	UpdateUniqueArmorModEnabled("Auto-Loading", AutoloadingEnabled, AutoloadingModRule, AutoloadingModItem)
 	UpdateUniqueArmorModEnabled("Hydropowered", HydropoweredEnabled, HydropoweredModRule, HydropoweredModItem)
+	UpdateUniqueArmorModEnabled("Hammering", HammeringEnabled, HammeringModRule, HammeringModItem)
 	UpdateUniqueArmorModEnabled("Chemhead", ChemheadEnabled, ChemheadModRule, ChemheadModItem)
 	UpdateUniqueArmorModEnabled("Comrade's", ComradesEnabled, ComradesModRule, ComradesModItem)
 	UpdateUniqueArmorModEnabled("Bomber's", BombersEnabled, BombersModRule, BombersModItem)
