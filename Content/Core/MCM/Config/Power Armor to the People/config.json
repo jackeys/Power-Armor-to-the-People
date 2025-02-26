@@ -581,6 +581,21 @@
                     }
                 },
                 {
+                    "text": "Construction Power Armor (Individual pieces)",
+                    "type": "switcher",
+                    "help": "Whether mixed sets for raiders can include Horus5's Construction Power Armor",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - Construction Power Armor.esp|80C"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
                     "text": "T-47R (Rare)",
                     "type": "switcher",
                     "help": "",
@@ -1299,6 +1314,21 @@
                 },
                 {
                     "type": "spacer"
+                },
+                {
+                    "text": "Construction Power Armor",
+                    "type": "switcher",
+                    "help": "Requires Horus5's Construction Power Armor",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - Construction Power Armor.esp|80D"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
                 },
                 {
                     "text": "Tesla T-45",
