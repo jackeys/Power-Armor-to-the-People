@@ -107,7 +107,7 @@ begin
   //// Civilian Power Armor ////
   //////////////////////////////
 
-  if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_Excavator') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_Construct') or IsPowerArmorSubtype(armoRec, 'ma_PA_SubRedux') then begin
+  if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_Excavator') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_Construct') or IsPowerArmorSubtype(armoRec, 'ma_PA_SubRedux') or IsPowerArmorSubtype(armoRec, 'SKI_MAKO_MA_DivingPa') then begin
     perks[0] := NO_REPAIR_REQUIREMENTS;
   end;
   
@@ -115,7 +115,7 @@ begin
   /// Improvised Power Armor ///
   //////////////////////////////
 
-  if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_Raider') then begin
+  if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_Raider') or IsPowerArmorSubtype(armoRec, '000IndustrialistPA') then begin
     // Overboss and Trapper power armor don't have their own keywords, so we have to look at the name
     if ContainsText(Name(armoRec), 'Overboss') then perks[0] := FormID_Armorer03Perk
     else if ContainsText(Name(armoRec), 'Trapper') then perks[0] := FormID_Armorer02Perk
@@ -137,11 +137,11 @@ begin
     perks[0] := FormID_Armorer01Perk;
     perks[1] := FormID_Science01Perk;
   end;
-  if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_T51') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_T52') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_Hellcat') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_CHS') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_T47R') then begin
+  if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_T51') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_T52') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_Hellcat') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_CHS') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_T47R') or IsPowerArmorSubtype(armoRec, 'eXo_dn_PowerArmor_BoS') then begin
     perks[0] := FormID_Armorer02Perk;
     perks[1] := FormID_Science01Perk;
   end;
-  if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_T60') or IsPowerArmorSubtype(armoRec, 'zzzM150IPAdn_PowerArmor_I01') or IsPowerArmorSubtype(armoRec, 'tumba_dn_PowerArmor_CPA') or IsPowerArmorSubtype(armoRec, 'ccSWKFO4001_dn_PowerArmor_CC1') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_SELPA') or IsPowerArmorSubtype(armoRec, 'dn_T53_PowerArmor_CPA') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_T47R_QS') then begin
+  if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_T60') or IsPowerArmorSubtype(armoRec, 'zzzM150IPAdn_PowerArmor_I01') or IsPowerArmorSubtype(armoRec, 'InstitutePAm150dn_PowerArmor') or IsPowerArmorSubtype(armoRec, 'tumba_dn_PowerArmor_CPA') or IsPowerArmorSubtype(armoRec, 'ccSWKFO4001_dn_PowerArmor_CC1') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_SELPA') or IsPowerArmorSubtype(armoRec, 'dn_T53_PowerArmor_CPA') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_T47R_QS') or IsPowerArmorSubtype(armoRec, 'DN_Bobcat') or IsPowerArmorSubtype(armoRec, 'Tumba_DN_GunnerPA_Bobcat') or IsPowerArmorSubtype(armoRec, 'DN_Lynx') or IsPowerArmorSubtype(armoRec, 'Tumba_DN_GunnerPA_Lynx') then begin
     perks[0] := FormID_Armorer02Perk;
     perks[1] := FormID_Science02Perk;
   end;
@@ -169,7 +169,7 @@ begin
     perks[2] := FormID_NuclearPhysicist01Perk;
   end;
   // Creation Club X-02, both Hellfire power armors, Enclave power armor
-  if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_X01') or IsPowerArmorSubtype(armoRec, 'ccBGSFO4115_dn_PowerArmor_X02') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_Hellfire') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_X03') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_Enclave') then begin
+  if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_X01') or IsPowerArmorSubtype(armoRec, 'ccBGSFO4115_dn_PowerArmor_X02') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_Hellfire') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_X03') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_Enclave') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_Equalizer') then begin
     perks[0] := FormID_Armorer03Perk;
     perks[1] := FormID_Science02Perk;
     perks[2] := FormID_NuclearPhysicist02Perk;
