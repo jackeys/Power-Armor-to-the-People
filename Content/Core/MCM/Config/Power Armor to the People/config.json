@@ -581,6 +581,21 @@
                     }
                 },
                 {
+                    "text": "Industrialist Power Armor (Individual pieces)",
+                    "type": "switcher",
+                    "help": "Whether mixed sets for raiders can include TheProxyGod's Industrialist Power Armor",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - Doom Engine.esp|002"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
                     "text": "Construction Power Armor (Individual pieces)",
                     "type": "switcher",
                     "help": "Whether mixed sets for raiders can include Horus5's Construction Power Armor",
