@@ -979,12 +979,17 @@
                     "type": "text"
                 },
                 {
-                    "text": "<li>T-60</li>",
+                    "text": "<li>Tumbajamba's Brotherhood Power Armor</li>",
                     "type": "text",
                     "html": "true"
                 },
                 {
                     "text": "<li>Midwest Power Armor</li>",
+                    "type": "text",
+                    "html": "true"
+                },
+                {
+                    "text": "<li>T-60</li>",
                     "type": "text",
                     "html": "true"
                 },
