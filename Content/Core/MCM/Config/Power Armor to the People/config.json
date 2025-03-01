@@ -911,6 +911,21 @@
                     }
                 },
                 {
+                    "text": "Equalizer Power Armor (Legendary/Commanders Only)",
+                    "type": "switcher",
+                    "help": "NewerMind43's Equalizer Power Armor",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - Equalizer Power Armor.esp|01F"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
                     "text": "Hellfire X-03 (Legendary/Commanders Only)",
                     "type": "switcher",
                     "help": "Unoctium's Hellfire X-03",
@@ -1164,6 +1179,21 @@
                     "valueOptions": {
                         "sourceType": "GlobalValue",
                         "sourceForm": "Power Armor to the People - Enclave Power Armor.esp|016"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
+                    "text": "Equalizer Power Armor",
+                    "type": "switcher",
+                    "help": "NewerMind43's Equalizer Power Armor",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - Equalizer Power Armor.esp|01E"
                     },
                     "action": {
                         "type": "CallFunction",
