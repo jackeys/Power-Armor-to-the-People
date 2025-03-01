@@ -3057,6 +3057,21 @@
                     }
                 },
                 {
+                    "text": "Allow Equalizer Power Armor for abandoned Enclave power armor",
+                    "type": "switcher",
+                    "help": "Allows Equalizer Power Armor to be a possible set for abandoned leveled Enclave sets",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - Equalizer Power Armor.esp|020"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
                     "text": "",
                     "type": "section"
                 },
