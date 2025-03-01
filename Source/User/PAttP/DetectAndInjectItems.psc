@@ -78,6 +78,10 @@ Bool  Property InstituteHeavyAssaultLaserEnabled = false Auto
 LeveledItem[] Property InstituteHeavyAssaultLaserInjectionPoints Auto Mandatory Const
 int Property InstituteHeavyAssaultLaserLevel Auto Mandatory Const
 
+Bool  Property DoomEngineEnabled = false Auto
+LeveledItem[] Property DoomEngineInjectionPoints Auto Mandatory Const
+int Property DoomEngineLevel Auto Mandatory Const
+
 ; Tesla enemy injections
 LeveledItem[] Property EnergyHeavyWeaponInjectionPoints Auto Mandatory Const
 LeveledItem[] Property EnergyRifleInjectionPoints Auto Mandatory Const
@@ -158,6 +162,10 @@ Function Inject()
 	if InstituteHeavyAssaultLaserEnabled
 		InjectIfPluginPresent(0x00000F9A, "InstituteHeavyAssaultLaser.esp", InstituteHeavyAssaultLaserInjectionPoints, InstituteHeavyAssaultLaserLevel)
 		InjectIfPluginPresent(0x00000F9A, "InstituteHeavyAssaultLaserMu.esp", InstituteHeavyAssaultLaserInjectionPoints, InstituteHeavyAssaultLaserLevel)
+	EndIf
+
+	if DoomEngineEnabled
+		InjectIfPluginPresent(0x00004C50, "DoomEngine.esp", DoomEngineInjectionPoints, DoomEngineLevel)
 	EndIf
 	
 	; Tesla - Energy weapons that are injected for everyone by their own mod, but will be missing because Tesla enemies have their own weapon list
