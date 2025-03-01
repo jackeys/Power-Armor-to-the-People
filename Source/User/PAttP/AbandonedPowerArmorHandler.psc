@@ -4,6 +4,29 @@ Scriptname PAttP:AbandonedPowerArmorHandler extends Quest
 PAttP:ConfigurationManager Property ConfigManager Auto Const Mandatory
 {AUTOFILL Configuration manager responsible for telling us what we should enable and disable}
 
+Struct DynamicReference
+    string PluginFile
+    {The plugin filename that contains the reference}
+
+    int FormId
+    {The form ID of the reference within the plugin}
+
+    float editorPosX
+    {The X position of the reference in the plugin - the reference will only be disabled if the position matches the editor position}
+
+    float editorPosY
+    {The Y position of the reference in the plugin - the reference will only be disabled if the position matches the editor position}
+
+    float editorPosZ
+    {The Z position of the reference in the plugin - the reference will only be disabled if the position matches the editor position}
+
+    float positionTolerance = 0.1
+    {How far away from the editor position an object can be without being considered "moved"}
+EndStruct
+
+DynamicReference[] Property DynamicallyDisableReferences Auto Const
+{Dynamic references that will be disabled if they are still in their starting position, but will be enabled if the feature is turned off}
+
 ObjectReference[] Property ToEnableIfFeatureIsOff Auto Const
 {Object references that should be enabled if the feature is off - these should be initially disabled}
 
@@ -35,10 +58,49 @@ Event OnQuestInit()
     HandleFeatureEnabled(ConfigManager.AbandonedPowerArmorReplacementEnabled)
 EndEvent
 
-Function HandleFeatureEnabled(bool abEnabled)
-    UpdateReferencesEnabled(abEnabled)
-    UpdateInjections(abEnabled)
-    StartQuests(abEnabled)
+Function HandleFeatureEnabled(bool abRemoveAbandonedPowerArmor)
+    UpdateDynamicReferencesEnabled(abRemoveAbandonedPowerArmor)
+    UpdateReferencesEnabled(abRemoveAbandonedPowerArmor)
+    UpdateInjections(abRemoveAbandonedPowerArmor)
+    StartQuests(abRemoveAbandonedPowerArmor)
+EndFunction
+
+Function UpdateDynamicReferencesEnabled(bool abRemoveAbandonedPowerArmor)
+    if !DynamicallyDisableReferences
+        return
+    EndIf
+
+    int i = 0
+    while i < DynamicallyDisableReferences.length
+        DynamicReference reference = DynamicallyDisableReferences[i]
+        ObjectReference object = Game.GetFormFromFile(reference.FormId, reference.PluginFile) as ObjectReference
+
+        if object
+            if abRemoveAbandonedPowerArmor
+                if !HasObjectMovedFromEditorPosition(reference, object)
+                    debug.trace(self + " is disabling a reference because it has not moved: " + object)
+                    object.Disable()
+                EndIf
+            else
+                debug.trace(self + " is enabling a reference: " + object)
+                object.Enable()
+            endIf
+        else
+            debug.trace(self + " did not find an object reference that matches " + reference)
+            RegisterForRemoteEvent(Game.GetPlayer(), "OnLocationChange")
+        EndIf
+        i += 1
+    EndWhile
+EndFunction
+
+Event Actor.OnLocationChange(Actor akSender, Location akOldLoc, Location akNewLoc)
+    ; Check if we can find the dynamic references now 
+    UnregisterForRemoteEvent(Game.GetPlayer(), "OnLocationChange")
+    UpdateDynamicReferencesEnabled(ConfigManager.AbandonedPowerArmorReplacementEnabled)
+EndEvent
+
+bool Function HasObjectMovedFromEditorPosition(DynamicReference akDynamicReference, ObjectReference akObject)
+    return Math.abs(akDynamicReference.editorPosX - akObject.GetPositionX()) > akDynamicReference.positionTolerance || Math.abs(akDynamicReference.editorPosY - akObject.GetPositionY()) > akDynamicReference.positionTolerance || Math.abs(akDynamicReference.editorPosZ - akObject.GetPositionZ()) > akDynamicReference.positionTolerance
 EndFunction
 
 Function UpdateReferencesEnabled(bool abFeatureEnabled)
