@@ -15,6 +15,7 @@ uses 'lib\mxpf';
 // Perks come from the main game file, proxy items come from PARTS_VisiblePerkRequirements
 // Add the constants here, and then update GetProxyItemFormIdForPerk to contain the mapping
 const
+  ProxyItemPluginFilename = 'PARTS_VisiblePerkRequirements.esp';
   FormID_Armorer01Perk = $0004B254;
   FormID_Armorer01ProxyItem = $00000001;
   FormID_Armorer02Perk = $0004B255;
@@ -124,7 +125,7 @@ end;
 
 procedure AddRepairConditions(rec: IInterface; armoRec: IInterface);
 var
-item, conditions, condition, ctda, lastcondition, checkctda, workbench, components, perkProxyComponent: IInterface;
+item, conditions, condition, ctda, lastcondition, checkctda, workbench, components, perkProxyComponent, perkProxyItem: IInterface;
 i, perkProxyFormId: integer;
 perks: array[0..2] of integer;
 begin
@@ -282,15 +283,7 @@ begin
   SetEditValue(ElementByName(ctda, 'Function'), 'HasPerk');
   SetEditValue(ElementByName(ctda, 'Perk'), MainFileFormName(perks[i]));
 
-    perkProxyFormId := GetProxyItemFormIdForPerk(perks[i]);
-
-    if perkProxyFormId > 0 then
-    begin
-      components := ElementByName(rec, 'FVPA - Components');
-      perkProxyComponent := ElementAssign(components, HighInteger, nil, false);
-      SetEditValue(ElementByName(perkProxyComponent, 'Component'), VisualPerkFormName(perkProxyFormId));
-      SetEditValue(ElementByName(perkProxyComponent, 'Count'), 1);
-    end;
+  AddPerkProxyRequirement(rec, perks[i]);
 
   for i := 1 to (Length(perks) - 1) do begin
     if perks[i] = NO_REPAIR_REQUIREMENTS then break;
@@ -304,15 +297,27 @@ begin
     SetEditValue(ElementByName(ctda, 'Function'), 'HasPerk');
     SetEditValue(ElementByName(ctda, 'Perk'), MainFileFormName(perks[i]));
 
-    perkProxyFormId := GetProxyItemFormIdForPerk(perks[i]);
-
-    if perkProxyFormId = 0 then break;
-
-    components := ElementByName(rec, 'FVPA - Components');
-    perkProxyComponent := ElementAssign(components, HighInteger, nil, false);
-    SetEditValue(ElementByName(perkProxyComponent, 'Component'), VisualPerkFormName(perkProxyFormId));
-    SetEditValue(ElementByName(perkProxyComponent, 'Count'), 1);
+    AddPerkProxyRequirement(rec, perks[i]);
   end;
+end;
+
+procedure AddPerkProxyRequirement(rec: IInterface; perkFormId: integer);
+var
+components, perkProxyComponent, perkProxyItem: IInterface;
+perkProxyFormId: integer;
+begin
+  if not assigned(FileByName(ProxyItemPluginFilename)) then exit;
+  
+  perkProxyFormId := GetProxyItemFormIdForPerk(perkFormId);
+  if perkProxyFormId = 0 then exit;
+
+  perkProxyItem := VisualPerkFormName(perkProxyFormId);
+  if not assigned(perkProxyItem) then exit;
+
+  components := ElementByName(rec, 'FVPA - Components');
+  perkProxyComponent := ElementAssign(components, HighInteger, nil, false);
+  SetEditValue(ElementByName(perkProxyComponent, 'Component'), Name(perkProxyItem));
+  SetEditValue(ElementByName(perkProxyComponent, 'Count'), 1);
 end;
 
 function IsPowerArmorSubtype(rec: IInterface; keyword: string): boolean;
@@ -337,11 +342,9 @@ function VisualPerkFormName(formID: integer): IInterface;
 var
   fVisiblePerkPlugin: IInterface;
 begin
-  AddMasterIfMissing(mxPatchFile, 'PARTS_VisiblePerkRequirements.esp');
-  fVisiblePerkPlugin := FileByName('PARTS_VisiblePerkRequirements.esp');
-  AddMessage(Format('FormID %d from file %s', [formID, Name(fVisiblePerkPlugin)]));
-  Result := Name(RecordByFormID(fVisiblePerkPlugin, FileFormIDtoLoadOrderFormID(fVisiblePerkPlugin, GetLoadOrder(fVisiblePerkPlugin) * $01000000 + formID), false));
-  AddMessage(Format('Result: %s', [Result]));
+  AddMasterIfMissing(mxPatchFile, ProxyItemPluginFilename);
+  fVisiblePerkPlugin := FileByName(ProxyItemPluginFilename);
+  Result := RecordByFormID(fVisiblePerkPlugin, FileFormIDtoLoadOrderFormID(fVisiblePerkPlugin, GetLoadOrder(fVisiblePerkPlugin) * $01000000 + formID), false);
 end;
 
 procedure ShowOptionsForm;
