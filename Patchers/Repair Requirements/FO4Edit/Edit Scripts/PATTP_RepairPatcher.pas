@@ -12,18 +12,31 @@ unit UserScript;
 // Import MXPF functions
 uses 'lib\mxpf';
 
+// Perks come from the main game file, proxy items come from PARTS_VisiblePerkRequirements
+// Add the constants here, and then update GetProxyItemFormIdForPerk to contain the mapping
 const
   FormID_Armorer01Perk = $0004B254;
+  FormID_Armorer01ProxyItem = $00000001;
   FormID_Armorer02Perk = $0004B255;
+  FormID_Armorer02ProxyItem = $00000002;
   FormID_Armorer03Perk = $0004B256;
+  FormID_Armorer03ProxyItem = $00000003;
   FormID_Armorer04Perk = $001797EA;
+  FormID_Armorer04ProxyItem = $00000004;
   FormID_NuclearPhysicist01Perk = $001D246F;
+  FormID_NuclearPhysicist01ProxyItem = $00000005;
   FormID_NuclearPhysicist02Perk = $001D2470;
+  FormID_NuclearPhysicist02ProxyItem = $00000006;
   FormID_NuclearPhysicist03Perk = $001D2471;
+  FormID_NuclearPhysicist03ProxyItem = $00000007;
   FormID_Science01Perk = $000264D9;
+  FormID_Science01ProxyItem = $00000008;
   FormID_Science02Perk = $000264DA;
+  FormID_Science02ProxyItem = $00000009;
   FormID_Science03Perk = $000264DB;
+  FormID_Science03ProxyItem = $0000000A;
   FormID_Science04Perk = $0016578F;
+  FormID_Science04ProxyItem = $0000000B;
   FormID_GlobalZero = $00022B43;
   UNKNOWN_POWER_ARMOR = -1;
   NO_REPAIR_REQUIREMENTS = 0;
@@ -31,6 +44,25 @@ const
 
 var
   bOverwriteConditions, bRemoveConstruction, bReset, bUserCancelled: boolean;
+
+function GetProxyItemFormIdForPerk(perkFormId: Integer): Integer;
+begin
+  if perkFormId = FormID_Armorer01Perk then Result := FormID_Armorer01ProxyItem
+  else if perkFormId = FormID_Armorer02Perk then Result := FormID_Armorer02ProxyItem
+  else if perkFormId = FormID_Armorer03Perk then Result := FormID_Armorer03ProxyItem
+  else if perkFormId = FormID_Armorer04Perk then Result := FormID_Armorer04ProxyItem
+
+  else if perkFormId = FormID_NuclearPhysicist01Perk then Result := FormID_NuclearPhysicist01ProxyItem
+  else if perkFormId = FormID_NuclearPhysicist02Perk then Result := FormID_NuclearPhysicist02ProxyItem
+  else if perkFormId = FormID_NuclearPhysicist03Perk then Result := FormID_NuclearPhysicist03ProxyItem
+  
+  else if perkFormId = FormID_Science01Perk then Result := FormID_Science01ProxyItem
+  else if perkFormId = FormID_Science02Perk then Result := FormID_Science02ProxyItem
+  else if perkFormId = FormID_Science03Perk then Result := FormID_Science03ProxyItem
+  else if perkFormId = FormID_Science04Perk then Result := FormID_Science04ProxyItem
+  
+  else Result := 0
+end;
 
 function Initialize: Integer;
 var
@@ -92,8 +124,8 @@ end;
 
 procedure AddRepairConditions(rec: IInterface; armoRec: IInterface);
 var
-item, conditions, condition, ctda, lastcondition, checkctda, workbench: IInterface;
-i: integer;
+item, conditions, condition, ctda, lastcondition, checkctda, workbench, components, perkProxyComponent: IInterface;
+i, perkProxyFormId: integer;
 perks: array[0..2] of integer;
 begin
   //Initialize the array to make sure there are no surprises
@@ -250,10 +282,20 @@ begin
   SetEditValue(ElementByName(ctda, 'Function'), 'HasPerk');
   SetEditValue(ElementByName(ctda, 'Perk'), MainFileFormName(perks[i]));
 
+    perkProxyFormId := GetProxyItemFormIdForPerk(perks[i]);
+
+    if perkProxyFormId > 0 then
+    begin
+      components := ElementByName(rec, 'FVPA - Components');
+      perkProxyComponent := ElementAssign(components, HighInteger, nil, false);
+      SetEditValue(ElementByName(perkProxyComponent, 'Component'), VisualPerkFormName(perkProxyFormId));
+      SetEditValue(ElementByName(perkProxyComponent, 'Count'), 1);
+    end;
+
   for i := 1 to (Length(perks) - 1) do begin
     if perks[i] = NO_REPAIR_REQUIREMENTS then break;
 
-    condition  := ElementAssign(conditions, i, nil, true);
+    condition  := ElementAssign(conditions, i, nil, false);
     ctda       := ElementBySignature(ElementByIndex(conditions, i), 'CTDA');
 
     // Type is "Equal to"
@@ -261,6 +303,15 @@ begin
     SetNativeValue(ElementByName(ctda, 'Comparison Value - Float'), 1.0);
     SetEditValue(ElementByName(ctda, 'Function'), 'HasPerk');
     SetEditValue(ElementByName(ctda, 'Perk'), MainFileFormName(perks[i]));
+
+    perkProxyFormId := GetProxyItemFormIdForPerk(perks[i]);
+
+    if perkProxyFormId = 0 then break;
+
+    components := ElementByName(rec, 'FVPA - Components');
+    perkProxyComponent := ElementAssign(components, HighInteger, nil, false);
+    SetEditValue(ElementByName(perkProxyComponent, 'Component'), VisualPerkFormName(perkProxyFormId));
+    SetEditValue(ElementByName(perkProxyComponent, 'Count'), 1);
   end;
 end;
 
@@ -279,7 +330,18 @@ var
   fFallout4: IInterface;
 begin
   fFallout4 := FileByName('Fallout4.esm');
-  Result := Name(RecordByFormID(fFallout4, (MasterCount(fFallout4) * $01000000 + formID), false));
+  Result := Name(RecordByFormID(fFallout4, formID, false));
+end;
+
+function VisualPerkFormName(formID: integer): IInterface;
+var
+  fVisiblePerkPlugin: IInterface;
+begin
+  AddMasterIfMissing(mxPatchFile, 'PARTS_VisiblePerkRequirements.esp');
+  fVisiblePerkPlugin := FileByName('PARTS_VisiblePerkRequirements.esp');
+  AddMessage(Format('FormID %d from file %s', [formID, Name(fVisiblePerkPlugin)]));
+  Result := Name(RecordByFormID(fVisiblePerkPlugin, FileFormIDtoLoadOrderFormID(fVisiblePerkPlugin, GetLoadOrder(fVisiblePerkPlugin) * $01000000 + formID), false));
+  AddMessage(Format('Result: %s', [Result]));
 end;
 
 procedure ShowOptionsForm;
