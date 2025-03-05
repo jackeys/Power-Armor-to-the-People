@@ -18,47 +18,36 @@ const
   ProxyItemPluginFilename = 'PARTS_VisiblePerkRequirements.esp';
 
   FormID_Armorer01Perk = $0004B254;
-  FormID_Armorer01ProxyItem = $00000001;
   EditorID_Armorer01ProxyItem = 'PARTS_misc_perkproxy_Armorer01';
 
   FormID_Armorer02Perk = $0004B255;
-  FormID_Armorer02ProxyItem = $00000002;
   EditorID_Armorer02ProxyItem = 'PARTS_misc_perkproxy_Armorer02';
 
   FormID_Armorer03Perk = $0004B256;
-  FormID_Armorer03ProxyItem = $00000003;
   EditorID_Armorer03ProxyItem = 'PARTS_misc_perkproxy_Armorer03';
 
   FormID_Armorer04Perk = $001797EA;
-  FormID_Armorer04ProxyItem = $00000004;
   EditorID_Armorer04ProxyItem = 'PARTS_misc_perkproxy_Armorer04';
 
   FormID_NuclearPhysicist01Perk = $001D246F;
-  FormID_NuclearPhysicist01ProxyItem = $00000005;
   EditorID_NuclearPhysicist01ProxyItem = 'PARTS_misc_perkproxy_NuclearPhysicist01';
 
   FormID_NuclearPhysicist02Perk = $001D2470;
-  FormID_NuclearPhysicist02ProxyItem = $00000006;
   EditorID_NuclearPhysicist02ProxyItem = 'PARTS_misc_perkproxy_NuclearPhysicist02';
 
   FormID_NuclearPhysicist03Perk = $001D2471;
-  FormID_NuclearPhysicist03ProxyItem = $00000007;
   EditorID_NuclearPhysicist03ProxyItem = 'PARTS_misc_perkproxy_NuclearPhysicist03';
 
   FormID_Science01Perk = $000264D9;
-  FormID_Science01ProxyItem = $00000008;
   EditorID_Science01ProxyItem = 'PARTS_misc_perkproxy_Science01';
 
   FormID_Science02Perk = $000264DA;
-  FormID_Science02ProxyItem = $00000009;
   EditorID_Science02ProxyItem = 'PARTS_misc_perkproxy_Science02';
 
   FormID_Science03Perk = $000264DB;
-  FormID_Science03ProxyItem = $0000000A;
   EditorID_Science03ProxyItem = 'PARTS_misc_perkproxy_Science03';
 
   FormID_Science04Perk = $0016578F;
-  FormID_Science04ProxyItem = $0000000B;
   EditorID_Science04ProxyItem = 'PARTS_misc_perkproxy_Science04';
 
   FormID_GlobalZero = $00022B43;
@@ -68,25 +57,6 @@ const
 
 var
   bOverwriteConditions, bRemoveConstruction, bReset, bUserCancelled: boolean;
-
-function GetProxyItemFormIdForPerk(perkFormId: Integer): Integer;
-begin
-  if perkFormId = FormID_Armorer01Perk then Result := FormID_Armorer01ProxyItem
-  else if perkFormId = FormID_Armorer02Perk then Result := FormID_Armorer02ProxyItem
-  else if perkFormId = FormID_Armorer03Perk then Result := FormID_Armorer03ProxyItem
-  else if perkFormId = FormID_Armorer04Perk then Result := FormID_Armorer04ProxyItem
-
-  else if perkFormId = FormID_NuclearPhysicist01Perk then Result := FormID_NuclearPhysicist01ProxyItem
-  else if perkFormId = FormID_NuclearPhysicist02Perk then Result := FormID_NuclearPhysicist02ProxyItem
-  else if perkFormId = FormID_NuclearPhysicist03Perk then Result := FormID_NuclearPhysicist03ProxyItem
-  
-  else if perkFormId = FormID_Science01Perk then Result := FormID_Science01ProxyItem
-  else if perkFormId = FormID_Science02Perk then Result := FormID_Science02ProxyItem
-  else if perkFormId = FormID_Science03Perk then Result := FormID_Science03ProxyItem
-  else if perkFormId = FormID_Science04Perk then Result := FormID_Science04ProxyItem
-  
-  else Result := 0
-end;
 
 function GetProxyItemEditorIdForPerk(perkFormId: Integer): string;
 begin
