@@ -13,31 +13,54 @@ unit UserScript;
 uses 'lib\mxpf';
 
 // Perks come from the main game file, proxy items come from PARTS_VisiblePerkRequirements
-// Add the constants here, and then update GetProxyItemFormIdForPerk to contain the mapping
+// Add the constants here, and then update GetProxyItemEditorIdForPerk to contain the mapping
 const
   ProxyItemPluginFilename = 'PARTS_VisiblePerkRequirements.esp';
+
   FormID_Armorer01Perk = $0004B254;
   FormID_Armorer01ProxyItem = $00000001;
+  EditorID_Armorer01ProxyItem = 'PARTS_misc_perkproxy_Armorer01';
+
   FormID_Armorer02Perk = $0004B255;
   FormID_Armorer02ProxyItem = $00000002;
+  EditorID_Armorer02ProxyItem = 'PARTS_misc_perkproxy_Armorer02';
+
   FormID_Armorer03Perk = $0004B256;
   FormID_Armorer03ProxyItem = $00000003;
+  EditorID_Armorer03ProxyItem = 'PARTS_misc_perkproxy_Armorer03';
+
   FormID_Armorer04Perk = $001797EA;
   FormID_Armorer04ProxyItem = $00000004;
+  EditorID_Armorer04ProxyItem = 'PARTS_misc_perkproxy_Armorer04';
+
   FormID_NuclearPhysicist01Perk = $001D246F;
   FormID_NuclearPhysicist01ProxyItem = $00000005;
+  EditorID_NuclearPhysicist01ProxyItem = 'PARTS_misc_perkproxy_NuclearPhysicist01';
+
   FormID_NuclearPhysicist02Perk = $001D2470;
   FormID_NuclearPhysicist02ProxyItem = $00000006;
+  EditorID_NuclearPhysicist02ProxyItem = 'PARTS_misc_perkproxy_NuclearPhysicist02';
+
   FormID_NuclearPhysicist03Perk = $001D2471;
   FormID_NuclearPhysicist03ProxyItem = $00000007;
+  EditorID_NuclearPhysicist03ProxyItem = 'PARTS_misc_perkproxy_NuclearPhysicist03';
+
   FormID_Science01Perk = $000264D9;
   FormID_Science01ProxyItem = $00000008;
+  EditorID_Science01ProxyItem = 'PARTS_misc_perkproxy_Science01';
+
   FormID_Science02Perk = $000264DA;
   FormID_Science02ProxyItem = $00000009;
+  EditorID_Science02ProxyItem = 'PARTS_misc_perkproxy_Science02';
+
   FormID_Science03Perk = $000264DB;
   FormID_Science03ProxyItem = $0000000A;
+  EditorID_Science03ProxyItem = 'PARTS_misc_perkproxy_Science03';
+
   FormID_Science04Perk = $0016578F;
   FormID_Science04ProxyItem = $0000000B;
+  EditorID_Science04ProxyItem = 'PARTS_misc_perkproxy_Science04';
+
   FormID_GlobalZero = $00022B43;
   UNKNOWN_POWER_ARMOR = -1;
   NO_REPAIR_REQUIREMENTS = 0;
@@ -63,6 +86,25 @@ begin
   else if perkFormId = FormID_Science04Perk then Result := FormID_Science04ProxyItem
   
   else Result := 0
+end;
+
+function GetProxyItemEditorIdForPerk(perkFormId: Integer): string;
+begin
+  if perkFormId = FormID_Armorer01Perk then Result := EditorID_Armorer01ProxyItem
+  else if perkFormId = FormID_Armorer02Perk then Result := EditorID_Armorer02ProxyItem
+  else if perkFormId = FormID_Armorer03Perk then Result := EditorID_Armorer03ProxyItem
+  else if perkFormId = FormID_Armorer04Perk then Result := EditorID_Armorer04ProxyItem
+
+  else if perkFormId = FormID_NuclearPhysicist01Perk then Result := EditorID_NuclearPhysicist01ProxyItem
+  else if perkFormId = FormID_NuclearPhysicist02Perk then Result := EditorID_NuclearPhysicist02ProxyItem
+  else if perkFormId = FormID_NuclearPhysicist03Perk then Result := EditorID_NuclearPhysicist03ProxyItem
+  
+  else if perkFormId = FormID_Science01Perk then Result := EditorID_Science01ProxyItem
+  else if perkFormId = FormID_Science02Perk then Result := EditorID_Science02ProxyItem
+  else if perkFormId = FormID_Science03Perk then Result := EditorID_Science03ProxyItem
+  else if perkFormId = FormID_Science04Perk then Result := EditorID_Science04ProxyItem
+  
+  else Result := ''
 end;
 
 function Initialize: Integer;
@@ -304,19 +346,19 @@ end;
 procedure AddPerkProxyRequirement(rec: IInterface; perkFormId: integer);
 var
 components, perkProxyComponent, perkProxyItem: IInterface;
-perkProxyFormId: integer;
+perkProxyEditorId: string;
 begin
   if not assigned(FileByName(ProxyItemPluginFilename)) then exit;
   
-  perkProxyFormId := GetProxyItemFormIdForPerk(perkFormId);
-  if perkProxyFormId = 0 then exit;
+  perkProxyEditorId := GetProxyItemEditorIdForPerk(perkFormId);
+  if perkProxyEditorId = '' then exit;
 
-  perkProxyItem := VisualPerkFormName(perkProxyFormId);
+  perkProxyItem := VisualPerkFormName(perkProxyEditorId);
   if not assigned(perkProxyItem) then exit;
 
   components := ElementByName(rec, 'FVPA - Components');
   perkProxyComponent := ElementAssign(components, HighInteger, nil, false);
-  SetEditValue(ElementByName(perkProxyComponent, 'Component'), Name(perkProxyItem));
+  SetEditValue(ElementByName(perkProxyComponent, 'Component'), perkProxyItem);
   SetEditValue(ElementByName(perkProxyComponent, 'Count'), 1);
 end;
 
@@ -338,13 +380,14 @@ begin
   Result := Name(RecordByFormID(fFallout4, formID, false));
 end;
 
-function VisualPerkFormName(formID: integer): IInterface;
+function VisualPerkFormName(editorId: string): IInterface;
 var
   fVisiblePerkPlugin: IInterface;
 begin
+  // Doing this by form ID didn't work with larger load orders, so use the editor ID instead
   AddMasterIfMissing(mxPatchFile, ProxyItemPluginFilename);
-  fVisiblePerkPlugin := FileByName(ProxyItemPluginFilename);
-  Result := RecordByFormID(fVisiblePerkPlugin, FileFormIDtoLoadOrderFormID(fVisiblePerkPlugin, GetLoadOrder(fVisiblePerkPlugin) * $01000000 + formID), false);
+  fVisiblePerkPlugin := FileByName(ProxyItemPluginFilename);  
+  Result := Name(MainRecordByEditorID(GroupBySignature(fVisiblePerkPlugin, 'MISC'), editorId));
 end;
 
 procedure ShowOptionsForm;
