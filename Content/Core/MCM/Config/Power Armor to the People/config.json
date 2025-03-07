@@ -687,6 +687,21 @@
                     }
                 },
                 {
+                    "text": "XR-01 (Rare, individual pieces)",
+                    "type": "switcher",
+                    "help": "Whether mixed sets for raiders and scavengers can include XR-01 (Enclave Recon Corps)",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - Enclave Recon Corps.esp|025"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
                     "text": "Creation Club X-02 (Rare)",
                     "type": "switcher",
                     "help": "Requires X02 Raider Power Armor",
@@ -856,6 +871,21 @@
                     "valueOptions": {
                         "sourceType": "GlobalValue",
                         "sourceForm": "Power Armor to the People.esp|B5C"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
+                    "text": "XR-01 (Legendary/Commanders Only)",
+                    "type": "switcher",
+                    "help": "XR-01 from PrincessAries' Enclave Recon Corps Armors",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - Enclave Recon Corps.esp|010"
                     },
                     "action": {
                         "type": "CallFunction",
@@ -1155,6 +1185,21 @@
                         "params": [false]
                     },
                     "groupCondition": 2
+                },
+                {
+                    "text": "XR-01",
+                    "type": "switcher",
+                    "help": "XR-01 from PrincessAries' Enclave Recon Corps Armors",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - Enclave Recon Corps.esp|00F"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
                 },
                 {
                     "text": "Enclave X-02",
