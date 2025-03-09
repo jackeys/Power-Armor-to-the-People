@@ -1939,12 +1939,42 @@
                     }
                 },
                 {
+                    "text": "Allow Trapper power armor as a legendary drop",
+                    "type": "switcher",
+                    "help": "Make Selakii's Trapper and Hermit power armor eligible as a drop from legendary enemies",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - Trapper Power Armor.esp|011"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
                     "text": "Allow Submersible power armor as a legendary drop",
                     "type": "switcher",
                     "help": "Make EdibleGrenade12's Submersible power armor redux eligible as a drop from legendary enemies",
                     "valueOptions": {
                         "sourceType": "GlobalValue",
                         "sourceForm": "Power Armor to the People - Submersible Power Armor Redux.esp|011"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
+                    "text": "Allow Diving power armor as a legendary drop",
+                    "type": "switcher",
+                    "help": "Make Selakii's Diving power armor eligible as a drop from legendary enemies",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - Diving Power Armor.esp|011"
                     },
                     "action": {
                         "type": "CallFunction",
