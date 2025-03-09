@@ -154,79 +154,79 @@ begin
 
   if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_Excavator') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_Construct') or IsPowerArmorSubtype(armoRec, 'ma_PA_SubRedux') or IsPowerArmorSubtype(armoRec, 'SKI_MAKO_MA_DivingPa') then begin
     perks[0] := NO_REPAIR_REQUIREMENTS;
-  end;
+  end
   
   //////////////////////////////
   /// Improvised Power Armor ///
   //////////////////////////////
 
-  if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_Raider') or IsPowerArmorSubtype(armoRec, '000IndustrialistPA') then begin
+  else if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_Raider') or IsPowerArmorSubtype(armoRec, '000IndustrialistPA') then begin
     // Overboss and Trapper power armor don't have their own keywords, so we have to look at the name
     if ContainsText(Name(armoRec), 'Overboss') then perks[0] := FormID_Armorer03Perk
     else if ContainsText(Name(armoRec), 'Trapper') then perks[0] := FormID_Armorer02Perk
     else perks[0] := FormID_Armorer01Perk;
-  end;
-  if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_Horse') or IsPowerArmorSubtype(armoRec, 'tumba_INNRs_PowerArmor_Cagebreaker') then begin
+  end
+  else if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_Horse') or IsPowerArmorSubtype(armoRec, 'tumba_INNRs_PowerArmor_Cagebreaker') then begin
     perks[0] := FormID_Armorer02Perk;
-  end;
+  end
   // Hermit doesn't have a unique keyword, so we have to check the name, too
-  if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_X01') and ContainsText(Name(armoRec), 'Hermit') then begin
+  else if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_X01') and ContainsText(Name(armoRec), 'Hermit') then begin
     perks[0] := FormID_Armorer03Perk;
-  end;
+  end
   
   //////////////////////////////
   //// Standard Power Armor ////
   //////////////////////////////
 
-  if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_T45') or IsPowerArmorSubtype(armoRec, 'ma_PA_T49') or IsPowerArmorSubtype(armoRec, 'TNPA_ma_PA_Atomite') then begin
+  else if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_T45') or IsPowerArmorSubtype(armoRec, 'ma_PA_T49') or IsPowerArmorSubtype(armoRec, 'TNPA_ma_PA_Atomite') then begin
     perks[0] := FormID_Armorer01Perk;
     perks[1] := FormID_Science01Perk;
-  end;
-  if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_T51') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_T52') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_Hellcat') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_CHS') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_T47R') or IsPowerArmorSubtype(armoRec, 'eXo_dn_PowerArmor_BoS') then begin
+  end
+  else if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_T51') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_T52') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_Hellcat') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_CHS') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_T47R') or IsPowerArmorSubtype(armoRec, 'eXo_dn_PowerArmor_BoS') then begin
     perks[0] := FormID_Armorer02Perk;
     perks[1] := FormID_Science01Perk;
-  end;
-  if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_T60') or IsPowerArmorSubtype(armoRec, 'zzzM150IPAdn_PowerArmor_I01') or IsPowerArmorSubtype(armoRec, 'InstitutePAm150dn_PowerArmor') or IsPowerArmorSubtype(armoRec, 'tumba_dn_PowerArmor_CPA') or IsPowerArmorSubtype(armoRec, 'ccSWKFO4001_dn_PowerArmor_CC1') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_SELPA') or IsPowerArmorSubtype(armoRec, 'dn_T53_PowerArmor_CPA') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_T47R_QS') or IsPowerArmorSubtype(armoRec, 'DN_Bobcat') or IsPowerArmorSubtype(armoRec, 'Tumba_DN_GunnerPA_Bobcat') or IsPowerArmorSubtype(armoRec, 'DN_Lynx') or IsPowerArmorSubtype(armoRec, 'Tumba_DN_GunnerPA_Lynx') then begin
+  end
+  else if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_T60') or IsPowerArmorSubtype(armoRec, 'zzzM150IPAdn_PowerArmor_I01') or IsPowerArmorSubtype(armoRec, 'InstitutePAm150dn_PowerArmor') or IsPowerArmorSubtype(armoRec, 'tumba_dn_PowerArmor_CPA') or IsPowerArmorSubtype(armoRec, 'ccSWKFO4001_dn_PowerArmor_CC1') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_SELPA') or IsPowerArmorSubtype(armoRec, 'dn_T53_PowerArmor_CPA') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_T47R_QS') or IsPowerArmorSubtype(armoRec, 'DN_Bobcat') or IsPowerArmorSubtype(armoRec, 'Tumba_DN_GunnerPA_Bobcat') or IsPowerArmorSubtype(armoRec, 'DN_Lynx') or IsPowerArmorSubtype(armoRec, 'Tumba_DN_GunnerPA_Lynx') then begin
     perks[0] := FormID_Armorer02Perk;
     perks[1] := FormID_Science02Perk;
-  end;
-  if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_VaultTec') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_MidWest') or IsPowerArmorSubtype(armoRec, 'tumba_ma_PA_Tank') or IsPowerArmorSubtype(armoRec, 'ma_PA_TES51') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_Soviet') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_MWR') then begin
+  end
+  else if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_VaultTec') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_MidWest') or IsPowerArmorSubtype(armoRec, 'tumba_ma_PA_Tank') or IsPowerArmorSubtype(armoRec, 'ma_PA_TES51') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_Soviet') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_MWR') then begin
     perks[0] := FormID_Armorer03Perk;
     perks[1] := FormID_Science02Perk;
-  end;
-  if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_T65') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_Liberty') or IsPowerArmorSubtype(armoRec, 'tumba_dn_PowerArmor_Synth') then begin
+  end
+  else if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_T65') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_Liberty') or IsPowerArmorSubtype(armoRec, 'tumba_dn_PowerArmor_Synth') then begin
     perks[0] := FormID_Armorer03Perk;
     perks[1] := FormID_Science03Perk;
-  end;
-  if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_Ultracite') then begin
+  end
+  else if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_Ultracite') then begin
     perks[0] := FormID_Armorer04Perk;
     perks[1] := FormID_Science04Perk;
-  end;
+  end
   
   //////////////////////////////
   //// Advanced Power Armor ////
   //////////////////////////////
 
   // Unoctium's Enclave X-02
-  if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_X02') then begin
+  else if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_X02') then begin
     perks[0] := FormID_Armorer02Perk;
     perks[1] := FormID_Science02Perk;
     perks[2] := FormID_NuclearPhysicist01Perk;
-  end;
+  end
   // Creation Club X-02, both Hellfire power armors, Enclave power armor
-  if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_X01') or IsPowerArmorSubtype(armoRec, 'ccBGSFO4115_dn_PowerArmor_X02') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_Hellfire') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_X03') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_Enclave') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_Equalizer') then begin
+  else if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_X01') or IsPowerArmorSubtype(armoRec, 'ccBGSFO4115_dn_PowerArmor_X02') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_Hellfire') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_X03') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_Enclave') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_Equalizer') then begin
     perks[0] := FormID_Armorer03Perk;
     perks[1] := FormID_Science02Perk;
     perks[2] := FormID_NuclearPhysicist02Perk;
-  end;
+  end
   // C1PH3RR's Enclave X-02 Black Devil
-  if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_CW_X02') then begin
+  else if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_CW_X02') then begin
     perks[0] := FormID_Armorer03Perk;
     perks[1] := FormID_Science03Perk;
     perks[2] := FormID_NuclearPhysicist02Perk;
-  end;
+  end
   // The Chosen One version of Classic Advanced Power Armor uses a different naming keyword
-  if IsPowerArmorSubtype(armoRec, 'ma_PA_CAPA') then begin
+  else if IsPowerArmorSubtype(armoRec, 'ma_PA_CAPA') then begin
     perks[0] := FormID_Armorer04Perk;
     perks[1] := FormID_Science04Perk;
     perks[2] := FormID_NuclearPhysicist03Perk;
