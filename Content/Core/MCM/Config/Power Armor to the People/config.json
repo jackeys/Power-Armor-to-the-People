@@ -1939,6 +1939,36 @@
                     }
                 },
                 {
+                    "text": "Allow Legion power armor as a legendary drop",
+                    "type": "switcher",
+                    "help": "Make Mobius' Legion power armor eligible as a drop from legendary enemies",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - Legion Power Armor.esp|010"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
+                    "text": "Allow Minutemen power armor as a legendary drop",
+                    "type": "switcher",
+                    "help": "Make Tumbajamba's Minutement power armor eligible as a drop from legendary enemies",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - Tumba Minutemen Armor.esp|00D"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
                     "text": "Allow Trapper power armor as a legendary drop",
                     "type": "switcher",
                     "help": "Make Selakii's Trapper and Hermit power armor eligible as a drop from legendary enemies",
