@@ -55,12 +55,17 @@ Function RegisterInjection(LeveledItem modifiedItemList, int aiLevel = -1)
             injectionLevel = 1
         EndIf
         
-        int actorIndex = LeveledActorMappings.FindStruct("InjectionTrigger", modifiedItemList)
-        if(actorIndex >= 0)
+        int actorIndex = 0
+        while(actorIndex < LeveledActorMappings.length)
             LeveledActorMapping mapping = LeveledActorMappings[actorIndex]
-            debug.trace("Injecting actor mapping " + mapping + " at level " + injectionLevel)
-            mapping.Destination.AddForm(mapping.ActorToInject, injectionLevel)
-        EndIf
+
+            if(mapping.InjectionTrigger == modifiedItemList)
+                debug.trace("Injecting actor mapping " + mapping + " at level " + injectionLevel)
+                mapping.Destination.AddForm(mapping.ActorToInject, injectionLevel)
+            EndIf
+
+            actorIndex += 1
+        EndWhile
     EndIf
 EndFunction
 
