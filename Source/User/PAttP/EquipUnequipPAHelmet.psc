@@ -7,6 +7,9 @@ Form Property PAHelmet Auto Const
 Keyword Property HelmetKeyword Auto Const
 {If this is provided, then the first helmet with this keyword will be equipped and unequipped. Requires F4SE and that the NPC doesn't have more than one helmet.}
 
+Keyword Property WearInsteadKeyword Auto Const
+{If this is provided, armor with this keyword will be worn instead when the power armor helmet is taken off}
+
 QuestTracker[] Property AlwaysOnWhenQuestsActive Auto Const
 {If any of these quests are active, the helmet will be on}
 
@@ -67,15 +70,26 @@ Function RemoveHelmet(Actor akWearer)
         Form[] inventory = akWearer.GetInventoryItems()
 
         int i = 0
+        Form itemToRemove = None
+        Form itemToEquipInstead = None
         while i < inventory.length
             Form item = inventory[i]
             if item.HasKeyword(HelmetKeyword)
-                akWearer.UnequipItem(item, true, true)
+                itemToRemove = item
+            elseif item.HasKeyword(WearInsteadKeyword)
+                itemToEquipInstead = item
+            endIf
+
+            if itemToRemove && (!WearInsteadKeyword || itemToEquipInstead)
+                akWearer.UnequipItem(itemToRemove, true, true)
+                akWearer.EquipItem(itemToEquipInstead, false, true)
                 return
             endIf
 
             i += 1
         endWhile
+        
+        akWearer.UnequipItem(itemToRemove, true, true)
     endIf
 EndFunction
 
