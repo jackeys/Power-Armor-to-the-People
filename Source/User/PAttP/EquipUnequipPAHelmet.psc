@@ -94,7 +94,11 @@ Function RemoveHelmet(Actor akWearer)
 EndFunction
 
 Function WearHelmet(Actor akWearer)
-    if PAHelmet
+    if !akWearer.IsInPowerArmor()
+        return
+    endIf
+
+    if PAHelmet && akWearer.GetItemCount(PAHelmet) > 0
         akWearer.EquipItem(PAHelmet, true, true)
     elseif HelmetKeyword
         Form[] inventory = akWearer.GetInventoryItems()
