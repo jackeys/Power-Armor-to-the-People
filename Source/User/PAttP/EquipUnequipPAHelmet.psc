@@ -1,8 +1,11 @@
 Scriptname PAttP:EquipUnequipPAHelmet extends ActiveMagicEffect const
 {Causes an NPC to take their power armor helmet off outside of combat}
 
-Form Property PAHelmet Auto Const Mandatory
+Form Property PAHelmet Auto Const
 {The helmet the actor should equip/unequip. They must have it in their inventory.}
+
+Keyword Property HelmetKeyword Auto Const
+{If this is provided, then the first helmet with this keyword will be equipped and unequipped. Requires F4SE and that the NPC doesn't have more than one helmet.}
 
 QuestTracker[] Property AlwaysOnWhenQuestsActive Auto Const
 {If any of these quests are active, the helmet will be on}
@@ -45,11 +48,53 @@ Event Quest.OnStageSet(Quest akSender, int auiStageID, int auiItemID)
 EndEvent
 
 Function ChangeHelmetEquipState(Actor akWearer, int aeCombatState)
+    if akWearer.IsDead()
+        return
+    endIf
+
     ; Not in combat - remove the helmet
     if aeCombatState == 0 && !ImportantQuestInProgress()
-        akWearer.UnequipItem(PAHelmet, true, true)
+        RemoveHelmet(akWearer)
     else
+        WearHelmet(akWearer)
+    endIf
+EndFunction
+
+Function RemoveHelmet(Actor akWearer)
+    if PAHelmet
+        akWearer.UnequipItem(PAHelmet, true, true)
+    elseif HelmetKeyword
+        Form[] inventory = akWearer.GetInventoryItems()
+
+        int i = 0
+        while i < inventory.length
+            Form item = inventory[i]
+            if item.HasKeyword(HelmetKeyword)
+                akWearer.UnequipItem(item, true, true)
+                return
+            endIf
+
+            i += 1
+        endWhile
+    endIf
+EndFunction
+
+Function WearHelmet(Actor akWearer)
+    if PAHelmet
         akWearer.EquipItem(PAHelmet, true, true)
+    elseif HelmetKeyword
+        Form[] inventory = akWearer.GetInventoryItems()
+
+        int i = 0
+        while i < inventory.length
+            Form item = inventory[i]
+            if item.HasKeyword(HelmetKeyword)
+                akWearer.EquipItem(item, true, true)
+                return
+            endIf
+            
+            i += 1
+        endWhile
     endIf
 EndFunction
 
