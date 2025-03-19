@@ -214,7 +214,7 @@ begin
     perks[2] := FormID_NuclearPhysicist01Perk;
   end
   // Creation Club X-02, both Hellfire power armors, Enclave power armor
-  else if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_X01') or IsPowerArmorSubtype(armoRec, 'ccBGSFO4115_dn_PowerArmor_X02') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_Hellfire') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_X03') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_Enclave') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_Equalizer') then begin
+  else if IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_X01') or IsPowerArmorSubtype(armoRec, 'ccBGSFO4115_dn_PowerArmor_X02') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_Hellfire') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_X03') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_Enclave') or IsPowerArmorSubtype(armoRec, 'dn_PowerArmor_Equalizer') or IsPowerArmorSubtype(armoRec, '00_dn_PowerArmor_APA') then begin
     perks[0] := FormID_Armorer03Perk;
     perks[1] := FormID_Science02Perk;
     perks[2] := FormID_NuclearPhysicist02Perk;
