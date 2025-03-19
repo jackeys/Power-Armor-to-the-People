@@ -956,6 +956,21 @@
                     }
                 },
                 {
+                    "text": "Classic Remnants Power Armor (Legendary/Commanders Only)",
+                    "type": "switcher",
+                    "help": "TEMMIS' Classic Remnants Power Armor",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - Classic Remnants Power Armor.esp|81E"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
                     "text": "Equalizer Power Armor (Legendary/Commanders Only)",
                     "type": "switcher",
                     "help": "NewerMind43's Equalizer Power Armor",
@@ -1239,6 +1254,21 @@
                     "valueOptions": {
                         "sourceType": "GlobalValue",
                         "sourceForm": "Power Armor to the People - Enclave Power Armor.esp|016"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
+                    "text": "Classic Remnants Power Armor",
+                    "type": "switcher",
+                    "help": "TEMMIS' Classic Remnants Power Armor",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - Classic Remnants Power Armor.esp|00F"
                     },
                     "action": {
                         "type": "CallFunction",
