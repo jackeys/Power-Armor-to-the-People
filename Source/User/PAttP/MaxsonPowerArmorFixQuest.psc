@@ -15,6 +15,9 @@ QuestTracker[] Property QuestsWherePAIsForced Auto Const Mandatory
 ReferenceAlias Property actorWearingPowerArmor Auto Const Mandatory
 {Maxon's reference alias}
 
+Keyword Property VertibirdSlotKeyword Auto Const Mandatory
+{Keyword that needs to be removed for the final battle so Maxson drops down on the correct side of the vertibird}
+
 Event OnQuestInit()
     StartTrackingQuests()
 EndEvent
@@ -36,6 +39,7 @@ Event Quest.OnStageSet(Quest akSender, int auiStageID, int auiItemID)
     if trackerIndex >= 0 && auiStageID == QuestsWherePAIsForced[trackerIndex].stageToRemovePowerArmor
         debug.trace(self + " tracked quest " + akSender + " reached stage " + auiStageID)
         ExitPowerArmor()
+        actorWearingPowerArmor.GetActorRef().RemoveKeyword(VertibirdSlotKeyword)
     endIf
 
     if akSender.IsCompleted()
