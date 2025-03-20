@@ -64,7 +64,7 @@ Function ChangeHelmetEquipState(Actor akWearer, int aeCombatState)
 EndFunction
 
 Function RemoveHelmet(Actor akWearer)
-    if PAHelmet
+    if PAHelmet && akWearer.GetItemCount(PAHelmet) > 0
         akWearer.UnequipItem(PAHelmet, true, true)
     elseif HelmetKeyword
         Form[] inventory = akWearer.GetInventoryItems()
