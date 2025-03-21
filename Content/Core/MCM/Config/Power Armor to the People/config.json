@@ -1044,17 +1044,7 @@
                     "html": "true"
                 },
                 {
-                    "text": "<li>Midwest Power Armor</li>",
-                    "type": "text",
-                    "html": "true"
-                },
-                {
                     "text": "<li>T-60</li>",
-                    "type": "text",
-                    "html": "true"
-                },
-                {
-                    "text": "<li>Ultracite Power Armor</li>",
                     "type": "text",
                     "html": "true"
                 },
@@ -1162,6 +1152,36 @@
                     "valueOptions": {
                         "sourceType": "GlobalValue",
                         "sourceForm": "Power Armor to the People - Select Power Armor.esp|008"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
+                    "text": "Midwest Power Armor Evolution",
+                    "type": "switcher",
+                    "help": "NewerMind43's Midwest Power Armor Evolution",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - Midwest Power Armor Evolution.esp|814"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
+                    "text": "Midwest Power Armor Revolution",
+                    "type": "switcher",
+                    "help": "NewerMind43's Midwest Power Armor Revolution",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - Midwest Power Armor Revolution.esp|816"
                     },
                     "action": {
                         "type": "CallFunction",
@@ -1315,6 +1335,21 @@
                     "valueOptions": {
                         "sourceType": "GlobalValue",
                         "sourceForm": "Power Armor to the People - T-65.esp|820"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
+                    "text": "Ultracite Power Armor",
+                    "type": "switcher",
+                    "help": "NewerMind43's Ultracite Power Armor",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - Ultracite Power Armor.esp|826"
                     },
                     "action": {
                         "type": "CallFunction",
