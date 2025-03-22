@@ -7,6 +7,12 @@ Struct QuestTracker
 
     int stageToRemovePowerArmor
     {The stage of the quest where Maxson should leave his armor}
+
+    Quest dependentQuest = None
+    {If another quest must also be in progress for this to happen, put it here}
+
+    int dependentQuestMinimumStage = -1
+    {The stage the dependent quest must have reached for triggers to start working for the questToTrack}
 EndStruct
 
 QuestTracker[] Property QuestsWherePAIsForced Auto Const Mandatory
@@ -26,6 +32,7 @@ Function StartTrackingQuests()
     int i = 0
     while i < QuestsWherePAIsForced.length
         if !QuestsWherePAIsForced[i].questToTrack.IsCompleted()
+            debug.trace(self + " is tracking stage changes for " + QuestsWherePAIsForced[i])
             RegisterForRemoteEvent(QuestsWherePAIsForced[i].questToTrack, "OnStageSet")
         EndIf
 
@@ -38,8 +45,10 @@ Event Quest.OnStageSet(Quest akSender, int auiStageID, int auiItemID)
 
     if trackerIndex >= 0 && auiStageID == QuestsWherePAIsForced[trackerIndex].stageToRemovePowerArmor
         debug.trace(self + " tracked quest " + akSender + " reached stage " + auiStageID)
-        ExitPowerArmor()
-        actorWearingPowerArmor.GetActorRef().RemoveKeyword(VertibirdSlotKeyword)
+        if !QuestsWherePAIsForced[trackerIndex].dependentQuest || QuestsWherePAIsForced[trackerIndex].dependentQuest.GetStage() >= QuestsWherePAIsForced[trackerIndex].dependentQuestMinimumStage
+            ExitPowerArmor()
+            actorWearingPowerArmor.GetActorRef().RemoveKeyword(VertibirdSlotKeyword)
+        endIf
     endIf
 
     if akSender.IsCompleted()
