@@ -1955,7 +1955,31 @@
                     }
                 },
                 {
-                    "text": "Patch-Specific Settings",
+                    "text": "Captain Cosmos Redemption Machine Legendary Chance",
+                    "type": "slider",
+                    "help": "The chance that power armor or cosmic cannons from a Captain Cosmos Redemption Machine will be legendary",
+                    "valueOptions": {
+                        "min": 0,
+                        "max": 100,
+                        "step": 1,
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - Captain Cosmos.esp|806"
+                    }
+                },
+                {
+                    "text": "Settler Vendor-O-Tron Legendary Chance",
+                    "type": "slider",
+                    "help": "The chance of getting legendary items from the Settler Vigilante vendor-o-tron",
+                    "valueOptions": {
+                        "min": 0,
+                        "max": 100,
+                        "step": 1,
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People.esp|A45"
+                    }
+                },
+                {
+                    "text": "Legendary Drops",
                     "type": "section"
                 },
                 {
@@ -2064,27 +2088,18 @@
                     }
                 },
                 {
-                    "text": "Captain Cosmos Redemption Machine Legendary Chance",
-                    "type": "slider",
-                    "help": "The chance that power armor or cosmic cannons from a Captain Cosmos Redemption Machine will be legendary",
+                    "text": "Allow X-02 (Black Devil) power armor as a legendary drop",
+                    "type": "switcher",
+                    "help": "Make X-02 (Black Devil) power armor eligible as a drop from legendary enemies",
                     "valueOptions": {
-                        "min": 0,
-                        "max": 100,
-                        "step": 1,
                         "sourceType": "GlobalValue",
-                        "sourceForm": "Power Armor to the People - Captain Cosmos.esp|806"
-                    }
-                },
-                {
-                    "text": "Settler Vendor-O-Tron Legendary Chance",
-                    "type": "slider",
-                    "help": "The chance of getting legendary items from the Settler Vigilante vendor-o-tron",
-                    "valueOptions": {
-                        "min": 0,
-                        "max": 100,
-                        "step": 1,
-                        "sourceType": "GlobalValue",
-                        "sourceForm": "Power Armor to the People.esp|A45"
+                        "sourceForm": "Power Armor to the People - Enclave X-02 (Black Devil).esp|814"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
                     }
                 },
                 {
@@ -3249,6 +3264,21 @@
                     "valueOptions": {
                         "sourceType": "GlobalValue",
                         "sourceForm": "Power Armor to the People - X-02 CC.esp|810"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
+                    "text": "Allow X-02 (Black Devil) for abandoned Enclave power armor",
+                    "type": "switcher",
+                    "help": "Make X-02 (Black Devil) to be a possible set for abandoned leveled Enclave sets",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - Enclave X-02 (Black Devil).esp|813"
                     },
                     "action": {
                         "type": "CallFunction",
