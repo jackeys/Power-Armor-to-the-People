@@ -36,7 +36,10 @@ foreach ($f in $content_files) {
             } elseif ($mod_file.Contains("Tumbajamba's Gunner Power Armor\Armor Collection")) {
                 $game_file = $game_file -replace '.esp', ' [Collection].esp'
                 Copy-Item -LiteralPath "$game_file" -Destination "$mod_file"
-            }  elseif (-not $mod_file.Contains("MogomraPAMs\1.4")) {
+            } elseif ($mod_file.Contains("Enclave X-02 Black Devil Power Armor\1.21")) {
+                $game_file = $game_file -replace '.esp', ' [1.21].esp'
+                Copy-Item -LiteralPath "$game_file" -Destination "$mod_file"
+            } elseif (-not $mod_file.Contains("MogomraPAMs\1.4")) {
                 Copy-Item -Path "$game_file" -Destination "$mod_file"
             }
         } else {
