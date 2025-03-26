@@ -1101,7 +1101,7 @@
                 {
                     "text": "T-45 and T-51",
                     "type": "switcher",
-                    "help": "Not needed if using Brotherhood Power Armor Overhaul. Requires a mod with a BoS paint job",
+                    "help": "Not needed if using Brotherhood Power Armor Overhaul or Equipment Overhaul",
                     "valueOptions": {
                         "sourceType": "GlobalValue",
                         "sourceForm": "Power Armor to the People.esp|B55"
@@ -1981,6 +1981,10 @@
                 {
                     "text": "Legendary Drops",
                     "type": "section"
+                },
+                {
+                    "text": "Most power armor is always eligible as a legendary drop, but the following can be configured",
+                    "type": "text"
                 },
                 {
                     "text": "Allow Overboss power armor as a legendary drop",
