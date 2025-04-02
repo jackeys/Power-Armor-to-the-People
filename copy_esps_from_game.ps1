@@ -19,11 +19,7 @@ foreach ($f in $content_files) {
         if ( Test-Path -Path $game_file ) {
 
             # Filter out the alternate versions that we don't directly develop against
-            if ( $mod_file.Contains("ESP Version") ) {
-                if (Compare-Object -ReferenceObject $(Get-Content $($mod_file -replace "ESP Version", "ESL Version")) -DifferenceObject $(Get-Content $game_file)) {
-                    Write-Output "Create an alternate version of $mod_file"
-                }
-            } elseif ($mod_file.Contains("Hellcat Power Armor\1.1")) {
+            if ($mod_file.Contains("Hellcat Power Armor\1.1")) {
                 if (Compare-Object -ReferenceObject $(Get-Content $($mod_file -replace "1.1", "1.2")) -DifferenceObject $(Get-Content $game_file)) {
                     Write-Output "Create an alternate version of $mod_file"
                 }
@@ -42,6 +38,15 @@ foreach ($f in $content_files) {
             } elseif ($mod_file.Contains("Soviet Power Armor\ESL Version")) {
                 $game_file = $game_file -replace '.esp', ' [ESL].esp'
                 Copy-Item -LiteralPath "$game_file" -Destination "$mod_file"
+            } elseif ($mod_file.Contains("Synth Power Armor\ESPFE Version")) {
+                $game_file = $game_file -replace '.esp', ' [ESPFE].esp'
+                Copy-Item -LiteralPath "$game_file" -Destination "$mod_file"
+            } elseif ( $mod_file.Contains("ESP Version") ) {
+                $esl_variant = $($mod_file -replace "ESP Version", "ESL Version")
+
+                if ((Test-Path -Path $esl_variant) -And (Compare-Object -ReferenceObject $(Get-Content $esl_variant) -DifferenceObject $(Get-Content $game_file))) {
+                    Write-Output "Create an alternate version of $mod_file"
+                }
             } elseif (-not $mod_file.Contains("MogomraPAMs\1.4")) {
                 Copy-Item -Path "$game_file" -Destination "$mod_file"
             }
