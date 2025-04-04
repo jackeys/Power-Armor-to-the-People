@@ -64,6 +64,9 @@ Function PerformUpgrade()
     If Version >= 4 && lastVersion < 4
         UpgradeToVersion4()
     EndIf
+    If Version >= 10 && lastVersion < 10
+        UpgradeToVersion10()
+    EndIf
     
     Var[] args = new Var[2]
     args[0] = lastVersion
@@ -115,6 +118,19 @@ Function UpgradeToVersion4()
         debug.trace(self + " is registering new X-02 unique item")
         x02RegistrationQuest.RegisterUniques()
     endIf
+
+    PAttP:RegisterUniqueItems farHarborRegistrationQuest = Game.GetFormFromFile(0x00000800, "Power Armor to the People - Far Harbor.esp") as PAttP:RegisterUniqueItems
+    
+    if farHarborRegistrationQuest
+        debug.trace(self + " is registering new Far Harbor triggers")
+        farHarborRegistrationQuest.RegisterTriggers()
+    endIf
+
+    PATTP_LegendaryRulesManager.UpdateLegendaryModRules()
+EndFunction
+
+Function UpgradeToVersion10()
+    debug.trace(self + " is upgrading to version 10")
 
     PAttP:RegisterUniqueItems farHarborRegistrationQuest = Game.GetFormFromFile(0x00000800, "Power Armor to the People - Far Harbor.esp") as PAttP:RegisterUniqueItems
     
