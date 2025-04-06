@@ -1176,6 +1176,21 @@
                     }
                 },
                 {
+                    "text": "Porshet-5 Power Armor",
+                    "type": "switcher",
+                    "help": "",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - P-5 Power Armor.esp|005"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
                     "text": "Midwest Power Armor Evolution",
                     "type": "switcher",
                     "help": "NewerMind43's Midwest Power Armor Evolution",
@@ -2098,6 +2113,21 @@
                     "valueOptions": {
                         "sourceType": "GlobalValue",
                         "sourceForm": "Power Armor to the People - Diving Power Armor.esp|011"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
+                    "text": "Allow Porshet-5 power armor as a legendary drop",
+                    "type": "switcher",
+                    "help": "Make NotDaveOrDaniel's Porshet-5 power armor eligible as a drop from legendary enemies",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - P-5 Power Armor.esp|006"
                     },
                     "action": {
                         "type": "CallFunction",
@@ -3233,6 +3263,21 @@
                     "valueOptions": {
                         "sourceType": "GlobalValue",
                         "sourceForm": "Power Armor to the People - Soviet Power Armor.esp|007"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
+                    "text": "Porshet-5 Power Armor",
+                    "type": "switcher",
+                    "help": "Whether The Collector can sell legendary Porshet-5 Power Armor",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - P-5 Power Armor.esp|00B"
                     },
                     "action": {
                         "type": "CallFunction",
