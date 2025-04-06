@@ -672,6 +672,21 @@
                     "groupCondition": 8
                 },
                 {
+                    "text": "TES-51 Power Armor (rare)",
+                    "type": "switcher",
+                    "help": "Whether Raiders can wear TES-51 adorned with hunting trophies",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - TES-51.esp|01C"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
                     "text": "X-01 (Rare, individual pieces)",
                     "type": "switcher",
                     "help": "Whether mixed sets for raiders and scavengers can include X-01",
@@ -1584,6 +1599,33 @@
                         "params": [false]
                     },
                     "groupCondition": 12
+                },
+                {
+                    "text": "Trappers",
+                    "type": "section"
+                },
+                {
+                    "text": "The following power armor sets are always included when available:<br><ol><li>Trapper Power Armor</li><li>Submersible Power Armor Redux</li><li>Diving Power Armor</li></ol>",
+                    "type": "text",
+                    "html": "true"
+                },
+                {
+                    "type": "spacer"
+                },
+                {
+                    "text": "TES-51 Power Armor",
+                    "type": "switcher",
+                    "help": "Whether Trappers can wear TES-51 adorned with hunting trophies",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - TES-51.esp|01B"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
                 }
             ]
         },
@@ -2128,6 +2170,21 @@
                     "valueOptions": {
                         "sourceType": "GlobalValue",
                         "sourceForm": "Power Armor to the People - P-5 Power Armor.esp|006"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
+                    "text": "TES-51 Power Armor",
+                    "type": "switcher",
+                    "help": "Make EdibleGrenade12's TES-51 power armor eligible as a drop from legendary enemies",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - TES-51.esp|01D"
                     },
                     "action": {
                         "type": "CallFunction",
@@ -3278,6 +3335,21 @@
                     "valueOptions": {
                         "sourceType": "GlobalValue",
                         "sourceForm": "Power Armor to the People - P-5 Power Armor.esp|00B"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|873",
+                        "function": "RefreshListInjections",
+                        "params": [false]
+                    }
+                },
+                {
+                    "text": "TES-51 Power Armor",
+                    "type": "switcher",
+                    "help": "Whether The Collector can sell legendary TES-51",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "Power Armor to the People - TES-51.esp|01E"
                     },
                     "action": {
                         "type": "CallFunction",
