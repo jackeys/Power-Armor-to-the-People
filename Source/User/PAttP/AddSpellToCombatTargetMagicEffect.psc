@@ -8,7 +8,8 @@ Spell Property SpellToApply auto const Mandatory
 
 GlobalVariable Property NextTimeSpellCanHappen auto const Mandatory
 
-float Property CooldownDays = 0.4 auto const
+float Property SpellChance = 65.0 auto const
+float Property CooldownDays = 0.2 auto const
 
 Event OnEffectStart(Actor akTarget, Actor akCaster)
 	RegisterForRemoteEvent(akTarget, "OnCombatStateChanged")
@@ -19,7 +20,7 @@ Event OnEffectFinish(Actor akTarget, Actor akCaster)
 EndEvent
 
 Event Actor.OnCombatStateChanged(Actor akSender, Actor akTarget, int aeCombatState)
-    if aeCombatState > 0
+    if aeCombatState > 0 && Utility.RandomFloat(0.0, 100.0) < SpellChance
         ; Wait to get a target count
         StartTimer(1.0)
     EndIf
