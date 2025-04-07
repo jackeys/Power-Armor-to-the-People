@@ -24,8 +24,8 @@ Event OnEffectStart(Actor akTarget, Actor akCaster)
 		akTarget.stopCombat()
 		akTarget.enableAI()
 
-		;Make them our friend
-		victimActor.setplayerTeammate(true)
+		;Make them our friend, granting us experience if they kill other enemies
+		victimActor.setplayerTeammate(true, true, true)
 		victimActor.AddKeyword(TeammateDontUseAmmoKeyword)
 		akTarget.SetValue(Morality, 0)
 
