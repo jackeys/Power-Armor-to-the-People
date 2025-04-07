@@ -38,6 +38,9 @@ foreach ($f in $content_files) {
             } elseif ($mod_file.Contains("Soviet Power Armor\ESL Version")) {
                 $game_file = $game_file -replace '.esp', ' [ESL].esp'
                 Copy-Item -LiteralPath "$game_file" -Destination "$mod_file"
+            } elseif ($mod_file.Contains("TES-51 Power Armor\ESL Version")) {
+                $game_file = $game_file -replace '.esp', ' [ESL].esp'
+                Copy-Item -LiteralPath "$game_file" -Destination "$mod_file"
             } elseif ($mod_file.Contains("Synth Power Armor\ESPFE Version")) {
                 $game_file = $game_file -replace '.esp', ' [ESPFE].esp'
                 Copy-Item -LiteralPath "$game_file" -Destination "$mod_file"
