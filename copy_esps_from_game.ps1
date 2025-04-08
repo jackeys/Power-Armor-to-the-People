@@ -47,6 +47,9 @@ foreach ($f in $content_files) {
             } elseif ($mod_file.Contains("Institute Power Armor\ESL Version")) {
                 $game_file = $game_file -replace '.esp', ' [ESL].esp'
                 Copy-Item -LiteralPath "$game_file" -Destination "$mod_file"
+            } elseif ($mod_file.Contains("Institute Power Armor\Redux")) {
+                $game_file = $game_file -replace '.esp', ' [Redux].esp'
+                Copy-Item -LiteralPath "$game_file" -Destination "$mod_file"
             } elseif ($mod_file.Contains("Construction Power Armor\ESP Version\2.0")) {
                 $game_file = $game_file -replace '.esp', ' [2.0].esp'
                 Copy-Item -LiteralPath "$game_file" -Destination "$mod_file"
