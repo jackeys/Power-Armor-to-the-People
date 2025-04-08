@@ -204,6 +204,22 @@ bool Property RepulsingEnabled = false Auto
 LegendaryItemQuestScript:LegendaryModRule Property RepulsingModRule Const Auto Mandatory
 MiscObject Property RepulsingModItem = None Const Auto Mandatory
 
+bool Property ReinforcingEnabled = false Auto
+LegendaryItemQuestScript:LegendaryModRule Property ReinforcingModRule Const Auto Mandatory
+MiscObject Property ReinforcingModItem = None Const Auto Mandatory
+
+bool Property StableEnabled = false Auto
+LegendaryItemQuestScript:LegendaryModRule Property StableModRule Const Auto Mandatory
+MiscObject Property StableModItem = None Const Auto Mandatory
+
+bool Property GeneralsEnabled = false Auto
+LegendaryItemQuestScript:LegendaryModRule Property GeneralsModRule Const Auto Mandatory
+MiscObject Property GeneralsModItem = None Const Auto Mandatory
+
+bool Property AlphasEnabled = false Auto
+LegendaryItemQuestScript:LegendaryModRule Property AlphasModRule Const Auto Mandatory
+MiscObject Property AlphasModItem = None Const Auto Mandatory
+
 bool Property HasRunBefore = true auto
 {Whether the rules updates have been run before. Start at true because the first release didn't have this, so we'll set it to false when we init the quest.}
 
@@ -268,9 +284,13 @@ Function UpdateLegendaryModRules()
 	UpdateUniqueArmorModEnabled("Hydropowered", HydropoweredEnabled, HydropoweredModRule, HydropoweredModItem)
 	UpdateUniqueArmorModEnabled("Hammering", HammeringEnabled, HammeringModRule, HammeringModItem)
 	UpdateUniqueArmorModEnabled("Repulsing", RepulsingEnabled, RepulsingModRule, RepulsingModItem)
+	UpdateUniqueArmorModEnabled("Reinforcing", ReinforcingEnabled, ReinforcingModRule, ReinforcingModItem)
+	UpdateUniqueArmorModEnabled("Stable", StableEnabled, StableModRule, StableModItem)
 	UpdateUniqueArmorModEnabled("Chemhead", ChemheadEnabled, ChemheadModRule, ChemheadModItem)
 	UpdateUniqueArmorModEnabled("Comrade's", ComradesEnabled, ComradesModRule, ComradesModItem)
 	UpdateUniqueArmorModEnabled("Bomber's", BombersEnabled, BombersModRule, BombersModItem)
+	UpdateUniqueArmorModEnabled("General's", GeneralsEnabled, GeneralsModRule, GeneralsModItem)
+	UpdateUniqueArmorModEnabled("Alpha's", AlphasEnabled, AlphasModRule, AlphasModItem)
 	UpdateUniqueArmorModEnabled("True American", BonusVsAbominationEnabled, BonusVsAbominationModRule, BonusVsAbominationModItem)
 EndFunction
 

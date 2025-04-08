@@ -2731,6 +2731,22 @@
                     "groupCondition": 2
                 },
                 {
+                    "text": "Alpha's",
+                    "type": "switcher",
+                    "help": "Animals may join your pack instead of fighting you (Helmet only)",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|A61",
+                        "propertyName": "AlphasEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|A61",
+                        "function": "UpdateLegendaryModRules"
+                    },
+                    "groupCondition": 2
+                },
+                {
                     "text": "Charging",
                     "type": "switcher",
                     "help": "Hitting an enemy with Pain Train restores 20 Action Points and increases speed by 10% for 10 seconds (Legs only)",
@@ -2859,6 +2875,22 @@
                     "groupCondition": 2
                 },
                 {
+                    "text": "General's",
+                    "type": "switcher",
+                    "help": "Periodically calls the Minutemen for assistance in combat (Torso only)",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|A61",
+                        "propertyName": "GeneralsEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|A61",
+                        "function": "UpdateLegendaryModRules"
+                    },
+                    "groupCondition": 2
+                },
+                {
                     "text": "Heroic",
                     "type": "switcher",
                     "help": "Increases Charisma based on how many settlements you have defended from attackers (up to +3). Increased chance for Settler Vigilantes to help defend settlements. (Helm only)",
@@ -2973,7 +3005,7 @@
                 {
                     "text": "Auto-Loading",
                     "type": "switcher",
-                    "help": "Reload all guns 20% faster",
+                    "help": "Reload all guns 20% faster (Arms only)",
                     "valueOptions": {
                         "sourceType": "PropertyValueBool",
                         "sourceForm": "Power Armor to the People.esp|A61",
@@ -2989,7 +3021,7 @@
                 {
                     "text": "Hammering",
                     "type": "switcher",
-                    "help": "Unarmed power attacks cause knockback",
+                    "help": "Unarmed power attacks cause knockback (Arms only)",
                     "valueOptions": {
                         "sourceType": "PropertyValueBool",
                         "sourceForm": "Power Armor to the People.esp|A61",
@@ -3003,13 +3035,45 @@
                     "groupCondition": 2
                 },
                 {
+                    "text": "Reinforcing",
+                    "type": "switcher",
+                    "help": "Grants increasing damage resistance the higher your rads (up to +200)",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|A61",
+                        "propertyName": "ReinforcingEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|A61",
+                        "function": "UpdateLegendaryModRules"
+                    },
+                    "groupCondition": 2
+                },
+                {
                     "text": "Repulsing",
                     "type": "switcher",
-                    "help": "30% chance to knock back melee attackers",
+                    "help": "30% chance to knock back melee attackers (Torso only)",
                     "valueOptions": {
                         "sourceType": "PropertyValueBool",
                         "sourceForm": "Power Armor to the People.esp|A61",
                         "propertyName": "RepulsingEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|A61",
+                        "function": "UpdateLegendaryModRules"
+                    },
+                    "groupCondition": 2
+                },
+                {
+                    "text": "Stable",
+                    "type": "switcher",
+                    "help": "Greatly reduces weapon spread and makes scoped aiming more steady (Arms only)",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|A61",
+                        "propertyName": "StableEnabled"
                     },
                     "action": {
                         "type": "CallFunction",
