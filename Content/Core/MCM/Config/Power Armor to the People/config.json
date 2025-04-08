@@ -2539,182 +2539,6 @@
                     "groupCondition": 2
                 },
                 {
-                    "text": "Overseer's",
-                    "type": "switcher",
-                    "help": "Deal 20% more damage while indoors (Helmet only)",
-                    "valueOptions": {
-                        "sourceType": "PropertyValueBool",
-                        "sourceForm": "Power Armor to the People.esp|A61",
-                        "propertyName": "OverseersEnabled"
-                    },
-                    "action": {
-                        "type": "CallFunction",
-                        "form": "Power Armor to the People.esp|A61",
-                        "function": "UpdateLegendaryModRules"
-                    },
-                    "groupCondition": 2
-                },
-                {
-                    "text": "People's",
-                    "type": "switcher",
-                    "help": "+1 to all SPECIAL stats if you have less than 1000 caps (Helmet only)",
-                    "valueOptions": {
-                        "sourceType": "PropertyValueBool",
-                        "sourceForm": "Power Armor to the People.esp|A61",
-                        "propertyName": "PeoplesEnabled"
-                    },
-                    "action": {
-                        "type": "CallFunction",
-                        "form": "Power Armor to the People.esp|A61",
-                        "function": "UpdateLegendaryModRules"
-                    },
-                    "groupCondition": 2
-                },
-                {
-                    "text": "Terrifying",
-                    "type": "switcher",
-                    "help": "Bonus to pacification chance and distance, and pacification now works on enemies that are higher level than you (Helmet only)",
-                    "valueOptions": {
-                        "sourceType": "PropertyValueBool",
-                        "sourceForm": "Power Armor to the People.esp|A61",
-                        "propertyName": "TerrifyingEnabled"
-                    },
-                    "action": {
-                        "type": "CallFunction",
-                        "form": "Power Armor to the People.esp|A61",
-                        "function": "UpdateLegendaryModRules"
-                    },
-                    "groupCondition": 2
-                },
-                {
-                    "text": "Piezonucleic",
-                    "type": "switcher",
-                    "help": "Radiation exposure increases Action Point refresh speed (Torso only)",
-                    "valueOptions": {
-                        "sourceType": "PropertyValueBool",
-                        "sourceForm": "Power Armor to the People.esp|A61",
-                        "propertyName": "PiezonucleicEnabled"
-                    },
-                    "action": {
-                        "type": "CallFunction",
-                        "form": "Power Armor to the People.esp|A61",
-                        "function": "UpdateLegendaryModRules"
-                    },
-                    "groupCondition": 2
-                },
-                {
-                    "text": "Rocketeer",
-                    "type": "switcher",
-                    "help": "Fly higher and faster when using a jet pack (Torso only)",
-                    "valueOptions": {
-                        "sourceType": "PropertyValueBool",
-                        "sourceForm": "Power Armor to the People.esp|A61",
-                        "propertyName": "RocketeerEnabled"
-                    },
-                    "action": {
-                        "type": "CallFunction",
-                        "form": "Power Armor to the People.esp|A61",
-                        "function": "UpdateLegendaryModRules"
-                    },
-                    "groupCondition": 2
-                },
-                {
-                    "text": "Director's",
-                    "type": "switcher",
-                    "help": "There is a 1% chance that a synth will be teleported to aid you whenever you are hit (Torso only)",
-                    "valueOptions": {
-                        "sourceType": "PropertyValueBool",
-                        "sourceForm": "Power Armor to the People.esp|A61",
-                        "propertyName": "DirectorsEnabled"
-                    },
-                    "action": {
-                        "type": "CallFunction",
-                        "form": "Power Armor to the People.esp|A61",
-                        "function": "UpdateLegendaryModRules"
-                    },
-                    "groupCondition": 2
-                },
-                {
-                    "text": "Recycling",
-                    "type": "switcher",
-                    "help": "1% chance of preventing damage from an attack, and a 3% chance of adding ballistic ammo from attacks to your inventory (Torso only)",
-                    "valueOptions": {
-                        "sourceType": "PropertyValueBool",
-                        "sourceForm": "Power Armor to the People.esp|A61",
-                        "propertyName": "RecyclingEnabled"
-                    },
-                    "action": {
-                        "type": "CallFunction",
-                        "form": "Power Armor to the People.esp|A61",
-                        "function": "UpdateLegendaryModRules"
-                    },
-                    "groupCondition": 2
-                },
-                {
-                    "text": "Condensing",
-                    "type": "switcher",
-                    "help": "Fusion core does not drain for 5 seconds after taking energy damage, and there is a 3% chance of adding energy ammo from attacks to your inventory (Torso only)",
-                    "valueOptions": {
-                        "sourceType": "PropertyValueBool",
-                        "sourceForm": "Power Armor to the People.esp|A61",
-                        "propertyName": "CondensingEnabled"
-                    },
-                    "action": {
-                        "type": "CallFunction",
-                        "form": "Power Armor to the People.esp|A61",
-                        "function": "UpdateLegendaryModRules"
-                    },
-                    "groupCondition": 2
-                },
-                {
-                    "text": "Deflecting",
-                    "type": "switcher",
-                    "help": "If you have the Ricochet perk, increases the chance of a ricochet (Arms only, does not stack)",
-                    "valueOptions": {
-                        "sourceType": "PropertyValueBool",
-                        "sourceForm": "Power Armor to the People.esp|A61",
-                        "propertyName": "DeflectingEnabled"
-                    },
-                    "action": {
-                        "type": "CallFunction",
-                        "form": "Power Armor to the People.esp|A61",
-                        "function": "UpdateLegendaryModRules"
-                    },
-                    "groupCondition": 2
-                },
-                {
-                    "text": "Ramming",
-                    "type": "switcher",
-                    "help": "Doubles Pain Train damage and stagger (Arms only, does not stack)",
-                    "valueOptions": {
-                        "sourceType": "PropertyValueBool",
-                        "sourceForm": "Power Armor to the People.esp|A61",
-                        "propertyName": "RammingEnabled"
-                    },
-                    "action": {
-                        "type": "CallFunction",
-                        "form": "Power Armor to the People.esp|A61",
-                        "function": "UpdateLegendaryModRules"
-                    },
-                    "groupCondition": 2
-                },
-                {
-                    "text": "Penetrating",
-                    "type": "switcher",
-                    "help": "Unarmed attacks ignore 30% of target's armor (Arms only, does not stack)",
-                    "valueOptions": {
-                        "sourceType": "PropertyValueBool",
-                        "sourceForm": "Power Armor to the People.esp|A61",
-                        "propertyName": "PenetratingEnabled"
-                    },
-                    "action": {
-                        "type": "CallFunction",
-                        "form": "Power Armor to the People.esp|A61",
-                        "function": "UpdateLegendaryModRules"
-                    },
-                    "groupCondition": 2
-                },
-                {
                     "text": "Adapting",
                     "type": "switcher",
                     "help": "If you have at least 250 rads, radiation exposure makes power armor indestructible (Arms only, does not stack)",
@@ -2747,77 +2571,13 @@
                     "groupCondition": 2
                 },
                 {
-                    "text": "Charging",
+                    "text": "Anti-Contamination",
                     "type": "switcher",
-                    "help": "Hitting an enemy with Pain Train restores 20 Action Points and increases speed by 10% for 10 seconds (Legs only)",
+                    "help": "Grants increasing radiation resistance the lower your health (up to +150)",
                     "valueOptions": {
                         "sourceType": "PropertyValueBool",
                         "sourceForm": "Power Armor to the People.esp|A61",
-                        "propertyName": "ChargingEnabled"
-                    },
-                    "action": {
-                        "type": "CallFunction",
-                        "form": "Power Armor to the People.esp|A61",
-                        "function": "UpdateLegendaryModRules"
-                    },
-                    "groupCondition": 2
-                },
-                {
-                    "text": "Heavy Lifting",
-                    "type": "switcher",
-                    "help": "Increases carry capacity by 15 for each heavy gun in your inventory, up to a maximum of 5 (Legs only)",
-                    "valueOptions": {
-                        "sourceType": "PropertyValueBool",
-                        "sourceForm": "Power Armor to the People.esp|A61",
-                        "propertyName": "HeavyLiftingEnabled"
-                    },
-                    "action": {
-                        "type": "CallFunction",
-                        "form": "Power Armor to the People.esp|A61",
-                        "function": "UpdateLegendaryModRules"
-                    },
-                    "groupCondition": 2
-                },
-                {
-                    "text": "Rad-Absorbing",
-                    "type": "switcher",
-                    "help": "Radiation exposure makes fusion cores last 50% longer (Legs only)",
-                    "valueOptions": {
-                        "sourceType": "PropertyValueBool",
-                        "sourceForm": "Power Armor to the People.esp|A61",
-                        "propertyName": "RadAbsorbingEnabled"
-                    },
-                    "action": {
-                        "type": "CallFunction",
-                        "form": "Power Armor to the People.esp|A61",
-                        "function": "UpdateLegendaryModRules"
-                    },
-                    "groupCondition": 2
-                },
-                {
-                    "text": "Fleeting",
-                    "type": "switcher",
-                    "help": "Increases movement speed by 20% when outnumbered (Legs only)",
-                    "valueOptions": {
-                        "sourceType": "PropertyValueBool",
-                        "sourceForm": "Power Armor to the People.esp|A61",
-                        "propertyName": "FleetingEnabled"
-                    },
-                    "action": {
-                        "type": "CallFunction",
-                        "form": "Power Armor to the People.esp|A61",
-                        "function": "UpdateLegendaryModRules"
-                    },
-                    "groupCondition": 2
-                },
-                {
-                    "text": "True American",
-                    "type": "switcher",
-                    "help": "Deal 10% more damage to and receive 10% less damage from Super Mutants and Ghouls (Arms only)",
-                    "valueOptions": {
-                        "sourceType": "PropertyValueBool",
-                        "sourceForm": "Power Armor to the People.esp|A61",
-                        "propertyName": "BonusVsAbominationEnabled"
+                        "propertyName": "AnticontaminationEnabled"
                     },
                     "action": {
                         "type": "CallFunction",
@@ -2843,13 +2603,13 @@
                     "groupCondition": 2
                 },
                 {
-                    "text": "Leaky",
+                    "text": "Auto-Loading",
                     "type": "switcher",
-                    "help": "There is a 5% chance to deal radiation damage to nearby enemies when hit, once every 60 seconds (Torso only)",
+                    "help": "Reload all guns 20% faster (Arms only)",
                     "valueOptions": {
                         "sourceType": "PropertyValueBool",
                         "sourceForm": "Power Armor to the People.esp|A61",
-                        "propertyName": "LeakyEnabled"
+                        "propertyName": "AutoloadingEnabled"
                     },
                     "action": {
                         "type": "CallFunction",
@@ -2859,13 +2619,13 @@
                     "groupCondition": 2
                 },
                 {
-                    "text": "Persistent",
+                    "text": "Bomber's",
                     "type": "switcher",
-                    "help": "Increases damage dealt by up to 5% for each piece of equipped power armor, the closer each is to breaking (Torso only)",
+                    "help": "Increases Explosives damage by 10%. Reduces damage from explosions by 25%. (Torso only)",
                     "valueOptions": {
                         "sourceType": "PropertyValueBool",
                         "sourceForm": "Power Armor to the People.esp|A61",
-                        "propertyName": "PersistentEnabled"
+                        "propertyName": "BombersEnabled"
                     },
                     "action": {
                         "type": "CallFunction",
@@ -2875,61 +2635,13 @@
                     "groupCondition": 2
                 },
                 {
-                    "text": "General's",
+                    "text": "Charging",
                     "type": "switcher",
-                    "help": "Periodically calls the Minutemen for assistance in combat (Torso only)",
+                    "help": "Hitting an enemy with Pain Train restores 20 Action Points and increases speed by 10% for 10 seconds (Legs only)",
                     "valueOptions": {
                         "sourceType": "PropertyValueBool",
                         "sourceForm": "Power Armor to the People.esp|A61",
-                        "propertyName": "GeneralsEnabled"
-                    },
-                    "action": {
-                        "type": "CallFunction",
-                        "form": "Power Armor to the People.esp|A61",
-                        "function": "UpdateLegendaryModRules"
-                    },
-                    "groupCondition": 2
-                },
-                {
-                    "text": "Heroic",
-                    "type": "switcher",
-                    "help": "Increases Charisma based on how many settlements you have defended from attackers (up to +3). Increased chance for Settler Vigilantes to help defend settlements. (Helm only)",
-                    "valueOptions": {
-                        "sourceType": "PropertyValueBool",
-                        "sourceForm": "Power Armor to the People.esp|A61",
-                        "propertyName": "HeroicEnabled"
-                    },
-                    "action": {
-                        "type": "CallFunction",
-                        "form": "Power Armor to the People.esp|A61",
-                        "function": "UpdateLegendaryModRules"
-                    },
-                    "groupCondition": 2
-                },
-                {
-                    "text": "Cryogenerator",
-                    "type": "switcher",
-                    "help": "Regenerates cryo cells if you have a cryo weapon equipped, up to a limit of 100. (Torso only)",
-                    "valueOptions": {
-                        "sourceType": "PropertyValueBool",
-                        "sourceForm": "Power Armor to the People.esp|A61",
-                        "propertyName": "CryogeneratorEnabled"
-                    },
-                    "action": {
-                        "type": "CallFunction",
-                        "form": "Power Armor to the People.esp|A61",
-                        "function": "UpdateLegendaryModRules"
-                    },
-                    "groupCondition": 2
-                },
-                {
-                    "text": "Hydro-Powered",
-                    "type": "switcher",
-                    "help": "Fusion core energy recharges while in water (Torso only)",
-                    "valueOptions": {
-                        "sourceType": "PropertyValueBool",
-                        "sourceForm": "Power Armor to the People.esp|A61",
-                        "propertyName": "HydropoweredEnabled"
+                        "propertyName": "ChargingEnabled"
                     },
                     "action": {
                         "type": "CallFunction",
@@ -2971,13 +2683,13 @@
                     "groupCondition": 2
                 },
                 {
-                    "text": "Bomber's",
+                    "text": "Condensing",
                     "type": "switcher",
-                    "help": "Increases Explosives damage by 10%. Reduces damage from explosions by 25%. (Torso only)",
+                    "help": "Fusion core does not drain for 5 seconds after taking energy damage, and there is a 3% chance of adding energy ammo from attacks to your inventory (Torso only)",
                     "valueOptions": {
                         "sourceType": "PropertyValueBool",
                         "sourceForm": "Power Armor to the People.esp|A61",
-                        "propertyName": "BombersEnabled"
+                        "propertyName": "CondensingEnabled"
                     },
                     "action": {
                         "type": "CallFunction",
@@ -2987,13 +2699,13 @@
                     "groupCondition": 2
                 },
                 {
-                    "text": "Anti-Contamination",
+                    "text": "Cryogenerator",
                     "type": "switcher",
-                    "help": "Grants increasing radiation resistance the lower your health (up to +150)",
+                    "help": "Regenerates cryo cells if you have a cryo weapon equipped, up to a limit of 100. (Torso only)",
                     "valueOptions": {
                         "sourceType": "PropertyValueBool",
                         "sourceForm": "Power Armor to the People.esp|A61",
-                        "propertyName": "AnticontaminationEnabled"
+                        "propertyName": "CryogeneratorEnabled"
                     },
                     "action": {
                         "type": "CallFunction",
@@ -3003,13 +2715,61 @@
                     "groupCondition": 2
                 },
                 {
-                    "text": "Auto-Loading",
+                    "text": "Deflecting",
                     "type": "switcher",
-                    "help": "Reload all guns 20% faster (Arms only)",
+                    "help": "If you have the Ricochet perk, increases the chance of a ricochet (Arms only, does not stack)",
                     "valueOptions": {
                         "sourceType": "PropertyValueBool",
                         "sourceForm": "Power Armor to the People.esp|A61",
-                        "propertyName": "AutoloadingEnabled"
+                        "propertyName": "DeflectingEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|A61",
+                        "function": "UpdateLegendaryModRules"
+                    },
+                    "groupCondition": 2
+                },
+                {
+                    "text": "Director's",
+                    "type": "switcher",
+                    "help": "There is a 1% chance that a synth will be teleported to aid you whenever you are hit (Torso only)",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|A61",
+                        "propertyName": "DirectorsEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|A61",
+                        "function": "UpdateLegendaryModRules"
+                    },
+                    "groupCondition": 2
+                },
+                {
+                    "text": "Fleeting",
+                    "type": "switcher",
+                    "help": "Increases movement speed by 20% when outnumbered (Legs only)",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|A61",
+                        "propertyName": "FleetingEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|A61",
+                        "function": "UpdateLegendaryModRules"
+                    },
+                    "groupCondition": 2
+                },
+                {
+                    "text": "General's",
+                    "type": "switcher",
+                    "help": "Periodically calls the Minutemen for assistance in combat (Torso only)",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|A61",
+                        "propertyName": "GeneralsEnabled"
                     },
                     "action": {
                         "type": "CallFunction",
@@ -3026,6 +2786,198 @@
                         "sourceType": "PropertyValueBool",
                         "sourceForm": "Power Armor to the People.esp|A61",
                         "propertyName": "HammeringEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|A61",
+                        "function": "UpdateLegendaryModRules"
+                    },
+                    "groupCondition": 2
+                },
+                {
+                    "text": "Heavy Lifting",
+                    "type": "switcher",
+                    "help": "Increases carry capacity by 15 for each heavy gun in your inventory, up to a maximum of 5 (Legs only)",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|A61",
+                        "propertyName": "HeavyLiftingEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|A61",
+                        "function": "UpdateLegendaryModRules"
+                    },
+                    "groupCondition": 2
+                },
+                {
+                    "text": "Heroic",
+                    "type": "switcher",
+                    "help": "Increases Charisma based on how many settlements you have defended from attackers (up to +3). Increased chance for Settler Vigilantes to help defend settlements. (Helm only)",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|A61",
+                        "propertyName": "HeroicEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|A61",
+                        "function": "UpdateLegendaryModRules"
+                    },
+                    "groupCondition": 2
+                },
+                {
+                    "text": "Hydro-Powered",
+                    "type": "switcher",
+                    "help": "Fusion core energy recharges while in water (Torso only)",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|A61",
+                        "propertyName": "HydropoweredEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|A61",
+                        "function": "UpdateLegendaryModRules"
+                    },
+                    "groupCondition": 2
+                },
+                {
+                    "text": "Leaky",
+                    "type": "switcher",
+                    "help": "There is a 5% chance to deal radiation damage to nearby enemies when hit, once every 60 seconds (Torso only)",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|A61",
+                        "propertyName": "LeakyEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|A61",
+                        "function": "UpdateLegendaryModRules"
+                    },
+                    "groupCondition": 2
+                },
+                {
+                    "text": "Overseer's",
+                    "type": "switcher",
+                    "help": "Deal 20% more damage while indoors (Helmet only)",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|A61",
+                        "propertyName": "OverseersEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|A61",
+                        "function": "UpdateLegendaryModRules"
+                    },
+                    "groupCondition": 2
+                },
+                {
+                    "text": "Penetrating",
+                    "type": "switcher",
+                    "help": "Unarmed attacks ignore 30% of target's armor (Arms only, does not stack)",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|A61",
+                        "propertyName": "PenetratingEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|A61",
+                        "function": "UpdateLegendaryModRules"
+                    },
+                    "groupCondition": 2
+                },
+                {
+                    "text": "People's",
+                    "type": "switcher",
+                    "help": "+1 to all SPECIAL stats if you have less than 1000 caps (Helmet only)",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|A61",
+                        "propertyName": "PeoplesEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|A61",
+                        "function": "UpdateLegendaryModRules"
+                    },
+                    "groupCondition": 2
+                },
+                {
+                    "text": "Persistent",
+                    "type": "switcher",
+                    "help": "Increases damage dealt by up to 5% for each piece of equipped power armor, the closer each is to breaking (Torso only)",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|A61",
+                        "propertyName": "PersistentEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|A61",
+                        "function": "UpdateLegendaryModRules"
+                    },
+                    "groupCondition": 2
+                },
+                {
+                    "text": "Piezonucleic",
+                    "type": "switcher",
+                    "help": "Radiation exposure increases Action Point refresh speed (Torso only)",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|A61",
+                        "propertyName": "PiezonucleicEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|A61",
+                        "function": "UpdateLegendaryModRules"
+                    },
+                    "groupCondition": 2
+                },
+                {
+                    "text": "Rad-Absorbing",
+                    "type": "switcher",
+                    "help": "Radiation exposure makes fusion cores last 50% longer (Legs only)",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|A61",
+                        "propertyName": "RadAbsorbingEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|A61",
+                        "function": "UpdateLegendaryModRules"
+                    },
+                    "groupCondition": 2
+                },
+                {
+                    "text": "Ramming",
+                    "type": "switcher",
+                    "help": "Doubles Pain Train damage and stagger (Arms only, does not stack)",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|A61",
+                        "propertyName": "RammingEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|A61",
+                        "function": "UpdateLegendaryModRules"
+                    },
+                    "groupCondition": 2
+                },
+                {
+                    "text": "Recycling",
+                    "type": "switcher",
+                    "help": "1% chance of preventing damage from an attack, and a 3% chance of adding ballistic ammo from attacks to your inventory (Torso only)",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|A61",
+                        "propertyName": "RecyclingEnabled"
                     },
                     "action": {
                         "type": "CallFunction",
@@ -3067,6 +3019,22 @@
                     "groupCondition": 2
                 },
                 {
+                    "text": "Rocketeer",
+                    "type": "switcher",
+                    "help": "Fly higher and faster when using a jet pack (Torso only)",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|A61",
+                        "propertyName": "RocketeerEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|A61",
+                        "function": "UpdateLegendaryModRules"
+                    },
+                    "groupCondition": 2
+                },
+                {
                     "text": "Stable",
                     "type": "switcher",
                     "help": "Greatly reduces weapon spread and makes scoped aiming more steady (Arms only)",
@@ -3074,6 +3042,38 @@
                         "sourceType": "PropertyValueBool",
                         "sourceForm": "Power Armor to the People.esp|A61",
                         "propertyName": "StableEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|A61",
+                        "function": "UpdateLegendaryModRules"
+                    },
+                    "groupCondition": 2
+                },
+                {
+                    "text": "Terrifying",
+                    "type": "switcher",
+                    "help": "Bonus to pacification chance and distance, and pacification now works on enemies that are higher level than you (Helmet only)",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|A61",
+                        "propertyName": "TerrifyingEnabled"
+                    },
+                    "action": {
+                        "type": "CallFunction",
+                        "form": "Power Armor to the People.esp|A61",
+                        "function": "UpdateLegendaryModRules"
+                    },
+                    "groupCondition": 2
+                },
+                {
+                    "text": "True American",
+                    "type": "switcher",
+                    "help": "Deal 10% more damage to and receive 10% less damage from Super Mutants and Ghouls (Arms only)",
+                    "valueOptions": {
+                        "sourceType": "PropertyValueBool",
+                        "sourceForm": "Power Armor to the People.esp|A61",
+                        "propertyName": "BonusVsAbominationEnabled"
                     },
                     "action": {
                         "type": "CallFunction",
